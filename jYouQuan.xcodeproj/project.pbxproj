@@ -691,7 +691,7 @@
 		9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLJionWorkCellTableViewCell.m; sourceTree = "<group>"; };
 		9E43F12C1D45A28900F89637 /* LLJionWorkCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLJionWorkCellTableViewCell.xib; sourceTree = "<group>"; };
 		9E43F12F1D45A3BF00F89637 /* more_work_func.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_work_func.png; sourceTree = "<group>"; };
-		9E487E701D3DB80B003AEB2F /* jishou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jishou.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E487E701D3DB80B003AEB2F /* jYouQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jYouQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E487E741D3DB80B003AEB2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E487E761D3DB80B003AEB2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9E487E771D3DB80B003AEB2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2067,7 +2067,7 @@
 				9E4882181D3DC2E3003AEB2F /* dao */,
 				9E487E8E1D3DBA29003AEB2F /* libs */,
 				9E487F751D3DBA29003AEB2F /* base */,
-				9E487E721D3DB80B003AEB2F /* jishou */,
+				9E487E721D3DB80B003AEB2F /* jYouQuan */,
 				9E487E711D3DB80B003AEB2F /* Products */,
 				176D6DE5331A31F49C90F2FE /* Pods */,
 				2D4EDFB2FB40FD46B485B920 /* Frameworks */,
@@ -2077,12 +2077,12 @@
 		9E487E711D3DB80B003AEB2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9E487E701D3DB80B003AEB2F /* jishou.app */,
+				9E487E701D3DB80B003AEB2F /* jYouQuan.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9E487E721D3DB80B003AEB2F /* jishou */ = {
+		9E487E721D3DB80B003AEB2F /* jYouQuan */ = {
 			isa = PBXGroup;
 			children = (
 				9EBC478D1D3F0EE000541F23 /* LLShell.m */,
@@ -2100,7 +2100,7 @@
 				9E487E7F1D3DB80B003AEB2F /* jishou.xcdatamodeld */,
 				9E487E731D3DB80B003AEB2F /* Supporting Files */,
 			);
-			path = jishou;
+			path = jYouQuan;
 			sourceTree = "<group>";
 		};
 		9E487E731D3DB80B003AEB2F /* Supporting Files */ = {
@@ -4157,9 +4157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9E487E6F1D3DB80B003AEB2F /* jishou */ = {
+		9E487E6F1D3DB80B003AEB2F /* jYouQuan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9E487E8A1D3DB80B003AEB2F /* Build configuration list for PBXNativeTarget "jishou" */;
+			buildConfigurationList = 9E487E8A1D3DB80B003AEB2F /* Build configuration list for PBXNativeTarget "jYouQuan" */;
 			buildPhases = (
 				44A3177AE337E6F69FBCA996 /* Check Pods Manifest.lock */,
 				9E487E6C1D3DB80B003AEB2F /* Sources */,
@@ -4172,9 +4172,9 @@
 			);
 			dependencies = (
 			);
-			name = jishou;
+			name = jYouQuan;
 			productName = jishou;
-			productReference = 9E487E701D3DB80B003AEB2F /* jishou.app */;
+			productReference = 9E487E701D3DB80B003AEB2F /* jYouQuan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -4192,7 +4192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9E487E6B1D3DB80B003AEB2F /* Build configuration list for PBXProject "jishou" */;
+			buildConfigurationList = 9E487E6B1D3DB80B003AEB2F /* Build configuration list for PBXProject "jYouQuan" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -4206,7 +4206,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9E487E6F1D3DB80B003AEB2F /* jishou */,
+				9E487E6F1D3DB80B003AEB2F /* jYouQuan */,
 			);
 		};
 /* End PBXProject section */
@@ -4980,8 +4980,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/Parse",
 				);
-				GCC_PREFIX_HEADER = jishou/Prefix.pch;
-				INFOPLIST_FILE = jishou/Info.plist;
+				GCC_PREFIX_HEADER = jYouQuan/Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/jYouQuan/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4993,7 +4993,7 @@
 					"$(PROJECT_DIR)/libs/EaseMobSDK/thirdpart/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbslm.cooci.jishou;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = jYouQuan;
 			};
 			name = Debug;
 		};
@@ -5009,8 +5009,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/Parse",
 				);
-				GCC_PREFIX_HEADER = jishou/Prefix.pch;
-				INFOPLIST_FILE = jishou/Info.plist;
+				GCC_PREFIX_HEADER = jYouQuan/Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/jYouQuan/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5022,14 +5022,14 @@
 					"$(PROJECT_DIR)/libs/EaseMobSDK/thirdpart/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbslm.cooci.jishou;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = jYouQuan;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9E487E6B1D3DB80B003AEB2F /* Build configuration list for PBXProject "jishou" */ = {
+		9E487E6B1D3DB80B003AEB2F /* Build configuration list for PBXProject "jYouQuan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E487E881D3DB80B003AEB2F /* Debug */,
@@ -5038,7 +5038,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9E487E8A1D3DB80B003AEB2F /* Build configuration list for PBXNativeTarget "jishou" */ = {
+		9E487E8A1D3DB80B003AEB2F /* Build configuration list for PBXNativeTarget "jYouQuan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E487E8B1D3DB80B003AEB2F /* Debug */,
