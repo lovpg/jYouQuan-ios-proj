@@ -1,0 +1,49 @@
+/* 
+  style.css
+  OllaFramework
+
+  Created by nonstriater on 14-8-13.
+  Copyright (c) 2014年 xiaoran. All rights reserved.
+*/
+
+{
+    lable1:{
+        font:16 bold;
+        color:green;
+    }
+    
+    label2:{
+    
+    }
+
+    view1:{
+        bgColor:red;
+        frame:20 20 40 40;
+
+    }
+    
+    view2:{
+    
+    }
+    
+    button1:{
+        backgroundImage:@"icon.png";
+    }
+
+    button2：{
+    
+    
+    }
+
+}
+
+
+/**
+ 
+ UILabel *lbl = [UILabel instanceWithStyle:label1];
+ UIButton *button = [UIButton instanceWithStyle:button1];
+
+ */
+
+
+

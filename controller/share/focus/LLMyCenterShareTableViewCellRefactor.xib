@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LLMyCenterShareTableViewCellRefactor" rowHeight="251" id="KGk-i7-Jjw" customClass="LLMyCenterShareTableViewCellRefactor">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="251"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="250.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dr6-ax-O9c" userLabel="backgroundButton" customClass="LLShareButton">
+                        <rect key="frame" x="5" y="19" width="310" height="231"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="backgroundButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e8z-tx-GMs"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="SDT-RZ-Pha" userLabel="barButton">
+                        <rect key="frame" x="221" y="19" width="85" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="groupBarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="waP-Rp-81C"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FhY-zf-u04" userLabel="avatarButton" customClass="LLAvatarImageButon">
+                        <rect key="frame" x="18" y="31" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" image="headphoto_default_128">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="avatarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BOI-Dg-PcV"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" id="yYI-TY-ckR" customClass="OllaImageLimitGridView">
+                        <rect key="frame" x="73" y="112" width="233" height="23"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="NIR-9k-LYb">
+                        <rect key="frame" x="20" y="164" width="280" height="40"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_choose.png" id="7zE-st-Fhq">
+                                <rect key="frame" x="8" y="10" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xwy-Tm-TGe">
+                                <rect key="frame" x="36" y="7" width="240" height="26"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Fl-66-WSD">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toThirdPlatform:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p1P-hF-58S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" id="TLX-wc-Av3" userLabel="interactiveView">
+                        <rect key="frame" x="0.0" y="212" width="320" height="36"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="2SB-zc-TwP" customClass="LLShareLineView">
+                                <rect key="frame" x="6" y="1" width="310" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="H3z-vx-uEN" customClass="LLShareVerticalLineView">
+                                <rect key="frame" x="108" y="3" width="1" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="foV-4r-0MY" customClass="LLShareVerticalLineView">
+                                <rect key="frame" x="210" y="3" width="1" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gFX-i9-Ecd" userLabel="likeButton" customClass="LLShareButton">
+                                <rect key="frame" x="6" y="0.0" width="74" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tA9-Me-hbZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XJn-vt-3eQ">
+                                <rect key="frame" x="44" y="3" width="36" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n67-Hg-J12" userLabel="commentButton" customClass="LLShareButton">
+                                <rect key="frame" x="80" y="0.0" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="commentButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e6K-Mj-i2D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afk-V6-sg1">
+                                <rect key="frame" x="117" y="3" width="45" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_count.png" id="dfG-TZ-wEe" userLabel="commentLogo">
+                                <rect key="frame" x="98" y="10" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share_new_gray_1.png" id="Kz4-Na-EQH" userLabel="shareLogo">
+                                <rect key="frame" x="269" y="8" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yWX-99-Zj4" userLabel="shareButton" customClass="LLShareButton">
+                                <rect key="frame" x="240" y="0.0" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="-10" minY="-1" maxX="-10" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ms0-A7-xcn"/>
+                                    <action selector="shareButtonTouchCancel:" destination="KGk-i7-Jjw" eventType="touchCancel" id="1UD-Qe-Dbo"/>
+                                    <action selector="shareButtonTouchDownEvent:" destination="KGk-i7-Jjw" eventType="touchDown" id="CzA-Ae-Vta"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="see_count.png" id="NNj-RS-yBp">
+                                <rect key="frame" x="182" y="10" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SxA-kx-G5J">
+                                <rect key="frame" x="210" y="10" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="swu-jV-9Ap">
+                                <rect key="frame" x="160" y="0.0" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="enrollButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jG0-1N-7Ca"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="praise_count.png" id="i5j-HB-lN2" userLabel="likeLogo">
+                                <rect key="frame" x="26" y="10" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I hope to speak In EnglishI hope to speak In EnglishI hope to speak In English" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b9t-bi-AiK" customClass="TTTAttributedLabel">
+                        <rect key="frame" x="20" y="85" width="280" height="48"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <gestureRecognizers/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9fI-qN-p9F" appends="YES" id="eOM-0U-z94"/>
+                        </connections>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fuj-sd-NBo">
+                        <rect key="frame" x="66" y="31" width="48" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ImJ-JA-q0W">
+                        <rect key="frame" x="66" y="49" width="75" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.1553292228" green="0.63857323229999996" blue="0.62120132829999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.1553292228" green="0.63857323229999996" blue="0.62120132829999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="AF4-7o-7QF" customClass="LLGenderImageView">
+                        <rect key="frame" x="129" y="30" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lf3-OY-oVF" customClass="LLRelativeTimeLabel">
+                        <rect key="frame" x="205" y="33" width="84" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="avatarButton" destination="FhY-zf-u04" id="h46-S8-BV4"/>
+                <outlet property="commentButton" destination="n67-Hg-J12" id="zwq-RM-J9n"/>
+                <outlet property="commentLabel" destination="afk-V6-sg1" id="4Ye-U3-tjC"/>
+                <outlet property="commentLogo" destination="dfG-TZ-wEe" id="9Iw-wj-s4H"/>
+                <outlet property="enrollCount" destination="SxA-kx-G5J" id="oYX-ih-Ayd"/>
+                <outlet property="genderImageView" destination="AF4-7o-7QF" id="G3O-D0-OM5"/>
+                <outlet property="groupBarButton" destination="SDT-RZ-Pha" id="sae-TD-FWR"/>
+                <outlet property="imageGroupView" destination="yYI-TY-ckR" id="8lY-WQ-xYG"/>
+                <outlet property="interactiveView" destination="TLX-wc-Av3" id="CTn-I4-TcZ"/>
+                <outlet property="likeButton" destination="gFX-i9-Ecd" id="Brd-hL-cXt"/>
+                <outlet property="likeImageView" destination="i5j-HB-lN2" id="3ER-w3-0bs"/>
+                <outlet property="likeNumLabel" destination="XJn-vt-3eQ" id="2O5-WG-EkA"/>
+                <outlet property="locationImage" destination="7zE-st-Fhq" id="QB3-ty-9lU"/>
+                <outlet property="locationLabel" destination="xwy-Tm-TGe" id="3TC-nZ-IGu"/>
+                <outlet property="locationView" destination="NIR-9k-LYb" id="wG9-YR-lIg"/>
+                <outlet property="nicknameLabel" destination="fuj-sd-NBo" id="BKj-gQ-6WI"/>
+                <outlet property="reportButton" destination="yWX-99-Zj4" id="rXa-WP-3e1"/>
+                <outlet property="shareBgImageView" destination="Dr6-ax-O9c" id="x7n-Ne-oHE"/>
+                <outlet property="shareLogo" destination="Kz4-Na-EQH" id="xj0-mC-713"/>
+                <outlet property="shareTextLabel" destination="b9t-bi-AiK" id="j62-ft-jR5"/>
+                <outlet property="tagsButton" destination="ImJ-JA-q0W" id="XLU-1e-zj3"/>
+                <outlet property="timeLabel" destination="Lf3-OY-oVF" id="7jQ-RQ-NaL"/>
+                <outletCollection property="gestureRecognizers" destination="NQX-tz-KPb" appends="YES" id="wvf-4s-wgY"/>
+            </connections>
+            <point key="canvasLocation" x="382" y="398.5"/>
+        </tableViewCell>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="9fI-qN-p9F">
+            <connections>
+                <action selector="longPressPostHandler:" destination="KGk-i7-Jjw" id="KKL-uu-Dpv"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <tapGestureRecognizer id="NQX-tz-KPb">
+            <connections>
+                <action selector="tapHandler:" destination="KGk-i7-Jjw" id="j1f-sj-enQ"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="comment_count.png" width="32" height="32"/>
+        <image name="headphoto_default_128" width="40" height="40"/>
+        <image name="location_choose.png" width="32" height="32"/>
+        <image name="praise_count.png" width="32" height="32"/>
+        <image name="see_count.png" width="32" height="32"/>
+        <image name="share_new_gray_1.png" width="28" height="28"/>
+    </resources>
+</document>

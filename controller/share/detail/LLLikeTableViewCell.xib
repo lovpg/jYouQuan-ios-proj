@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="59" id="KGk-i7-Jjw" customClass="LLLikeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="58.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-q4-90e">
+                        <rect key="frame" x="15" y="7" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="DEf-DK-6hq"/>
+                            <constraint firstAttribute="width" constant="40" id="at2-k1-3Jw"/>
+                        </constraints>
+                        <state key="normal" image="headphoto_default">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="avatarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="czT-TE-vQz"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxU-GC-OMf">
+                        <rect key="frame" x="67" y="7" width="40" height="40"/>
+                        <state key="normal" image="headphoto_default">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="avatarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fku-nD-BGx"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAC-Fh-Wf3">
+                        <rect key="frame" x="119" y="7" width="40" height="40"/>
+                        <state key="normal" image="headphoto_default">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="avatarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yGj-tJ-il5"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJq-dG-Jtg">
+                        <rect key="frame" x="171" y="7" width="40" height="40"/>
+                        <state key="normal" image="headphoto_default">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="avatarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZLV-mv-nIl"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyd-oR-MRw">
+                        <rect key="frame" x="223" y="7" width="40" height="40"/>
+                        <state key="normal" image="headphoto_default">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="avatarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dCV-Lc-EQO"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PAC-Fh-Wf3" firstAttribute="height" secondItem="Iwb-q4-90e" secondAttribute="height" id="1my-dF-7SD"/>
+                    <constraint firstItem="PAC-Fh-Wf3" firstAttribute="width" secondItem="Iwb-q4-90e" secondAttribute="width" id="2NC-US-gyo"/>
+                    <constraint firstItem="gJq-dG-Jtg" firstAttribute="leading" secondItem="PAC-Fh-Wf3" secondAttribute="trailing" constant="12" id="9Od-at-Gcv"/>
+                    <constraint firstItem="yxU-GC-OMf" firstAttribute="leading" secondItem="Iwb-q4-90e" secondAttribute="trailing" constant="12" id="Ds9-Li-Mil"/>
+                    <constraint firstItem="Iwb-q4-90e" firstAttribute="height" secondItem="gJq-dG-Jtg" secondAttribute="height" id="GrZ-k0-Rx8"/>
+                    <constraint firstItem="Iwb-q4-90e" firstAttribute="width" secondItem="gJq-dG-Jtg" secondAttribute="width" id="HHK-Jk-F4x"/>
+                    <constraint firstItem="PAC-Fh-Wf3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="JEq-cq-zQe"/>
+                    <constraint firstItem="yxU-GC-OMf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="Lij-hc-hH9"/>
+                    <constraint firstItem="yxU-GC-OMf" firstAttribute="height" secondItem="Iwb-q4-90e" secondAttribute="height" id="PFj-Mq-jXf"/>
+                    <constraint firstItem="Iwb-q4-90e" firstAttribute="width" secondItem="cyd-oR-MRw" secondAttribute="width" id="Sdt-eD-4Iq"/>
+                    <constraint firstItem="Iwb-q4-90e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="Yh2-tN-MWL"/>
+                    <constraint firstItem="cyd-oR-MRw" firstAttribute="leading" secondItem="gJq-dG-Jtg" secondAttribute="trailing" constant="12" id="aak-MG-ApS"/>
+                    <constraint firstItem="PAC-Fh-Wf3" firstAttribute="leading" secondItem="yxU-GC-OMf" secondAttribute="trailing" constant="12" id="gIE-zp-hML"/>
+                    <constraint firstItem="Iwb-q4-90e" firstAttribute="height" secondItem="cyd-oR-MRw" secondAttribute="height" id="hrV-F7-TwI"/>
+                    <constraint firstItem="Iwb-q4-90e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="kqS-zk-Ybd"/>
+                    <constraint firstItem="gJq-dG-Jtg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="lzb-dr-gLT"/>
+                    <constraint firstItem="cyd-oR-MRw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="pdj-gX-BLV"/>
+                    <constraint firstItem="yxU-GC-OMf" firstAttribute="width" secondItem="Iwb-q4-90e" secondAttribute="width" id="tc4-y1-UOi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="likeAvatar1" destination="Iwb-q4-90e" id="cWR-YR-Ae4"/>
+                <outlet property="likeAvatar2" destination="yxU-GC-OMf" id="dNe-pj-58y"/>
+                <outlet property="likeAvatar3" destination="PAC-Fh-Wf3" id="2kj-Dm-Vbv"/>
+                <outlet property="likeAvatar4" destination="gJq-dG-Jtg" id="a6q-39-UQB"/>
+                <outlet property="likeAvatar5" destination="cyd-oR-MRw" id="1CS-tA-0C0"/>
+            </connections>
+            <point key="canvasLocation" x="102" y="27.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="headphoto_default" width="40" height="40"/>
+    </resources>
+</document>

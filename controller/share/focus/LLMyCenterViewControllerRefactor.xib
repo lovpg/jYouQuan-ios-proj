@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLMyCenterViewControllerRefactor">
+            <connections>
+                <outlet property="commentNotifyCell" destination="fwy-ei-jWY" id="qHX-Lp-XHC"/>
+                <outlet property="messageNotifyButton" destination="6d1-Uc-ADK" id="4zl-6d-DNX"/>
+                <outlet property="messageNotifyView" destination="l8w-ka-d2R" id="6PC-C2-l9R"/>
+                <outlet property="tableView" destination="1F8-bG-hou" id="xpQ-VK-qSw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <customObject id="jTi-BH-ncd" userLabel="message notifiy bind" customClass="OllaDataBindContainer">
+            <connections>
+                <outletCollection property="dataBindings" destination="0iJ-Gt-zsi" id="b65-Ks-cjy"/>
+                <outletCollection property="dataBindings" destination="LOF-Q3-K0k" id="9AT-vg-8yi"/>
+                <outletCollection property="dataBindings" destination="MEv-GG-VAV" id="BM9-gt-yAq"/>
+            </connections>
+        </customObject>
+        <customObject id="LOF-Q3-K0k" userLabel="header radius" customClass="OllaDataBind">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="propertyKeyPath" value="cornerRadius"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="value" value="15"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outletCollection property="views" destination="XAB-CX-1Kf" id="Uce-O5-1PV"/>
+            </connections>
+        </customObject>
+        <customObject id="0iJ-Gt-zsi" userLabel="avatar" customClass="OllaDataBind">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="PropertyKeyPath" value="remoteImageURL"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="dataKeyPath" value="dataItem.avatar"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outletCollection property="views" destination="XAB-CX-1Kf" id="tEW-Oj-CEV"/>
+            </connections>
+        </customObject>
+        <customObject id="MEv-GG-VAV" userLabel="message" customClass="OllaDataBind">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="propertyKeyPath" value="text"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="dataKeyPath" value="dataItem.message"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outletCollection property="views" destination="csA-Ct-cVh" id="XAe-Q0-EAx"/>
+            </connections>
+        </customObject>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1F8-bG-hou">
+                    <rect key="frame" x="0.0" y="76" width="320" height="492"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ape-Af-BPv"/>
+                        <outlet property="delegate" destination="-1" id="Mnd-kw-sDz"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="269" y="330"/>
+        </view>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="fwy-ei-jWY" userLabel="message cell" customClass="OllaTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fwy-ei-jWY" id="oBE-N0-eWj">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="39.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="l8w-ka-d2R">
+                        <rect key="frame" x="80" y="0.0" width="160" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6d1-Uc-ADK">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.56470588239999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newsCommentClick:" destination="-1" eventType="touchUpInside" id="acH-s2-gjc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphoto_default" id="XAB-CX-1Kf">
+                                <rect key="frame" x="10" y="5" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100  messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="csA-Ct-cVh">
+                                <rect key="frame" x="45" y="10" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="olla_list_indicator" id="QqA-Iu-j39">
+                                <rect key="frame" x="133" y="10" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="dataBindContainer" destination="jTi-BH-ncd" id="E8s-gJ-J65"/>
+            </connections>
+            <point key="canvasLocation" x="-40" y="-30"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="headphoto_default" width="40" height="40"/>
+        <image name="olla_list_indicator" width="40" height="40"/>
+    </resources>
+</document>

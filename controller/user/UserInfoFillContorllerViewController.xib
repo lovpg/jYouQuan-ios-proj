@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoFillContorllerViewController">
+            <connections>
+                <outlet property="avatorButton" destination="yEJ-j0-iD1" id="lkP-OZ-f9W"/>
+                <outlet property="contentView" destination="Ozd-JZ-AEJ" id="T42-Vt-oGa"/>
+                <outlet property="email" destination="Y6k-iL-egT" id="Ko6-eL-2ib"/>
+                <outlet property="fillButton" destination="jdQ-LX-rr0" id="ncj-vw-Mii"/>
+                <outlet property="gender" destination="3eR-hA-p10" id="65z-7Z-2ad"/>
+                <outlet property="genderImageView" destination="iSl-3v-lPK" id="IsC-Qf-BSK"/>
+                <outlet property="headView" destination="cbY-wp-KmF" id="9Rp-jr-qSs"/>
+                <outlet property="nickname" destination="LvF-M1-HSz" id="I3K-OV-ojJ"/>
+                <outlet property="tableSource" destination="Myu-a9-X1o" id="Dbp-Fa-dLF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <customObject id="Myu-a9-X1o" userLabel="tableDataSource" customClass="OllaTableSource">
+            <connections>
+                <outlet property="delegate" destination="-1" id="rwV-7n-Lkm"/>
+                <outletCollection property="sections" destination="GLm-GA-Y85" id="nXC-wy-M1y"/>
+            </connections>
+        </customObject>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="LLResignView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="cbY-wp-KmF">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="完善资料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qSr-H4-2oN">
+                            <rect key="frame" x="126" y="31" width="80" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" red="0.91764705879999997" green="0.97647058819999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ozd-JZ-AEJ">
+                    <rect key="frame" x="0.0" y="68" width="320" height="500"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="Myu-a9-X1o" id="ZmW-U8-eE9"/>
+                        <outlet property="delegate" destination="Myu-a9-X1o" id="90g-T9-EJB"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="241" y="265"/>
+        </view>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="184" id="1Af-KF-EPS">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Af-KF-EPS" id="eSO-iC-R0S">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="174.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yEJ-j0-iD1">
+                        <rect key="frame" x="140" y="47" width="81" height="81"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <state key="normal" image="default_headphoto.png"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="40.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="1" green="0.98926134590000003" blue="0.97710014020000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="avatarButtonClick:" destination="-1" eventType="touchUpInside" id="pyG-6G-ffc"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head_bg.png" id="L4A-vx-3BU">
+                        <rect key="frame" x="135" y="47" width="91" height="81"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-130" y="3.5"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="o2r-Om-NjX">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o2r-Om-NjX" id="XwV-ot-SCa">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Y6k-iL-egT">
+                        <rect key="frame" x="85" y="10" width="250" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HEr-bg-fMY">
+                        <rect key="frame" x="30" y="14" width="51" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-130" y="413"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wDM-6R-EOA">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wDM-6R-EOA" id="okW-JV-94C">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="3eR-hA-p10">
+                        <rect key="frame" x="90" y="10" width="51" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <connections>
+                            <action selector="genderValueChanged:" destination="-1" eventType="valueChanged" id="5nd-lU-pf6"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cOa-6K-qLz">
+                        <rect key="frame" x="31" y="14" width="51" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="olla_filter_female_h" id="iSl-3v-lPK">
+                        <rect key="frame" x="147" y="8" width="32" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-130" y="308"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="59" id="Iy0-Mj-Feh">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iy0-Mj-Feh" id="2ql-mr-LTu">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="呢称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sxc-jA-8yh">
+                        <rect key="frame" x="30" y="14" width="51" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="LvF-M1-HSz">
+                        <rect key="frame" x="85" y="10" width="250" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="-130" y="208"/>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="99" id="qna-1U-Fbh">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qna-1U-Fbh" id="GnJ-v5-K6X">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="98.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jdQ-LX-rr0">
+                        <rect key="frame" x="22" y="50" width="317" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36003607100000001" green="0.78282828280000005" blue="0.36195530409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <state key="normal" title="提交资料">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="fillButtonClick:" destination="-1" eventType="touchUpInside" id="dpf-9j-GcE"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-130" y="564.5"/>
+        </tableViewCell>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <customObject id="GLm-GA-Y85" userLabel="tableSection" customClass="OllaTableSection">
+            <connections>
+                <outletCollection property="cells" destination="1Af-KF-EPS" id="z99-fh-RG6"/>
+                <outletCollection property="cells" destination="Iy0-Mj-Feh" id="9RA-AB-tz4"/>
+                <outletCollection property="cells" destination="wDM-6R-EOA" id="Xyh-8e-6xe"/>
+                <outletCollection property="cells" destination="o2r-Om-NjX" id="ynk-64-gqi"/>
+                <outletCollection property="cells" destination="qna-1U-Fbh" id="GZF-1x-Nt4"/>
+            </connections>
+        </customObject>
+    </objects>
+    <resources>
+        <image name="default_headphoto.png" width="240" height="240"/>
+        <image name="head_bg.png" width="112" height="112"/>
+        <image name="olla_filter_female_h" width="640" height="532"/>
+    </resources>
+</document>

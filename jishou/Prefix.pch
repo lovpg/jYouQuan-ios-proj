@@ -1,0 +1,446 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <AVFoundation/AVFoundation.h>
+
+#import <pop/POP.h>
+#import "OllaFramework.h"
+
+#import "LLBaseViewController.h"
+#import "AppDelegate.h"
+#import "LLHTTPRequestOperationManager.h"
+#import "LLHTTPWriteOperationManager.h"
+#import "LLAppHelper.h"
+#import "LLFMDBUtil.h"
+#import "EaseMob.h"
+#import "EaseMobHeaders.h"
+#import "EMCDDeviceManager.h"
+#import "LLEaseModUtil.h"
+#import "UIViewController+HUD.h"
+
+#import "UIResponder+Router.h"
+#import "WCAlertView.h"
+#import "JSONAdapter.h"
+#import "GCDObjC.h"
+
+#import "PSTAlertController.h"
+#import "PSTAlertController+Helper.h"
+
+#import "NSDictionary+Helper.h"
+#import "NSArray+Helper.h"
+#import "NSString+Helper.h"
+
+#import "Masonry.h"
+#import "PureLayout.h"
+#import "JDStatusBarNotification.h"
+
+//SDWebimage
+#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
+#import "LLResignView.h"
+
+#import "PureLayout.h"
+#import "MWPhotoBrowser.h"
+#import "DACircularProgressView.h"
+#import "TTGlobalUICommon.h"
+
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import "LLIMContext.h"
+#import "TTTAttributedLabel.h"
+#import "SVWebViewController.h"
+
+#import "ObjcAssociatedObjectHelpers.h"
+#import "NSObject+AssociatedDictionary.h"
+#import "extobjc.h"
+#import "LLPreference.h"
+#import "AFNetworking.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+
+#import "LLFMDB.h"
+#import "LLAPICache.h"
+#import "LxDBAnything.h"
+
+
+#endif
+
+// 是否是生产版本
+#define Olla_Production       1
+// 是否开启老鹰专用提示21
+#define Olla_Show_BossMessage 0
+// 是否开启开发者设置
+#define Olla_Show_DEV_SETTING 0
+
+#if Olla_Production
+static const int ddLogLevel = DDLogLevelError;
+#else
+static const int ddLogLevel = DDLogLevelDebug;
+#endif
+
+#define Olla_APP_STORE_URL @"https://itunes.apple.com/app/id672763056"
+
+#define Olla_APP_WEBSITE_URL @"http://www.olla.im"
+
+#define ollaFirstLaunchKey @"ollaFirstLaunchKey"
+#define Olla_First_Launch ![[[NSUserDefaults standardUserDefaults] objectForKey:ollaFirstLaunchKey] boolValue]
+
+#define App_Text_Color [UIColor colorWithRed:11/255.0f green:106/255.0f blue:255/255.0f alpha:1.0f]
+#define App_Text_Font(x) [UIFont systemFontOfSize:x]
+
+
+#define Olla2_2 [LLAppHelper versionGreaterThanOrEqual:@"2.2"]
+
+#define Olla_API_Base_URL ([LLAppHelper baseAPIURL])
+#define Olla_API_IM_URL ([LLAppHelper baseIMURL])
+
+
+//#undef RELEASE
+//#define RELEASE (__ON__)
+//
+//#if RELEASE
+//#define Olla_API_Base_URL @"https://olla.im"
+//#define Olla_API_IM_URL @"im.olla.im"
+//#else
+//#define Olla_API_Base_URL @"https://test.olla.im" //@"http://182.92.64.241:8081"
+//#define Olla_API_IM_URL @"test.im.olla.im"
+//#endif
+
+#define Olla_Error_Log @"/errorlog.do" // level=error&message=?
+
+//////////////////////////// 用户相关 /////////////////////////////
+
+#define LBSLM_API_Login @"/login.do"  // username=${username}&password=${password}
+#define LBSLM_API_Signup @"/signup.do" // username=${username}&password=${password}&nickname=${nickname}&pic
+
+// 发送邮箱验证码
+#define Olla_API_Forgot_Password @"/forgot.do"  // email=${email}
+// 重置密码
+#define Olla_API_Reset_Password @"reset.do"  // email=${email}&password=${password}&sc=${随机码}
+// 修改邮箱
+#define Olla_API_Edit_Email @"/user/edit/email.do"  // email=
+
+#define Olla_API_Check_UserName @"/signup/exist.do" //username=hctan 判断用户名是否可用
+#define Olla_API_Logout  @"/logout.do"
+
+#define Olla_API_ProfileMe    @"/me.do"
+#define Olla_API_ProfileOther @"/person.do"  //用户资料  ?uid={uid}
+#define Olla_API_Profiles     @"/persons.do"
+
+#define Olla_API_Edit_Audio @"/user/edit/voice.do"
+#define Olla_API_Edit_User @"/user/edit/fill.do" //一次性修改所有
+#define Olla_API_Edit_Name @"/user/edit/nickname.do"
+
+
+
+#define Olla_API_Edit_UserName @"/user/edit/username.do"//测试userName
+
+#define Olla_API_Edit_Headphoto @"/user/edit/avatar.do"
+#define Olla_API_Edit_Cover @"/user/edit/cover.do" // 修改封面（可能要修改成多图的）
+#define Olla_API_Edit_Gender @"/user/edit/gender.do"
+#define Olla_API_Edit_Region @"/user/edit/region.do"
+#define Olla_API_Edit_Whatsup @"/user/edit/sign.do"
+
+#define Olla_API_Edit_Speaking @"/user/edit/speaking.do"
+#define Olla_API_Edit_Learning @"/user/edit/learning.do"
+#define Olla_API_Edit_Interests @"/user/edit/interests.do"
+#define Olla_API_Edit_Mobile @"/user/edit/mobile.do" //?mobile=${mobile}
+#define Olla_API_Edit_Email @"/user/edit/email.do"
+#define Olla_API_Edit_Birth @"/user/edit/birth.do"
+#define Olla_API_Edit_Password @"/user/edit/passwd.do"  // password=1111111
+
+#define Olla_API_Edit_Good       @"/user/edit/good.do"    // 点赞 ouid={uid}
+#define Olla_API_Edit_GoodCancel @"/user/edit/ungood.do"    // 点赞 ouid={uid}
+
+#define Olla_API_Follow_List  @"/follow/list.do"     // 朋友列表(已废弃)
+#define Olla_API_Friends_List @"/follow/listPage.do" // 朋友列表
+#define Olla_API_Follow       @"/follow/add.do"
+#define Olla_API_Unfollow     @"/follow/delete.do"
+// 参数 uid
+
+#define Olla_API_Fans_List @"/fans/list.do"
+#define Olla_API_Fans_Delete @"/fans/delete.do"
+
+
+#define Olla_API_Fans_Count @"/fans/count.do"
+
+
+#define Olla_API_Black_Add @"/blacklist/add.do"
+#define Olla_API_Black_Remove @"/blacklist/delete.do"
+#define Olla_API_Black_List @"/blacklist/list.do"
+
+// Group bar 相关
+#define Olla_API_Groupbar_Recommended      @"/bar/hots.do"
+#define Olla_API_Groupbar_Post_Recommended @"/hots.do"
+#define Olla_API_Groupbar_Post_Promote     @"/post/promote.do"
+#define Olla_API_Groupbar_Create         @"/bar/create.do"
+#define Olla_API_Groupbar_Detail         @"/bar/detail.do"      // bid=?
+#define Olla_API_Groupbar_Member         @"/bar/fans/list.do"   // bid=?
+#define Olla_API_Groupbar_Join           @"/bar/follow/join.do" // bid=?
+#define Olla_API_Groupbar_Leave          @"/bar/follow/exit.do" // bid=?
+#define Olla_API_Groupbar_Invite         @"/bar/invite.do"      // bid=? ouid=10010;4011414;3374014;
+#define Olla_API_Groupbar_Report         @"/bar/complaint/add.do"
+// bid=? content=?
+#define Olla_API_Groupbar_Bar_Setting    @"/bar/follow/detail.do"
+
+#define Olla_API_Groupbar_Bar_Mute       @"/bar/mute.do"
+#define Olla_API_Groupbar_Bar_Unmute     @"/bar/unmute.do"
+
+#define Olla_API_Groupbar_Edit_NickName  @"/bar/updateNickname.do"
+#define Olla_API_Groupbar_Member_Delete  @"/bar/follow/delete.do"
+
+#define Olla_API_Groupbar_Update_Cover   @"/bar/cover.do"       // bid=?
+
+#define Olla_API_Groupbar_Update_Tags    @"/bar/updateTags.do"
+#define Olla_API_Groupbar_Update_Region  @"/bar/updateRegion.do"
+#define Olla_API_Groupbar_Update_City    @"/bar/updateCity.do"
+// bid=? city=?
+
+#define Olla_API_Groupbar_MyList         @"/bar/follow/list.do"
+#define Olla_API_Groupbar_Search         @"/bar/search.do"  // keyword=?
+#define Olla_API_Groupbar_Subcategory    @"/bar/subcategroy.do" // city=?
+
+
+#define Olla_API_Groupbar_Post_List      @"/post/barPostList.do"// bid=?
+#define Olla_API_Groupbar_Post_GoodList  @"/post/goodList.do"
+#define Olla_API_Groupbar_Post_Add       @"/post/add.do"        // bid=?
+#define Olla_API_Groupbar_Post_Like      @"/post/good.do"
+#define Olla_API_Groupbar_Post_Unlike    @"/post/ungood.do"
+#define Olla_API_Groupbar_Post_Delete    @"/post/delete.do"
+#define Olla_API_Groupbar_Post_Detail    @"/post/get.do"
+#define Olla_API_Groupbar_Post_Comment_List @"/comment/plist.do"
+// postId=?
+
+// 帖子评论点赞信息
+#define Olla_API_Groupbar_Comment_Like   @"/comment/good.do"
+#define Olla_API_Groupbar_Comment_Unlike @"/comment/ungood.do"
+
+
+// 获取热词
+#define Olla_API_Hot_Bar_Post_Hotwords @"/post/searchTags.do"
+
+
+#define Olla_API_Groupbar_Post_Top       @"/admin/post/top.do"
+#define Olla_API_Groupbar_Post_Down      @"/admin/post/down.do"
+
+#define Olla_API_Groupbar_Post_Search    @"/post/search.do" // keyword=? bid=?
+
+#define Olla_API_Groupbar_Details       @"/bar/bars.do"
+
+#define Olla_API_Groupbar_IsMember      @"/bar/fans/exist.do" // bid=?
+
+#define Olla_API_Groupbar_Auth          @"/user/auth.do"
+
+//#define Olla_API_Post_Comment           @"/comment/postComment.do"  // 换
+// Share
+#define Olla_API_Share_Comment          @"comment/sadd.do"  // commentId = ?
+// Post
+#define Olla_API_Post_Comment          @"comment/padd.do"   // commentId = ?
+
+#define Olla_API_Share_Post_Coment_Voice @"/comment/voice.do"
+
+#define Olla_API_Post_Comment_Delete    @"/comment/delete.do"  // commentId=
+
+#define Olla_API_Post_Comment_BatchList  @"/comment/batchList.do"
+
+// 帖子收藏
+#define Olla_API_Post_Favorite @"/post/favorite.do"  // postId=
+#define Olla_API_Post_Favorite_Cancel @"/post/unfavorite.do"  // postId=
+#define Olla_API_Post_Favorites_List @"/post/favlist.do"
+
+// 推荐用户
+#define Olla_API_Recommended_Users      @"/user/recommended.do"
+
+// 推荐群吧
+#define Olla_API_Recommended_Groups     @"/bar/recommended.do"
+
+
+
+//////////////////////////// IM 相关 /////////////////////////////
+
+#define Olla_API_Upload_IMImage @"/im/upload/image.do"
+#define Olla_API_Upload_IMVoice @"/im/upload/voice.do"
+
+
+// 首页 +
+#define Olla_API_MakeFriends @"/nearby.do"
+// 参数：pageId ，size ，第一页带location
+
+#define Olla_API_Search_User @"/user/search.do"
+// 参数: 1.padeId, 2.size, 3.city, 4.gender, 5.region, 6.lang(native language, 可以多个, ";"隔开), 7.learning, 8.keyword
+
+#define Olla_API_Plaza_Search @"/share/search.do"//keyword=&gender=&country=&pageId=
+
+
+//lucky match
+#define Olla_API_Match_CheckIn @"lucky/checkin.do"
+#define Olla_API_Match_filter @"lucky/edit.do" // ?gender=gender&language=${language} #自定义条件
+
+
+///////////////////////////// share //////////////////////////
+#define Olla_API_Plaza_Ad @"/bar/promote.do"
+#define Olla_API_Share_Me @"/share/me.do"     // 查看我个人的share列表
+#define Olla_API_Share_Personal @"/share/list.do" // 查看某个人的share列表 ?uid={uid}
+#define Olla_API_Share_Friends @"/share/friend.do"   // 朋友圈，我的主页上
+#define Olla_API_Share_Detail @"/share/get.do" // share详情  shareId=
+
+// share收藏
+#define Olla_API_Share_Favorite @"/share/favorite.do" // shareId=
+#define Olla_API_Share_Favorite_Cancel @"/share/unfavorite.do" // shareId=
+#define Olla_API_Share_favorites_List @"/share/favlist.do"
+
+#define LBS_API_Share_Global @"/share/plaza.do" // 广场share列表
+#define LBS_API_Share_Focus @"/share/hots.do" // 广场share列表
+#define Olla_API_Share_Add @"/share/add.do" // 发表share 参数:
+#define LBSLM_API_Share_Delete @"/share/delete.do"  //删除share shareId=${shareId}
+
+#define Olla_API_Share_CommentList @"/comment/list.do" // shareId=${shareId}
+#define Olla_API_Share_CommentDetail @"/comment/get.do" //  commentId=
+#define Olla_API_Share_Comment_Add @"/comment/add.do"  //shareId=${shareId}&content=${content}
+#define Olla_API_Share_Comment_Delete @"/comment/delete.do" //commentId=${commentId}
+
+#define LBSLM_API_Share_Focus @"/share/focus.do"//@"/good/add.do"  //点赞  shareId=${shareId}
+#define Olla_API_Share_Like @"/share/good.do"//@"/good/add.do"  //点赞  shareId=${shareId}
+#define Olla_API_Share_Unlike @"/share/ungood.do" //取消点赞 shareId=${shareId}
+
+#define Olla_API_report @"/complaint/add.do"  // 举报share，?shareId=${shareId}
+
+#define Olla_API_report_BlackList @"/blacklist/add.do" //拉黑 str : type ,0 2
+
+
+#define Olla_API_Good_List @"/good/list.do"   // 各人Profile赞列表
+
+#define Olla_API_Share_GoodList @"/share/goodList.do" // 获取完整的share goodList : shareId= pageId
+
+#define Olla_API_Share_BatchList @"/share/batchList.do"
+
+
+//// 支付相关 ////
+
+// 商品列表
+#define Olla_API_ProductList     @"/ware/list.do"
+// 我的钱包
+#define Olla_API_Wallet_Me       @"/wallet/me.do"
+
+// 申请提现
+#define Olla_API_Ask_Reward          @"/wallet/withdraw.do" // account=? coin=? type=?
+
+// 订单列表
+#define Olla_API_Order_List      @"/order/list.do"
+// 获取订单号
+#define Olla_API_Order_Create    @"/order/create.do" // wareid=? payType= iospay, alipay
+// 苹果支付提交
+#define Olla_API_Order_Check     @"/order/check.do" // orderid=? receipt=?
+// Paypal支付提交
+#define Olla_API_Payment         @"/order/payment.do" // orderid=? paymentid=?
+
+// 帖子打赏
+#define Olla_API_Post_Donate      @"/post/donate.do" // postId=? coin=? ouid=?
+
+// 打赏记录
+#define Olla_API_Donate_List      @"/donate/list.do"
+
+//// Quick tutor 相关 ////
+
+// 大类吧
+#define Olla_API_Quick_Help_Category @"/post/category.do"  // category=? "Chats"
+
+// 小类吧
+#define Olla_API_Quick_Help_Subcategory @"/post/subcategroy.do"
+
+// 获取quick tutor bar
+#define Olla_API_Quick_Help_Bar @"/bar/chat.do"     //learning=?
+
+// 获取语言列表
+#define Olla_API_Quick_Help_Bar_Language_List @"/bar/learning.do"
+
+#define Olla_API_Quick_Tutor_Check_is_Join @"/bar/isjoin.do" // learning=?
+
+// 创建付费聊天
+#define Olla_API_Quick_Tutor_Chat_Create   @"/chat/create.do" // uid=? coin=?
+// 开始付费聊天
+#define Olla_API_Quick_Tutor_Chat_Start    @"/chat/start.do" // chatId=?
+// 结束付费聊天
+#define Olla_API_Quick_Tutor_Chat_Finish   @"/chat/finish.do" // chatId=?
+// 拒绝付费聊天
+#define Olla_API_Quick_Tutor_Chat_Reject   @"/chat/reject.do"
+// 取消付费聊天
+#define Olla_API_Quick_Tutor_Chat_Cancel   @"/chat/cancel.do"
+
+// 举报
+#define Olla_API_Quick_Report_Quick_Tutor @"/report/chat.do"  // uid=, content=, 举报内容以逗号隔开
+
+#define Olla_API_Quick_Extract_Tip @"/chat/donate.do"  // chatId: ouid: coin:
+
+// 评分
+#define Olla_API_Quick_Add_Evaluation @"/chat/evaluate.do" //  points:评分 content:评论内容 chatId: ouid:教方id
+
+#define Olla_API_Quick_Tutor_Processing_List @"/chat/ongoing.do"
+
+#define Olla_API_Quick_Tutor_Evaluation_List  @"/chat/evaluateList.do"  // pageId= size=
+
+
+#define Olla_API_Quick_Tutor_Status  @"/chat/get.do" // chatId
+
+// 吐槽室
+#define Olla_API_Live_Post_Voice  @"/live/voice.do" // 语音上传
+#define Olla_API_Live_Post_Topic  @"/live/add.do"   // 主题数据提交
+#define Olla_API_Live_Plaza       @"/live/plaza.do" // 主题数据
+#define Olla_API_Members_Managed  @"/persons.do"    // 成员管理数据
+#define Olla_API_Members_Forbid   @"/live/forbidSpeaking.do"   // 禁言操作接口
+#define Olla_API_Members_Allow    @"/live/allowSpeaking.do"    // 取消禁言接口
+#define Olla_API_Block_list       @"/live/blocklist.do"        // 获取禁言列表
+
+#define Olla_DidEnterBackground   @"Olla_DidEnterBackground"
+#define Olla_DidBecomeActive      @"Olla_DidBecomeActive"
+
+// 15012
+// 1268144600
+//#define YY_Olla_AppKey       15012             // YY OLLA Test AppKey
+#define YY_Olla_AppKey       1625065785             // YY OLLA AppKey
+//#define YY_Olla_SecretKey    @"c7369353_4502_4"     // YY OLLA Test SecretKey
+#define YY_Olla_SecretKey    @"3365b06a_e8"     // YY OLLA SecretKey
+
+////////////////////////////// 其他 //////////////////////////
+#define Olla_API_DeviceToken      @"/device.do"
+
+/////////////////直播室//////////////////////////
+#define Olla_API_LIVEROOM_CREATE   @"/live/create.do"
+#define Olla_API_LIVEROOM_LIST     @"/live/list.do"
+#define Olla_API_YY_TOKEN          @"/live/token.do"
+
+
+/******************拾里圈**********************/
+#define Olla_API_TMC_CREATE      @"/tmc/create.do"
+#define Olla_API_TMC_FOLLOW      @"/tmc/follow.do"
+#define Olla_API_TMC_Token      @"/tmc/token.do"
+#define Olla_API_TMC_UNFOLLOW      @"/tmc/unfollow.do"
+#define Olla_API_TMC_AVATOR      @"/tmc/avator.do"
+#define Olla_API_USER_TMCS      @"/tmc/list.do"
+#define Olla_API_NEARBY_TMCS      @"/tmc/nearby.do"
+#define Olla_API_TMC_SHARES      @"/tmc/listShares.do"
+
+
+
+
+////////////////////////////// 其他 //////////////////////////
+#define Olla_API_DeviceToken      @"/device.do"
+#define LBSLM_API_CODE @"/code.do"
+
+
+
+
+
