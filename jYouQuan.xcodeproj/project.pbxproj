@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0420EF0CD285F9996E78F0C7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6DF10E453F0F087A91083 /* libPods.a */; };
-		9E3F4C6C1D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3F4C691D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a */; };
+		9A933C1F1D71397900E60EC2 /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A933C1E1D71397900E60EC2 /* libEaseMobClientSDK.a */; };
 		9E3F4C6D1D3F4EEB00AAF9F8 /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */; };
 		9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F1271D45A04200F89637 /* jion_jbz.png */; };
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
@@ -599,6 +599,7 @@
 /* Begin PBXFileReference section */
 		54C6DF10E453F0F087A91083 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7764805606C6F6291888D8A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9A933C1E1D71397900E60EC2 /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
 		9E3F4C031D3F4EEB00AAF9F8 /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
 		9E3F4C041D3F4EEB00AAF9F8 /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerDelegate.h; sourceTree = "<group>"; };
 		9E3F4C051D3F4EEB00AAF9F8 /* EaseMob+CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseMob+CallService.h"; sourceTree = "<group>"; };
@@ -684,7 +685,6 @@
 		9E3F4C641D3F4EEB00AAF9F8 /* EMNetworkMonitorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMNetworkMonitorDefs.h; sourceTree = "<group>"; };
 		9E3F4C661D3F4EEB00AAF9F8 /* EMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMError.h; sourceTree = "<group>"; };
 		9E3F4C671D3F4EEB00AAF9F8 /* EMErrorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMErrorDefs.h; sourceTree = "<group>"; };
-		9E3F4C691D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
 		9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseMob.bundle; sourceTree = "<group>"; };
 		9E43F1271D45A04200F89637 /* jion_jbz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jion_jbz.png; sourceTree = "<group>"; };
 		9E43F12A1D45A28900F89637 /* LLJionWorkCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLJionWorkCellTableViewCell.h; sourceTree = "<group>"; };
@@ -1737,11 +1737,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A933C1F1D71397900E60EC2 /* libEaseMobClientSDK.a in Frameworks */,
 				9E6C072E1D3F5D7C00628BE9 /* libstdc++.6.0.9.tbd in Frameworks */,
 				9E953BD21D3F5ADB00EA9BD7 /* libopencore-amrnb.a in Frameworks */,
 				9EBC48291D3F1C9500541F23 /* libz.tbd in Frameworks */,
 				9EBC48281D3F1C7D00541F23 /* libxml2.tbd in Frameworks */,
-				9E3F4C6C1D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a in Frameworks */,
 				9EBC48261D3F1C7600541F23 /* libresolv.tbd in Frameworks */,
 				9EBC48241D3F1C6200541F23 /* libiconv.tbd in Frameworks */,
 				0420EF0CD285F9996E78F0C7 /* libPods.a in Frameworks */,
@@ -1774,12 +1774,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9A933C1D1D71397900E60EC2 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9A933C1E1D71397900E60EC2 /* libEaseMobClientSDK.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		9E3F4BFE1D3F4EEB00AAF9F8 /* EaseMobSDK */ = {
 			isa = PBXGroup;
 			children = (
 				9E953BA21D3F5ADB00EA9BD7 /* thirdpart */,
 				9E3F4BFF1D3F4EEB00AAF9F8 /* include */,
-				9E3F4C681D3F4EEB00AAF9F8 /* lib */,
+				9A933C1D1D71397900E60EC2 /* lib */,
 				9E3F4C6A1D3F4EEB00AAF9F8 /* resources */,
 			);
 			path = EaseMobSDK;
@@ -2027,14 +2035,6 @@
 				9E3F4C671D3F4EEB00AAF9F8 /* EMErrorDefs.h */,
 			);
 			path = ErrorManager;
-			sourceTree = "<group>";
-		};
-		9E3F4C681D3F4EEB00AAF9F8 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				9E3F4C691D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		9E3F4C6A1D3F4EEB00AAF9F8 /* resources */ = {
