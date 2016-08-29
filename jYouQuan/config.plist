@@ -287,6 +287,11 @@
 			<key>title</key>
 			<string>Detail</string>
 		</dict>
+		<key>video-record</key>
+		<dict>
+			<key>class</key>
+			<string>LLVideoRecordViewController</string>
+		</dict>
 	</dict>
 	<key>guide</key>
 	<string>guilde:///guide</string>
