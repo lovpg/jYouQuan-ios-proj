@@ -1,0 +1,6 @@
+framework module TMilesMediaSDK {
+  umbrella header "TMilesMediaSDK.h"
+
+  export *
+  module * { export * }
+}
