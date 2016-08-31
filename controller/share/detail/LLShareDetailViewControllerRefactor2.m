@@ -48,6 +48,7 @@
 {
     //    [self.navigationController popViewControllerAnimated:YES];
     [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

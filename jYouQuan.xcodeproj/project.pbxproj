@@ -26,6 +26,10 @@
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
 		9E43F12E1D45A28900F89637 /* LLJionWorkCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F12C1D45A28900F89637 /* LLJionWorkCellTableViewCell.xib */; };
 		9E43F1301D45A3BF00F89637 /* more_work_func.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F12F1D45A3BF00F89637 /* more_work_func.png */; };
+		9E467B621D76717A00D000D7 /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E467B611D76717A00D000D7 /* icon-60@2x.png */; };
+		9E467B641D7671A400D000D7 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E467B631D7671A400D000D7 /* iTunesArtwork@2x.png */; };
+		9E467B671D76858100D000D7 /* headphoto_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E467B651D76858100D000D7 /* headphoto_default.png */; };
+		9E467B681D76858100D000D7 /* headphoto_default_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E467B661D76858100D000D7 /* headphoto_default_128.png */; };
 		9E487E751D3DB80B003AEB2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E487E741D3DB80B003AEB2F /* main.m */; };
 		9E487E781D3DB80B003AEB2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E487E771D3DB80B003AEB2F /* AppDelegate.m */; };
 		9E487E7B1D3DB80B003AEB2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E487E7A1D3DB80B003AEB2F /* ViewController.m */; };
@@ -608,6 +612,21 @@
 		9EF95E671D3E309E000DBD15 /* see_count.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF95E661D3E309E000DBD15 /* see_count.png */; };
 /* End PBXBuildFile section */
 
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9E97F4591D73DFD0002BD421 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+
 /* Begin PBXFileReference section */
 		54C6DF10E453F0F087A91083 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7764805606C6F6291888D8A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -723,6 +742,10 @@
 		9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLJionWorkCellTableViewCell.m; sourceTree = "<group>"; };
 		9E43F12C1D45A28900F89637 /* LLJionWorkCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLJionWorkCellTableViewCell.xib; sourceTree = "<group>"; };
 		9E43F12F1D45A3BF00F89637 /* more_work_func.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_work_func.png; sourceTree = "<group>"; };
+		9E467B611D76717A00D000D7 /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
+		9E467B631D7671A400D000D7 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		9E467B651D76858100D000D7 /* headphoto_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headphoto_default.png; sourceTree = "<group>"; };
+		9E467B661D76858100D000D7 /* headphoto_default_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headphoto_default_128.png; sourceTree = "<group>"; };
 		9E487E701D3DB80B003AEB2F /* jYouQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jYouQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E487E741D3DB80B003AEB2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E487E761D3DB80B003AEB2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1769,10 +1792,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				9A758CDE1D767A24007353FC /* Photos.framework in Frameworks */,
 				9A758CDC1D767A13007353FC /* AVFoundation.framework in Frameworks */,
 				9A758CDA1D767A09007353FC /* AssetsLibrary.framework in Frameworks */,
 				9AD6120A1D742FD30052350D /* libEaseMobClientSDK.a in Frameworks */,
+
 				9E6C072E1D3F5D7C00628BE9 /* libstdc++.6.0.9.tbd in Frameworks */,
 				9E953BD21D3F5ADB00EA9BD7 /* libopencore-amrnb.a in Frameworks */,
 				9EBC48291D3F1C9500541F23 /* libz.tbd in Frameworks */,
@@ -4148,6 +4173,10 @@
 		9EF95E2E1D3E16B7000DBD15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E467B651D76858100D000D7 /* headphoto_default.png */,
+				9E467B661D76858100D000D7 /* headphoto_default_128.png */,
+				9E467B631D7671A400D000D7 /* iTunesArtwork@2x.png */,
+				9E467B611D76717A00D000D7 /* icon-60@2x.png */,
 				9E43F12F1D45A3BF00F89637 /* more_work_func.png */,
 				9EF926671D427EA30078CDD6 /* im_bubble_l.imageset */,
 				9EF9265E1D427E000078CDD6 /* chat_groupbar_left_bubble.imageset */,
@@ -4295,6 +4324,7 @@
 				9EF371571D4284F200A96215 /* LLShareDetailTableViewCellRefactor.xib in Resources */,
 				9EBC476C1D3F0C4100541F23 /* record_animate_1.png in Resources */,
 				9EF95E671D3E309E000DBD15 /* see_count.png in Resources */,
+				9E467B681D76858100D000D7 /* headphoto_default_128.png in Resources */,
 				9E4881011D3DBA2A003AEB2F /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				9EF926631D427E000078CDD6 /* chat_groupbar_left_bubble.png in Resources */,
 				9E6C07551D3F66F100628BE9 /* chatBar_moreSelected.png in Resources */,
@@ -4330,6 +4360,7 @@
 				9EBC47701D3F0C4100541F23 /* record_animate_13.png in Resources */,
 				9E6C07801D3F7D5A00628BE9 /* img_02.png in Resources */,
 				9E6C07561D3F66F100628BE9 /* chatBar_more@2x.png in Resources */,
+				9E467B641D7671A400D000D7 /* iTunesArtwork@2x.png in Resources */,
 				9E4881DD1D3DC0C7003AEB2F /* sr_refresh.png in Resources */,
 				9E54369F1D40829900BB67F9 /* share_send.png in Resources */,
 				9EF95E591D3E27CA000DBD15 /* logo.png in Resources */,
@@ -4412,6 +4443,7 @@
 				9E6C07571D3F66F100628BE9 /* chatBar_more.png in Resources */,
 				9EF95E2A1D3E065F000DBD15 /* LLWorkSpaceViewController.xib in Resources */,
 				9EBC475A1D3F0C4100541F23 /* keyboard_facial_h@2x.png in Resources */,
+				9E467B621D76717A00D000D7 /* icon-60@2x.png in Resources */,
 				9EF371511D4284F200A96215 /* LLShareCommentCell.xib in Resources */,
 				9EBC47791D3F0C4100541F23 /* record_animate_9.png in Resources */,
 				9EBE1FDF1D410E1B00639DC5 /* share_new_gray_1.png in Resources */,
@@ -4432,6 +4464,7 @@
 				9E6C07751D3F7A3B00628BE9 /* img_01.png in Resources */,
 				9EBC475D1D3F0C4100541F23 /* keyboard_live_chat.png in Resources */,
 				9EF371411D4284F200A96215 /* LLEnrollListViewController.xib in Resources */,
+				9E467B671D76858100D000D7 /* headphoto_default.png in Resources */,
 				9EBC47761D3F0C4100541F23 /* record_animate_6.png in Resources */,
 				9E54369D1D4080E600BB67F9 /* location_choose.png in Resources */,
 				9E4880F11D3DBA2A003AEB2F /* MJPhotoBrowser.bundle in Resources */,

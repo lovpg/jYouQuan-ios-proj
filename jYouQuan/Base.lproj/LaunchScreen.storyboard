@@ -36,11 +36,11 @@
                                     <constraint firstAttribute="height" constant="68" id="OUc-j3-uGX"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="dhJ-Vu-o0Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="dhJ-Vu-o0Y">
                                 <rect key="frame" x="120" y="92" width="81" height="81"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="81" id="9UW-y7-Egm"/>
-                                    <constraint firstAttribute="width" constant="81" id="VyY-zd-CQI"/>
+                                    <constraint firstAttribute="height" constant="90" id="9UW-y7-Egm"/>
+                                    <constraint firstAttribute="width" constant="90" id="VyY-zd-CQI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -63,6 +63,6 @@
     </scenes>
     <resources>
         <image name="banner.png" width="980" height="90"/>
-        <image name="logo.png" width="137" height="131"/>
+        <image name="iTunesArtwork.png" width="512" height="512"/>
     </resources>
 </document>

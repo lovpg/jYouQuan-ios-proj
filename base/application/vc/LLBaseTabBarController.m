@@ -16,7 +16,7 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
 
 @interface LLBaseTabBarController () <UITabBarControllerDelegate>
 {
-    UIImageView *_groupBarTabView;
+
 }
 
 @property (strong, nonatomic) NSDate *lastPlaySoundDate;
@@ -58,10 +58,8 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        _isEmailBinded = YES;
-        _isBirthBinded = YES;
+    if (self)
+    {
         
     }
     return self;
@@ -102,6 +100,11 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
     
     self.delegate = self;
     
+    [[LLEaseModUtil sharedUtil] loginWithCompletion:^(BOOL succeed)
+     {
+         [self setupUnreadMessageCount];
+     }];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -126,15 +129,17 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
 {
     [self unregisterNotifications];
     
+    [[EaseMob sharedInstance].chatManager addDelegate:self delegateQueue:nil];
 }
 
 -(void)unregisterNotifications
 {
-
+    [[EaseMob sharedInstance].chatManager removeDelegate:self];
 }
 
 -(void)reloadUnreadCount:(NSNotification *)notification
 {
+    [self setupUnreadMessageCount];
 }
 
 - (void)updateUnreadCount:(NSNotification *)notification {
@@ -177,6 +182,7 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
 // 未读消息数量变化回调
 -(void)didUnreadMessagesCountChanged
 {
+    [self setupUnreadMessageCount];
 }
 
 - (void)didFinishedReceiveOfflineMessages:(NSArray *)offlineMessages
@@ -191,6 +197,123 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
 - (BOOL)needShowNotification:(NSString *)fromChatter
 {
     return true;
+}
+
+// 统计未读消息数
+-(void)setupUnreadMessageCount
+{
+    NSArray *conversations = [[[EaseMob sharedInstance] chatManager] conversations];
+    
+    NSDictionary *shareCommentDict = nil;
+    NSDictionary *shareLikeDict = nil;
+    NSDictionary *fansDict = nil;
+    NSInteger unreadCount = 0;
+    NSInteger fansCount = 0;
+    NSInteger shareCommentCount = 0;
+    NSInteger shareLikeCount = 0;
+    
+    NSArray *ollaAccounts = [[LLEaseModUtil sharedUtil] ollaAccounts];
+    for (EMConversation *conversation in conversations)
+    {
+        NSString *uid = conversation.latestMessage.from;
+        if (!uid)
+        {
+            uid = conversation.chatter;
+            if (!uid) {
+                continue;
+            }
+        }
+        
+        if ([ollaAccounts containsObject:uid])
+        {
+            if ([uid isEqualToString:LLEaseShareCommentAccount])
+            {
+                shareCommentDict = conversation.latestMessage.ext;
+                shareCommentCount = conversation.unreadMessagesCount;
+            }
+            else if ([uid isEqualToString:LLEaseShareLikeAccount])
+            {
+                shareLikeDict = conversation.latestMessage.ext;
+                shareLikeCount = conversation.unreadMessagesCount;
+            }
+            else if ([uid isEqualToString:LLEaseFansAccount])
+            {
+                fansDict = conversation.latestMessage.ext;
+                fansCount = conversation.unreadMessagesCount;
+            }
+            continue;
+        }
+        unreadCount += conversation.unreadMessagesCount;
+    }
+    //    UIViewController *homeVC = self.viewControllers[0];
+    UIViewController *homeVC = self.viewControllers[0];
+    UIViewController *messageVC = self.viewControllers[1];
+    UIViewController *meVC = self.viewControllers[2];
+    
+    //这里是TabBar的红点数***//***这个是bar中总的红点数字//
+    NSInteger groupBarMessageCount = [[LLEaseModUtil sharedUtil] unreadGroupBarMessages].count;
+    
+    //    self.groupBarHub.count = groupBarMessageCount;
+    if (groupBarMessageCount > 0)
+    {
+        //        groupBarVC.tabBarItem.badgeValue = @(groupBarMessageCount).stringValue;//隐藏 discovery中的红点数
+//        [[NSNotificationCenter defaultCenter] postNotificationName:LLGroupBarNewMessgeNotification object:@(groupBarMessageCount)];
+    }
+    else
+    {
+        homeVC.tabBarItem.badgeValue = nil;
+//        [[NSNotificationCenter defaultCenter] postNotificationName:LLGroupBarNewMessgeNotification object:@(0)];
+    }
+    
+//    if (unreadCount > 0)
+//    {
+//        messageVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%li",(int)unreadCount+groupBarMessageCount];
+//    }
+//    else
+//    {
+//        messageVC.tabBarItem.badgeValue = nil;
+//    }
+    
+    if (fansCount > 0)
+    {
+        meVC.tabBarItem.badgeValue = [NSString stringWithFormat:@"%i",(int)fansCount];
+        
+        NSDictionary *dict = [[fansDict objectForKey:@"ext"] jsonValue];
+        if (dict) {
+            NSNotification *notification = [NSNotification notificationWithName:@"OllaNewFansNotification" object:nil userInfo:dict];
+            [[NSNotificationCenter defaultCenter] postNotification:notification];
+        }
+        
+    }
+    else
+    {
+        meVC.tabBarItem.badgeValue = nil;
+    }
+    
+    NSInteger messageCount = shareCommentCount + shareLikeCount + unreadCount;
+    if (messageCount > 0)
+    {
+        messageVC.tabBarItem.badgeValue = @(messageCount).stringValue;
+        NSDictionary *info = shareCommentDict ? shareCommentDict : shareLikeDict;
+        NSDictionary *dict = [[info objectForKey:@"ext"] jsonValue];
+        if (dict)
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"OllaNewCommentNotification"
+                                                                object:dict];
+        }
+    }
+    else
+    {
+        messageVC.tabBarItem.badgeValue = nil;
+    }
+    
+    
+    
+    NSInteger totalCount = unreadCount + fansCount + shareCommentCount + groupBarMessageCount + shareLikeCount;
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    [application setApplicationIconBadgeNumber:totalCount];
+    
 }
 
 
