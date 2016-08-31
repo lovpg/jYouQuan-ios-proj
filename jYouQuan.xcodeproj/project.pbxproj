@@ -8,7 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0420EF0CD285F9996E78F0C7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6DF10E453F0F087A91083 /* libPods.a */; };
-		9E3F4C6C1D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3F4C691D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a */; };
+		9A1D241D1D755AA300D02D36 /* videoPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D241C1D755AA300D02D36 /* videoPlay.png */; };
+		9A1D24201D75864700D02D36 /* BANetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D241F1D75864700D02D36 /* BANetManager.m */; };
+		9A1D24231D75865800D02D36 /* UIImage+CompressImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D24221D75865800D02D36 /* UIImage+CompressImage.m */; };
+		9A758CDA1D767A09007353FC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CD91D767A09007353FC /* AssetsLibrary.framework */; };
+		9A758CDC1D767A13007353FC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDB1D767A13007353FC /* AVFoundation.framework */; };
+		9A758CDE1D767A24007353FC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDD1D767A24007353FC /* Photos.framework */; };
+		9AD6120A1D742FD30052350D /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD612091D742FD30052350D /* libEaseMobClientSDK.a */; };
+		9AD612181D7431520052350D /* KZVideoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6120D1D7431520052350D /* KZVideoConfig.m */; };
+		9AD612191D7431520052350D /* KZVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6120F1D7431520052350D /* KZVideoListViewController.m */; };
+		9AD6121A1D7431520052350D /* KZVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612111D7431520052350D /* KZVideoPlayer.m */; };
+		9AD6121B1D7431520052350D /* KZVideoSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612131D7431520052350D /* KZVideoSupport.m */; };
+		9AD6121C1D7431520052350D /* KZVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612151D7431520052350D /* KZVideoViewController.m */; };
+		9AD6121D1D7431520052350D /* LLMediaRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612171D7431520052350D /* LLMediaRecordController.m */; };
 		9E3F4C6D1D3F4EEB00AAF9F8 /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */; };
 		9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F1271D45A04200F89637 /* jion_jbz.png */; };
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
@@ -603,6 +615,7 @@
 		9EF95E671D3E309E000DBD15 /* see_count.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF95E661D3E309E000DBD15 /* see_count.png */; };
 /* End PBXBuildFile section */
 
+
 /* Begin PBXCopyFilesBuildPhase section */
 		9E97F4591D73DFD0002BD421 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -616,9 +629,31 @@
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+
 /* Begin PBXFileReference section */
 		54C6DF10E453F0F087A91083 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7764805606C6F6291888D8A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9A1D241C1D755AA300D02D36 /* videoPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videoPlay.png; sourceTree = "<group>"; };
+		9A1D241E1D75864700D02D36 /* BANetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BANetManager.h; sourceTree = "<group>"; };
+		9A1D241F1D75864700D02D36 /* BANetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BANetManager.m; sourceTree = "<group>"; };
+		9A1D24211D75865800D02D36 /* UIImage+CompressImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CompressImage.h"; sourceTree = "<group>"; };
+		9A1D24221D75865800D02D36 /* UIImage+CompressImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CompressImage.m"; sourceTree = "<group>"; };
+		9A758CD91D767A09007353FC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9A758CDB1D767A13007353FC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9A758CDD1D767A24007353FC /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		9AD612091D742FD30052350D /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
+		9AD6120C1D7431520052350D /* KZVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZVideoConfig.h; sourceTree = "<group>"; };
+		9AD6120D1D7431520052350D /* KZVideoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoConfig.m; sourceTree = "<group>"; };
+		9AD6120E1D7431520052350D /* KZVideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZVideoListViewController.h; sourceTree = "<group>"; };
+		9AD6120F1D7431520052350D /* KZVideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoListViewController.m; sourceTree = "<group>"; };
+		9AD612101D7431520052350D /* KZVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZVideoPlayer.h; sourceTree = "<group>"; };
+		9AD612111D7431520052350D /* KZVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoPlayer.m; sourceTree = "<group>"; };
+		9AD612121D7431520052350D /* KZVideoSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZVideoSupport.h; sourceTree = "<group>"; };
+		9AD612131D7431520052350D /* KZVideoSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoSupport.m; sourceTree = "<group>"; };
+		9AD612141D7431520052350D /* KZVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZVideoViewController.h; sourceTree = "<group>"; };
+		9AD612151D7431520052350D /* KZVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoViewController.m; sourceTree = "<group>"; };
+		9AD612161D7431520052350D /* LLMediaRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMediaRecordController.h; sourceTree = "<group>"; };
+		9AD612171D7431520052350D /* LLMediaRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMediaRecordController.m; sourceTree = "<group>"; };
 		9E3F4C031D3F4EEB00AAF9F8 /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
 		9E3F4C041D3F4EEB00AAF9F8 /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerDelegate.h; sourceTree = "<group>"; };
 		9E3F4C051D3F4EEB00AAF9F8 /* EaseMob+CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseMob+CallService.h"; sourceTree = "<group>"; };
@@ -704,7 +739,6 @@
 		9E3F4C641D3F4EEB00AAF9F8 /* EMNetworkMonitorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMNetworkMonitorDefs.h; sourceTree = "<group>"; };
 		9E3F4C661D3F4EEB00AAF9F8 /* EMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMError.h; sourceTree = "<group>"; };
 		9E3F4C671D3F4EEB00AAF9F8 /* EMErrorDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMErrorDefs.h; sourceTree = "<group>"; };
-		9E3F4C691D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
 		9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseMob.bundle; sourceTree = "<group>"; };
 		9E43F1271D45A04200F89637 /* jion_jbz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jion_jbz.png; sourceTree = "<group>"; };
 		9E43F12A1D45A28900F89637 /* LLJionWorkCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLJionWorkCellTableViewCell.h; sourceTree = "<group>"; };
@@ -1764,11 +1798,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				9A758CDE1D767A24007353FC /* Photos.framework in Frameworks */,
+				9A758CDC1D767A13007353FC /* AVFoundation.framework in Frameworks */,
+				9A758CDA1D767A09007353FC /* AssetsLibrary.framework in Frameworks */,
+				9AD6120A1D742FD30052350D /* libEaseMobClientSDK.a in Frameworks */,
+
 				9E6C072E1D3F5D7C00628BE9 /* libstdc++.6.0.9.tbd in Frameworks */,
 				9E953BD21D3F5ADB00EA9BD7 /* libopencore-amrnb.a in Frameworks */,
 				9EBC48291D3F1C9500541F23 /* libz.tbd in Frameworks */,
 				9EBC48281D3F1C7D00541F23 /* libxml2.tbd in Frameworks */,
-				9E3F4C6C1D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a in Frameworks */,
 				9EBC48261D3F1C7600541F23 /* libresolv.tbd in Frameworks */,
 				9EBC48241D3F1C6200541F23 /* libiconv.tbd in Frameworks */,
 				0420EF0CD285F9996E78F0C7 /* libPods.a in Frameworks */,
@@ -1791,6 +1830,9 @@
 		2D4EDFB2FB40FD46B485B920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A758CDD1D767A24007353FC /* Photos.framework */,
+				9A758CDB1D767A13007353FC /* AVFoundation.framework */,
+				9A758CD91D767A09007353FC /* AssetsLibrary.framework */,
 				9E6C072D1D3F5D7C00628BE9 /* libstdc++.6.0.9.tbd */,
 				9EBC48271D3F1C7D00541F23 /* libxml2.tbd */,
 				9EBC48251D3F1C7600541F23 /* libresolv.tbd */,
@@ -1801,12 +1843,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9AD612081D742FD30052350D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9AD612091D742FD30052350D /* libEaseMobClientSDK.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		9AD6120B1D7431520052350D /* media */ = {
+			isa = PBXGroup;
+			children = (
+				9AD6120C1D7431520052350D /* KZVideoConfig.h */,
+				9AD6120D1D7431520052350D /* KZVideoConfig.m */,
+				9AD6120E1D7431520052350D /* KZVideoListViewController.h */,
+				9AD6120F1D7431520052350D /* KZVideoListViewController.m */,
+				9AD612101D7431520052350D /* KZVideoPlayer.h */,
+				9AD612111D7431520052350D /* KZVideoPlayer.m */,
+				9AD612121D7431520052350D /* KZVideoSupport.h */,
+				9AD612131D7431520052350D /* KZVideoSupport.m */,
+				9AD612141D7431520052350D /* KZVideoViewController.h */,
+				9AD612151D7431520052350D /* KZVideoViewController.m */,
+				9AD612161D7431520052350D /* LLMediaRecordController.h */,
+				9AD612171D7431520052350D /* LLMediaRecordController.m */,
+				9A1D241E1D75864700D02D36 /* BANetManager.h */,
+				9A1D241F1D75864700D02D36 /* BANetManager.m */,
+				9A1D24211D75865800D02D36 /* UIImage+CompressImage.h */,
+				9A1D24221D75865800D02D36 /* UIImage+CompressImage.m */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
 		9E3F4BFE1D3F4EEB00AAF9F8 /* EaseMobSDK */ = {
 			isa = PBXGroup;
 			children = (
 				9E953BA21D3F5ADB00EA9BD7 /* thirdpart */,
 				9E3F4BFF1D3F4EEB00AAF9F8 /* include */,
-				9E3F4C681D3F4EEB00AAF9F8 /* lib */,
+				9AD612081D742FD30052350D /* lib */,
 				9E3F4C6A1D3F4EEB00AAF9F8 /* resources */,
 			);
 			path = EaseMobSDK;
@@ -2054,14 +2127,6 @@
 				9E3F4C671D3F4EEB00AAF9F8 /* EMErrorDefs.h */,
 			);
 			path = ErrorManager;
-			sourceTree = "<group>";
-		};
-		9E3F4C681D3F4EEB00AAF9F8 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				9E3F4C691D3F4EEB00AAF9F8 /* libEaseMobClientSDK.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		9E3F4C6A1D3F4EEB00AAF9F8 /* resources */ = {
@@ -3327,6 +3392,7 @@
 		9E4882AA1D3DCC24003AEB2F /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				9AD6120B1D7431520052350D /* media */,
 				9EF926501D42667A0078CDD6 /* me */,
 				9EF2192B1D41F8FF0015995C /* widet */,
 				9E6C07611D3F6B0500628BE9 /* share */,
@@ -4184,6 +4250,7 @@
 				9EF95E3A1D3E18DE000DBD15 /* tab_order_new_h.png */,
 				9EF95E371D3E1788000DBD15 /* tab_index_new.png */,
 				9EF95E351D3E1734000DBD15 /* tab_index_new_h.png */,
+				9A1D241C1D755AA300D02D36 /* videoPlay.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -4201,7 +4268,6 @@
 				9E487E6E1D3DB80B003AEB2F /* Resources */,
 				D40131FD7DA84A849913D5CD /* Embed Pods Frameworks */,
 				EB88B86F6C1408E75E4EA14E /* Copy Pods Resources */,
-				9E97F4591D73DFD0002BD421 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4344,6 +4410,7 @@
 				9E6C075B1D3F66F100628BE9 /* chatBar_keyboard.png in Resources */,
 				9EF3713F1D4284F200A96215 /* LLCrownGoodListViewController.xib in Resources */,
 				9EF219161D41D7320015995C /* LLWebBrowserViewController.xib in Resources */,
+				9A1D241D1D755AA300D02D36 /* videoPlay.png in Resources */,
 				9E6C07931D3F8B8400628BE9 /* LLMyCenterShareTableViewCellRefactor.xib in Resources */,
 				9E6C074D1D3F66F100628BE9 /* chatBar_recordSelectedBg.png in Resources */,
 				9E6C07531D3F66F100628BE9 /* chatBar_record.png in Resources */,
@@ -4612,7 +4679,9 @@
 				9EBE201F1D410F2D00639DC5 /* LLContentWrapLabel.m in Sources */,
 				9E953BD01D3F5ADB00EA9BD7 /* wav.mm in Sources */,
 				9E48817B1D3DBA2A003AEB2F /* OllaStyleBinding.m in Sources */,
+				9A1D24201D75864700D02D36 /* BANetManager.m in Sources */,
 				9E4882891D3DC52B003AEB2F /* LLShare.m in Sources */,
+				9AD612191D7431520052350D /* KZVideoListViewController.m in Sources */,
 				9E48813C1D3DBA2A003AEB2F /* LLAPICache.m in Sources */,
 				9E4882871D3DC52B003AEB2F /* LLSimpleUser.m in Sources */,
 				9E4881821D3DBA2A003AEB2F /* MJRefreshFooter+Helper.m in Sources */,
@@ -4713,6 +4782,7 @@
 				9E953BCF1D3F5ADB00EA9BD7 /* amrFileCodec.mm in Sources */,
 				9E6C07921D3F8B8400628BE9 /* LLMyCenterShareTableViewCellRefactor.m in Sources */,
 				9E4882901D3DC52B003AEB2F /* LLEnroll.m in Sources */,
+				9AD6121B1D7431520052350D /* KZVideoSupport.m in Sources */,
 				9E6C07941D3F8B8400628BE9 /* LLMyCenterViewController.m in Sources */,
 				9EF95E1F1D3E05EC000DBD15 /* LLHomeViewController.m in Sources */,
 				9E4881551D3DBA2A003AEB2F /* CLLocation+decode.m in Sources */,
@@ -4777,6 +4847,7 @@
 				9E4882BE1D3DD282003AEB2F /* LoginViewController.m in Sources */,
 				9EF95E2D1D3E0B49000DBD15 /* LLIndexSegmentViewController.m in Sources */,
 				9E953BCA1D3F5ADB00EA9BD7 /* EMCDDeviceManager+Media.m in Sources */,
+				9AD6121A1D7431520052350D /* KZVideoPlayer.m in Sources */,
 				9E48819E1D3DBA2A003AEB2F /* OllaTableViewCell.m in Sources */,
 				9E4881571D3DBA2A003AEB2F /* MBProgressHUD+addtions.m in Sources */,
 				9E48819A1D3DBA2A003AEB2F /* OllaRefreshView.m in Sources */,
@@ -4798,6 +4869,7 @@
 				9E4880C91D3DBA2A003AEB2F /* NSObject+Delete.m in Sources */,
 				9E4881991D3DBA2A003AEB2F /* OllaMenuLabel.m in Sources */,
 				9E48812B1D3DBA2A003AEB2F /* OllaAuthContext.m in Sources */,
+				9AD612181D7431520052350D /* KZVideoConfig.m in Sources */,
 				9E4880F41D3DBA2A003AEB2F /* MJPhotoProgressView.m in Sources */,
 				9E4881631D3DBA2A003AEB2F /* NSString+helper.m in Sources */,
 				9E4880E81D3DBA2A003AEB2F /* NSInvocation+EXT.m in Sources */,
@@ -4847,6 +4919,7 @@
 				9E48815F1D3DBA2A003AEB2F /* NSLocale+additions.m in Sources */,
 				9E48828C1D3DC52B003AEB2F /* LLLikeUser.m in Sources */,
 				9E4881861D3DBA2A003AEB2F /* UIImageView+CacheURL.m in Sources */,
+				9AD6121D1D7431520052350D /* LLMediaRecordController.m in Sources */,
 				9E48818C1D3DBA2A003AEB2F /* UIView+Gesture.m in Sources */,
 				9E4881761D3DBA2A003AEB2F /* OllaModel.m in Sources */,
 				9E6C079A1D3F8C8A00628BE9 /* LLMyFriendsZoneDataController.m in Sources */,
@@ -4872,10 +4945,12 @@
 				9E4882C01D3DD282003AEB2F /* SignupViewController.m in Sources */,
 				9E4881981D3DBA2A003AEB2F /* OllaLoadingMoreView.m in Sources */,
 				9EBC472C1D3F0C4100541F23 /* ChineseToPinyin.m in Sources */,
+				9AD6121C1D7431520052350D /* KZVideoViewController.m in Sources */,
 				9E4881781D3DBA2A003AEB2F /* OllaHTTPRequestOperationManager.m in Sources */,
 				9EBC47131D3F0C4000541F23 /* ConvertToCommonEmoticonsHelper.m in Sources */,
 				9EF371041D4281A800A96215 /* LLRoundingCornersButton.m in Sources */,
 				9E4881381D3DBA2A003AEB2F /* LLBaseTabBarController.m in Sources */,
+				9A1D24231D75865800D02D36 /* UIImage+CompressImage.m in Sources */,
 				9EBC46221D3F096F00541F23 /* LLAppHelper.m in Sources */,
 				9E953BCD1D3F5ADB00EA9BD7 /* EMCDDeviceManager+Remind.m in Sources */,
 				9E4880DA1D3DBA2A003AEB2F /* CTAssetsPickerController.m in Sources */,
@@ -5025,6 +5100,7 @@
 				);
 				GCC_PREFIX_HEADER = jYouQuan/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/jYouQuan/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5055,6 +5131,7 @@
 				);
 				GCC_PREFIX_HEADER = jYouQuan/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/jYouQuan/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
