@@ -24,6 +24,54 @@
     [super setSelected:selected animated:animated];
 }
 
+- (IBAction)ScrollClickAction:(id)sender
+{
+    NSLog(@"%ld",(long)self.pageControl.currentPage);
+    NSLog(@"%ld",(long)self.pageControl.currentPage);
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"config"
+                                                          ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    NSDictionary *bannerMapping = data[@"banner-url-mapping"];
+    NSNumber *currentPage  = [NSNumber numberWithInteger:self.pageControl.currentPage];
+    NSString *shareId = nil;
+    switch (currentPage.integerValue)
+    {
+        case 0:
+            shareId = [bannerMapping objectForKey:@"banner-1"];
+            break;
+        case 1:
+            shareId = [bannerMapping objectForKey:@"banner-2"];
+            break;
+        case 2:
+            shareId = [bannerMapping objectForKey:@"banner-3"];
+            break;
+        default:
+            break;
+    }
+    
+    if(!shareId) return;
+    [[LLHTTPRequestOperationManager shareManager] GETWithURL:Olla_API_Share_Detail parameters:@{@"shareId":shareId}
+                                                   modelType:[LLShare class]
+                                                     success:^(OllaModel *model)
+     {
+         LLShare *share = (LLShare *)model;
+         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[share dictionaryRepresentation]];
+         [dict setValue:@(1) forKey:@"flag"];
+         [dict setValue:share.user.uid forKey:@"uid"];
+         [dict setValue:share.user.avatar forKey:@"avatar"];
+         [dict setValue:share.user.gender forKey:@"gender"];
+         [dict setValue:share.user.nickname forKey:@"nickname"];
+         [self routerEventWithName:LLScrollBannerButtonClickEvent userInfo:@{@"share":share}];
+     }
+                                                     failure:^(NSError *error)
+     {
+         
+     }];
+    
+
+}
+
+
 
 - (void)layoutSubviews
 {
@@ -44,6 +92,10 @@
         NSString *name = [NSString stringWithFormat:@"img_0%d", i + 1];
         imageView.image = [UIImage imageNamed:name];
         self.bannerScrollView.showsHorizontalScrollIndicator = NO;
+        imageView.userInteractionEnabled=YES; 
+        UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                  action:@selector(ScrollClickAction:)];
+        [imageView addGestureRecognizer:tapGesture];
         [self.bannerScrollView addSubview:imageView];
     }
     CGFloat contentW = totalCount *imageW;
@@ -92,7 +144,8 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:10
                                                   target:self
                                                 selector:@selector(nextImage)
-                                                userInfo:nil                                                 repeats:YES];
+                                                userInfo:nil
+                                                 repeats:YES];
 }
 
 - (void)removeTimer

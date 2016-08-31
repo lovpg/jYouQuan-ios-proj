@@ -282,7 +282,7 @@
         height -= 8;
     }
     
-    return height + 16;
+    return height;
 }
 - (void) loadFriendUserInfo
 {

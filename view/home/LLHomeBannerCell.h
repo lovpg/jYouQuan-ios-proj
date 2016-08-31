@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *LLScrollBannerButtonClickEvent = @"LLScrollBannerButtonClickEvent";
+
+
 @interface LLHomeBannerCell : UITableViewCell<UIScrollViewDelegate>
 
 

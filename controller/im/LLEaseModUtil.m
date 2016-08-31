@@ -31,7 +31,14 @@ DEF_SINGLETON(LLEaseModUtil, sharedUtil);
     self = [super init];
     if (self) {
         _loginQueue = [[GCDQueue alloc] initSerial];
-        _ollaAccounts = @[LLEaseShareCommentAccount, LLEaseFollowAccount,LLEaseFansAccount, LLEaseGroupBarInviteAccount,LLEaseGroupBarMessageAccount, LLEaseShareLikeAccount,LLEaseGroupBarLikeAccount, LLEaseGroupBarCommentAccount];
+        _ollaAccounts = @[LLEaseShareCommentAccount,
+                          LLEaseFollowAccount,
+                          LLEaseFansAccount,
+                          LLEaseGroupBarInviteAccount,
+                          LLEaseGroupBarMessageAccount,
+                          LLEaseShareLikeAccount,
+                          LLEaseGroupBarLikeAccount,
+                          LLEaseGroupBarCommentAccount];
     }
     return self;
 }
