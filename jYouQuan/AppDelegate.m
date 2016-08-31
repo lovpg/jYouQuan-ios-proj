@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LLTabbarBadgeController.h"
-#import <TMilesMediaSDK/TMilesMediaSDK.h>
+//#import <TMilesMediaSDK/TMilesMediaSDK.h>
 
 
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height//获取屏幕高度，兼容性测试
@@ -24,8 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [NSThread sleepForTimeInterval:5];
-    LLAudioUpload *audioUpload = [[LLAudioUpload alloc]init];
-    [audioUpload upload:@"xx.mp3" data:nil];
+//    LLAudioUpload *audioUpload = [[LLAudioUpload alloc]init];
+//    [audioUpload upload:@"xx.mp3" data:nil];
     [super application:application didFinishLaunchingWithOptions:launchOptions];
     if (![loginService checkLogined])
     {

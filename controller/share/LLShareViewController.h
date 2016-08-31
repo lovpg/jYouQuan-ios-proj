@@ -9,6 +9,10 @@
 #import "LLBaseViewController.h"
 #import "OllaImagePickerScrollView.h"
 
+#import "KZVideoConfig.h"
+
+@class KZVideoViewController;
+
 @interface LLShareViewController : LLBaseViewController<UITextViewDelegate>
 {
     IBOutlet __weak UIActivityIndicatorView *indicatorView;
@@ -22,5 +26,8 @@
 @property(nonatomic,weak) IBOutlet OllaImagePickerScrollView *imagePickerView;
 @property (weak, nonatomic) IBOutlet UITextView *content;
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
+
+- (void)videoViewController:(KZVideoViewController *)videoController didRecordVideo:(KZVideoModel *)videoModel;
++ (AFHTTPSessionManager *)sharedAFManager;
 
 @end

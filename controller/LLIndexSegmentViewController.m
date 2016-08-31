@@ -13,10 +13,16 @@
 #import "LLMyCenterViewControllerRefactor.h"
 #import "LLHotShareViewController.h"
 
+#import "LLMediaRecordController.h"
+#import "KZVideoViewController.h"
+#import "KZVideoPlayer.h"
+
+
 
 @interface LLIndexSegmentViewController ()
 {
-        NSMutableDictionary *shareDic;
+    NSMutableDictionary *shareDic;
+    
 }
 
 
@@ -84,9 +90,21 @@
 
          if (0==tapIndex)
          {//camera
+             /*
              [shareDic setValue:@"life" forKey:@"tags"];
 //             [self openURL:[self.url URLByAppendingPathComponent:@"share"] params:shareDic animated:YES];
              [self openURL:[NSURL URLWithString:@"present:///root/share" queryValue:nil]  animated:YES];
+              */
+             
+             KZVideoViewController *videoVC = [[KZVideoViewController alloc] init];
+//             videoVC.delegate = self;
+             videoVC.Typeshowing = KZVideoViewShowTypeSingle;
+//             UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:videoVC];
+             videoVC.hidesBottomBarWhenPushed = YES;
+             [self.navigationController pushViewController:videoVC animated:YES];
+             
+//             [videoVC startAnimationWithType:KZVideoViewShowTypeSingle];
+             
          }
          else if(1==tapIndex)
          {// album
@@ -131,6 +149,9 @@
             break;
     }
 }
+
+
+
 
 
 @end

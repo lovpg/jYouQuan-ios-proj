@@ -8,12 +8,25 @@
 
 #import "LLShareViewController.h"
 
+#import "KZVideoViewController.h"
+#import "KZVideoPlayer.h"
+#import "BANetManager.h"
+#import <AFNetworking.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+
 #define max_words_allowed 1024
 
-@interface LLShareViewController ()
+
+
+@interface LLShareViewController () <KZVideoViewControllerDelegate>
+
 {
     NSMutableArray *selections;
     IBOutlet UITextView *contentTextView;
+    
+    KZVideoModel *_videoModel;
+
+
 }
 @end
 
@@ -45,14 +58,41 @@
 - (IBAction)backAction:(id)sender
 {
 //    [self.navigationController popViewControllerAnimated:YES];
-    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    if (_videoModel)
+    {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else
+    {
+        [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    }
 }
 
 - (void)viewDidLoad
 {
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [super viewDidLoad];
-    self.imagePickerView.addImage = [UIImage imageNamed:@"publish_addphoto_n"];
+    if (!_videoModel)
+    {
+       self.imagePickerView.addImage = [UIImage imageNamed:@"publish_addphoto_n"];
+    }
+    else
+    {
+        UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        videoButton.frame = CGRectMake(5, -1, 62, 60);
+        [self.imagePickerView addSubview:videoButton];
+        
+        UIImageView *playImageView = [[UIImageView alloc]init];
+        playImageView.center = videoButton.center;
+        playImageView.bounds = CGRectMake(0, 0, 25, 25);
+        playImageView.image = [UIImage imageNamed:@"videoPlay"];
+        [self.imagePickerView addSubview:playImageView];
+
+        videoButton.image = [UIImage imageNamed:_videoModel.thumAbsolutePath];
+        [videoButton addTarget:self action:@selector(playVideoAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    
     self.imagePickerView.cellImageCornerRadius = 3.f;
     indicatorView.hidden = YES;
     self.postion = @"0,0";
@@ -65,10 +105,31 @@
                                                  name:@"LLCatatoryChooseNotification"
                                                object:nil];
     
+    // 测试能不能将MOV转换成MP4
+//    [self convertMOVformattoMP4];
+    
+    NSURL *url = [NSURL URLWithString:_videoModel.videoAbsolutePath];
+    [self convert2Mp4:url];
+    
 }
 - (void)viewDidAppear:(BOOL)animated
 {
 
+    
+}
+
+- (void)playVideoAction:(UIButton *)button
+{
+    
+    NSURL *videoUrl = [NSURL fileURLWithPath:_videoModel.videoAbsolutePath];
+    KZVideoPlayer *player = [[KZVideoPlayer alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height) videoUrl:videoUrl];
+//    [self.view addSubview:player];
+    UIWindow *keyWindow = [UIApplication sharedApplication].delegate.window;
+    [keyWindow addSubview:player];
+
+//    self.navigationController.navigationBar.hidden = YES;
+    
+    
 }
 
 
@@ -182,9 +243,11 @@
     //[self openURL:[NSURL URLWithString:@"." relativeToURL:self.url] animated:YES];
 }
 
-- (BOOL)checkInputContentLegal{
+- (BOOL)checkInputContentLegal
+{
     
-    if ([_content.text length]==0) {
+    if ([_content.text length]==0)
+    {
         [UIAlertView showWithTitle:nil message:@"写点啥吧，你这样我交不了差！" cancelButtonTitle:@"OK" otherButtonTitles:nil tapBlock:nil];
         return NO;
     }
@@ -309,6 +372,106 @@
     placeholdLabel.text = @"";
     return YES;
 }
+
+
+#pragma mark - KZVideoViewControllerDelegate
+- (void)videoViewController:(KZVideoViewController *)videoController didRecordVideo:(KZVideoModel *)videoModel {
+    _videoModel = videoModel;
+
+    NSError *error = nil;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSDictionary *attri = [fm attributesOfItemAtPath:_videoModel.videoAbsolutePath error:&error];
+    if (error)
+    {
+        NSLog(@"error:%@",error);
+    }
+    else
+    {
+//        self.videoSizeLable.text = [NSString stringWithFormat:@"视频总大小:%.0fKB",attri.fileSize/1024.0];
+        NSLog(@"视频总大小: %.0fKB", attri.fileSize / 1024.0);
+    }
+    
+
+    
+//    NSURL *videoUrl = [NSURL fileURLWithPath:_videoModel.videoAbsolutePath];
+//    KZVideoPlayer *player = [[KZVideoPlayer alloc] initWithFrame:self.imagePickerView.bounds videoUrl:videoUrl];
+//    [self.imagePickerView addSubview:player];
+    
+    
+}
+
+
+- (void)videoViewControllerDidCancel:(KZVideoViewController *)videoController
+{
+    NSLog(@"没有录到视频");
+}
+
+// 上传视频到服务器
+// 首先将视频转换为MP4
+- (void)convertMOVformattoMP4
+{
+    [BANetManager ba_uploadVideoWithUrlString:nil parameters:nil withVideoPath:_videoModel.videoAbsolutePath withSuccessBlock:^(id response) {
+        
+    } withFailureBlock:^(NSError *error) {
+        
+    } withUploadProgress:^(int64_t bytesProgress, int64_t totalBytesProgress) {
+        
+    }];
+    
+    
+
+}
+
+
+#pragma mark - helper
+- (NSURL *)convert2Mp4:(NSURL *)movUrl {
+    NSURL *mp4Url = nil;
+    AVURLAsset *avAsset = [AVURLAsset URLAssetWithURL:movUrl options:nil];
+    NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:avAsset];
+    
+    if ([compatiblePresets containsObject:AVAssetExportPresetHighestQuality]) {
+        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc]initWithAsset:avAsset
+                                                                              presetName:AVAssetExportPresetHighestQuality];
+        mp4Url = [movUrl copy];
+        mp4Url = [mp4Url URLByDeletingPathExtension];
+        mp4Url = [mp4Url URLByAppendingPathExtension:@"mp4"];
+        exportSession.outputURL = mp4Url;
+        exportSession.shouldOptimizeForNetworkUse = YES;
+        exportSession.outputFileType = AVFileTypeMPEG4;
+        dispatch_semaphore_t wait = dispatch_semaphore_create(0l);
+        [exportSession exportAsynchronouslyWithCompletionHandler:^{
+            switch ([exportSession status]) {
+                case AVAssetExportSessionStatusFailed: {
+                    NSLog(@"failed, error:%@.", exportSession.error);
+                } break;
+                case AVAssetExportSessionStatusCancelled: {
+                    NSLog(@"cancelled.");
+                } break;
+                case AVAssetExportSessionStatusCompleted: {
+                    NSLog(@"completed.");
+                } break;
+                default: {
+                    NSLog(@"others.");
+                } break;
+            }
+            dispatch_semaphore_signal(wait);
+        }];
+        long timeout = dispatch_semaphore_wait(wait, DISPATCH_TIME_FOREVER);
+        if (timeout) {
+            NSLog(@"timeout.");
+        }
+        if (wait) {
+            //dispatch_release(wait);
+            wait = nil;
+        }
+    }
+    
+    return mp4Url;
+}
+
+
+
+
 
 
 @end
