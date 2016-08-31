@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "IBaseUIViewController.h"
+#import "EMChatManagerDelegate.h"
 
 
-@interface LLBaseTabBarController : UITabBarController<IBaseUIViewController>
+@interface LLBaseTabBarController : UITabBarController<IBaseUIViewController,EMChatManagerDelegate>
 {
-
+    UIImageView *_groupBarTabView;
 }
 
 - (void)jumpToChatList;

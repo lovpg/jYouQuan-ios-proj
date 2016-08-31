@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A83E28E6CA6060920A9805C02DE813882D173B59",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A83E28E6CA6060920A9805C02DE813882D173B59" : 0,
+    "8AB2B31AAA1C827E9CA884E4049EF31C2F4A6874" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BC854636-D313-4A44-9E49-D15BC0A7A847",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A83E28E6CA6060920A9805C02DE813882D173B59" : "jYouQuan-ios-proj\/",
+    "8AB2B31AAA1C827E9CA884E4049EF31C2F4A6874" : "jYouQuan-ios-proj\/TMilesMediaSDK\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "jYouQuan",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "jYouQuan.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lovpg\/TMilesMediaSDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8AB2B31AAA1C827E9CA884E4049EF31C2F4A6874"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lovpg\/jYouQuan-ios-proj.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A83E28E6CA6060920A9805C02DE813882D173B59"
+    }
+  ]
+}

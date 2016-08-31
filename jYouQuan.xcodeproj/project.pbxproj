@@ -14,6 +14,8 @@
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
 		9E43F12E1D45A28900F89637 /* LLJionWorkCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F12C1D45A28900F89637 /* LLJionWorkCellTableViewCell.xib */; };
 		9E43F1301D45A3BF00F89637 /* more_work_func.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F12F1D45A3BF00F89637 /* more_work_func.png */; };
+		9E467B621D76717A00D000D7 /* icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E467B611D76717A00D000D7 /* icon-60@2x.png */; };
+		9E467B641D7671A400D000D7 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E467B631D7671A400D000D7 /* iTunesArtwork@2x.png */; };
 		9E487E751D3DB80B003AEB2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E487E741D3DB80B003AEB2F /* main.m */; };
 		9E487E781D3DB80B003AEB2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E487E771D3DB80B003AEB2F /* AppDelegate.m */; };
 		9E487E7B1D3DB80B003AEB2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E487E7A1D3DB80B003AEB2F /* ViewController.m */; };
@@ -346,10 +348,6 @@
 		9E953BD11D3F5ADB00EA9BD7 /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E953BBF1D3F5ADB00EA9BD7 /* EMVoiceConverter.mm */; };
 		9E953BD21D3F5ADB00EA9BD7 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E953BC31D3F5ADB00EA9BD7 /* libopencore-amrnb.a */; };
 		9E953BD31D3F5ADB00EA9BD7 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E953BC71D3F5ADB00EA9BD7 /* libopencore-amrwb.a */; };
-		9E97F4561D73DFCC002BD421 /* TMilesMediaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E97F4551D73DFCC002BD421 /* TMilesMediaSDK.framework */; };
-		9E97F45B1D73E08A002BD421 /* TMilesMediaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E97F45A1D73E08A002BD421 /* TMilesMediaSDK.framework */; };
-		9E97F45C1D73E0A5002BD421 /* TMilesMediaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E97F45A1D73E08A002BD421 /* TMilesMediaSDK.framework */; };
-		9E97F45D1D73E0A5002BD421 /* TMilesMediaSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E97F45A1D73E08A002BD421 /* TMilesMediaSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EBC45C21D3F034300541F23 /* LLHomeShareViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC45BE1D3F034300541F23 /* LLHomeShareViewCell.m */; };
 		9EBC45C31D3F034300541F23 /* LLHomeShareViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC45BF1D3F034300541F23 /* LLHomeShareViewCell.xib */; };
 		9EBC46131D3F085A00541F23 /* LLFivePhotoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC46031D3F085A00541F23 /* LLFivePhotoLayout.m */; };
@@ -607,7 +605,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9E97F45D1D73E0A5002BD421 /* TMilesMediaSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,6 +706,8 @@
 		9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLJionWorkCellTableViewCell.m; sourceTree = "<group>"; };
 		9E43F12C1D45A28900F89637 /* LLJionWorkCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLJionWorkCellTableViewCell.xib; sourceTree = "<group>"; };
 		9E43F12F1D45A3BF00F89637 /* more_work_func.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_work_func.png; sourceTree = "<group>"; };
+		9E467B611D76717A00D000D7 /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
+		9E467B631D7671A400D000D7 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		9E487E701D3DB80B003AEB2F /* jYouQuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jYouQuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E487E741D3DB80B003AEB2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E487E761D3DB80B003AEB2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1352,8 +1351,6 @@
 		9E953BC51D3F5ADB00EA9BD7 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
 		9E953BC61D3F5ADB00EA9BD7 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
 		9E953BC71D3F5ADB00EA9BD7 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
-		9E97F4551D73DFCC002BD421 /* TMilesMediaSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMilesMediaSDK.framework; path = "/Users/Reco/workspace/cooci/jYouQuan-ios-proj/libs/TMilesMediaSDK.framework"; sourceTree = "<absolute>"; };
-		9E97F45A1D73E08A002BD421 /* TMilesMediaSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TMilesMediaSDK.framework; sourceTree = "<group>"; };
 		9EBC45BD1D3F034300541F23 /* LLHomeShareViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLHomeShareViewCell.h; sourceTree = "<group>"; };
 		9EBC45BE1D3F034300541F23 /* LLHomeShareViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLHomeShareViewCell.m; sourceTree = "<group>"; };
 		9EBC45BF1D3F034300541F23 /* LLHomeShareViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLHomeShareViewCell.xib; sourceTree = "<group>"; };
@@ -1757,8 +1754,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E97F45C1D73E0A5002BD421 /* TMilesMediaSDK.framework in Frameworks */,
-				9E97F4561D73DFCC002BD421 /* TMilesMediaSDK.framework in Frameworks */,
 				9E6C072E1D3F5D7C00628BE9 /* libstdc++.6.0.9.tbd in Frameworks */,
 				9E953BD21D3F5ADB00EA9BD7 /* libopencore-amrnb.a in Frameworks */,
 				9EBC48291D3F1C9500541F23 /* libz.tbd in Frameworks */,
@@ -1767,7 +1762,6 @@
 				9EBC48261D3F1C7600541F23 /* libresolv.tbd in Frameworks */,
 				9EBC48241D3F1C6200541F23 /* libiconv.tbd in Frameworks */,
 				0420EF0CD285F9996E78F0C7 /* libPods.a in Frameworks */,
-				9E97F45B1D73E08A002BD421 /* TMilesMediaSDK.framework in Frameworks */,
 				9E953BD31D3F5ADB00EA9BD7 /* libopencore-amrwb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2137,7 +2131,6 @@
 		9E487E8E1D3DBA29003AEB2F /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				9E97F45A1D73E08A002BD421 /* TMilesMediaSDK.framework */,
 				9E3F4BFE1D3F4EEB00AAF9F8 /* EaseMobSDK */,
 				9E4881A41D3DC0C7003AEB2F /* SlimeRefresh */,
 				9E487E921D3DBA29003AEB2F /* Alipay */,
@@ -4110,6 +4103,8 @@
 		9EF95E2E1D3E16B7000DBD15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E467B631D7671A400D000D7 /* iTunesArtwork@2x.png */,
+				9E467B611D76717A00D000D7 /* icon-60@2x.png */,
 				9E43F12F1D45A3BF00F89637 /* more_work_func.png */,
 				9EF926671D427EA30078CDD6 /* im_bubble_l.imageset */,
 				9EF9265E1D427E000078CDD6 /* chat_groupbar_left_bubble.imageset */,
@@ -4292,6 +4287,7 @@
 				9EBC47701D3F0C4100541F23 /* record_animate_13.png in Resources */,
 				9E6C07801D3F7D5A00628BE9 /* img_02.png in Resources */,
 				9E6C07561D3F66F100628BE9 /* chatBar_more@2x.png in Resources */,
+				9E467B641D7671A400D000D7 /* iTunesArtwork@2x.png in Resources */,
 				9E4881DD1D3DC0C7003AEB2F /* sr_refresh.png in Resources */,
 				9E54369F1D40829900BB67F9 /* share_send.png in Resources */,
 				9EF95E591D3E27CA000DBD15 /* logo.png in Resources */,
@@ -4373,6 +4369,7 @@
 				9E6C07571D3F66F100628BE9 /* chatBar_more.png in Resources */,
 				9EF95E2A1D3E065F000DBD15 /* LLWorkSpaceViewController.xib in Resources */,
 				9EBC475A1D3F0C4100541F23 /* keyboard_facial_h@2x.png in Resources */,
+				9E467B621D76717A00D000D7 /* icon-60@2x.png in Resources */,
 				9EF371511D4284F200A96215 /* LLShareCommentCell.xib in Resources */,
 				9EBC47791D3F0C4100541F23 /* record_animate_9.png in Resources */,
 				9EBE1FDF1D410E1B00639DC5 /* share_new_gray_1.png in Resources */,

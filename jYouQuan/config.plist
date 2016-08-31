@@ -205,17 +205,9 @@
 				</dict>
 				<dict>
 					<key>url</key>
-					<string>tab:///nav-tmiles-circle/tmc-list</string>
-					<key>title</key>
-					<string>订单</string>
-					<key>image</key>
-					<string>tab_order_new</string>
-				</dict>
-				<dict>
-					<key>url</key>
 					<string>tab:///nav-messages/chats</string>
 					<key>title</key>
-					<string>通知</string>
+					<string>消息</string>
 					<key>image</key>
 					<string>tabbar_me_new</string>
 				</dict>
