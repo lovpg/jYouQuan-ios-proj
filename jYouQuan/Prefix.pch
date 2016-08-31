@@ -306,6 +306,7 @@ static const int ddLogLevel = DDLogLevelDebug;
 #define LBS_API_Share_Focus @"/share/hots.do" // 广场share列表
 #define Olla_API_Share_Add @"/share/add.do" // 发表share 参数:
 #define LBSLM_API_Share_Delete @"/share/delete.do"  //删除share shareId=${shareId}
+#define Olla_API_Video_Submit @"/im/upload/vedio.do" // 帖子视频上传接口
 
 #define Olla_API_Share_CommentList @"/comment/list.do" // shareId=${shareId}
 #define Olla_API_Share_CommentDetail @"/comment/get.do" //  commentId=

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
             landmarkName = "-ctrollVideoDidClose:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "499"
-            endingLineNumber = "499"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
             landmarkName = "-ctrollVideoDidClose:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310346.842945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "489"
+            endingLineNumber = "489"
             landmarkName = "-moveTopBarAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310346.842945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "-moveTopBarAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310346.842945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "-setupSubViews"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310346.842945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "-setupSubViews"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310346.842945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-setupSubViews"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "640"
-            endingLineNumber = "640"
+            startingLineNumber = "737"
+            endingLineNumber = "737"
             landmarkName = "-saveVideo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "-imagePickerScrollView:didSelectedAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-locationSelectedHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-categorySelectedHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "-categoryChooseAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "-photoBrowser:isPhotoSelectedAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
             landmarkName = "-photoBrowser:photoAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "662"
-            endingLineNumber = "662"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
             landmarkName = "-saveVideo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -356,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "638"
-            endingLineNumber = "638"
+            startingLineNumber = "735"
+            endingLineNumber = "735"
             landmarkName = "-saveVideo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -371,28 +371,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "controller/media/KZVideoConfig.m"
-            timestampString = "494245250.214333"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "+modelWithPath:thumPath:recordTime:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -404,14 +388,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/BANetManager.m"
-            timestampString = "494243783.892073"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "491"
-            endingLineNumber = "491"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "+ba_uploadVideoWithUrlString:parameters:withVideoPath:withSuccessBlock:withFailureBlock:withUploadProgress:"
             landmarkType = "5">
             <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[BANetManager ba_uploadVideoWithUrlString:parameters:withVideoPath:withSuccessBlock:withFailureBlock:withUploadProgress:]"
+                  moduleName = "jishoujYouQuan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/media/BANetManager.m"
+                  timestampString = "494333320.114421"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "396">
+               </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
@@ -420,27 +419,42 @@
                   moduleName = "jishoujYouQuan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/media/BANetManager.m"
-                  timestampString = "494306282.176369"
+                  timestampString = "494333320.114546"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "521"
-                  endingLineNumber = "521"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "208">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__122+[BANetManager ba_uploadVideoWithUrlString:parameters:withVideoPath:withSuccessBlock:withFailureBlock:withUploadProgress:]_block_invoke_2"
+                  symbolName = "__copy_helper_block_.93"
                   moduleName = "jishoujYouQuan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/media/BANetManager.m"
-                  timestampString = "494306282.176484"
+                  timestampString = "494333320.114652"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "521"
-                  endingLineNumber = "521"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.94"
+                  moduleName = "jishoujYouQuan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/media/BANetManager.m"
+                  timestampString = "494333320.114754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -452,43 +466,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/BANetManager.m"
-            timestampString = "494243788.956201"
+            timestampString = "494331363.714307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
-            landmarkName = "+ba_uploadVideoWithUrlString:parameters:withVideoPath:withSuccessBlock:withFailureBlock:withUploadProgress:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "controller/media/BANetManager.m"
-            timestampString = "494244130.437586"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
-            landmarkName = "+ba_uploadVideoWithUrlString:parameters:withVideoPath:withSuccessBlock:withFailureBlock:withUploadProgress:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "controller/media/BANetManager.m"
-            timestampString = "494244237.545304"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "488"
-            endingLineNumber = "488"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "+ba_uploadVideoWithUrlString:parameters:withVideoPath:withSuccessBlock:withFailureBlock:withUploadProgress:"
             landmarkType = "5">
          </BreakpointContent>
@@ -500,11 +482,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "626"
-            endingLineNumber = "626"
+            startingLineNumber = "723"
+            endingLineNumber = "723"
             landmarkName = "-createWriter:"
             landmarkType = "5">
          </BreakpointContent>
@@ -516,11 +498,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "631"
-            endingLineNumber = "631"
+            startingLineNumber = "728"
+            endingLineNumber = "728"
             landmarkName = "-createWriter:"
             landmarkType = "5">
          </BreakpointContent>
@@ -532,11 +514,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "652"
-            endingLineNumber = "652"
+            startingLineNumber = "749"
+            endingLineNumber = "749"
             landmarkName = "-saveVideo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -548,11 +530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "664"
-            endingLineNumber = "664"
+            startingLineNumber = "761"
+            endingLineNumber = "761"
             landmarkName = "-saveVideo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -564,12 +546,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306280.799964"
+            timestampString = "494310476.945501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "677"
-            endingLineNumber = "677"
+            startingLineNumber = "774"
+            endingLineNumber = "774"
             landmarkName = "-saveVideo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494310346.842945"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "-dealloc"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494310313.892087"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "544"
+            endingLineNumber = "544"
+            landmarkName = "-ctrollVideoDidEnd:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/CL_VideoRecorder/VJ_VideoFolderManager.m"
+            timestampString = "494315620.46083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "+fileSize:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494315714.590697"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "810"
+            endingLineNumber = "810"
+            landmarkName = "-compositionMp4VideoFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoConfig.m"
+            timestampString = "494321842.603925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "+modelWithPath:thumPath:recordTime:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494322511.230038"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "878"
+            endingLineNumber = "878"
+            landmarkName = "-compositionMp4VideoFile:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -580,42 +658,170 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
+            timestampString = "494331429.803873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "442"
-            endingLineNumber = "442"
-            landmarkName = "-convert2Mp4:"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/LLShareViewController.m"
+            timestampString = "494333035.43774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "-submitVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/LLShareViewController.m"
+            timestampString = "494333037.989971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
+            landmarkName = "-submitVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494333128.268109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "885"
+            endingLineNumber = "885"
+            landmarkName = "-compositionMp4VideoFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494333152.521845"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "846"
+            endingLineNumber = "846"
+            landmarkName = "-compositionMp4VideoFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494333158.554147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "867"
+            endingLineNumber = "867"
+            landmarkName = "-compositionMp4VideoFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494333180.195052"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "828"
+            endingLineNumber = "828"
+            landmarkName = "-compositionMp4VideoFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494333184.883117"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "836"
+            endingLineNumber = "836"
+            landmarkName = "-compositionMp4VideoFile:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/media/KZVideoViewController.m"
+            timestampString = "494333243.869196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "863"
+            endingLineNumber = "863"
+            landmarkName = "-compositionMp4VideoFile:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[LLShareViewController convert2Mp4:]"
+                  symbolName = "-[KZVideoViewController compositionMp4VideoFile:]"
                   moduleName = "jishoujYouQuan"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/share/LLShareViewController.m"
-                  timestampString = "494306282.181405"
+                  urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/media/KZVideoViewController.m"
+                  timestampString = "494333320.128312"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "442"
-                  endingLineNumber = "442"
-                  offsetFromSymbolStart = "568">
+                  startingLineNumber = "863"
+                  endingLineNumber = "863"
+                  offsetFromSymbolStart = "3208">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__37-[LLShareViewController convert2Mp4:]_block_invoke"
+                  symbolName = "__49-[KZVideoViewController compositionMp4VideoFile:]_block_invoke"
                   moduleName = "jishoujYouQuan"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/share/LLShareViewController.m"
-                  timestampString = "494306282.18151"
+                  urlString = "file:///Users/Corporal/workspace/jYou/jYouQuan-ios-proj/controller/media/KZVideoViewController.m"
+                  timestampString = "494333320.128486"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "442"
-                  endingLineNumber = "442"
+                  startingLineNumber = "863"
+                  endingLineNumber = "863"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -627,29 +833,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "controller/share/LLShareViewController.m"
-            timestampString = "494304116.524781"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
-            landmarkName = "-convert2Mp4:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "controller/media/KZVideoViewController.m"
-            timestampString = "494306400.720187"
+            timestampString = "494333287.374729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "-dealloc"
+            startingLineNumber = "875"
+            endingLineNumber = "875"
+            landmarkName = "-compositionMp4VideoFile:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -15,7 +15,14 @@
 #import "KZVideoListViewController.h"
 #import "LLShareViewController.h"
 
-@interface KZVideoViewController()<KZControllerBarDelegate,AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate> {
+#import "VJ_VideoFolderManager.h"
+
+@interface KZVideoViewController()<KZControllerBarDelegate,AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate,
+
+    AVCaptureAudioDataOutputSampleBufferDelegate,
+    AVCaptureVideoDataOutputSampleBufferDelegate,
+    UIGestureRecognizerDelegate,
+    AVCaptureFileOutputRecordingDelegate> {
     
     KZStatusBar *_topSlideView;
     
@@ -28,6 +35,8 @@
     
     AVCaptureSession *_videoSession;
     AVCaptureVideoPreviewLayer *_videoPreLayer;
+    
+    // 录制采集设备
     AVCaptureDevice *_videoDevice;
     
     AVCaptureVideoDataOutput *_videoDataOut;
@@ -46,6 +55,18 @@
     KZVideoModel *_currentRecord;
     BOOL _currentRecordIsCancel;
     UIView *_eyeView;
+    
+    
+    
+    // 新的定义
+    //从设备获取数据
+    AVCaptureDeviceInput * _videoDeviceInput;
+    AVCaptureDevice *_audioDevice;
+    AVCaptureDeviceInput * _audioDeviceInput;
+    //写入文件
+    AVCaptureMovieFileOutput *_captureMovieFileOutput;
+    AVCaptureConnection * _connection;
+
 }
 
 @property (nonatomic, assign) KZVideoViewShowType showType;
@@ -60,6 +81,8 @@
 {
     _showType = _Typeshowing;
 //    __currentVideoVC = self;
+    [VJ_VideoFolderManager createVideoFolderIfNotExist];
+    [VJ_VideoFolderManager deleteRecordVideoCache];
     
     [self setupSubViews];
 //    self.view.hidden = YES;
@@ -256,8 +279,10 @@
         return;
     }
     
+    // 创建录制线程
     _recoding_queue = dispatch_queue_create("com.kzsmallvideo.queue", DISPATCH_QUEUE_SERIAL);
     
+    /*
     NSArray *devicesVideo = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     NSArray *devicesAudio = [AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio];
     
@@ -290,6 +315,51 @@
     if ([_videoSession canAddOutput:_audioDataOut]) {
         [_videoSession addOutput:_audioDataOut];
     }
+     */
+    
+    // 新的代码
+    //视频设备配置为摄像头
+    NSError * vError = nil;
+    NSError * aError = nil;
+    _videoDevice = [self deviceWithMediaType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionBack];
+    _videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_videoDevice error:&vError];
+    
+    //添加一个音频输入设备
+    _audioDevice = [[AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio] firstObject];
+    _audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_audioDevice error:&aError];
+    
+    //视频保存文件操作
+    _captureMovieFileOutput=[[AVCaptureMovieFileOutput alloc]init];
+    
+    //初始化Session
+    _videoSession = [[AVCaptureSession alloc]init];
+    
+    //将设备输出添加到会话中
+    if ([_videoSession canAddOutput:_captureMovieFileOutput]) {
+        [_videoSession addOutput:_captureMovieFileOutput];
+    }
+    if ([_videoSession canAddInput:_videoDeviceInput]) {
+        [_videoSession addInput:_videoDeviceInput];
+        [_videoSession addInput:_audioDeviceInput];
+        _connection =[_captureMovieFileOutput connectionWithMediaType:AVMediaTypeVideo];
+        if ([_connection isVideoStabilizationSupported ]) {
+            _connection.preferredVideoStabilizationMode=AVCaptureVideoStabilizationModeAuto;
+        }
+    }
+    [_videoSession beginConfiguration];
+    
+    //设置分辨率
+    if ([_videoSession canSetSessionPreset:AVCaptureSessionPresetMedium]) {
+        _videoSession.sessionPreset = AVCaptureSessionPresetMedium;
+    } else {
+        _videoSession.sessionPreset = AVCaptureSessionPresetLow;
+    }
+    
+    [_videoSession commitConfiguration];
+
+    
+    
+    
 
     CGFloat viewWidth = CGRectGetWidth(_actionView.frame);
     _videoPreLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_videoSession];
@@ -298,10 +368,28 @@
     _videoPreLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [_videoView.layer addSublayer:_videoPreLayer];
     
+    
     [_videoSession startRunning];
     
     [self viewWillAppear];
 }
+
+/**
+ * 判断摄像头的设备是否可用，并使启用默认设备
+ */
+- (AVCaptureDevice *)deviceWithMediaType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)position{
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:mediaType];
+    AVCaptureDevice *captureDevice = devices.firstObject;
+    for (AVCaptureDevice *device in devices) {
+        if (device.position == position) {
+            captureDevice = device;
+            break;
+        }
+    }
+    return captureDevice;
+}
+
+
 
 - (void)viewWillAppear
 {
@@ -430,13 +518,17 @@
 #pragma mark - controllerBarDelegate 
 
 - (void)ctrollVideoDidStart:(KZControllerBar *)controllerBar {
-    _currentRecord = [KZVideoUtil createNewVideo];
+//    _currentRecord = [KZVideoUtil createNewVideo];
     _currentRecordIsCancel = NO;
-    NSURL *outURL = [NSURL fileURLWithPath:_currentRecord.videoAbsolutePath];
-    [self createWriter:outURL];
+//    NSURL *outURL = [NSURL fileURLWithPath:_currentRecord.videoAbsolutePath];
+//    [self createWriter:outURL];
+    if(![_captureMovieFileOutput isRecording]) {
+        [_captureMovieFileOutput startRecordingToOutputFileURL:[NSURL fileURLWithPath:[VJ_VideoFolderManager getVideoMOVFilePathString]]
+                                             recordingDelegate:self];
+    }
+
     
     _topSlideView.isRecoding = YES;
-    
     _statusInfo.textColor = kzThemeTineColor;
     _statusInfo.text = @"↑上移取消";
     _statusInfo.hidden = NO;
@@ -451,19 +543,23 @@
 - (void)ctrollVideoDidEnd:(KZControllerBar *)controllerBar {
     _topSlideView.isRecoding = NO;
     _recoding = NO;
-    [self saveVideo:^(NSURL *outFileURL) {
-        LLShareViewController *shareVC = [[LLShareViewController alloc]init];
-        self.delegate = shareVC;
-//        [self.navigationController pushViewController:shareVC animated:YES];
-        if (_delegate)
-        {
-            [_delegate videoViewController:self didRecordVideo:_currentRecord];
-//            [self endAniamtion];
-            [self.navigationController pushViewController:shareVC animated:YES];
-        }
-    }];
+//    [self saveVideo:^(NSURL *outFileURL) {
+//        LLShareViewController *shareVC = [[LLShareViewController alloc]init];
+//        self.delegate = shareVC;
+////        [self.navigationController pushViewController:shareVC animated:YES];
+//        if (_delegate)
+//        {
+//            [_delegate videoViewController:self didRecordVideo:_currentRecord];
+////            [self endAniamtion];
+//            [self.navigationController pushViewController:shareVC animated:YES];
+//        }
+//    }];
     
 //    NSLog(@"视频录制结束");
+    if([_captureMovieFileOutput isRecording])
+    {
+        [_captureMovieFileOutput stopRecording];
+    }
 }
 
 - (void)ctrollVideoDidCancel:(KZControllerBar *)controllerBar reason:(KZRecordCancelReason)reason{
@@ -690,5 +786,170 @@
     });
     
 }
+
+
+#pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate 摄像头画面代理
+-(void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections
+{
+    NSLog(@"开始录制...");
+}
+
+-(void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error{
+    NSLog(@"录制结束...%@",outputFileURL);
+    NSURL * videoFilePath = [NSURL URLWithString:[VJ_VideoFolderManager getVideoMOVFilePathString]];
+    NSLog(@"压缩前大小 %f MB",[VJ_VideoFolderManager fileSize:videoFilePath]);
+    [self compositionMp4VideoFile:outputFileURL];
+}
+
+
+/**
+ * 压缩
+ */
+- (void)compositionMp4VideoFile:(NSURL *)origonPath {
+    //获取视频资源
+    AVURLAsset *avAsset = [AVURLAsset URLAssetWithURL:origonPath options:nil];
+    // 图像裁剪部分
+    AVAssetTrack * assetTrack = [[avAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    AVMutableVideoCompositionLayerInstruction *layerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:assetTrack];
+    CGFloat rate;
+    CGFloat renderW = Screen_Width;
+    rate = renderW / MIN(assetTrack.naturalSize.width, assetTrack.naturalSize.height);
+    CGAffineTransform layerTransform = CGAffineTransformMake(assetTrack.preferredTransform.a, assetTrack.preferredTransform.b, assetTrack.preferredTransform.c, assetTrack.preferredTransform.d, assetTrack.preferredTransform.tx * rate, assetTrack.preferredTransform.ty * rate);
+    layerTransform = CGAffineTransformConcat(layerTransform, CGAffineTransformMake(1, 0, 0, 1, 0, -(assetTrack.naturalSize.width - assetTrack.naturalSize.height) / 2.0+1*(Screen_Width - Screen_Width)/2));
+    layerTransform = CGAffineTransformScale(layerTransform, rate, rate);
+    [layerInstruction setTransform:layerTransform atTime:kCMTimeZero];
+    [layerInstruction setOpacity:0.0 atTime:avAsset.duration];
+    
+    NSMutableArray *layerInstructionArray = [[NSMutableArray alloc] init];
+    [layerInstructionArray addObject:layerInstruction];
+    
+    AVMutableVideoCompositionInstruction *mainInstruciton = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    mainInstruciton.timeRange = CMTimeRangeMake(kCMTimeZero, avAsset.duration);
+    mainInstruciton.layerInstructions = layerInstructionArray;
+    AVMutableVideoComposition *mainCompositionInst = [AVMutableVideoComposition videoComposition];
+    mainCompositionInst.instructions = @[mainInstruciton];
+    mainCompositionInst.frameDuration = CMTimeMake(1,100);
+    mainCompositionInst.renderSize = CGSizeMake(renderW, renderW);
+
+    
+    NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:avAsset];
+    if ([compatiblePresets containsObject:AVAssetExportPresetMediumQuality]) {
+        //原有导出方式
+        //        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc]initWithAsset:avAsset presetName:AVAssetExportPresetMediumQuality];
+        
+        //裁剪导出方式
+        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:avAsset presetName:AVAssetExportPresetMediumQuality];
+        exportSession.videoComposition = mainCompositionInst;
+        //
+        
+        //判断MP4文件是否有占位，如果有旧删除。
+        NSString * mp4Path = [VJ_VideoFolderManager getVideoCompositionFilePathString];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if ([fileManager fileExistsAtPath:mp4Path]) {
+            NSError *error = nil;
+            [fileManager removeItemAtPath:mp4Path error:&error];
+            if (error) {
+                NSLog(@"删除视频文件出错:%@", error);
+            } else {
+                NSLog(@"删除MP4文件成功，即将将转码后的文件导出到路径：%@",mp4Path);
+            }
+        } else {
+            NSLog(@"当前目录下没有MP4文件存在，即将将转码后的文件导出到路径：%@",mp4Path);
+        }
+        
+        exportSession.outputURL = [NSURL fileURLWithPath:[VJ_VideoFolderManager getVideoCompositionFilePathString]];
+        exportSession.outputFileType = AVFileTypeMPEG4;
+        exportSession.shouldOptimizeForNetworkUse = YES;
+        [exportSession exportAsynchronouslyWithCompletionHandler:^{
+            
+            switch ([exportSession status]) {
+                case AVAssetExportSessionStatusFailed: {
+                    NSLog(@"MP4格式视频导出失败，错误信息: %@", [[exportSession error] localizedDescription]);
+                    break;
+                }
+                case AVAssetExportSessionStatusCancelled: {
+                    NSLog(@"导出取消");
+                    break;
+                }
+                case AVAssetExportSessionStatusCompleted: {
+                    NSLog(@"导出成功，导出的MP4文件大小为:%lf MB",[NSData dataWithContentsOfURL:exportSession.outputURL].length/1024.f/1024.f);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        [self playRecordVideo];
+                        
+                        UIImage *image = [self thumbnailImageForVideo:exportSession.outputURL atTime:1];
+                        
+                        
+                        LLShareViewController *shareVC = [[LLShareViewController alloc]init];
+                        shareVC.thumbImage = image;
+//                                self.delegate = shareVC;
+                        //        [self.navigationController pushViewController:shareVC animated:YES];
+//                                if (_delegate)
+//                                {
+//                                    [_delegate videoViewController:self didRecordVideo:_currentRecord];
+                        //            [self endAniamtion];
+                                    [self.navigationController pushViewController:shareVC animated:YES];
+//                                }
+
+                    });
+                    break;
+                }
+                default:{
+                    break;
+                }
+                    
+            }
+        }];
+    }
+}
+
+- (UIImage *)firstFrameWithVideoURL:(NSURL *)url size:(CGSize)size
+{
+    // 获取视频第一帧
+    NSDictionary *opts = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:AVURLAssetPreferPreciseDurationAndTimingKey];
+    AVURLAsset *urlAsset = [AVURLAsset URLAssetWithURL:url options:opts];
+    AVAssetImageGenerator *generator = [AVAssetImageGenerator assetImageGeneratorWithAsset:urlAsset];
+    generator.appliesPreferredTrackTransform = YES;
+    generator.maximumSize = CGSizeMake(size.width, size.height);
+    NSError *error = nil;
+    CGImageRef img = [generator copyCGImageAtTime:CMTimeMake(0, 10) actualTime:NULL error:&error];
+    if (error == nil)
+    {
+        return [UIImage imageWithCGImage:img];
+    }
+    return nil;
+}
+
+- (UIImage *) thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time {
+    
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    
+    NSParameterAssert(asset);
+    
+    AVAssetImageGenerator *assetImageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    
+    
+    
+    assetImageGenerator.appliesPreferredTrackTransform =YES;        assetImageGenerator.apertureMode =AVAssetImageGeneratorApertureModeEncodedPixels;
+    
+    CGImageRef thumbnailImageRef = NULL;
+    
+    CFTimeInterval thumbnailImageTime = time;
+    
+    NSError *thumbnailImageGenerationError = nil;
+    
+    thumbnailImageRef = [assetImageGenerator
+                           copyCGImageAtTime:CMTimeMake(thumbnailImageTime,60) actualTime:NULL error:&thumbnailImageGenerationError];
+//    thumbnailImageRef = [assetImageGenerator copyCGImageAtTime:CMTimeMake(thumbnailImageTime, 60) actualTime:<#(nullable CMTime *)#> error:<#(NSError *__autoreleasing  _Nullable * _Nullable)#>]
+    
+    if (!thumbnailImageRef)
+        
+        DDLogInfo(@"thumbnailImageGenerationError %@", thumbnailImageGenerationError);
+    
+    UIImage *thumbnailImage = thumbnailImageRef ? [[UIImage alloc] initWithCGImage:thumbnailImageRef] :nil;
+    
+    return thumbnailImage;
+    
+}
+
 
 @end

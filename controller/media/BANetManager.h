@@ -1,62 +1,4 @@
 
-/*!
- *  @header BAKit.h
- *          BABaseProject
- *
- *  @brief  BAKit
- *
- *  @author 博爱
- *  @copyright    Copyright © 2016年 博爱. All rights reserved.
- *  @version    V1.0
- */
-
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                            O\ = /O
-//                        ____/`---'\____
-//                      .   ' \\| |// `.
-//                       / \\||| : |||// \
-//                     / _||||| -:- |||||- \
-//                       | | \\\ - /// | |
-//                     | \_| ''\---/'' | |
-//                      \ .-\__ `-` ___/-. /
-//                   ___`. .' /--.--\ `. . __
-//                ."" '< `.___\_<|>_/___.' >'"".
-//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
-//                 \ \ `-. \_ __\ /__ _/ .-` / /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//
-//         .............................................
-//                  佛祖镇楼                  BUG辟易
-//          佛曰:
-//                  写字楼里写字间，写字间里程序员；
-//                  程序人员写程序，又拿程序换酒钱。
-//                  酒醒只在网上坐，酒醉还来网下眠；
-//                  酒醉酒醒日复日，网上网下年复年。
-//                  但愿老死电脑间，不愿鞠躬老板前；
-//                  奔驰宝马贵者趣，公交自行程序员。
-//                  别人笑我忒疯癫，我笑自己命太贱；
-//                  不见满街漂亮妹，哪个归得程序员？
-
-/*
- 
- *********************************************************************************
- *
- * 在使用BAKit的过程中如果出现bug请及时以以下任意一种方式联系我，我会及时修复bug
- *
- * QQ     : 博爱1616【137361770】
- * 微博    : 博爱1616
- * Email  : 137361770@qq.com
- * GitHub : https://github.com/boai
- * 博客园  : http://www.cnblogs.com/boai/
- * 博客    : http://boai.github.io
- 
- *********************************************************************************
- 
- */
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -149,23 +91,6 @@ typedef NSURLSessionTask BAURLSessionTask;
                                 progress:(BADownloadProgress)progress;
 
 /*!
- *  上传图片(多图)
- *
- *  @param operations   上传图片预留参数---视具体情况而定 可移除
- *  @param imageArray   上传的图片数组
- *  @param urlString    上传的url
- *  @param successBlock 上传成功的回调
- *  @param failureBlock 上传失败的回调
- *  @param progress     上传进度
- */
-+ (BAURLSessionTask *)ba_uploadImageWithUrlString:(NSString *)urlString
-                                       parameters:(NSDictionary *)parameters
-                                   withImageArray:(NSArray *)imageArray
-                                 withSuccessBlock:(BAResponseSuccess)successBlock
-                                  withFailurBlock:(BAResponseFail)failureBlock
-                               withUpLoadProgress:(BAUploadProgress)progress;
-
-/*!
  *  视频上传
  *
  *  @param operations   上传视频预留参数---视具体情况而定 可移除
@@ -181,23 +106,6 @@ typedef NSURLSessionTask BAURLSessionTask;
                    withSuccessBlock:(BAResponseSuccess)successBlock
                    withFailureBlock:(BAResponseFail)failureBlock
                  withUploadProgress:(BAUploadProgress)progress;
-
-/*!
- *  文件下载
- *
- *  @param operations   文件下载预留参数---视具体情况而定 可移除
- *  @param savePath     下载文件保存路径
- *  @param urlString        请求的url
- *  @param successBlock 下载文件成功的回调
- *  @param failureBlock 下载文件失败的回调
- *  @param progress     下载文件的进度显示
- */
-+ (BAURLSessionTask *)ba_downLoadFileWithUrlString:(NSString *)urlString
-                                        parameters:(NSDictionary *)parameters
-                                      withSavaPath:(NSString *)savePath
-                                  withSuccessBlock:(BAResponseSuccess)successBlock
-                                  withFailureBlock:(BAResponseFail)failureBlock
-                              withDownLoadProgress:(BADownloadProgress)progress;
 
 
 

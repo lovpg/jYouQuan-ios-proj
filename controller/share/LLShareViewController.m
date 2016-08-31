@@ -13,6 +13,7 @@
 #import "BANetManager.h"
 #import <AFNetworking.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "VJ_VideoFolderManager.h"
 
 #define max_words_allowed 1024
 
@@ -58,7 +59,7 @@
 - (IBAction)backAction:(id)sender
 {
 //    [self.navigationController popViewControllerAnimated:YES];
-    if (_videoModel)
+    if (_thumbImage)
     {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
@@ -72,7 +73,7 @@
 {
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [super viewDidLoad];
-    if (!_videoModel)
+    if (!_thumbImage)
     {
        self.imagePickerView.addImage = [UIImage imageNamed:@"publish_addphoto_n"];
     }
@@ -81,6 +82,7 @@
         UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
         videoButton.frame = CGRectMake(5, -1, 62, 60);
         [self.imagePickerView addSubview:videoButton];
+        videoButton.image = _thumbImage;
         
         UIImageView *playImageView = [[UIImageView alloc]init];
         playImageView.center = videoButton.center;
@@ -88,8 +90,13 @@
         playImageView.image = [UIImage imageNamed:@"videoPlay"];
         [self.imagePickerView addSubview:playImageView];
 
-        videoButton.image = [UIImage imageNamed:_videoModel.thumAbsolutePath];
-        [videoButton addTarget:self action:@selector(playVideoAction:) forControlEvents:UIControlEventTouchUpInside];
+        //
+        
+        //
+        
+//        [videoButton addTarget:self action:@selector(playVideoAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [videoButton addTarget:self action:@selector(submitVideo) forControlEvents:UIControlEventTouchUpInside];
         
     }
     
@@ -108,8 +115,8 @@
     // 测试能不能将MOV转换成MP4
 //    [self convertMOVformattoMP4];
     
-    NSURL *url = [NSURL URLWithString:_videoModel.videoAbsolutePath];
-    [self convert2Mp4:url];
+//    NSURL *url = [NSURL URLWithString:_videoModel.videoAbsolutePath];
+//    [self convert2Mp4:url];
     
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -121,8 +128,10 @@
 - (void)playVideoAction:(UIButton *)button
 {
     
-    NSURL *videoUrl = [NSURL fileURLWithPath:_videoModel.videoAbsolutePath];
-    KZVideoPlayer *player = [[KZVideoPlayer alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height) videoUrl:videoUrl];
+//    NSURL *videoUrl = [NSURL fileURLWithPath:_videoModel.videoAbsolutePath];
+    NSURL *mergeFileURL = [NSURL fileURLWithPath:[VJ_VideoFolderManager getVideoCompositionFilePathString]];
+    NSLog(@"Will play video from url:%@", [VJ_VideoFolderManager getVideoCompositionFilePathString]);
+    KZVideoPlayer *player = [[KZVideoPlayer alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height) videoUrl:mergeFileURL];
 //    [self.view addSubview:player];
     UIWindow *keyWindow = [UIApplication sharedApplication].delegate.window;
     [keyWindow addSubview:player];
@@ -418,55 +427,44 @@
         
     }];
     
-    
 
 }
 
-
-#pragma mark - helper
-- (NSURL *)convert2Mp4:(NSURL *)movUrl {
-    NSURL *mp4Url = nil;
-    AVURLAsset *avAsset = [AVURLAsset URLAssetWithURL:movUrl options:nil];
-    NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:avAsset];
+// 上传视频
+- (void)submitVideo
+{
+    NSString *videoPath = [VJ_VideoFolderManager getVideoCompositionFilePathString];
+//
+//    [[LLHTTPWriteOperationManager shareWriteManager] POST:Olla_API_Video_Submit parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        //获得沙盒中的视频内容
+//        [formData appendPartWithFileURL:[NSURL fileURLWithPath:videoPath] name:@"write you want to writre" fileName:videoPath mimeType:@"video/mpeg4" error:nil];
+//    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+//        NSLog(@"上传视频成功 = %@",responseObject);
+////        if (successBlock)
+////        {
+////            successBlock(responseObject);
+////        }
+//
+//    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+////        if (failureBlock)
+////        {
+////            failureBlock(error);
+////        }
+//        NSLog(@"错误信息 %@", error);
+//
+//    }];
     
-    if ([compatiblePresets containsObject:AVAssetExportPresetHighestQuality]) {
-        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc]initWithAsset:avAsset
-                                                                              presetName:AVAssetExportPresetHighestQuality];
-        mp4Url = [movUrl copy];
-        mp4Url = [mp4Url URLByDeletingPathExtension];
-        mp4Url = [mp4Url URLByAppendingPathExtension:@"mp4"];
-        exportSession.outputURL = mp4Url;
-        exportSession.shouldOptimizeForNetworkUse = YES;
-        exportSession.outputFileType = AVFileTypeMPEG4;
-        dispatch_semaphore_t wait = dispatch_semaphore_create(0l);
-        [exportSession exportAsynchronouslyWithCompletionHandler:^{
-            switch ([exportSession status]) {
-                case AVAssetExportSessionStatusFailed: {
-                    NSLog(@"failed, error:%@.", exportSession.error);
-                } break;
-                case AVAssetExportSessionStatusCancelled: {
-                    NSLog(@"cancelled.");
-                } break;
-                case AVAssetExportSessionStatusCompleted: {
-                    NSLog(@"completed.");
-                } break;
-                default: {
-                    NSLog(@"others.");
-                } break;
-            }
-            dispatch_semaphore_signal(wait);
-        }];
-        long timeout = dispatch_semaphore_wait(wait, DISPATCH_TIME_FOREVER);
-        if (timeout) {
-            NSLog(@"timeout.");
-        }
-        if (wait) {
-            //dispatch_release(wait);
-            wait = nil;
-        }
-    }
+    [[LLHTTPRequestOperationManager shareManager] POSTWithURL:Olla_API_Video_Submit parameters:nil data:[NSData dataWithContentsOfFile:videoPath] success:^(NSDictionary *responseObject) {
+        NSLog(@"upload ok: %@", responseObject[@"data"]);
     
-    return mp4Url;
+        
+    } failure:^(NSError *error) {
+        DDLogError(@"whatup视频 upload error:%@",error);
+        
+    }];
+    
+    
+    
 }
 
 
