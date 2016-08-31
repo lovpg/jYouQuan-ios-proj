@@ -14,6 +14,8 @@
 #import "AppDelegate.h"
 #import "LLEnrollTableViewCell.h"
 
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+
 @interface LLShareDetailBaseViewController () {
 
     LLSupplyProfileService *supplyProfileService;
@@ -427,10 +429,8 @@
 {
     if (!self.toolBarView)
     {// 不加这个判断，评论时这个方法多次执行崩溃
-        CGRect frame = [AppDelegate getFrame:CGRectMake(0, self.view.frame.size.height - [LLPostMessageToolBar defaultHeight], self.view.bounds.size.width, [LLPostMessageToolBar defaultHeight])];
-       //[self.toolBarView setFrame:frame];
-        NSLog(@"%f,,,%f",self.view.bounds.size.width, frame.size.width);
-        self.toolBarView = [[LLPostMessageToolBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - [LLPostMessageToolBar defaultHeight], frame.size.width, [LLPostMessageToolBar defaultHeight])];
+        NSLog(@"%f",ScreenWidth);
+        self.toolBarView = [[LLPostMessageToolBar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - [LLPostMessageToolBar defaultHeight], ScreenWidth, [LLPostMessageToolBar defaultHeight])];
         self.toolBarView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
         self.toolBarView.delegate = self;
         

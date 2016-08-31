@@ -14,9 +14,10 @@ static NSString *LLEMMessageSendNotification = @"LLEMMessageSendNotification";
 
 static NSString* LLEaseShareCommentAccount       = @"10001"; // share评论
 static NSString* LLEaseFollowAccount             = @"10002"; // Follow
-static NSString* LLEaseFansAccount               = @"10003"; // Fans
+static NSString* LLEaseGroupBarMessage           = @"10003"; // 新贴
 static NSString* LLEaseGroupBarInviteAccount     = @"10004"; // 群吧邀请
 static NSString* LLEaseGroupBarMessageAccount    = @"10005"; // 群吧消息
+static NSString* LLEaseFansAccount               = @"10006"; // Fans
 static NSString* LLEaseShareLikeAccount          = @"10007"; // share点赞
 static NSString* LLEaseGroupBarLikeAccount       = @"10007"; // 群吧帖子点赞
 static NSString* LLEaseGroupBarCommentAccount    = @"10008"; // 群吧帖子评论

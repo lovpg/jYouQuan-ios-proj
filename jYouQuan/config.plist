@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>banner-url-mapping</key>
+	<dict>
+		<key>banner-1</key>
+		<string>479d812ebff54b618359939d77acf749</string>
+		<key>banner-2</key>
+		<string>39e40da0447349919682fc87b01df06c</string>
+		<key>banner-3</key>
+		<string>39e40da0447349919682fc87b01df06c</string>
+	</dict>
 	<key>lbslm</key>
 	<string>lbslm:///root/tab</string>
 	<key>services</key>

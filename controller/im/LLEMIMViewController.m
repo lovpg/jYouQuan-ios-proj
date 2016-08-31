@@ -113,6 +113,7 @@
 
 - (IBAction)backAction:(id)sender
 {
+    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -457,6 +458,7 @@
 
 - (void)setupBarButtonItem
 {
+    [self.navigationController setNavigationBarHidden:NO];
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [backButton setImage:[UIImage imageNamed:@"navigation_back_arrow_new"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];

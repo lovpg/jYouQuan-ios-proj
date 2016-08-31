@@ -211,6 +211,7 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
     NSInteger fansCount = 0;
     NSInteger shareCommentCount = 0;
     NSInteger shareLikeCount = 0;
+    NSInteger groupBarMessageCount = 0;
     
     NSArray *ollaAccounts = [[LLEaseModUtil sharedUtil] ollaAccounts];
     for (EMConversation *conversation in conversations)
@@ -236,10 +237,15 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
                 shareLikeDict = conversation.latestMessage.ext;
                 shareLikeCount = conversation.unreadMessagesCount;
             }
-            else if ([uid isEqualToString:LLEaseFansAccount])
+//            else if ([uid isEqualToString:LLEaseFansAccount])
+//            {
+//                fansDict = conversation.latestMessage.ext;
+//                fansCount = conversation.unreadMessagesCount;
+//            }
+            else if ([uid isEqualToString:LLEaseGroupBarMessage])
             {
-                fansDict = conversation.latestMessage.ext;
-                fansCount = conversation.unreadMessagesCount;
+//                fansDict = conversation.latestMessage.ext;
+                groupBarMessageCount = conversation.unreadMessagesCount;
             }
             continue;
         }
@@ -251,19 +257,19 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
     UIViewController *meVC = self.viewControllers[2];
     
     //这里是TabBar的红点数***//***这个是bar中总的红点数字//
-    NSInteger groupBarMessageCount = [[LLEaseModUtil sharedUtil] unreadGroupBarMessages].count;
-    
-    //    self.groupBarHub.count = groupBarMessageCount;
-    if (groupBarMessageCount > 0)
-    {
-        //        groupBarVC.tabBarItem.badgeValue = @(groupBarMessageCount).stringValue;//隐藏 discovery中的红点数
-//        [[NSNotificationCenter defaultCenter] postNotificationName:LLGroupBarNewMessgeNotification object:@(groupBarMessageCount)];
-    }
-    else
-    {
-        homeVC.tabBarItem.badgeValue = nil;
-//        [[NSNotificationCenter defaultCenter] postNotificationName:LLGroupBarNewMessgeNotification object:@(0)];
-    }
+//    NSInteger groupBarMessageCount = [[LLEaseModUtil sharedUtil] unreadGroupBarMessages].count;
+//    
+//    //    self.groupBarHub.count = groupBarMessageCount;
+//    if (groupBarMessageCount > 0)
+//    {
+//        //        groupBarVC.tabBarItem.badgeValue = @(groupBarMessageCount).stringValue;//隐藏 discovery中的红点数
+////        [[NSNotificationCenter defaultCenter] postNotificationName:LLGroupBarNewMessgeNotification object:@(groupBarMessageCount)];
+//    }
+//    else
+//    {
+//        homeVC.tabBarItem.badgeValue = nil;
+////        [[NSNotificationCenter defaultCenter] postNotificationName:LLGroupBarNewMessgeNotification object:@(0)];
+//    }
     
 //    if (unreadCount > 0)
 //    {
@@ -290,7 +296,7 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
         meVC.tabBarItem.badgeValue = nil;
     }
     
-    NSInteger messageCount = shareCommentCount + shareLikeCount + unreadCount;
+    NSInteger messageCount = shareCommentCount + shareLikeCount + unreadCount + groupBarMessageCount;
     if (messageCount > 0)
     {
         messageVC.tabBarItem.badgeValue = @(messageCount).stringValue;
