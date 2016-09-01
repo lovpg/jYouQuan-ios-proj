@@ -2,8 +2,8 @@
 //  KZVideoViewController.h
 //  KZWeChatSmallVideo_OC
 //
-//  Created by HouKangzhu on 16/7/18.
-//  Copyright © 2016年 侯康柱. All rights reserved.
+//  Created by Corporal on 16/7/18.
+//  Copyright © 2016年 Corporal. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -32,8 +32,6 @@
 
 @protocol KZVideoViewControllerDelegate <NSObject>
 
-@required
-- (void)videoViewController:(KZVideoViewController *)videoController didRecordVideo:(KZVideoModel *)videoModel;
 
 @optional
 - (void)videoViewControllerDidCancel:(KZVideoViewController *)videoController;

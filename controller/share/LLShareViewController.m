@@ -10,7 +10,7 @@
 
 #import "KZVideoViewController.h"
 #import "KZVideoPlayer.h"
-#import "BANetManager.h"
+
 #import <AFNetworking.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "VJ_VideoFolderManager.h"
@@ -25,7 +25,7 @@
     NSMutableArray *selections;
     IBOutlet UITextView *contentTextView;
     
-    KZVideoModel *_videoModel;
+    
 
 
 }
@@ -338,11 +338,13 @@
  replacementText:(NSString *)text
 {
     
-    if ([text isEqualToString:@"\n"]) {//换行
+    if ([text isEqualToString:@"\n"])
+    {//换行
         [textView resignFirstResponder];
     }
     
-    if([text length]==0){// 删除
+    if([text length]==0)
+    {// 删除
         return YES;
     }
     if ([textView.text length]+[text length]>max_words_allowed ) {//如果添加的内容以后操作最大，就不让
@@ -383,51 +385,11 @@
 }
 
 
-#pragma mark - KZVideoViewControllerDelegate
-- (void)videoViewController:(KZVideoViewController *)videoController didRecordVideo:(KZVideoModel *)videoModel {
-    _videoModel = videoModel;
-
-    NSError *error = nil;
-    NSFileManager *fm = [NSFileManager defaultManager];
-    NSDictionary *attri = [fm attributesOfItemAtPath:_videoModel.videoAbsolutePath error:&error];
-    if (error)
-    {
-        NSLog(@"error:%@",error);
-    }
-    else
-    {
-//        self.videoSizeLable.text = [NSString stringWithFormat:@"视频总大小:%.0fKB",attri.fileSize/1024.0];
-        NSLog(@"视频总大小: %.0fKB", attri.fileSize / 1024.0);
-    }
-    
-
-    
-//    NSURL *videoUrl = [NSURL fileURLWithPath:_videoModel.videoAbsolutePath];
-//    KZVideoPlayer *player = [[KZVideoPlayer alloc] initWithFrame:self.imagePickerView.bounds videoUrl:videoUrl];
-//    [self.imagePickerView addSubview:player];
-    
-    
-}
 
 
 - (void)videoViewControllerDidCancel:(KZVideoViewController *)videoController
 {
     NSLog(@"没有录到视频");
-}
-
-// 上传视频到服务器
-// 首先将视频转换为MP4
-- (void)convertMOVformattoMP4
-{
-    [BANetManager ba_uploadVideoWithUrlString:nil parameters:nil withVideoPath:_videoModel.videoAbsolutePath withSuccessBlock:^(id response) {
-        
-    } withFailureBlock:^(NSError *error) {
-        
-    } withUploadProgress:^(int64_t bytesProgress, int64_t totalBytesProgress) {
-        
-    }];
-    
-
 }
 
 // 上传视频
@@ -454,11 +416,13 @@
 //
 //    }];
     
-    [[LLHTTPRequestOperationManager shareManager] POSTWithURL:Olla_API_Video_Submit parameters:nil data:[NSData dataWithContentsOfFile:videoPath] success:^(NSDictionary *responseObject) {
+    [[LLHTTPRequestOperationManager shareManager] POSTWithURL:Olla_API_Video_Submit parameters:nil data:[NSData dataWithContentsOfFile:videoPath] success:^(NSDictionary *responseObject)
+    {
         NSLog(@"upload ok: %@", responseObject[@"data"]);
     
         
-    } failure:^(NSError *error) {
+    } failure:^(NSError *error)
+    {
         DDLogError(@"whatup视频 upload error:%@",error);
         
     }];

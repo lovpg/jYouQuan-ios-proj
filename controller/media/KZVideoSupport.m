@@ -2,8 +2,8 @@
 //  KZVideoSupport.m
 //  KZWeChatSmallVideo_OC
 //
-//  Created by HouKangzhu on 16/7/19.
-//  Copyright © 2016年 侯康柱. All rights reserved.
+//  Created by Corporal on 16/7/19.
+//  Copyright © 2016年 Corporal. All rights reserved.
 //
 
 #import "KZVideoSupport.h"
@@ -486,14 +486,7 @@ CGFloat angleToRadian(CGFloat angle) {
     //        self.videoListBtn.backgroundColor = kzThemeTineColor
     [self addSubview:_videoListBtn];
     
-    NSArray<KZVideoModel *> *videoList = [KZVideoUtil getSortVideoList];
-    if (videoList.count == 0) {
-        _videoListBtn.hidden = YES;
-    }
-    else {
-        [_videoListBtn setBackgroundImage:[UIImage imageWithContentsOfFile:videoList[0].thumAbsolutePath] forState: UIControlStateNormal];
-    }
-    
+       
     CGFloat closeBtnWidth = _videoListBtn.frame.size.height;
     _closeVideoBtn = [KZCloseBtn buttonWithType:UIButtonTypeCustom];
     _closeVideoBtn.frame = CGRectMake(self.bounds.size.width - closeBtnWidth - edge, CGRectGetMinY(_videoListBtn.frame), closeBtnWidth, closeBtnWidth);
@@ -713,11 +706,7 @@ CGFloat angleToRadian(CGFloat angle) {
     return self;
 }
 
-- (void)setVideoModel:(KZVideoModel *)videoModel {
-    _videoModel = videoModel;
-    _thumImage.image = [UIImage imageNamed:videoModel.thumAbsolutePath];
-//    [UIImage imageWithContentsOfFile:videoModel.totalThumPath];
-}
+
 
 - (void)setEdit:(BOOL)canEdit {
     _closeBtn.hidden = !canEdit;
