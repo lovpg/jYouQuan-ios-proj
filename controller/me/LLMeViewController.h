@@ -7,8 +7,13 @@
 //
 
 #import "LLBaseViewController.h"
+#import "LLAvatarImageButon.h"
 
 @interface LLMeViewController : LLBaseViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet LLAvatarImageButon *avatorButoon;
+
+@property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end

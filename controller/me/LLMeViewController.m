@@ -7,8 +7,16 @@
 //
 
 #import "LLMeViewController.h"
+#import "LLUserService.h"
+#import "LLUser.h"
 
 @interface LLMeViewController ()
+{
+    LLUserService *userService;
+    OllaImagePickerController *imagePickerController;
+}
+
+@property(nonatomic, strong) LLUser *user;
 
 @end
 
@@ -34,15 +42,111 @@
 {
     
 }
+- (IBAction)updateAvatorAction:(id)sender
+{
+    
+    if (!imagePickerController)
+    {
+        imagePickerController = [[OllaImagePickerController alloc] initWithViewController:self];
+        imagePickerController.allowsEditing = YES;
+    }
+    
+    // 选择图片完成时的操作
+    __weak typeof(self) weakSelf = self;
+    imagePickerController.completeBlock = ^(OllaImagePickerController *controller,UIImage *image)
+    {
+        __strong typeof(self) strongSelf = weakSelf;
+        [strongSelf updateAvatorWithImage:image];
+    };
+    
+    // 更换封面选项
+    [UIActionSheet showFromTabBar:[self tabbar]
+                        withTitle:@"更新头像"
+                cancelButtonTitle:@"取消"
+           destructiveButtonTitle:nil
+                otherButtonTitles:@[@"拍照",@"从相册中选择"]
+                         tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex)
+     {
+        
+        if (0==tapIndex) {//camera
+            //默认 camera
+            [imagePickerController setImagePickerType:OllaImagePickerCamera];
+            [imagePickerController picker];
+            
+        }else if(1==tapIndex){// album
+            
+            [imagePickerController setImagePickerType:OllaImagPickerAlbum];
+            [imagePickerController picker];
+            
+        }
+        
+    }];
+}
+
+
+- (void)updateAvatorWithImage:(UIImage *)image
+{
+    //先设置好封面，再上传
+    self.avatorButoon.image = image;
+//    [coverImageView setImage:image];
+    // ***** 保存封面图片到本地  以供其他地方使用
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSData *imageData;
+    if (UIImagePNGRepresentation(image) == nil)
+    {
+        imageData = UIImageJPEGRepresentation(image, 100);
+    }
+    else
+    {
+        imageData = UIImagePNGRepresentation(image);
+    }
+    [defaults setObject:imageData forKey:@"avatorImageData"];
+    [defaults synchronize];//用synchronize方法把数据持久化到standardUserDefaults数据库
+    
+    [userService updateAvatar:image success:^(NSDictionary *userInfo)
+     {
+        
+        NSString *remoteURL = userInfo[@"data"];//cover
+        [[SDImageCache sharedImageCache] storeImage:image forKey:remoteURL];//这里如果能手工建立头像的url缓存，下次进来就不用闪一下了。
+        
+    }
+    fail:^(NSError *error)
+     {
+        [JDStatusBarNotification showWithStatus:@"更新头像失败" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+        
+    }];
+}
+
+- (UITabBar *)tabbar
+{
+    return self.tabBarController.tabBar;
+}
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    userService = [[LLUserService alloc] init];
+    self.user  = [userService getMe];
+    self.nicknameLabel.text = self.user.nickname;
+    self.usernameLabel.text = self.user.userName;
+    self.avatorButoon.thumbSize = CGSizeMake(60, 60);
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSData *imageData =[defaults objectForKey:@"avatorImageData"];
+    if(imageData)
+    {
+        self.avatorButoon.image = [UIImage imageWithData:imageData];
+    }
+    else
+    {
+        [self.avatorButoon setRemoteImageURL:self.user.avatar];
+    }
+//    self.avatorButoon.remoteImageURL = self.user.avatar;
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -21,7 +21,7 @@
 #import "LLThirdCollection.h"
 #import "LLHomeBannerCell.h"
 
-
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height//获取屏幕高度，兼容性测试
 #define span 10000
 @interface LLHomeViewController() < UITableViewDataSource, UITableViewDelegate,
 LLShareDataSourceDelegate>
@@ -138,7 +138,7 @@ LLShareDataSourceDelegate>
     self.tableView.header = header;
     
     // 加载更多
-    self.loadingView = [[LLLoadingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+    self.loadingView = [[LLLoadingView alloc] initWithFrame:CGRectMake(0, 0, ScreenHeight, 44)];
     self.loadingView.statusLabel.font = [UIFont systemFontOfSize:11.f];
     self.loadingView.statusLabel.textColor = [UIColor lightGrayColor];
     self.loadingView.size = 20;
