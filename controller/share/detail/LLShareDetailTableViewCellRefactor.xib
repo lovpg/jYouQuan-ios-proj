@@ -224,7 +224,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UII-LT-yZo">
-                        <rect key="frame" x="73" y="43" width="83" height="23"/>
+                        <rect key="frame" x="67" y="44" width="56" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -280,7 +280,7 @@
     </objects>
     <resources>
         <image name="comment_count.png" width="32" height="32"/>
-        <image name="headphoto_default_128" width="114" height="114"/>
+        <image name="headphoto_default_128" width="137" height="131"/>
         <image name="location_choose.png" width="32" height="32"/>
         <image name="praise_count.png" width="32" height="32"/>
         <image name="see_count.png" width="32" height="32"/>

@@ -5102,6 +5102,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5124,6 +5125,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbslm.cooci.jishou;
 				PRODUCT_NAME = jYouQuan;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -5133,6 +5135,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5155,6 +5158,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbslm.cooci.jishou;
 				PRODUCT_NAME = jYouQuan;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -21,7 +21,7 @@
 #import "LLThirdCollection.h"
 #import "LLHomeBannerCell.h"
 
-
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height//获取屏幕高度，兼容性测试
 #define span 10000
 @interface LLHomeViewController() < UITableViewDataSource, UITableViewDelegate,
 LLShareDataSourceDelegate>

@@ -53,15 +53,15 @@ static NSString *umengAppKey = @"547c2d92fd98c56fb6000631";
     
     NSString *apnsCertName = nil;
     #if DEBUG
-        apnsCertName = @"apns-tmiles-dev";
+        apnsCertName = @"dev-apns-jyq";
     #else
         apnsCertName = @"apns-tmiles-production";
     #endif
     NSString *easeKey = nil;
     if ([LLAppHelper isTestEnv]) {
-        easeKey = @"lbslm#wl";
+        easeKey = @"lbslm#strongarm";
     } else {
-        easeKey = @"lbslm#wl";
+        easeKey = @"lbslm#strongarm";
     }
     NSLog(@"%@",  [EaseMob sharedInstance].sdkVersion);
     

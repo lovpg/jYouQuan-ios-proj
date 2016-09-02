@@ -82,7 +82,7 @@
 
 - (void)pickerImage{
     
-    [UIActionSheet showInView:_presentedViewController.view withTitle:@"Please upload your head photo" cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@[@"Take Photo",@"Choose Photo"] tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex){
+    [UIActionSheet showInView:_presentedViewController.view withTitle:@"上传一张照片" cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"拍照",@"从相册中选择照片"] tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex){
         if (0==tapIndex) {//camera
             //默认 camera
             [self setImagePickerType:OllaImagePickerCamera];

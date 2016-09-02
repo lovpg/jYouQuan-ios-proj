@@ -15,9 +15,9 @@
     //加一个缩略
     NSString *thumbURL = [LLAppHelper thumbImageWithURL:remoteImageURL size:self.thumbSize];
     //服务端图片给的绝对路径，要适配最优host路径
-    if ([thumbURL hasPrefix:@"http"]&&[thumbURL containsSubString:@"olla.im"]) {
+    if ([thumbURL hasPrefix:@"http"]&&[thumbURL containsSubString:@"lbslm.com"]) {
         NSString *adptiveHost = [LLAppHelper baseAPIURL];
-        NSRange range = [thumbURL rangeOfString:@"olla.im"];
+        NSRange range = [thumbURL rangeOfString:@"lbslm.com"];
         thumbURL = [thumbURL stringByReplacingCharactersInRange:NSMakeRange(0, range.location+range.length) withString:adptiveHost];
     }
 //    DDLogInfo(@"url=%@, thumb imageurl = %@",remoteImageURL,thumbURL);

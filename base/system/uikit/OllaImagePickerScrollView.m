@@ -124,7 +124,7 @@
 
 - (void)addImageFromCameraOrAlbum{
     
-    [UIActionSheet showInView:[[self getValidViewControllerForActionSheet] view] withTitle:nil cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@[@"Take Photo",@"Choose Photo"] tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex){
+    [UIActionSheet showInView:[[self getValidViewControllerForActionSheet] view] withTitle:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"拍照",@"从相册中选择照片"] tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex){
         if (0==tapIndex) {//camera
             //默认 camera
             [[self cameraImagePickerController] setImagePickerType:OllaImagePickerCamera];
@@ -190,7 +190,7 @@
     
     if ([self.images count]>self.maxImageCount) {
         DDLogInfo(@"图片数量超过最大限制(%lud)",self.maxImageCount);
-        [UIAlertView showWithTitle:nil message:@"only 9 photos" cancelButtonTitle:@"got it" otherButtonTitles:nil tapBlock:nil];
+        [UIAlertView showWithTitle:nil message:@"超过9张照片啦" cancelButtonTitle:@"知道了" otherButtonTitles:nil tapBlock:nil];
         return NO;
     }
     return YES;
