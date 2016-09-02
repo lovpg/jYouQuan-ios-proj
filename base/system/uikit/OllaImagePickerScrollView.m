@@ -121,7 +121,7 @@
 
 - (void)addImageFromCameraOrAlbum{
     
-    [UIActionSheet showInView:[[self getValidViewControllerForActionSheet] view] withTitle:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"取消",@"从相册中选择照片"] tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex){
+    [UIActionSheet showInView:[[self getValidViewControllerForActionSheet] view] withTitle:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"拍照",@"从相册中选择照片"] tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex){
         if (0==tapIndex) {//camera
             //默认 camera
             [[self cameraImagePickerController] setImagePickerType:OllaImagePickerCamera];
