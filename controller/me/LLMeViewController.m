@@ -143,9 +143,8 @@
     }
     else
     {
-        [self.avatorButoon setRemoteImageURL:self.user.avatar];
+        [self.avatorButoon sd_setImageWithURL:[NSURL URLWithString:self.user.avatar] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"headphoto_default_128"]];
     }
-//    self.avatorButoon.remoteImageURL = self.user.avatar;
 
 }
 
