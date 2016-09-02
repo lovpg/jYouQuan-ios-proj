@@ -187,7 +187,7 @@
     
     if ([self.images count]>self.maxImageCount) {
         DDLogInfo(@"图片数量超过最大限制(%lud)",self.maxImageCount);
-        [UIAlertView showWithTitle:nil message:@"only 9 photos" cancelButtonTitle:@"got it" otherButtonTitles:nil tapBlock:nil];
+        [UIAlertView showWithTitle:nil message:@"超过9张照片啦" cancelButtonTitle:@"知道了" otherButtonTitles:nil tapBlock:nil];
         return NO;
     }
     return YES;
