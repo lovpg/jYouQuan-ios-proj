@@ -138,7 +138,7 @@ LLShareDataSourceDelegate>
     self.tableView.header = header;
     
     // 加载更多
-    self.loadingView = [[LLLoadingView alloc] initWithFrame:CGRectMake(0, 0, ScreenHeight, 44)];
+    self.loadingView = [[LLLoadingView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
     self.loadingView.statusLabel.font = [UIFont systemFontOfSize:11.f];
     self.loadingView.statusLabel.textColor = [UIColor lightGrayColor];
     self.loadingView.size = 20;
