@@ -53,9 +53,9 @@ static NSString *umengAppKey = @"547c2d92fd98c56fb6000631";
     
     NSString *apnsCertName = nil;
     #if DEBUG
-        apnsCertName = @"dev-apns-jyq";
+        apnsCertName = @"apns_dev_strongarm";
     #else
-        apnsCertName = @"apns-tmiles-production";
+        apnsCertName = @"apns_prod_strongarm";
     #endif
     NSString *easeKey = nil;
     if ([LLAppHelper isTestEnv]) {
