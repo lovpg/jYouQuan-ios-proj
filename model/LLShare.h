@@ -35,6 +35,8 @@ static NSString *LLShareTextPhoneNumberClickEvent = @"LLShareTextPhoneNumberClic
 @property(nonatomic,strong) LLThirdCollection *collection;
 //@property(nonatomic,strong) LLGroupBar *bar;
 
+@property(nonatomic,strong) NSString *vedioUrl;
+
 - (NSString *)timeString;
 
 @end

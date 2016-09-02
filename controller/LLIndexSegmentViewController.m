@@ -112,8 +112,9 @@
          else if(1==tapIndex)
          {// album 拍照功能
              
-             [shareDic setValue:@"humor" forKey:@"tags"];
-             [self openURL:[NSURL URLWithString:@"present:///root/share" queryValue:nil]  animated:YES];
+             [shareDic setValue:@"camera" forKey:@"tags"];
+//             [self openURL:[NSURL URLWithString:@"present:///root/share" queryValue:nil]  animated:YES];
+             [self openURL:[NSURL URLWithString:@"present:///root/share"] params:shareDic animated:YES];
              
 //             LLImagePickerViewController *imagePickerVC = [[LLImagePickerViewController alloc]init];
 //             [self.navigationController pushViewController:imagePickerVC animated:YES];
@@ -121,8 +122,9 @@
          else if(2==tapIndex)
          {// album
              
-             [shareDic setValue:@"activity" forKey:@"tags"];
-             [self openURL:[NSURL URLWithString:@"present:///root/share" queryValue:nil]  animated:YES];
+             [shareDic setValue:@"album" forKey:@"tags"];
+//             [self openURL:[NSURL URLWithString:@"present:///root/share" queryValue:nil]  animated:YES];
+             [self openURL:[NSURL URLWithString:@"present:///root/share"] params:shareDic animated:YES];
          }
 
          

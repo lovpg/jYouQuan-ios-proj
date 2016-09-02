@@ -25,10 +25,12 @@
     NSMutableArray *selections;
     IBOutlet UITextView *contentTextView;
     
-    
-
-
 }
+
+@property (nonatomic, strong) NSString *videoUrl;
+
+
+
 @end
 
 @implementation LLShareViewController
@@ -77,7 +79,7 @@
     
 //    self.tabBarController.tabBar.hidden = YES;
 //    self.view.contentMode = UIEdgeInsetsMake(0, 0, -64, 0);
-    [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, -64, 0)];
+//    [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, -64, 0)];
     
 }
 
@@ -85,40 +87,6 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
-    _imagePickerView.TypeShowing = @"openPhotoAlbum";
-//    self.automaticallyAdjustsScrollViewInsets = NO;
-//    self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight;
-    
-    
-    if (!_thumbImage)
-    {
-       self.imagePickerView.addImage = [UIImage imageNamed:@"publish_addphoto_n"];
-        
-        
-    }
-    else
-    {
-        _thumbImage = [self.params objectForKey:@"videoPic"];
-        UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        videoButton.frame = CGRectMake(5, -1, 62, 60);
-        [self.imagePickerView addSubview:videoButton];
-        videoButton.image = _thumbImage;
-        
-        UIImageView *playImageView = [[UIImageView alloc]init];
-        playImageView.center = videoButton.center;
-        playImageView.bounds = CGRectMake(0, 0, 25, 25);
-        playImageView.image = [UIImage imageNamed:@"videoPlay"];
-        [self.imagePickerView addSubview:playImageView];
-
-        //
-        
-        //
-        
-//        [videoButton addTarget:self action:@selector(playVideoAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [videoButton addTarget:self action:@selector(submitVideo) forControlEvents:UIControlEventTouchUpInside];
-        
-    }
     
     self.imagePickerView.cellImageCornerRadius = 3.f;
     indicatorView.hidden = YES;
@@ -133,17 +101,52 @@
                                                object:nil];
     
    
-//    _imagePickerView.TypeShowing = @"openCamera";
     
     
+    
+        NSString *string = [self.params objectForKey:@"tags"];
+        if ([string isEqualToString:@"camera"])
+        {
+            self.imagePickerView.addImage = [UIImage imageNamed:@"publish_addphoto_n"];
+            _imagePickerView.TypeShowing = @"openCamera";
+        }
+        
+        else if ([string isEqualToString:@"album"])
+        {
+            self.imagePickerView.addImage = [UIImage imageNamed:@"publish_addphoto_n"];
+            _imagePickerView.TypeShowing = @"openPhotoAlbum";
+        }
+        
+        else if ([string isEqualToString:@"video"])
+        {
+            _thumbImage = [self.params objectForKey:@"videoPic"];
+            UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            videoButton.frame = CGRectMake(5, -1, 62, 60);
+            [self.imagePickerView addSubview:videoButton];
+            videoButton.image = _thumbImage;
+            
+            UIImageView *playImageView = [[UIImageView alloc]init];
+            playImageView.center = videoButton.center;
+            playImageView.bounds = CGRectMake(0, 0, 25, 25);
+            playImageView.image = [UIImage imageNamed:@"videoPlay"];
+            [self.imagePickerView addSubview:playImageView];
+            [videoButton addTarget:self action:@selector(playVideoActions:) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+            self.videoUrl = [self.params objectForKey:@"videoUrl"];
+//            self.videoUrl = [NSURL URLWithString:videoUrl];
+
+        }
 }
+
+
 - (void)viewDidAppear:(BOOL)animated
 {
 
     
 }
 
-- (void)playVideoAction:(UIButton *)button
+- (void)playVideoActions:(UIButton *)button
 {
     
 //    NSURL *videoUrl = [NSURL fileURLWithPath:_videoModel.videoAbsolutePath];
@@ -208,27 +211,77 @@
     [indicatorView startAnimating];
     
     __weak typeof(self) weakSelf = self;
+    
+    NSDictionary *dictionary = [NSDictionary dictionary];
+    
+    if (!self.videoUrl)
+    {
+      
+        dictionary = @{@"content"  :_content.text,
+                       @"tags"     :self.tagsLabel.text,
+                       @"city"     :@"中国",
+                       @"location" :self.postion,
+                       @"address"  :self.location.text,
+                       @"vedioUrl" :@""
+                       };
+    }
+    else
+    {
+        
+        dictionary = @{@"content"  :_content.text,
+                       @"tags"     :self.tagsLabel.text,
+                       @"city"     :@"中国",
+                       @"location" :self.postion,
+                       @"address"  :self.location.text,
+                       @"vedioUrl" :self.videoUrl
+                       };
+    }
+    
+    
+    
     [[LLHTTPWriteOperationManager shareWriteManager]
      POST:Olla_API_Share_Add
-     parameters:@{@"content":_content.text,
-                  @"tags":self.tagsLabel.text,
-                  @"city":@"广东 广州",
-                  @"location":self.postion,
-                  @"address":self.location.text,
-                  }
-     constructingBodyWithBlock:^(id<AFMultipartFormData> formData){// 一组图片上传！！
+     parameters:dictionary  constructingBodyWithBlock:^(id<AFMultipartFormData> formData){// 一组图片上传！！
          
-         NSMutableArray *images = [NSMutableArray arrayWithArray:[weakSelf.imagePickerView images]];
-         for (id asset in images) {
+         NSArray *images = [NSArray array];
+         if (_thumbImage)
+         {
+             images = @[_thumbImage];
+             for (id asset in images)
+             {
+                 NSData *data = nil;
+                 if ([asset isKindOfClass:[UIImage class]])
+                 {
+                     data = UIImageJPEGRepresentation(asset, 0.4);
+                 }
+                 if ([asset isKindOfClass:ALAsset.class])
+                 {
+                     UIImage *original = [UIImage imageWithCGImage: [[asset defaultRepresentation] fullScreenImage]];
+                     data = UIImageJPEGRepresentation(original, 0.4);
+                 }
+                 [formData appendPartWithFileData:data name:@"file" fileName:@"file.jpg" mimeType:@"multipart/form-data"];
+             }
+         
+
+         }
+         else
+         {
+//         images = [NSMutableArray arrayWithArray:[weakSelf.imagePickerView images]];
+          images = [weakSelf.imagePickerView images];
+          for (id asset in images)
+          {
              NSData *data = nil;
-             if ([asset isKindOfClass:[UIImage class]]) {
+             if ([asset isKindOfClass:[UIImage class]])
+             {
                  data = UIImageJPEGRepresentation(asset, 0.4);
              }
-             if ([asset isKindOfClass:ALAsset.class]) {
+             if ([asset isKindOfClass:ALAsset.class])
+             {
                  UIImage *original = [UIImage imageWithCGImage: [[asset defaultRepresentation] fullScreenImage]];
                  data = UIImageJPEGRepresentation(original, 0.4);
              }
              [formData appendPartWithFileData:data name:@"file" fileName:@"file.jpg" mimeType:@"multipart/form-data"];
+           }
          }
          
      } success:^(AFHTTPRequestOperation *operation,id respondObject){
@@ -250,6 +303,8 @@
          [JDStatusBarNotification showWithStatus:[LLAppHelper errorMessageWithError:error] dismissAfter:1.f styleName:JDStatusBarStyleDark];
          [strongSelf errorHandler:error];
      }];
+        
+    
 }
 
 
@@ -266,8 +321,15 @@
     
     DDLogInfo(@"send share ok :%@",result);
 //    [self.navigationController popViewControllerAnimated:YES];
+    if (_thumbImage)
+    {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else
+    {
     [self dismissViewControllerAnimated:YES completion:nil];
     //[self openURL:[NSURL URLWithString:@"." relativeToURL:self.url] animated:YES];
+    }
 }
 
 - (BOOL)checkInputContentLegal
@@ -405,30 +467,11 @@
 
 
 
-- (void)videoViewControllerDidCancel:(KZVideoViewController *)videoController
-{
-    NSLog(@"没有录到视频");
-}
+//- (void)videoViewControllerDidCancel:(KZVideoViewController *)videoController
+//{
+//    NSLog(@"没有录到视频");
+//}
 
-// 上传视频
-- (void)submitVideo
-{
-    NSString *videoPath = [VJ_VideoFolderManager getVideoCompositionFilePathString];
-    
-    [[LLHTTPRequestOperationManager shareManager] POSTWithURL:Olla_API_Video_Submit parameters:nil data:[NSData dataWithContentsOfFile:videoPath] success:^(NSDictionary *responseObject)
-    {
-        NSLog(@"upload ok: %@", responseObject[@"data"]);
-    
-        
-    } failure:^(NSError *error)
-    {
-        DDLogError(@"whatup视频 upload error:%@",error);
-        
-    }];
-    
-    
-    
-}
 
 
 

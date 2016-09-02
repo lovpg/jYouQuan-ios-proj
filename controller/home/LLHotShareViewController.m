@@ -130,7 +130,7 @@
          strongSelf.shareDataSource = [self dataFilter:datas];
          for (int i = 0; i < [ datas count]; i++)
          {
-             LLShare *share = [ datas objectAtIndex:i];
+             LLShare *share = [datas objectAtIndex:i];
              
          }
          [strongSelf.tableView reloadData];

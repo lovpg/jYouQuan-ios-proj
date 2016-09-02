@@ -13,6 +13,8 @@
 
 @property (nonatomic, assign) CGFloat maxWidth;
 
+@property (nonatomic, assign) BOOL isMovie;
+
 - (void)photoSelectedAtIndex:(NSInteger)index;
 - (void)photoSelected:(id)sender;
 

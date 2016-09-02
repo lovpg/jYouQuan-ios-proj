@@ -145,7 +145,8 @@ const CGFloat imageMargin = 5.f;
 }
 
 
-- (void)cancelAllImageLoading{
+- (void)cancelAllImageLoading
+{
     for (UIView *button in [self subviews]) {
         
         if ([button isKindOfClass:[UIButton class]]) {

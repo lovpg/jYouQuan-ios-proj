@@ -80,26 +80,38 @@
         y = y+size.height+spacing1;
     }
     
-    if ([self.dataItem.imageList count]>0) {
+    if ([self.dataItem.imageList count]>0)
+    {
         // 原图==》缩略图
-        if ([self.dataItem.imageList count] == 1) {
+        if ([self.dataItem.imageList count] == 1)
+        {
             layoutManager.photos = @[[LLAppHelper oneShareThumbImageURLWithString:self.dataItem.imageList.firstObject]];
-        } else {
+        }
+        else
+        {
             NSMutableArray *thumbImages = [NSMutableArray array];
-            for (NSString *originImage in self.dataItem.imageList) {
+            for (NSString *originImage in self.dataItem.imageList)
+            {
                 [thumbImages addObject:[LLAppHelper shareThumbMidImageURLWithString:originImage]];
             }
             layoutManager.photos = thumbImages;
         }
         
         LLPhotoLayout *layoutView = layoutManager.photoLayout;
+        if (self.dataItem.vedioUrl.length > 0)
+        {
+            layoutView.isMovie = YES;
+        }
+        
         layoutView.originX = shareTextLabel.left;
         layoutView.originY = y;
         [self addSubview:layoutView];
         
         y += ([layoutView layoutHeight] + spacing2);
         
-    }else{
+    }
+    else
+    {
         //imageGroupView.height = 0.f;
         [imageGroupView removeFromSuperview];//TODO: 这样会不会在复用这个cell时有问题
     }
@@ -139,9 +151,12 @@
     //    }
     
     // self.likeLogo.image = self.share.good ? [UIImage imageNamed:@"share_like_new_state_true"] : [UIImage imageNamed:@"share_like_new_state_false"];
-    if (self.dataItem.good) {
+    if (self.dataItem.good)
+    {
         likeImageView.image = [UIImage imageNamed:@"praise_count"];
-    } else {
+    }
+    else
+    {
         likeImageView.image = [UIImage imageNamed:@"praise_count"];
     }
     
@@ -210,7 +225,8 @@
 
 #pragma mark - 点赞相关
 // 取消点赞
-- (void)decreaseLikeNum{
+- (void)decreaseLikeNum
+{
     
     NSInteger count = [likeNumLabel.text integerValue] - 1 ;
     if (count < 0) {
@@ -225,7 +241,8 @@
 }
 
 // 点赞
-- (void)increaseLikeNum{
+- (void)increaseLikeNum
+{
     
     int count = [likeNumLabel.text intValue] + 1;
     

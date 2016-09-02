@@ -68,6 +68,8 @@
 @property(nonatomic, strong) VJ_CameraBtn * cameraModelChangeBtn;
 @property(nonatomic, strong) VJ_CameraFlashBtn * openFlashBtn;
 
+@property (nonatomic, strong) UIImage *image;
+
 
 @end
 
@@ -737,22 +739,9 @@
                     NSLog(@"导出成功，导出的MP4文件大小为:%lf MB",[NSData dataWithContentsOfURL:exportSession.outputURL].length/1024.f/1024.f);
                     dispatch_async(dispatch_get_main_queue(), ^{
 //                        [self playRecordVideo];
+                        _image = [self thumbnailImageForVideo:exportSession.outputURL atTime:1];
+                        [self submitVideo];
                         
-                        UIImage *image = [self thumbnailImageForVideo:exportSession.outputURL atTime:1];
-                        
-                        
-//                        LLShareViewController *shareVC = [[LLShareViewController alloc]init];
-//                        shareVC.thumbImage = image;
-//                                self.delegate = shareVC;
-                        //        [self.navigationController pushViewController:shareVC animated:YES];
-//                                if (_delegate)
-//                                {
-//                                    [_delegate videoViewController:self didRecordVideo:_currentRecord];
-                        //            [self endAniamtion];
-                        
-//                                }
-                        NSDictionary *dictionary = @{@"videoPic" : image};
-                        [self openURL:[self.url URLByAppendingPathComponent:@"share"] params:dictionary animated:YES];
 
                     });
                     break;
@@ -814,6 +803,30 @@
     return thumbnailImage;
     
 }
+
+// 上传视频
+- (void)submitVideo
+{
+    NSString *videoPath = [VJ_VideoFolderManager getVideoCompositionFilePathString];
+    
+    [[LLHTTPRequestOperationManager shareManager] POSTWithURL:Olla_API_Video_Submit parameters:nil data:[NSData dataWithContentsOfFile:videoPath] success:^(NSDictionary *responseObject)
+     {
+         NSLog(@"upload ok: %@", responseObject[@"data"]);
+         NSString *videoUrl = responseObject[@"data"];
+         NSDictionary *dictionary = @{@"tags" : @"video", @"videoPic" : _image, @"videoUrl" : videoUrl};
+         [self openURL:[self.url URLByAppendingPathComponent:@"share"] params:dictionary animated:YES];
+         
+         
+     } failure:^(NSError *error)
+     {
+         DDLogError(@"whatup视频 upload error:%@",error);
+         
+     }];
+    
+    
+    
+}
+
 
 
 @end

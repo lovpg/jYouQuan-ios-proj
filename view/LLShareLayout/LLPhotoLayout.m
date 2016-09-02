@@ -46,20 +46,40 @@
     
     //[[LLImageBrowserController sharedInstance] thumbsImages:self.photos selectAtIndex:index];
     
-    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
-    NSMutableArray *mjPhotos = [NSMutableArray array];
-    for (int i=0; i<self.photos.count; i++)
+    if (self.isMovie)
     {
-        UIView *subView = (i<6)?self.subviews[i]:nil;//最多显示6张图
-        MJPhoto *photo = [[MJPhoto alloc] init];
-        photo.url = [NSURL URLWithString:[LLAppHelper shareImageURLWithThumbString:self.photos[i]]];
-        photo.placeholder = [(UIButton *)subView image];
-        photo.startFrame = [[UIApplication sharedApplication].keyWindow convertRect:subView.frame fromView:subView.superview];
-        [mjPhotos addObject:photo];
+        MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+        NSMutableArray *mjPhotos = [NSMutableArray array];
+        for (int i = 0; i < self.photos.count; i++)
+        {
+            UIView *subView = (i<6)?self.subviews[i]:nil;//最多显示6张图
+            MJPhoto *photo = [[MJPhoto alloc] init];
+            photo.url = [NSURL URLWithString:[LLAppHelper shareImageURLWithThumbString:self.photos[i]]];
+            photo.placeholder = [(UIButton *)subView image];
+            photo.startFrame = [[UIApplication sharedApplication].keyWindow convertRect:subView.frame fromView:subView.superview];
+            [mjPhotos addObject:photo];
+        }
+        browser.photos = mjPhotos;
+        browser.currentPhotoIndex = index;
+        [browser show];
     }
-    browser.photos = mjPhotos;
-    browser.currentPhotoIndex = index;
-    [browser show];
+    else
+    {
+        MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+        NSMutableArray *mjPhotos = [NSMutableArray array];
+        for (int i = 0; i < self.photos.count; i++)
+        {
+           UIView *subView = (i<6)?self.subviews[i]:nil;//最多显示6张图
+           MJPhoto *photo = [[MJPhoto alloc] init];
+           photo.url = [NSURL URLWithString:[LLAppHelper shareImageURLWithThumbString:self.photos[i]]];
+           photo.placeholder = [(UIButton *)subView image];
+           photo.startFrame = [[UIApplication sharedApplication].keyWindow convertRect:subView.frame fromView:subView.superview];
+           [mjPhotos addObject:photo];
+        }
+        browser.photos = mjPhotos;
+        browser.currentPhotoIndex = index;
+        [browser show];
+    }
     
 }
 
