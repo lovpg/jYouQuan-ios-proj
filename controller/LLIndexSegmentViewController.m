@@ -17,6 +17,8 @@
 #import "KZVideoViewController.h"
 #import "KZVideoPlayer.h"
 
+#import "LLImagePickerViewController.h"
+
 
 
 @interface LLIndexSegmentViewController ()
@@ -33,6 +35,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    self.tabBarController.tabBar.hidden = NO;
     [super viewWillAppear:animated];
 
 }
@@ -96,21 +99,24 @@
              [self openURL:[NSURL URLWithString:@"present:///root/share" queryValue:nil]  animated:YES];
               */
              
-             KZVideoViewController *videoVC = [[KZVideoViewController alloc] init];
-//             videoVC.delegate = self;
-             videoVC.Typeshowing = KZVideoViewShowTypeSingle;
-//             UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:videoVC];
-             videoVC.hidesBottomBarWhenPushed = YES;
-             [self.navigationController pushViewController:videoVC animated:YES];
              
-//             [videoVC startAnimationWithType:KZVideoViewShowTypeSingle];
+             // openUrl方式打开
+//            [shareDic setValue:@"life" forKey:@"tags"];
+//            [self openURL:[self.url URLByAppendingPathComponent:@"video-record"] params:nil animated:YES];
+             
+//             [self openURLhidesBottomBarWhenPushed:[self.url URLByAppendingPathComponent:@"video-record"] animated:YES];
+
+             [self openURLhidesBottomBarWhenPushed:[self.url URLByAppendingPathComponent:@"video-record"] params:nil animated:YES];
              
          }
          else if(1==tapIndex)
-         {// album
+         {// album 拍照功能
              
              [shareDic setValue:@"humor" forKey:@"tags"];
              [self openURL:[NSURL URLWithString:@"present:///root/share" queryValue:nil]  animated:YES];
+             
+//             LLImagePickerViewController *imagePickerVC = [[LLImagePickerViewController alloc]init];
+//             [self.navigationController pushViewController:imagePickerVC animated:YES];
          }
          else if(2==tapIndex)
          {// album

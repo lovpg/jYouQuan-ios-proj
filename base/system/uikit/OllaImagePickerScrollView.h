@@ -21,6 +21,8 @@
 @property(nonatomic,assign) CGFloat cellImageCornerRadius;
 @property(nonatomic,assign) NSUInteger maxImageCount;//default 9;
 
+@property (nonatomic, strong) NSString *TypeShowing; // 用来设置出现视图要出现的效果
+
 @property(nonatomic,weak) IBOutlet id<OllaImagePickerScrollViewDelegate> delegate;
 @property(nonatomic,weak) IBOutlet UIViewController *viewController;// for pickercontroller里的actionsheet, 注意循环引用
 @property(nonatomic,strong) OllaImagePickerController *cameraPickerController;//拍照

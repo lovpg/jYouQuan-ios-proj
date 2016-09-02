@@ -36,7 +36,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+       if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
     {
         UIImage *aimage = [UIImage imageNamed:@"navigation_back_arrow_new"];
         UIImage *image = [aimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -53,6 +53,8 @@
         [self.navigationItem setLeftBarButtonItem:leftItem animated:YES];
         [self.navigationItem setRightBarButtonItem:rightItem animated:YES];
     }
+    
+
     return self;
 }
 
@@ -66,19 +68,37 @@
     else
     {
         [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+        
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+//    self.tabBarController.tabBar.hidden = YES;
+//    self.view.contentMode = UIEdgeInsetsMake(0, 0, -64, 0);
+    [self.tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, -64, 0)];
+    
 }
 
 - (void)viewDidLoad
 {
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    _imagePickerView.TypeShowing = @"openPhotoAlbum";
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight;
+    
+    
     if (!_thumbImage)
     {
        self.imagePickerView.addImage = [UIImage imageNamed:@"publish_addphoto_n"];
+        
+        
     }
     else
     {
+        _thumbImage = [self.params objectForKey:@"videoPic"];
         UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
         videoButton.frame = CGRectMake(5, -1, 62, 60);
         [self.imagePickerView addSubview:videoButton];
@@ -112,11 +132,9 @@
                                                  name:@"LLCatatoryChooseNotification"
                                                object:nil];
     
-    // 测试能不能将MOV转换成MP4
-//    [self convertMOVformattoMP4];
+   
+//    _imagePickerView.TypeShowing = @"openCamera";
     
-//    NSURL *url = [NSURL URLWithString:_videoModel.videoAbsolutePath];
-//    [self convert2Mp4:url];
     
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -396,25 +414,6 @@
 - (void)submitVideo
 {
     NSString *videoPath = [VJ_VideoFolderManager getVideoCompositionFilePathString];
-//
-//    [[LLHTTPWriteOperationManager shareWriteManager] POST:Olla_API_Video_Submit parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//        //获得沙盒中的视频内容
-//        [formData appendPartWithFileURL:[NSURL fileURLWithPath:videoPath] name:@"write you want to writre" fileName:videoPath mimeType:@"video/mpeg4" error:nil];
-//    } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//        NSLog(@"上传视频成功 = %@",responseObject);
-////        if (successBlock)
-////        {
-////            successBlock(responseObject);
-////        }
-//
-//    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-////        if (failureBlock)
-////        {
-////            failureBlock(error);
-////        }
-//        NSLog(@"错误信息 %@", error);
-//
-//    }];
     
     [[LLHTTPRequestOperationManager shareManager] POSTWithURL:Olla_API_Video_Submit parameters:nil data:[NSData dataWithContentsOfFile:videoPath] success:^(NSDictionary *responseObject)
     {

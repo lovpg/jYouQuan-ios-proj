@@ -76,11 +76,13 @@
 
 - (void)viewDidLoad
 {
+    _Typeshowing = KZVideoViewShowTypeSingle;
     _showType = _Typeshowing;
 //    __currentVideoVC = self;
     [VJ_VideoFolderManager createVideoFolderIfNotExist];
     [VJ_VideoFolderManager deleteRecordVideoCache];
     
+    self.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height);
         [self setupSubViews];
         self.view.hidden = NO;
         self.actionView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, CGRectGetHeight([KZVideoConfig viewFrameWithType:_Typeshowing]));
@@ -95,6 +97,33 @@
     
     //初始化摄像头并呈现画面，默认后置摄像头启动
     [self startCamera:AVCaptureDevicePositionBack];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+//    self.tabBarController.tabBar.hidden = YES;
+   
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+//    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (void)hideTabBar {
+    if (self.tabBarController.tabBar.hidden == YES) {
+        return;
+    }
+    UIView *contentView;
+    if ( [[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]] )
+        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+    else
+        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBarController.tabBar.frame.size.height);
+    self.tabBarController.tabBar.hidden = YES;
     
 }
 
@@ -712,16 +741,18 @@
                         UIImage *image = [self thumbnailImageForVideo:exportSession.outputURL atTime:1];
                         
                         
-                        LLShareViewController *shareVC = [[LLShareViewController alloc]init];
-                        shareVC.thumbImage = image;
+//                        LLShareViewController *shareVC = [[LLShareViewController alloc]init];
+//                        shareVC.thumbImage = image;
 //                                self.delegate = shareVC;
                         //        [self.navigationController pushViewController:shareVC animated:YES];
 //                                if (_delegate)
 //                                {
 //                                    [_delegate videoViewController:self didRecordVideo:_currentRecord];
                         //            [self endAniamtion];
-                                    [self.navigationController pushViewController:shareVC animated:YES];
+                        
 //                                }
+                        NSDictionary *dictionary = @{@"videoPic" : image};
+                        [self openURL:[self.url URLByAppendingPathComponent:@"share"] params:dictionary animated:YES];
 
                     });
                     break;

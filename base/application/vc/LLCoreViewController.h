@@ -19,6 +19,12 @@
 - (void)applyDataBinding;
 
 //just for test
--(BOOL)openURL:(NSURL *)url animated:(BOOL)animation;
+- (BOOL)openURL:(NSURL *)url animated:(BOOL)animation;
+
+// 自定义一个push方式推出视图隐藏底部的tab
+- (BOOL)openURLhidesBottomBarWhenPushed:(NSURL *)url animated:(BOOL)animation;
+
+- (BOOL)openURLhidesBottomBarWhenPushed:(NSURL *)url params:(id)params animated:(BOOL)animation;
+
 
 @end

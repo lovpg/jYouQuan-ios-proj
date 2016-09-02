@@ -11,7 +11,7 @@
 @protocol KZVideoViewControllerDelegate;
 
 // 主类  更多自定义..修改KZVideoConfig.h里面的define
-@interface KZVideoViewController : UIViewController
+@interface KZVideoViewController : LLBaseViewController
 
 //@property (nonatomic, strong, readonly) UIView *view;
 

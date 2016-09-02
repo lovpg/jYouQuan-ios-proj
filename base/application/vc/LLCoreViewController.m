@@ -140,6 +140,7 @@
     
 }
 
+
 -(BOOL)openURL:(NSURL *)url params:(id)params animated:(BOOL)animation{
     
     NSString *scheme = [url scheme];
@@ -183,6 +184,62 @@
     }
     
     return [_parentController openURL:url params:params animated:animation];
+}
+
+
+// 推出视图时时push将tabBar隐藏掉
+- (BOOL)openURLhidesBottomBarWhenPushed:(NSURL *)url animated:(BOOL)animation
+{
+    
+    return [self openURLhidesBottomBarWhenPushed:url params:nil animated:animation];
+    
+    
+}
+- (BOOL)openURLhidesBottomBarWhenPushed:(NSURL *)url params:(id)params animated:(BOOL)animation
+{
+    NSString *scheme = [url scheme];
+    if ([scheme isEqualToString:@"pop"])
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+        return true;
+    }
+    else if([scheme isEqualToString:@"present"])
+    {
+        
+        NSString *path = [url firstPathComponentRelativeTo:@"/"];
+        if ([path length]==0)
+        {//dismiss
+            [self dismissViewControllerAnimated:animation completion:nil];
+            return YES;
+        }
+        
+        if ([url.host length] == 0 )
+        {
+            id modalViewController = self;
+            while ([modalViewController presentedViewController])
+            {
+                modalViewController = [modalViewController presentedViewController];
+            }
+            
+            id presentingViewController = [self.context getViewController:url basePath:@"/"];
+            if ([presentingViewController conformsToProtocol:@protocol(IBaseUIViewController)])
+            {
+                [(id<IBaseUIViewController>)presentingViewController setParams:params];
+            }
+            if (presentingViewController)
+            {
+                //                [presentingViewController loadURL:url basePath:@"/" animated:animation];
+                [presentingViewController loadURL:url basePath:@"/" params:params animated:animation];
+                [modalViewController presentViewController:presentingViewController animated:animation completion:nil];
+                return YES;
+            }
+        }
+        
+    }
+    
+//    return [_parentController openURL:url params:params animated:animation];
+    return [_parentController openURLhidesBottomBarWhenPushed:url params:params animated:animation];
+    
 }
 
 -(void)dealloc{

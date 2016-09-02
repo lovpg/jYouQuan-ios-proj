@@ -41,7 +41,8 @@
     self.images = [NSMutableArray arrayWithCapacity:3];
 }
 
-- (void)dealloc{
+- (void)dealloc
+{
     self.cameraPickerController = nil;
 }
 
@@ -104,12 +105,14 @@
 
 - (void)buttonClicked:(id)sender{
     
-    if (![sender isKindOfClass:[UIButton class]]) {
+    if (![sender isKindOfClass:[UIButton class]])
+    {
         return ;
     }
 
     int index = [(UIView *)sender tag];
-    if (index==[self.images count]+1) {//打开相册选择器
+    if (index==[self.images count]+1)
+    {//打开相册选择器
         [self addImageFromCameraOrAlbum];
         return;
     }
@@ -219,6 +222,28 @@
     
     return [UIImage imageWithCGImage:[rep fullResolutionImage]];
 }
+
+
+- (void)setTypeShowing:(NSString *)TypeShowing
+{
+    _TypeShowing = TypeShowing;
+    if ([_TypeShowing isEqualToString:@"openCamera"])
+    {
+        [[self cameraImagePickerController] setImagePickerType:OllaImagePickerCamera];
+        [[self cameraImagePickerController] picker];
+    }
+    
+    else if ([_TypeShowing isEqualToString:@"openPhotoAlbum"])
+    {
+        if (IS_IOS7) {
+            [[self getValidViewControllerForActionSheet] presentViewController:[self albumPickerController] animated:YES completion:^{}];
+        }else{
+            [[self cameraImagePickerController] setImagePickerType:OllaImagePickerPhotoLibrary];
+            [[self cameraImagePickerController] picker];
+        }
+    }
+}
+
 
 @end
 
