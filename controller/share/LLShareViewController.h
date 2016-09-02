@@ -27,7 +27,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *content;
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
 
-- (void)videoViewController:(KZVideoViewController *)videoController didRecordVideo:(KZVideoModel *)videoModel;
+
+@property (nonatomic, strong) NSURL *thumbImageUrl;
+@property (nonatomic, strong) UIImage *thumbImage;
 + (AFHTTPSessionManager *)sharedAFManager;
 
 @end
