@@ -12,7 +12,8 @@
 
 
 // 支持相册相机取图，且支持相册多选(基于CTAssetsPickerController实现)
-@interface OllaImagePickerScrollView : UIView{
+@interface OllaImagePickerScrollView : UIView
+{
 }
 
 @property(nonatomic,strong) UIScrollView *scrollView;

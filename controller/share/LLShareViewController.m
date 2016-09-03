@@ -28,6 +28,7 @@
 }
 
 @property (nonatomic, strong) NSString *videoUrl;
+@property (nonatomic, strong) UIButton *videoButton;
 
 
 
@@ -120,17 +121,21 @@
         else if ([string isEqualToString:@"video"])
         {
             _thumbImage = [self.params objectForKey:@"videoPic"];
-            UIButton *videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            videoButton.frame = CGRectMake(5, -1, 62, 60);
-            [self.imagePickerView addSubview:videoButton];
-            videoButton.image = _thumbImage;
             
-            UIImageView *playImageView = [[UIImageView alloc]init];
-            playImageView.center = videoButton.center;
-            playImageView.bounds = CGRectMake(0, 0, 25, 25);
-            playImageView.image = [UIImage imageNamed:@"videoPlay"];
-            [self.imagePickerView addSubview:playImageView];
-            [videoButton addTarget:self action:@selector(playVideoActions:) forControlEvents:UIControlEventTouchUpInside];
+            UIImage *composeImage = [self composeImg:_thumbImage frontImage:[UIImage imageNamed:@"videoPlay"]];
+            
+            
+            _videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            _videoButton.frame = CGRectMake(5, -1, 62, 60);
+            [self.imagePickerView addSubview:_videoButton];
+            _videoButton.image = composeImage;
+            
+//            UIImageView *playImageView = [[UIImageView alloc]init];
+//            playImageView.center = videoButton.center;
+//            playImageView.bounds = CGRectMake(0, 0, 25, 25);
+//            playImageView.image = [UIImage imageNamed:@"videoPlay"];
+//            [self.imagePickerView addSubview:playImageView];
+            [_videoButton addTarget:self action:@selector(playVideoActions:) forControlEvents:UIControlEventTouchUpInside];
             
             
             self.videoUrl = [self.params objectForKey:@"videoUrl"];
@@ -246,7 +251,7 @@
          NSArray *images = [NSArray array];
          if (_thumbImage)
          {
-             images = @[_thumbImage];
+             images = @[_videoButton.image];
              for (id asset in images)
              {
                  NSData *data = nil;
@@ -464,7 +469,30 @@
     return YES;
 }
 
+// 合成图片的方法(两张图片)
+- (UIImage *)composeImg:(UIImage *)backImage frontImage:(UIImage *)frontImage
+{
+    UIImage *img = frontImage;
+    CGImageRef imgRef = img.CGImage;
+    CGFloat w = CGImageGetWidth(imgRef) + 15;
+    CGFloat h = CGImageGetHeight(imgRef) + 15;
+    
+    //以1.png的图大小为底图
+    UIImage *img1 = backImage;
+    CGImageRef imgRef1 = img1.CGImage;
+    CGFloat w1 = CGImageGetWidth(imgRef1);
+    CGFloat h1 = CGImageGetHeight(imgRef1);
+    
+    //以1.png的图大小为画布创建上下文
+    UIGraphicsBeginImageContext(CGSizeMake(w1, h1));
+    [img1 drawInRect:CGRectMake(0, 0, w1, h1)];//先把1.png 画到上下文中
+    [img drawInRect:CGRectMake((w1-w)/2.0, (h1-h)/2.0, w, h)];//再把小图放在上下文中
+    UIImage *resultImg = UIGraphicsGetImageFromCurrentImageContext();//从当前上下文中获得最终图片
+    UIGraphicsEndImageContext();//关闭上下文
+    
+    return resultImg;
 
+}
 
 
 //- (void)videoViewControllerDidCancel:(KZVideoViewController *)videoController

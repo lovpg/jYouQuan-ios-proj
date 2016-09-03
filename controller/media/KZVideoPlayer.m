@@ -16,10 +16,14 @@
     UIView   *_backGroudView;
     CALayer  *_playStatus;
     
+    UILabel  *_promptLabel;
+    
+    
     BOOL _isPlaying;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame videoUrl:(NSURL *)videoUrl{
+- (instancetype)initWithFrame:(CGRect)frame videoUrl:(NSURL *)videoUrl
+{
     if (self = [super initWithFrame:frame])
     {
         _autoReplay = YES;
@@ -36,7 +40,8 @@
     [self tapAction];
 }
 
-- (void)stop {
+- (void)stop
+{
     if (_isPlaying) {
         [self tapAction];
     }
@@ -74,6 +79,13 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
     [self addGestureRecognizer:tap];
     
+    _promptLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
+    _promptLabel.center = CGPointMake(Screen_Width / 2.0, _ctrlView.bottom + 18);
+    _promptLabel.font = [UIFont systemFontOfSize:15.0f];
+    _promptLabel.text = @"轻触退出";
+    _promptLabel.textColor = [UIColor whiteColor];
+    [_backGroudView addSubview:_promptLabel];
+    _promptLabel.hidden = YES;
     // 设置播放的默认音量值
     _player.volume = 1.0f;
     [_player play];
@@ -125,12 +137,15 @@
 
 - (void)playEnd {
     
-    if (!_autoReplay) {
+    if (!_autoReplay)
+    {
         return;
     }
-    [_player seekToTime:kCMTimeZero completionHandler:^(BOOL finished) {
-//        [_player play];
-        [self removeFromSuperviews];
+    [_player seekToTime:kCMTimeZero completionHandler:^(BOOL finished)
+    {
+        _promptLabel.hidden = NO;
+        [_player play];
+//        [self removeFromSuperviews];
     }];
 }
 

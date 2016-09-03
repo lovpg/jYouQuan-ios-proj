@@ -101,6 +101,7 @@
         if (self.dataItem.vedioUrl.length > 0)
         {
             layoutView.isMovie = YES;
+            layoutView.videoUrl = self.dataItem.vedioUrl;
         }
         
         layoutView.originX = shareTextLabel.left;
