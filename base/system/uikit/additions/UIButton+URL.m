@@ -67,37 +67,35 @@ const static void *placeholderDisableKey = &placeholderDisableKey;
    
      __weak UIButton *wself = self;
 
-   
-    [self sd_setBackgroundImageWithURL: [NSURL URLWithString:remoteImageURL] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:self.placeholder] options:SDWebImageAllowInvalidSSLCertificates|SDWebImageRetryFailed completed:^(UIImage *image,NSError *error,SDImageCacheType cacheType,NSURL *imageURL){
+    [self sd_setBackgroundImageWithURL: [NSURL URLWithString:remoteImageURL]
+                              forState:UIControlStateNormal
+                      placeholderImage:[UIImage imageNamed:self.placeholder]
+                               options:SDWebImageAllowInvalidSSLCertificates|SDWebImageRetryFailed
+                             completed:^(UIImage *image,NSError *error,SDImageCacheType cacheType,NSURL *imageURL)
+    {
 
         
         
-        float width = image.size.width;
-        float height = image.size.height;
-        float _width = wself.frame.size.width;
-        float _height = wself.frame.size.height;
-        NSLog(@"%0.2f,%0.2f,%0.2f,%0.2f", width, height,_width,_height);
-        if(_width > 280 )
-        {
-            _width  = 280;
-            _height = 280;
-            float subWidth = width - _width;
-            float subHeight = height - _width;
-            if(subWidth > subHeight)
-            {
-                float tHeight = _width * (height/width);
-                wself.frame = CGRectMake(0, 0, _width, tHeight);
-            }
-            else
-            {
-                float tWidth = _height * (width/height);
-                wself.frame = CGRectMake(0, 0, tWidth, _height);
-            }
-        }
-        else
-        {
-            
-        }
+//        float width = image.size.width;
+//        float height = image.size.height;
+//        float _width = wself.frame.size.width;
+//        float _height = wself.frame.size.height;
+//        NSLog(@"%0.2f,%0.2f,%0.2f,%0.2f", width, height,_width,_height);
+//        if( _width > 280 )
+//        {
+//            float subWidth = width - _width;
+//            float subHeight = height - _height;
+//            if(subWidth > subHeight)
+//            {
+//                float tHeight = _width * (height/width);
+//                wself.frame = CGRectMake(0, 0, _width, tHeight);
+//            }
+//            else
+//            {
+//                float tWidth = _height * (width/height);
+//                wself.frame = CGRectMake(0, 0, tWidth, _height);
+//            }
+//        }
         
         dispatch_main_sync_safe(^{
             __strong UIButton *sself = wself;

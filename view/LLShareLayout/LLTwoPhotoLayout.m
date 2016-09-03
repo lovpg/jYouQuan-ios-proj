@@ -14,7 +14,8 @@
 - (CGFloat)layoutHeight
 {
     NSUInteger photoCount = [self.photos count];
-    return (self.maxWidth - 44) / photoCount;
+//    return (self.maxWidth - 44) / photoCount;
+     return (self.maxWidth) / photoCount;
 }
 
 - (void)layout{
@@ -22,19 +23,21 @@
     NSUInteger photoCount = [self.photos count];
     CGFloat padding = 5;
    // float width = (self.maxWidth - (photoCount == 2 ? 44 : 48)) / photoCount;
-    float width = (self.maxWidth - (photoCount == 2 ? 44 : 48)) / photoCount;
+    float width = self.maxWidth / photoCount;
     for (int i=0; i<photoCount; i++)
     {
         LLShareImageButton *imageView = [LLShareImageButton buttonWithType:UIButtonTypeCustom];
         imageView.frame = CGRectMake(padding*(i)+i*width, 0, width, width);
-        imageView.cornerRadius = 6.f;
+//        imageView.cornerRadius = 6.f;
+        imageView.cornerRadius = 0.f;
         imageView.tag = i+1;
         [imageView setRemoteImageURL:self.photos[i]];
         [imageView addTarget:self action:@selector(photoSelected:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:imageView];
     }
     
-    self.width = self.maxWidth - 40;
+//    self.width = self.maxWidth - 40;
+    self.width = self.maxWidth;
     self.height = width;
 }
 

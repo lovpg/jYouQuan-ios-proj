@@ -42,7 +42,7 @@
     userSerive = [[LLUserService alloc] init];
     self.imagesContainer.delegate = self;
     [self loadFriendUserInfo];
-    self.backgroundButton.cornerRadius = 5;
+    self.backgroundButton.cornerRadius = 0;
     self.backgroundButton.backgroundColor = [UIColor colorWithRed:0.97 green:0.98 blue:0.98 alpha:1.f];
     self.backgroundButton.borderWidth = 0.5;
     self.backgroundButton.borderColor = [UIColor colorWithRed:0.91 green:0.91 blue:0.91 alpha:1.f];
@@ -62,8 +62,8 @@
     nicknameLabelFrame.size.width = MIN(nameSize.width, 95.0f);
     self.nicknameLabel.frame = CGRectMake(73, 22, MIN(nameSize.width, 95.0f), 21);
     
-    self.genderImageView.originX = self.nicknameLabel.originX + self.nicknameLabel.width + 5;
-    self.countryImageView.originX = self.genderImageView.originX + self.genderImageView.width + 5;
+//    self.genderImageView.originX = self.nicknameLabel.originX + self.nicknameLabel.width + 5;
+//    self.countryImageView.originX = self.genderImageView.originX + self.genderImageView.width + 5;
     
     _timeLabel.text = [[NSDate dateWithTimeIntervalSince1970:self.share.posttime/1000] formatRelativeTime];
     self.tagsButton.text =  [LLAppHelper getNamefromCategory:self.share.tags];
@@ -96,10 +96,12 @@
     self.shareDetailLabel.height = labelSize.height + 15;
     
     // 重新做图片布局
-    if (self.share.imageList.count > 0) {
+    if (self.share.imageList.count > 0)
+    {
         
         self.imagesContainer.originY = self.shareDetailLabel.originY + self.shareDetailLabel.height + 25.f / 2;
-        self.imagesContainer.originX = self.shareDetailLabel.originX;
+//        self.imagesContainer.originX = self.shareDetailLabel.originX;
+        self.imagesContainer.originX = 0;
         if (!layoutManager) {
             layoutManager = [[LLPhotoLayoutManager alloc] init];
         }
@@ -123,6 +125,13 @@
         layoutView.originX = 0;
         layoutView.originY = 0;
         
+        if (self.share.vedioUrl.length > 0)
+        {
+            layoutView.isMovie = YES;
+            layoutView.videoUrl = self.share.vedioUrl;
+        }
+        
+        
         self.imagesContainer.width = layoutView.width;
         self.imagesContainer.height = [layoutView layoutHeight];
         [self.imagesContainer addSubview:layoutView];
@@ -134,7 +143,7 @@
     {  // 带有地址
         
         self.locationContainerView.hidden = NO;
-        self.locationContainerView.originX = 11;
+//        self.locationContainerView.originX = 11;
         
         // 判断是否带图片,带图片则locationView的位置根据图片位置调整,不带则根据share detail text label的位置来调整
         if (self.share.imageList.count > 0)
@@ -221,7 +230,7 @@
     if (self.share.imageList.count > 0) {
         
         self.imagesContainer.originY = self.shareDetailLabel.originY + self.shareDetailLabel.height + padding;
-        self.imagesContainer.originX = self.shareDetailLabel.originX;
+//        self.imagesContainer.originX = self.shareDetailLabel.originX;
         
         NSLog(@"imagesContainer.originX=%f,imagesContainer.originY=%f,shareDetailLabel.originY=%f,shareDetailLabel.originX=%f",self.imagesContainer.originX ,self.imagesContainer.originY,self.shareDetailLabel.originX,self.shareDetailLabel.originY);
         
@@ -245,7 +254,7 @@
         
         self.imagesContainer.width = layoutView.width;
         self.imagesContainer.height = [layoutView layoutHeight];
-        [self.imagesContainer addSubview:layoutView];
+//        [self.imagesContainer addSubview:layoutView];
         
         height += (self.imagesContainer.height + padding);
     }

@@ -85,15 +85,15 @@
     [VJ_VideoFolderManager deleteRecordVideoCache];
     
     self.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height);
-        [self setupSubViews];
-        self.view.hidden = NO;
-        self.actionView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, CGRectGetHeight([KZVideoConfig viewFrameWithType:_Typeshowing]));
-        [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveLinear animations:^{
-            self.actionView.transform = CGAffineTransformIdentity;
-            self.view.backgroundColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.4];
-        } completion:^(BOOL finished) {
-            [self VideoViewDidAppear];
-        }];
+    [self setupSubViews];
+    self.view.hidden = NO;
+    self.actionView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, CGRectGetHeight([KZVideoConfig viewFrameWithType:_Typeshowing]));
+    [UIView animateWithDuration:0.3 delay:0.1 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.actionView.transform = CGAffineTransformIdentity;
+        self.view.backgroundColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.4];
+    } completion:^(BOOL finished) {
+        [self VideoViewDidAppear];
+    }];
 
 //    [self setupVideo];
     

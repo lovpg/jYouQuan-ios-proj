@@ -39,7 +39,7 @@
 {
     [super layoutSubviews];
     
-    shareBgImageView.cornerRadius = 3.f;
+    shareBgImageView.cornerRadius = 0.f;
     shareBgImageView.borderWidth = 1.f;
     shareBgImageView.borderColor = [UIColor colorWithRed:220 / 255.f green:220 / 255.f blue:220 / 255.f alpha:1.f];
     
@@ -95,8 +95,15 @@
         }
         
         LLPhotoLayout *layoutView = layoutManager.photoLayout;
-        layoutView.originX = shareTextLabel.left;
+//        layoutView.originX = shareTextLabel.left;
+        layoutView.originX = 0;
         layoutView.originY = y;
+        
+        if (self.dataItem.vedioUrl.length > 0)
+        {
+            layoutView.isMovie = YES;
+            layoutView.videoUrl = self.dataItem.vedioUrl;
+        }
         [self addSubview:layoutView];
         
         y += ([layoutView layoutHeight] + spacing2);
