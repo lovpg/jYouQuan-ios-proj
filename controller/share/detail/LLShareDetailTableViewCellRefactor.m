@@ -106,8 +106,18 @@
             layoutManager = [[LLPhotoLayoutManager alloc] init];
         }
         
-        if ([self.share.imageList count] == 1) {
-            layoutManager.photos = @[[LLAppHelper oneShareThumbImageURLWithString:self.share.imageList.firstObject]];
+        if ([self.share.imageList count] == 1)
+        {
+            if (self.share.vedioUrl.length > 0)
+            {
+                NSString *imageUrl = self.share.imageList.firstObject;
+                NSArray *imageArr = [NSArray arrayWithObject:imageUrl];
+                layoutManager.photos = imageArr;
+            }
+            else
+            {
+                layoutManager.photos = @[[LLAppHelper oneShareThumbImageURLWithString:self.share.imageList.firstObject]];
+            }
         }
         else
         {
@@ -238,15 +248,27 @@
             layoutManager = [[LLPhotoLayoutManager alloc] init];
         }
         
-        if ([self.share.imageList count] == 1) {
-            layoutManager.photos = @[[LLAppHelper oneShareThumbImageURLWithString:self.share.imageList.firstObject]];
-        } else {
-            NSMutableArray *thumbImages = [NSMutableArray array];
-            for (NSString *originImage in self.share.imageList) {
-                [thumbImages addObject:[LLAppHelper shareThumbMidImageURLWithString:originImage]];
-            }
-            layoutManager.photos = thumbImages;
-        }
+//        if ([self.share.imageList count] == 1)
+//        {
+//            if (self.share.vedioUrl.length > 0)
+//            {
+//                NSString *imageUrl = self.share.imageList.firstObject;
+//                NSArray *imageArr = [NSArray arrayWithObject:imageUrl];
+//                layoutManager.photos = imageArr;
+//            }
+//            else
+//            {
+//                layoutManager.photos = @[[LLAppHelper oneShareThumbImageURLWithString:self.share.imageList.firstObject]];
+//            }
+//        }
+//        else
+//        {
+//            NSMutableArray *thumbImages = [NSMutableArray array];
+//            for (NSString *originImage in self.share.imageList) {
+//                [thumbImages addObject:[LLAppHelper shareThumbMidImageURLWithString:originImage]];
+//            }
+//            layoutManager.photos = thumbImages;
+//        }
         
         LLPhotoLayout *layoutView = layoutManager.photoLayout;
         layoutView.originX = 0;

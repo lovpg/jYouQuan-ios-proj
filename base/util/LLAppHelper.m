@@ -194,7 +194,8 @@
     return [key stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@",extention] withString:[NSString stringWithFormat:@"%@.%@",thumb,extention]];
 }
 
-+ (NSString *)imImageURLWithThumbString:(NSString *)key{
++ (NSString *)imImageURLWithThumbString:(NSString *)key
+{
     return [key stringByReplacingOccurrencesOfString:@"_120x160" withString:@""];
 }
 

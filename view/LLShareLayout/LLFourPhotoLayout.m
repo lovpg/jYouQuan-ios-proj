@@ -11,7 +11,7 @@
 @implementation LLFourPhotoLayout
 
 - (CGFloat)layoutHeight {
-    return self.maxWidth - 40;
+    return self.maxWidth;
 }
 
 // 2行
@@ -20,7 +20,7 @@
     NSUInteger photoCount = [self.photos count];
     CGFloat padding = 5.f;
     
-    CGFloat width = (self.maxWidth - 44) / 2;
+    CGFloat width = self.maxWidth / 2;
     
     CGRect rect = CGRectZero;
     for (int i=0; i<photoCount; i++) {
@@ -29,7 +29,8 @@
         rect = CGRectMake(x, y, width,width);
         LLShareImageButton *imageView = [LLShareImageButton buttonWithType:UIButtonTypeCustom];
         imageView.frame = rect;
-        imageView.cornerRadius = 6.f;
+//        imageView.cornerRadius = 6.f;
+         imageView.cornerRadius = 0.f;
         imageView.tag = i+1;
         [imageView setRemoteImageURL:self.photos[i]];
         [imageView addTarget:self action:@selector(photoSelected:) forControlEvents:UIControlEventTouchUpInside];
