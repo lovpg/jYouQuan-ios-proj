@@ -41,7 +41,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    shareBgImageView.cornerRadius = 3.f;
+    shareBgImageView.cornerRadius = 0.f;
     shareBgImageView.borderWidth = 1.f;
     shareBgImageView.borderColor = [UIColor colorWithRed:220 / 255.f green:220 / 255.f blue:220 / 255.f alpha:1.f];
     
@@ -85,17 +85,29 @@
         // 原图==》缩略图
         if ([self.dataItem.imageList count] == 1)
         {
-            layoutManager.photos = @[[LLAppHelper oneShareThumbImageURLWithString:self.dataItem.imageList.firstObject]];
+            if (self.dataItem.vedioUrl.length > 0)
+            {
+                NSString *imageUrl = self.dataItem.imageList.firstObject;
+                NSArray *imageArr = [NSArray arrayWithObject:imageUrl];
+                layoutManager.photos = imageArr;
+            }
+            else
+            {
+                layoutManager.photos = @[[LLAppHelper oneShareThumbImageURLWithString:self.dataItem.imageList.firstObject]];
+            }
         }
         else
         {
             NSMutableArray *thumbImages = [NSMutableArray array];
             for (NSString *originImage in self.dataItem.imageList)
             {
-                [thumbImages addObject:[LLAppHelper shareThumbMidImageURLWithString:originImage]];
+                [thumbImages addObject:[LLAppHelper shareThumbImageURLWithString:originImage]];
             }
             layoutManager.photos = thumbImages;
         }
+        
+        
+        
         
         LLPhotoLayout *layoutView = layoutManager.photoLayout;
         if (self.dataItem.vedioUrl.length > 0)
@@ -104,7 +116,7 @@
             layoutView.videoUrl = self.dataItem.vedioUrl;
         }
         
-        layoutView.originX = shareTextLabel.left;
+        layoutView.originX = 0;
         layoutView.originY = y;
         [self addSubview:layoutView];
         
@@ -161,10 +173,10 @@
         likeImageView.image = [UIImage imageNamed:@"praise_count"];
     }
     
-    if(![self.dataItem.user.uid isEqualToString:@"4463704"])
-    {
-        self.followButton.text = @"置顶";
-    }
+//    if(![self.dataItem.user.uid isEqualToString:@"4463704"])
+//    {
+//        self.followButton.text = @"置顶";
+//    }
     
     timeLabel.text = [NSString stringWithFormat:@"%f", self.dataItem.posttime];
     timeLabel.text = [self.dataItem timeString];

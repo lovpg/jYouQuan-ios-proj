@@ -15,7 +15,7 @@
 //图片还要下载，如何确定高度
 - (CGFloat)layoutHeight
 {
-    float width = self.maxWidth - 90;
+    float width = self.maxWidth;
     return width;
 }
 
@@ -28,15 +28,16 @@
 
     imageView.placeholder = @"headphoto_default_280x280";
     imageView.frame = CGRectMake(0, 0, width, width);
-    imageView.cornerRadius = 6.f;
+//    imageView.cornerRadius = 6.f;
+    imageView.cornerRadius = 0.f;
     imageView.tag = 1;
     [self addSubview:imageView];
     self.width = width;
     self.height = width;
     
-    if ([self.photos count]) {
+    if ([self.photos count])
+    {
         [imageView setRemoteImageURL:self.photos[0]];
-
         [imageView addTarget:self action:@selector(photoSelected:) forControlEvents:UIControlEventTouchUpInside];
     }
 }

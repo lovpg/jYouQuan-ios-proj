@@ -194,7 +194,8 @@
     return [key stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@",extention] withString:[NSString stringWithFormat:@"%@.%@",thumb,extention]];
 }
 
-+ (NSString *)imImageURLWithThumbString:(NSString *)key{
++ (NSString *)imImageURLWithThumbString:(NSString *)key
+{
     return [key stringByReplacingOccurrencesOfString:@"_120x160" withString:@""];
 }
 
@@ -202,7 +203,7 @@
 + (NSString *)oneShareThumbImageURLWithString:(NSString *)key {
     NSString *extention = [key pathExtension];
 //    NSString *thumb = @"_280x280_crop";
-    NSString *thumb = @"";
+    NSString *thumb = @"_320x320_crop";
     
     return [key stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@",extention] withString:[NSString stringWithFormat:@"%@.%@",thumb,extention]];
 }
@@ -210,7 +211,7 @@
 + (NSString *)shareThumbImageURLWithString:(NSString *)key
 {
     NSString *extention = [key pathExtension];
-    NSString *thumb = @"_160x160_crop";// 80x80较模糊
+    NSString *thumb = @"_240x240_crop";// 80x80较模糊//_160x160_crop
     
     return [key stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@",extention] withString:[NSString stringWithFormat:@"%@.%@",thumb,extention]];
 }
