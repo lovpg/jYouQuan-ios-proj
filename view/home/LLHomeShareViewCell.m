@@ -18,6 +18,7 @@
     LLPhotoLayoutManager *layoutManager;
     LLThirdCollection *collection;
     LLUserService *userService;
+    LLUser *currentUser;
 }
 
 -(void)awakeFromNib
@@ -41,6 +42,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+     timeLabel.hidden = YES;
     shareBgImageView.cornerRadius = 0.f;
     shareBgImageView.borderWidth = 1.f;
     shareBgImageView.borderColor = [UIColor colorWithRed:220 / 255.f green:220 / 255.f blue:220 / 255.f alpha:1.f];
@@ -178,16 +180,20 @@
 //        self.followButton.text = @"置顶";
 //    }
     
-    timeLabel.text = [NSString stringWithFormat:@"%f", self.dataItem.posttime];
-    timeLabel.text = [self.dataItem timeString];
+//    timeLabel.text = [NSString stringWithFormat:@"%f", self.dataItem.posttime];
+//    timeLabel.text = [self.dataItem timeString];
     
      LLUser *user = [userService getMe];
     if(![user.uid isEqualToString:@"4463704"])
     {
         self.optButton.hidden = YES;
     }
+    [self loadFriendUserInfo];
 
 }
+
+
+
 
 - (float)shareCellHeight:(LLShare *)dataItem {
     
@@ -224,6 +230,32 @@
     }
     
     return height + bottomMargin;
+}
+
+- (void) loadFriendUserInfo
+{
+    LLSimpleUser *simpleUser = self.dataItem.user;
+    NSLog(@"%@", simpleUser.nickname);
+    [userService get:simpleUser.uid
+            success:^(LLUser *user)
+             {
+                 currentUser = user;
+                 if ( ![[[userService getMe] uid] isEqualToString:self.dataItem.user.uid] && !currentUser.follow )
+                 {
+                     self.followButton.text =  @"+ 关注";
+                 }
+                 else
+                 {
+
+                     timeLabel.hidden = NO;
+                     timeLabel.text = [[NSDate dateWithTimeIntervalSince1970:self.dataItem.posttime/1000] formatRelativeTime];
+                     self.followButton.hidden = YES;
+                 }
+             }
+               fail:^(NSError *error)
+             {
+                 NSLog(@"%@",error);
+             }];
 }
 
 //相对布局，这里打住
@@ -287,14 +319,66 @@
 }
 - (IBAction)followClicked:(id)sender
 {
-
-
+       currentUser.follow?[self unfollow:self.dataItem.user]:[self follow:self.dataItem.user];
 }
+
+- (void)unfollow:(LLSimpleUser *)user {
+    
+    [[LLHTTPRequestOperationManager shareManager]
+     GETWithURL:Olla_API_Unfollow
+     parameters:@{@"uid":user.uid}
+     success:^(id datas,BOOL hasNext)
+    {
+         self.followButton.text = @"+ 关注";
+         
+         NSString *message = @"已取消关注.";
+         [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
+         
+         
+     }
+     failure:^(NSError *error)
+    {
+
+          //TODO: 添加关注失败
+          NSString *message = @"取消关注失败.";
+          [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
+          self.followButton.text = @"- 取关";
+     }];
+}
+
+- (void)follow:(LLSimpleUser *)user
+{
+    
+    [[LLHTTPRequestOperationManager shareManager]
+     GETWithURL:Olla_API_Follow
+     parameters:@{@"uid":user.uid}
+     success:^(id datas,BOOL hasNext)
+    {
+        timeLabel.hidden = NO;
+        timeLabel.text = [[NSDate dateWithTimeIntervalSince1970:self.dataItem.posttime/1000] formatRelativeTime];
+        self.followButton.hidden = YES;
+         NSString *message = @"关注成功.";
+         [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
+         
+     } failure:^(NSError *error){
+         DDLogError(@"添加关注失败：%@",error);
+         //[hud removeFromSuperview];
+         
+          NSString *message = @"关注失败，请重试.";
+          [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
+          self.followButton.text = @"+ 关注";
+     }];
+}
+
 - (IBAction)toThirdCollection:(id)sender
 {
     if(collection)
     {
         [self routerEventWithName:LLMyCenterShareThirdPlatfomButtonClickEvent userInfo:@{@"dataItem":self.dataItem}];
+    }
+    else
+    {
+        [self routerEventWithName:LLMyCenterShareCommentClickEvent userInfo:@{@"dataItem":self.dataItem}];
     }
 }
 - (IBAction)optAction:(id)sender

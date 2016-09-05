@@ -568,12 +568,6 @@ LLShareDataSourceDelegate>
         LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
         [self openURL:[NSURL URLWithString:@"present:///root/share-detail" ] params:dataItem animated:YES];
     }
-    else if ([eventName isEqualToString:LLMyCenterShareCommentClickEvent])
-    {  // 点击评论
-        // 先判断是否填写资料
-        LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
-        [self openURL:[NSURL URLWithString:@"present:///root/share-detail" ] params:dataItem animated:YES];
-    } //点击广告
     else if ([eventName isEqualToString:LLScrollBannerButtonClickEvent])
     {
         // 跳到share详情

@@ -829,11 +829,9 @@ static NSArray *SCOPE = nil;
     {  // 分享
         
         LLShare *dataItem = [userInfo objectForKey:@"share"];
-//        if (dataItem.bar) {
-//            [self shareWithPost:dataItem];
-//        } else {
-       //     [self shareWithShare:dataItem];
-      //  }
+
+        [self shareWithShare:dataItem];
+        
     }
     else if ([eventName isEqualToString:LLMyCenterShareAvatarButtonClickEvent])
     {
@@ -841,7 +839,7 @@ static NSArray *SCOPE = nil;
         if(user.uid == self.user.uid)return;
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[user dictionaryRepresentation]];
         [dict setValue:@1 forKey:@"flag"];
-        [self openURL:[NSURL URLWithString:@"present:///root/im"] params:user animated:YES];
+        [self openURL:[NSURL URLWithString:@"present:///root/im"] params:user animated:NO];
 
     }
     else if ([eventName isEqualToString:LLMyCenterShareRewardButtonClickEvent])
@@ -905,8 +903,8 @@ static NSArray *SCOPE = nil;
 //    [shareView show];
 }
 
-- (void)shareWithShare:(LLShare *)dataItem {
-//    
+- (void)shareWithShare:(LLShare *)dataItem
+{
 //    NSString *host = [LLAppHelper baseAPIURL];
 //    NSString *url = [NSString stringWithFormat:@"%@/post/page.do?postId=%@", host, dataItem.shareId];
 //    
