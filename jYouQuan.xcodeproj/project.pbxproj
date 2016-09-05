@@ -23,7 +23,6 @@
 		9AD6121B1D7431520052350D /* KZVideoSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612131D7431520052350D /* KZVideoSupport.m */; };
 		9AD6121C1D7431520052350D /* KZVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612151D7431520052350D /* KZVideoViewController.m */; };
 		9AD6121D1D7431520052350D /* LLMediaRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612171D7431520052350D /* LLMediaRecordController.m */; };
-		9AF1C4C81D7959E8006FBDFD /* LLImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */; };
 		9E3F4C6D1D3F4EEB00AAF9F8 /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */; };
 		9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F1271D45A04200F89637 /* jion_jbz.png */; };
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
@@ -643,8 +642,6 @@
 		9AD612151D7431520052350D /* KZVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoViewController.m; sourceTree = "<group>"; };
 		9AD612161D7431520052350D /* LLMediaRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMediaRecordController.h; sourceTree = "<group>"; };
 		9AD612171D7431520052350D /* LLMediaRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMediaRecordController.m; sourceTree = "<group>"; };
-		9AF1C4C61D7959E8006FBDFD /* LLImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLImagePickerViewController.h; sourceTree = "<group>"; };
-		9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLImagePickerViewController.m; sourceTree = "<group>"; };
 		9E3F4C031D3F4EEB00AAF9F8 /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
 		9E3F4C041D3F4EEB00AAF9F8 /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerDelegate.h; sourceTree = "<group>"; };
 		9E3F4C051D3F4EEB00AAF9F8 /* EaseMob+CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseMob+CallService.h"; sourceTree = "<group>"; };
@@ -1875,8 +1872,6 @@
 				9AD612151D7431520052350D /* KZVideoViewController.m */,
 				9AD612161D7431520052350D /* LLMediaRecordController.h */,
 				9AD612171D7431520052350D /* LLMediaRecordController.m */,
-				9AF1C4C61D7959E8006FBDFD /* LLImagePickerViewController.h */,
-				9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -4868,7 +4863,6 @@
 				9E4881591D3DBA2A003AEB2F /* NSArray+Helper.m in Sources */,
 				9EBC47431D3F0C4100541F23 /* LLEMIMViewController.m in Sources */,
 				9E4880E11D3DBA2A003AEB2F /* EXTADT.m in Sources */,
-				9AF1C4C81D7959E8006FBDFD /* LLImagePickerViewController.m in Sources */,
 				9EBC47521D3F0C4100541F23 /* LLSendMessageQueue.m in Sources */,
 				9E48825C1D3DC2E3003AEB2F /* LLImDAO.m in Sources */,
 				9E487E781D3DB80B003AEB2F /* AppDelegate.m in Sources */,
