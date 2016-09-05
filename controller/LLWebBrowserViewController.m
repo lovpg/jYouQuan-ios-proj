@@ -7,6 +7,7 @@
 //
 
 #import "LLWebBrowserViewController.h"
+#import "LLThirdCollection.h"
 
 @interface LLWebBrowserViewController ()
 
@@ -19,7 +20,12 @@
     [super viewDidLoad];
 //    [self.navigationController setNavigationBarHidden:NO animated:NO];
     self.webView.scalesPageToFit = YES;//自动对页面进行缩放以适应屏幕电话号码，单击可以拨打
-    NSURL* url = [NSURL URLWithString:@"http://app.lbslm.com/protocol.html"];//创建URL
+    LLThirdCollection *collection = self.params;
+    NSURL *url = [NSURL URLWithString:@"http://app.lbslm.com/protocol.html"];//创建URL
+    if(collection)
+    {
+        url = [NSURL URLWithString:collection.url];
+    }
     NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
     [self.webView loadRequest:request];
 }
@@ -30,7 +36,16 @@
 }
 - (IBAction)back:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if([[self.url relativeString] hasPrefix:@"present:"])
+    {
+        [self.navigationController dismissViewControllerAnimated:NO completion:^{
+            
+        }];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 /*

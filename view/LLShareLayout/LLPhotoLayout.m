@@ -49,20 +49,7 @@
     
     if (self.isMovie)
     {
-//        MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
-//        NSMutableArray *mjPhotos = [NSMutableArray array];
-//        for (int i = 0; i < self.photos.count; i++)
-//        {
-//            UIView *subView = (i<6)?self.subviews[i]:nil;//最多显示6张图
-//            MJPhoto *photo = [[MJPhoto alloc] init];
-//            photo.url = [NSURL URLWithString:[LLAppHelper shareImageURLWithThumbString:self.photos[i]]];
-//            photo.placeholder = [(UIButton *)subView image];
-//            photo.startFrame = [[UIApplication sharedApplication].keyWindow convertRect:subView.frame fromView:subView.superview];
-//            [mjPhotos addObject:photo];
-//        }
-//        browser.photos = mjPhotos;
-//        browser.currentPhotoIndex = index;
-//        [browser show];
+
         NSURL *videoPlayUrl = [NSURL URLWithString:self.videoUrl];
         KZVideoPlayer *player = [[KZVideoPlayer alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height) videoUrl:videoPlayUrl];
         //    [self.view addSubview:player];
@@ -78,6 +65,7 @@
         {
            UIView *subView = (i<6)?self.subviews[i]:nil;//最多显示6张图
            MJPhoto *photo = [[MJPhoto alloc] init];
+//           photo.url = [NSURL URLWithString:[LLAppHelper shareImageURLWithThumbString:self.photos[i]]];
            photo.url = [NSURL URLWithString:[LLAppHelper shareImageURLWithThumbString:self.photos[i]]];
            photo.placeholder = [(UIButton *)subView image];
            photo.startFrame = [[UIApplication sharedApplication].keyWindow convertRect:subView.frame fromView:subView.superview];

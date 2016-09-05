@@ -23,6 +23,9 @@
 		9AD6121C1D7431520052350D /* KZVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612151D7431520052350D /* KZVideoViewController.m */; };
 		9AD6121D1D7431520052350D /* LLMediaRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612171D7431520052350D /* LLMediaRecordController.m */; };
 		9AF1C4C81D7959E8006FBDFD /* LLImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */; };
+		9E3931481D7CFF8700E2511E /* LbslmWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */; };
+		9E3931491D7CFF8700E2511E /* LbslmWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */; };
+		9E39314B1D7D0DE300E2511E /* transfer_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E39314A1D7D0DE300E2511E /* transfer_24.png */; };
 		9E3F4C6D1D3F4EEB00AAF9F8 /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */; };
 		9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F1271D45A04200F89637 /* jion_jbz.png */; };
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
@@ -644,6 +647,10 @@
 		9AD612171D7431520052350D /* LLMediaRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMediaRecordController.m; sourceTree = "<group>"; };
 		9AF1C4C61D7959E8006FBDFD /* LLImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLImagePickerViewController.h; sourceTree = "<group>"; };
 		9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLImagePickerViewController.m; sourceTree = "<group>"; };
+		9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LbslmWebViewController.xib; path = ../LbslmWebViewController.xib; sourceTree = "<group>"; };
+		9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LbslmWebViewController.m; path = ../LbslmWebViewController.m; sourceTree = "<group>"; };
+		9E3931471D7CFF8700E2511E /* LbslmWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LbslmWebViewController.h; path = ../LbslmWebViewController.h; sourceTree = "<group>"; };
+		9E39314A1D7D0DE300E2511E /* transfer_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_24.png; sourceTree = "<group>"; };
 		9E3F4C031D3F4EEB00AAF9F8 /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
 		9E3F4C041D3F4EEB00AAF9F8 /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerDelegate.h; sourceTree = "<group>"; };
 		9E3F4C051D3F4EEB00AAF9F8 /* EaseMob+CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseMob+CallService.h"; sourceTree = "<group>"; };
@@ -4074,6 +4081,9 @@
 		9EF2192B1D41F8FF0015995C /* widet */ = {
 			isa = PBXGroup;
 			children = (
+				9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */,
+				9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */,
+				9E3931471D7CFF8700E2511E /* LbslmWebViewController.h */,
 				9EF2191C1D41EAD70015995C /* LLLocationChooseViewController.h */,
 				9EF2191D1D41EAD70015995C /* LLLocationChooseViewController.m */,
 				9EF2191E1D41EAD70015995C /* LLLocationChooseViewController.xib */,
@@ -4186,6 +4196,7 @@
 		9EF95E2E1D3E16B7000DBD15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E39314A1D7D0DE300E2511E /* transfer_24.png */,
 				9E641BF51D7ACFD1000709C3 /* videoPlay.png */,
 				9A5B33B11D7832E700DE9F51 /* media */,
 				9E467B771D76B21A00D000D7 /* olla__dialogue_triangle@2x.png */,
@@ -4398,6 +4409,7 @@
 				9E6C075C1D3F66F100628BE9 /* chatBar_faceSelected@2x.png in Resources */,
 				9EBC476A1D3F0C4100541F23 /* keyboard_voice_release@2x.png in Resources */,
 				9EBC47751D3F0C4100541F23 /* record_animate_5.png in Resources */,
+				9E39314B1D7D0DE300E2511E /* transfer_24.png in Resources */,
 				9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */,
 				9E467B781D76B21A00D000D7 /* olla__dialogue_triangle@2x.png in Resources */,
 				9EF2193A1D42146E0015995C /* LLHotShareViewController.xib in Resources */,
@@ -4455,6 +4467,7 @@
 				9EF95E381D3E1788000DBD15 /* tab_index_new.png in Resources */,
 				9EBC47171D3F0C4000541F23 /* LLPostMessageToolBar.xib in Resources */,
 				9E4881DE1D3DC0C7003AEB2F /* sr_refresh@2X.png in Resources */,
+				9E3931481D7CFF8700E2511E /* LbslmWebViewController.xib in Resources */,
 				9E4880DF1D3DBA2A003AEB2F /* CTAssetsPickerController.strings in Resources */,
 				9EBC47601D3F0C4100541F23 /* keyboard_popup.png in Resources */,
 				9EF95E431D3E1A56000DBD15 /* tabbar_me_new.png in Resources */,
@@ -4963,6 +4976,7 @@
 				9EF371041D4281A800A96215 /* LLRoundingCornersButton.m in Sources */,
 				9E4881381D3DBA2A003AEB2F /* LLBaseTabBarController.m in Sources */,
 				9EBC46221D3F096F00541F23 /* LLAppHelper.m in Sources */,
+				9E3931491D7CFF8700E2511E /* LbslmWebViewController.m in Sources */,
 				9E953BCD1D3F5ADB00EA9BD7 /* EMCDDeviceManager+Remind.m in Sources */,
 				9E4880DA1D3DBA2A003AEB2F /* CTAssetsPickerController.m in Sources */,
 				9E4882941D3DC52B003AEB2F /* LLChatRecord.m in Sources */,
