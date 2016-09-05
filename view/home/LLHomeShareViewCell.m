@@ -166,14 +166,14 @@
     //    }
     
     // self.likeLogo.image = self.share.good ? [UIImage imageNamed:@"share_like_new_state_true"] : [UIImage imageNamed:@"share_like_new_state_false"];
-    if (self.dataItem.good)
-    {
-        likeImageView.image = [UIImage imageNamed:@"praise_count"];
-    }
-    else
-    {
-        likeImageView.image = [UIImage imageNamed:@"praise_count"];
-    }
+//    if (self.dataItem.good)
+//    {
+//        likeImageView.image = [UIImage imageNamed:@"praise_count"];
+//    }
+//    else
+//    {
+//        likeImageView.image = [UIImage imageNamed:@"praise_count"];
+//    }
     
 //    if(![self.dataItem.user.uid isEqualToString:@"4463704"])
 //    {
@@ -187,6 +187,10 @@
     if(![user.uid isEqualToString:@"4463704"])
     {
         self.optButton.hidden = YES;
+    }
+    if(!self.dataItem.top)
+    {
+        topImageView.hidden = YES;
     }
     [self loadFriendUserInfo];
 

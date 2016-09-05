@@ -7,15 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="KGk-i7-Jjw" customClass="LLHomeShareViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="251"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="KGk-i7-Jjw" customClass="LLHomeShareViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="250.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DzI-uk-gIv">
-                        <rect key="frame" x="0.0" y="10" width="320" height="241"/>
+                        <rect key="frame" x="0.0" y="10" width="320" height="240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <state key="normal">
                             <color key="titleColor" red="1" green="0.98926134590000003" blue="0.97710014020000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="5KA-Ro-py2" customClass="OllaImageLimitGridView">
-                        <rect key="frame" x="0.0" y="118" width="320" height="36"/>
+                        <rect key="frame" x="0.0" y="118" width="320" height="35"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -79,7 +79,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <view contentMode="scaleToFill" id="qgc-We-zgP">
-                        <rect key="frame" x="8" y="206" width="312" height="36"/>
+                        <rect key="frame" x="8" y="205" width="312" height="36"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hU4-HX-8Wp">
@@ -156,7 +156,7 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Tz-8g-PYj">
-                        <rect key="frame" x="169" y="31" width="64" height="30"/>
+                        <rect key="frame" x="176" y="31" width="64" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.1553292228" green="0.63857323229999996" blue="0.62120132829999997" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -208,6 +208,10 @@
                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wonderful.png" id="tS2-1m-gN3">
+                        <rect key="frame" x="0.0" y="10" width="33" height="33"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -230,8 +234,9 @@
                 <outlet property="shareTextLabel" destination="vXF-B9-IlD" id="bK1-9p-0Fl"/>
                 <outlet property="tagsButton" destination="fnT-02-WN8" id="AA3-Kv-U1h"/>
                 <outlet property="timeLabel" destination="rH6-mD-M7z" id="uyM-Uk-u58"/>
+                <outlet property="topImageView" destination="tS2-1m-gN3" id="AMk-cS-3Ah"/>
             </connections>
-            <point key="canvasLocation" x="222" y="203.5"/>
+            <point key="canvasLocation" x="222" y="204"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -241,5 +246,6 @@
         <image name="praise_count.png" width="32" height="32"/>
         <image name="see_count.png" width="32" height="32"/>
         <image name="share_new_gray_1.png" width="28" height="28"/>
+        <image name="wonderful.png" width="64" height="64"/>
     </resources>
 </document>

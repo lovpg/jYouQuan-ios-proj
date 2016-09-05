@@ -23,6 +23,8 @@
 		9AD6121C1D7431520052350D /* KZVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612151D7431520052350D /* KZVideoViewController.m */; };
 		9AD6121D1D7431520052350D /* LLMediaRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612171D7431520052350D /* LLMediaRecordController.m */; };
 		9AF1C4C81D7959E8006FBDFD /* LLImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */; };
+		9E2BE8011D7D770E007805CB /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2BE8001D7D770E007805CB /* top.png */; };
+		9E2BE8031D7D7826007805CB /* wonderful.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2BE8021D7D7826007805CB /* wonderful.png */; };
 		9E3931481D7CFF8700E2511E /* LbslmWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */; };
 		9E3931491D7CFF8700E2511E /* LbslmWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */; };
 		9E39314B1D7D0DE300E2511E /* transfer_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E39314A1D7D0DE300E2511E /* transfer_24.png */; };
@@ -647,6 +649,8 @@
 		9AD612171D7431520052350D /* LLMediaRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMediaRecordController.m; sourceTree = "<group>"; };
 		9AF1C4C61D7959E8006FBDFD /* LLImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLImagePickerViewController.h; sourceTree = "<group>"; };
 		9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLImagePickerViewController.m; sourceTree = "<group>"; };
+		9E2BE8001D7D770E007805CB /* top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top.png; sourceTree = "<group>"; };
+		9E2BE8021D7D7826007805CB /* wonderful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wonderful.png; sourceTree = "<group>"; };
 		9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LbslmWebViewController.xib; path = ../LbslmWebViewController.xib; sourceTree = "<group>"; };
 		9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LbslmWebViewController.m; path = ../LbslmWebViewController.m; sourceTree = "<group>"; };
 		9E3931471D7CFF8700E2511E /* LbslmWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LbslmWebViewController.h; path = ../LbslmWebViewController.h; sourceTree = "<group>"; };
@@ -4196,6 +4200,8 @@
 		9EF95E2E1D3E16B7000DBD15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E2BE8021D7D7826007805CB /* wonderful.png */,
+				9E2BE8001D7D770E007805CB /* top.png */,
 				9E39314A1D7D0DE300E2511E /* transfer_24.png */,
 				9E641BF51D7ACFD1000709C3 /* videoPlay.png */,
 				9A5B33B11D7832E700DE9F51 /* media */,
@@ -4349,6 +4355,7 @@
 				9E6C07581D3F66F100628BE9 /* chatBar_keyboardSelected@2x.png in Resources */,
 				9EBC47611D3F0C4100541F23 /* keyboard_popup@2x.png in Resources */,
 				9E6C07591D3F66F100628BE9 /* chatBar_keyboardSelected.png in Resources */,
+				9E2BE8011D7D770E007805CB /* top.png in Resources */,
 				9EF371571D4284F200A96215 /* LLShareDetailTableViewCellRefactor.xib in Resources */,
 				9EBC476C1D3F0C4100541F23 /* record_animate_1.png in Resources */,
 				9EF95E671D3E309E000DBD15 /* see_count.png in Resources */,
@@ -4433,6 +4440,7 @@
 				9E6C075B1D3F66F100628BE9 /* chatBar_keyboard.png in Resources */,
 				9EF3713F1D4284F200A96215 /* LLCrownGoodListViewController.xib in Resources */,
 				9EF219161D41D7320015995C /* LLWebBrowserViewController.xib in Resources */,
+				9E2BE8031D7D7826007805CB /* wonderful.png in Resources */,
 				9E6C07931D3F8B8400628BE9 /* LLMyCenterShareTableViewCellRefactor.xib in Resources */,
 				9E6C074D1D3F66F100628BE9 /* chatBar_recordSelectedBg.png in Resources */,
 				9E6C07531D3F66F100628BE9 /* chatBar_record.png in Resources */,

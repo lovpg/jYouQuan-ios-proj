@@ -147,7 +147,8 @@
     
     __weak __block typeof(self) weakSelf = self;
     
-    [[LLHTTPRequestOperationManager shareManager] GETWithURL:Olla_API_Share_Detail parameters:@{@"shareId":self.share.shareId}
+    [[LLHTTPRequestOperationManager shareManager] GETWithURL:Olla_API_Share_Detail
+                                                  parameters:@{@"shareId":self.share.shareId}
         success:^(id datas, BOOL hasNext)
      {
         //        [weakSelf.dataSource addObject:self.share];
@@ -155,6 +156,7 @@
         [weakSelf.dataItemDataSource removeAllObjects];
          weakSelf.share.goodCount = [[datas objectForKey:@"goodCount"] intValue];
          weakSelf.share.commentCount = [[datas objectForKey:@"commentCount"] intValue];
+         weakSelf.share.top =  [[datas objectForKey:@"top"] boolValue];
         [weakSelf.dataItemDataSource addObject:weakSelf.share];
         
         NSMutableArray *likeArr = [NSMutableArray array];
