@@ -71,7 +71,8 @@ extern NSString *OllaNicknameChangeNotification;
 }
 
 
-- (void)save:(id)sender{
+- (void)save:(id)sender
+{
     
     if (![self checkInputLegal])
     {
