@@ -57,7 +57,7 @@
     LLUserService *userService;
     
 }
-
+@property (nonatomic) BOOL isMoreFloder;
 @property (nonatomic) BOOL isChatGroup;
 @property (nonatomic) EMConversationType conversationType;
 @property (strong, nonatomic) NSString *chatter;
@@ -68,7 +68,7 @@
 @property (strong, nonatomic) DXMessageToolBar *chatToolBar;
 
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
-
+@property (strong, nonatomic) UIView *moreActionView;
 @property (strong, nonatomic) MessageReadManager *messageReadManager;//message阅读的管理者
 @property (strong, nonatomic) EMConversation *conversation;//会话管理者
 @property (strong, nonatomic) NSDate *chatTagDate;
@@ -144,7 +144,20 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
-    
+//    self.isMoreFloder = false;
+//    self.moreActionView = [[UIView alloc]initWithFrame:CGRectMake(ScreenWidth - 100, 10, 100, 60)];
+//    UIImage *blackImage = [UIImage imageNamed:@"black"];
+//    UIImageView *blackImageView = [[UIImageView alloc]initWithFrame:CGRectMake(4, 0, 24, 24)];
+//    blackImageView.image = blackImage;
+//    [self.moreActionView addSubview:blackImageView];
+//    UIButton *blackButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
+//    blackButton.text = @"屏蔽他";
+//    blackButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+//    blackButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 8);
+//    [self.moreActionView addSubview:blackButton];
+//    self.moreActionView.backgroundColor = RGB_HEX(0xe21001);
+//    [self.view addSubview:self.moreActionView];
+//     self.moreActionView.hidden = YES;
 //    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"im_bg"]];
 //    imageView.frame = self.view.bounds;
 //    [self.view addSubview:imageView];
@@ -456,25 +469,50 @@
     }
 }
 
+
+- (IBAction)moreAction:(id)sender
+{
+    [UIActionSheet showInView:[self.presentedViewController view]
+                    withTitle:nil
+            cancelButtonTitle:@"取消"
+       destructiveButtonTitle:nil
+            otherButtonTitles:@[
+                                @"拉黑"]
+                     tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex)
+     {
+         
+         if (0==tapIndex)
+         {
+             [self black:self.user.uid];
+         }
+         
+     }];
+}
+
+
 - (void)setupBarButtonItem
 {
     [self.navigationController setNavigationBarHidden:NO];
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
     [backButton setImage:[UIImage imageNamed:@"navigation_back_arrow_new"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
-    
-    if (_isChatGroup)
-    {
-        UIButton *detailButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
-        [detailButton setImage:[UIImage imageNamed:@"group_detail"] forState:UIControlStateNormal];
-        [detailButton addTarget:self action:@selector(showRoomContact:) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:detailButton];
-    }
-    else{
-        self.navigationItem.rightBarButtonItem = [LLAppHelper barButtonItemWithUserInfo:@"" imageName:@"olla_login_username_h" target:self action:@selector(doAction:)];
-    }
+    UIButton *moreButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
+    [moreButton setImage:[UIImage imageNamed:@"nav_more"] forState:UIControlStateNormal];
+    [moreButton addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *moreItem = [[UIBarButtonItem alloc] initWithCustomView:moreButton];
+    [self.navigationItem setRightBarButtonItem:moreItem];
+//    if (_isChatGroup)
+//    {
+//        UIButton *detailButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
+//        [detailButton setImage:[UIImage imageNamed:@"group_detail"] forState:UIControlStateNormal];
+//        [detailButton addTarget:self action:@selector(showRoomContact:) forControlEvents:UIControlEventTouchUpInside];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:detailButton];
+//    }
+//    else{
+//        self.navigationItem.rightBarButtonItem = [LLAppHelper barButtonItemWithUserInfo:@"" imageName:@"nav_more" target:self action:@selector(doAction:)];
+//    }
 }
 
 - (void)doAction:(id)sender {
@@ -2035,7 +2073,7 @@
 - (IBAction)black:(id)sender
 {
     
-    [UIAlertView showWithTitle:nil message:@"拉入黑名单，他/她将不能和你互动，包括评论，聊天等?" cancelButtonTitle:@"放弃" otherButtonTitles:@[@"拉黑"] tapBlock:^(UIAlertView *alertView,NSInteger tapIndex)
+    [UIAlertView showWithTitle:nil message:@"拉入黑名单，将不能和你互动!" cancelButtonTitle:@"放弃" otherButtonTitles:@[@"拉黑"] tapBlock:^(UIAlertView *alertView,NSInteger tapIndex)
     {
         if (tapIndex==1)
         {// 确定拉黑
@@ -2054,7 +2092,7 @@
             NSString *easeUsername = [NSString stringWithFormat:@"%@", uid];
             __weak typeof(self) weakSelf = self;
             [[LLHTTPRequestOperationManager shareManager]
-             GETWithURL:Olla_API_Black_Add
+             GETWithURL:TM_API_Black_Add
              parameters:@{
                           @"uid":uid
                           }

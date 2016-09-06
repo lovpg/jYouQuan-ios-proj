@@ -21,7 +21,7 @@
 //    [self.navigationController setNavigationBarHidden:NO animated:NO];
     self.webView.scalesPageToFit = YES;//自动对页面进行缩放以适应屏幕电话号码，单击可以拨打
     LLThirdCollection *collection = self.params;
-    NSURL *url = [NSURL URLWithString:@"http://app.lbslm.com/protocol.html"];//创建URL
+    NSURL *url = [NSURL URLWithString:@"http://app.lbslm.com/agreement.html"];//创建URL
     if(collection)
     {
         url = [NSURL URLWithString:collection.url];

@@ -480,9 +480,9 @@
             cancelButtonTitle:@"取消"
        destructiveButtonTitle:nil
             otherButtonTitles:@[
-                                @"删除",@"点赞",
-                                @"置顶",@"收藏",
-                                @"分享",@"和他/她聊天"]
+                                @"删除",@"关小黑屋",
+                                @"置顶",@"取消置顶",
+                                @"重置密码",@"和他/她聊天"]
                      tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex)
      {
          
@@ -492,7 +492,7 @@
          }
          else if(1==tapIndex)
          {
-             [JDStatusBarNotification showWithStatus:@"拒绝操作" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+             [self dark:share.user.uid];
          }
          else if(2==tapIndex)
          {
@@ -500,11 +500,11 @@
          }
          else if(3==tapIndex)
          {
-             [JDStatusBarNotification showWithStatus:@"拒绝操作" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+             [self reMoveTop:share];
          }
          else if(4==tapIndex)
          {
-             [JDStatusBarNotification showWithStatus:@"拒绝操作" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+             [self resetPasswd:share.user.uid];
          }
          else if(5==tapIndex)
          {
@@ -515,6 +515,24 @@
          }
          
          
+     }];
+}
+
+- (void) resetPasswd : (NSString *)uid
+{
+    
+    [[LLHTTPRequestOperationManager shareManager]
+     GETWithURL:TM_API_Edit_Password
+     parameters:@{@"uid": [NSNumber numberWithLong:[uid longLongValue]]}
+     success:^(id datas , BOOL hasNext)
+     {
+         [JDStatusBarNotification showWithStatus:@"已重置密码" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+         
+     }
+     failure:^(NSError *error)
+     {
+         
+         [JDStatusBarNotification showWithStatus:@"重置失败" dismissAfter:1.f styleName:JDStatusBarStyleDark];
      }];
 }
 
@@ -536,6 +554,41 @@
      }];
 }
 
+- (void) reMoveTop : (LLShare *)share
+{
+    
+    [[LLHTTPRequestOperationManager shareManager]
+     GETWithURL:LBSLM_API_Share_UnFocus
+     parameters:@{@"shareId":share.shareId}
+     success:^(id datas , BOOL hasNext)
+     {
+         [JDStatusBarNotification showWithStatus:@"置顶移除" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+         
+     }
+     failure:^(NSError *error)
+     {
+         
+         [JDStatusBarNotification showWithStatus:@"置顶移除失败" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+     }];
+}
+
+- (void) dark : (NSString *)uid
+{
+    
+    [[LLHTTPRequestOperationManager shareManager]
+     GETWithURL:TM_API_Dark_User
+     parameters:@{@"uid": [NSNumber numberWithLong:[uid longLongValue]]}
+     success:^(id datas , BOOL hasNext)
+     {
+         [JDStatusBarNotification showWithStatus:@"已成功关小黑屋" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+         
+     }
+     failure:^(NSError *error)
+     {
+         
+         [JDStatusBarNotification showWithStatus:@"关小黑屋失败" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+     }];
+}
 
 - (void) delShare : (LLShare *)share
 {
@@ -555,7 +608,6 @@
          [JDStatusBarNotification showWithStatus:@"删除失败" dismissAfter:1.f styleName:JDStatusBarStyleDark];
      }];
 }
-
 
 
 @end

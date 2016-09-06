@@ -144,7 +144,7 @@ static const int ddLogLevel = DDLogLevelDebug;
 #define Olla_API_Edit_User @"/user/edit/fill.do" //一次性修改所有
 #define Olla_API_Edit_Name @"/user/edit/nickname.do"
 
-
+#define TM_API_Dark_User @"/admin/dark/add.do"
 
 #define Olla_API_Edit_UserName @"/user/edit/username.do"//测试userName
 
@@ -160,7 +160,7 @@ static const int ddLogLevel = DDLogLevelDebug;
 #define Olla_API_Edit_Mobile @"/user/edit/mobile.do" //?mobile=${mobile}
 #define Olla_API_Edit_Email @"/user/edit/email.do"
 #define Olla_API_Edit_Birth @"/user/edit/birth.do"
-#define Olla_API_Edit_Password @"/user/edit/passwd.do"  // password=1111111
+#define TM_API_Edit_Password @"/user/edit/passwd.do"  // password=1111111
 
 #define Olla_API_Edit_Good       @"/user/edit/good.do"    // 点赞 ouid={uid}
 #define Olla_API_Edit_GoodCancel @"/user/edit/ungood.do"    // 点赞 ouid={uid}
@@ -178,9 +178,9 @@ static const int ddLogLevel = DDLogLevelDebug;
 #define Olla_API_Fans_Count @"/fans/count.do"
 
 
-#define Olla_API_Black_Add @"/blacklist/add.do"
-#define Olla_API_Black_Remove @"/blacklist/delete.do"
-#define Olla_API_Black_List @"/blacklist/list.do"
+#define TM_API_Black_Add @"/blacklist/add.do"
+#define TM_API_Black_Remove @"/blacklist/delete.do"
+#define TM_API_Black_List @"/blacklist/list.do"
 
 // Group bar 相关
 #define Olla_API_Groupbar_Recommended      @"/bar/hots.do"
@@ -313,7 +313,8 @@ static const int ddLogLevel = DDLogLevelDebug;
 #define Olla_API_Share_Comment_Add @"/comment/add.do"  //shareId=${shareId}&content=${content}
 #define Olla_API_Share_Comment_Delete @"/comment/delete.do" //commentId=${commentId}
 
-#define LBSLM_API_Share_Focus @"/share/focus.do"//@"/good/add.do"  //点赞  shareId=${shareId}
+#define LBSLM_API_Share_Focus @"/share/focus.do"//@"/good/add.do"  //置顶  shareId=${shareId}
+#define LBSLM_API_Share_UnFocus @"/share/unfocus.do"//@"/good/add.do"  //取消置顶 shareId=${shareId}
 #define Olla_API_Share_Like @"/share/good.do"//@"/good/add.do"  //点赞  shareId=${shareId}
 #define Olla_API_Share_Unlike @"/share/ungood.do" //取消点赞 shareId=${shareId}
 

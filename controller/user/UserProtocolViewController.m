@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;//自动对页面进行缩放以适应屏幕
     self.webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单击可以拨打
-    NSURL* url = [NSURL URLWithString:@"http://app.lbslm.com/protocol.html"];//创建URL
+    NSURL* url = [NSURL URLWithString:@"http://app.lbslm.com/agreement.html"];//创建URL
     NSURLRequest* request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
     [self.webView loadRequest:request];
 }
