@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0420EF0CD285F9996E78F0C7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6DF10E453F0F087A91083 /* libPods.a */; };
+		9A1654261D7D1B8A006FB41B /* arrowhead.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1654231D7D1B8A006FB41B /* arrowhead.png */; };
+		9A1654271D7D1B8A006FB41B /* arrowhead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1654241D7D1B8A006FB41B /* arrowhead@2x.png */; };
+		9A1654281D7D1B8A006FB41B /* arrowhead@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1654251D7D1B8A006FB41B /* arrowhead@3x.png */; };
+		9A16542C1D7D1C06006FB41B /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1654291D7D1C06006FB41B /* password.png */; };
+		9A16542D1D7D1C06006FB41B /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A16542A1D7D1C06006FB41B /* password@2x.png */; };
+		9A16542E1D7D1C06006FB41B /* password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A16542B1D7D1C06006FB41B /* password@3x.png */; };
+		9A1D21BE1D7E5D2500280EED /* LLPasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D21BC1D7E5D2500280EED /* LLPasswordEditViewController.m */; };
+		9A1D21BF1D7E5D2500280EED /* LLPasswordEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */; };
 		9A5B33B01D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */; };
 		9A5B33B31D78331300DE9F51 /* flashOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B21D78331300DE9F51 /* flashOn.png */; };
 		9A5B33B51D78331700DE9F51 /* flashOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B41D78331700DE9F51 /* flashOff.png */; };
@@ -16,18 +24,34 @@
 		9A758CDC1D767A13007353FC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDB1D767A13007353FC /* AVFoundation.framework */; };
 		9A758CDE1D767A24007353FC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDD1D767A24007353FC /* Photos.framework */; };
 		9A758CE21D768896007353FC /* VJ_VideoFolderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A758CE11D768896007353FC /* VJ_VideoFolderManager.m */; };
+		9ACCB6311D7D733A007E84B1 /* LLProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB62F1D7D733A007E84B1 /* LLProfileEditViewController.m */; };
+		9ACCB6321D7D733A007E84B1 /* LLProfileEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6301D7D733A007E84B1 /* LLProfileEditViewController.xib */; };
+		9ACCB6371D7D7472007E84B1 /* LLAvatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB6351D7D7472007E84B1 /* LLAvatorTableViewCell.m */; };
+		9ACCB6381D7D7472007E84B1 /* LLAvatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6361D7D7472007E84B1 /* LLAvatorTableViewCell.xib */; };
+		9ACCB63C1D7D748F007E84B1 /* LLNickNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB63A1D7D748F007E84B1 /* LLNickNameTableViewCell.m */; };
+		9ACCB63D1D7D748F007E84B1 /* LLNickNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB63B1D7D748F007E84B1 /* LLNickNameTableViewCell.xib */; };
+		9ACCB6411D7D749F007E84B1 /* LLPasswordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB63F1D7D749F007E84B1 /* LLPasswordTableViewCell.m */; };
+		9ACCB6421D7D749F007E84B1 /* LLPasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6401D7D749F007E84B1 /* LLPasswordTableViewCell.xib */; };
+		9ACCB6461D7D8780007E84B1 /* LLEditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB6441D7D8780007E84B1 /* LLEditNameViewController.m */; };
+		9ACCB6471D7D8780007E84B1 /* LLEditNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6451D7D8780007E84B1 /* LLEditNameViewController.xib */; };
+		9ACCB64E1D7D8B65007E84B1 /* backer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB64D1D7D8B65007E84B1 /* backer@2x.png */; };
+		9ACCB6521D7D8BAC007E84B1 /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB64F1D7D8BAC007E84B1 /* finish.png */; };
+		9ACCB6531D7D8BAC007E84B1 /* finish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6501D7D8BAC007E84B1 /* finish@2x.png */; };
+		9ACCB6541D7D8BAC007E84B1 /* finish@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6511D7D8BAC007E84B1 /* finish@3x.png */; };
 		9AD6120A1D742FD30052350D /* libEaseMobClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD612091D742FD30052350D /* libEaseMobClientSDK.a */; };
 		9AD612181D7431520052350D /* KZVideoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6120D1D7431520052350D /* KZVideoConfig.m */; };
 		9AD6121A1D7431520052350D /* KZVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612111D7431520052350D /* KZVideoPlayer.m */; };
 		9AD6121B1D7431520052350D /* KZVideoSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612131D7431520052350D /* KZVideoSupport.m */; };
 		9AD6121C1D7431520052350D /* KZVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612151D7431520052350D /* KZVideoViewController.m */; };
 		9AD6121D1D7431520052350D /* LLMediaRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612171D7431520052350D /* LLMediaRecordController.m */; };
+
 		9AF1C4C81D7959E8006FBDFD /* LLImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */; };
 		9E2BE8011D7D770E007805CB /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2BE8001D7D770E007805CB /* top.png */; };
 		9E2BE8031D7D7826007805CB /* wonderful.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2BE8021D7D7826007805CB /* wonderful.png */; };
 		9E3931481D7CFF8700E2511E /* LbslmWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */; };
 		9E3931491D7CFF8700E2511E /* LbslmWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */; };
 		9E39314B1D7D0DE300E2511E /* transfer_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E39314A1D7D0DE300E2511E /* transfer_24.png */; };
+
 		9E3F4C6D1D3F4EEB00AAF9F8 /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */; };
 		9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F1271D45A04200F89637 /* jion_jbz.png */; };
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
@@ -628,6 +652,15 @@
 /* Begin PBXFileReference section */
 		54C6DF10E453F0F087A91083 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7764805606C6F6291888D8A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9A1654231D7D1B8A006FB41B /* arrowhead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowhead.png; sourceTree = "<group>"; };
+		9A1654241D7D1B8A006FB41B /* arrowhead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowhead@2x.png"; sourceTree = "<group>"; };
+		9A1654251D7D1B8A006FB41B /* arrowhead@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowhead@3x.png"; sourceTree = "<group>"; };
+		9A1654291D7D1C06006FB41B /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		9A16542A1D7D1C06006FB41B /* password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password@2x.png"; sourceTree = "<group>"; };
+		9A16542B1D7D1C06006FB41B /* password@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password@3x.png"; sourceTree = "<group>"; };
+		9A1D21BB1D7E5D2500280EED /* LLPasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPasswordEditViewController.h; sourceTree = "<group>"; };
+		9A1D21BC1D7E5D2500280EED /* LLPasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPasswordEditViewController.m; sourceTree = "<group>"; };
+		9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLPasswordEditViewController.xib; sourceTree = "<group>"; };
 		9A5B33AE1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJ_VideoRecorderToolView.h; sourceTree = "<group>"; };
 		9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VJ_VideoRecorderToolView.m; sourceTree = "<group>"; };
 		9A5B33B21D78331300DE9F51 /* flashOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashOn.png; sourceTree = "<group>"; };
@@ -638,6 +671,25 @@
 		9A758CDD1D767A24007353FC /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		9A758CE01D768896007353FC /* VJ_VideoFolderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJ_VideoFolderManager.h; sourceTree = "<group>"; };
 		9A758CE11D768896007353FC /* VJ_VideoFolderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VJ_VideoFolderManager.m; sourceTree = "<group>"; };
+		9ACCB62E1D7D733A007E84B1 /* LLProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLProfileEditViewController.h; sourceTree = "<group>"; };
+		9ACCB62F1D7D733A007E84B1 /* LLProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLProfileEditViewController.m; sourceTree = "<group>"; };
+		9ACCB6301D7D733A007E84B1 /* LLProfileEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLProfileEditViewController.xib; sourceTree = "<group>"; };
+		9ACCB6341D7D7472007E84B1 /* LLAvatorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLAvatorTableViewCell.h; sourceTree = "<group>"; };
+		9ACCB6351D7D7472007E84B1 /* LLAvatorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLAvatorTableViewCell.m; sourceTree = "<group>"; };
+		9ACCB6361D7D7472007E84B1 /* LLAvatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLAvatorTableViewCell.xib; sourceTree = "<group>"; };
+		9ACCB6391D7D748F007E84B1 /* LLNickNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLNickNameTableViewCell.h; sourceTree = "<group>"; };
+		9ACCB63A1D7D748F007E84B1 /* LLNickNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLNickNameTableViewCell.m; sourceTree = "<group>"; };
+		9ACCB63B1D7D748F007E84B1 /* LLNickNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLNickNameTableViewCell.xib; sourceTree = "<group>"; };
+		9ACCB63E1D7D749F007E84B1 /* LLPasswordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPasswordTableViewCell.h; sourceTree = "<group>"; };
+		9ACCB63F1D7D749F007E84B1 /* LLPasswordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPasswordTableViewCell.m; sourceTree = "<group>"; };
+		9ACCB6401D7D749F007E84B1 /* LLPasswordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLPasswordTableViewCell.xib; sourceTree = "<group>"; };
+		9ACCB6431D7D8780007E84B1 /* LLEditNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLEditNameViewController.h; sourceTree = "<group>"; };
+		9ACCB6441D7D8780007E84B1 /* LLEditNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLEditNameViewController.m; sourceTree = "<group>"; };
+		9ACCB6451D7D8780007E84B1 /* LLEditNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLEditNameViewController.xib; sourceTree = "<group>"; };
+		9ACCB64D1D7D8B65007E84B1 /* backer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backer@2x.png"; sourceTree = "<group>"; };
+		9ACCB64F1D7D8BAC007E84B1 /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
+		9ACCB6501D7D8BAC007E84B1 /* finish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish@2x.png"; sourceTree = "<group>"; };
+		9ACCB6511D7D8BAC007E84B1 /* finish@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish@3x.png"; sourceTree = "<group>"; };
 		9AD612091D742FD30052350D /* libEaseMobClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEaseMobClientSDK.a; sourceTree = "<group>"; };
 		9AD6120C1D7431520052350D /* KZVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZVideoConfig.h; sourceTree = "<group>"; };
 		9AD6120D1D7431520052350D /* KZVideoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoConfig.m; sourceTree = "<group>"; };
@@ -649,6 +701,7 @@
 		9AD612151D7431520052350D /* KZVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoViewController.m; sourceTree = "<group>"; };
 		9AD612161D7431520052350D /* LLMediaRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMediaRecordController.h; sourceTree = "<group>"; };
 		9AD612171D7431520052350D /* LLMediaRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMediaRecordController.m; sourceTree = "<group>"; };
+
 		9AF1C4C61D7959E8006FBDFD /* LLImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLImagePickerViewController.h; sourceTree = "<group>"; };
 		9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLImagePickerViewController.m; sourceTree = "<group>"; };
 		9E2BE8001D7D770E007805CB /* top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top.png; sourceTree = "<group>"; };
@@ -657,6 +710,7 @@
 		9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LbslmWebViewController.m; path = ../LbslmWebViewController.m; sourceTree = "<group>"; };
 		9E3931471D7CFF8700E2511E /* LbslmWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LbslmWebViewController.h; path = ../LbslmWebViewController.h; sourceTree = "<group>"; };
 		9E39314A1D7D0DE300E2511E /* transfer_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_24.png; sourceTree = "<group>"; };
+
 		9E3F4C031D3F4EEB00AAF9F8 /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
 		9E3F4C041D3F4EEB00AAF9F8 /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerDelegate.h; sourceTree = "<group>"; };
 		9E3F4C051D3F4EEB00AAF9F8 /* EaseMob+CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseMob+CallService.h"; sourceTree = "<group>"; };
@@ -1868,6 +1922,22 @@
 			path = CL_VideoRecorder;
 			sourceTree = "<group>";
 		};
+		9ACCB6331D7D7420007E84B1 /* me */ = {
+			isa = PBXGroup;
+			children = (
+				9ACCB6341D7D7472007E84B1 /* LLAvatorTableViewCell.h */,
+				9ACCB6351D7D7472007E84B1 /* LLAvatorTableViewCell.m */,
+				9ACCB6361D7D7472007E84B1 /* LLAvatorTableViewCell.xib */,
+				9ACCB6391D7D748F007E84B1 /* LLNickNameTableViewCell.h */,
+				9ACCB63A1D7D748F007E84B1 /* LLNickNameTableViewCell.m */,
+				9ACCB63B1D7D748F007E84B1 /* LLNickNameTableViewCell.xib */,
+				9ACCB63E1D7D749F007E84B1 /* LLPasswordTableViewCell.h */,
+				9ACCB63F1D7D749F007E84B1 /* LLPasswordTableViewCell.m */,
+				9ACCB6401D7D749F007E84B1 /* LLPasswordTableViewCell.xib */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
 		9AD612081D742FD30052350D /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -1890,8 +1960,6 @@
 				9AD612151D7431520052350D /* KZVideoViewController.m */,
 				9AD612161D7431520052350D /* LLMediaRecordController.h */,
 				9AD612171D7431520052350D /* LLMediaRecordController.m */,
-				9AF1C4C61D7959E8006FBDFD /* LLImagePickerViewController.h */,
-				9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */,
 			);
 			path = media;
 			sourceTree = "<group>";
@@ -3442,6 +3510,7 @@
 		9E4882AB1D3DCC24003AEB2F /* view */ = {
 			isa = PBXGroup;
 			children = (
+				9ACCB6331D7D7420007E84B1 /* me */,
 				9E43F1291D45A14100F89637 /* workspace */,
 				9EBE1FE41D410F2D00639DC5 /* other */,
 				9EBC46011D3F085A00541F23 /* LLShareLayout */,
@@ -4142,6 +4211,15 @@
 				9EF926511D42668B0078CDD6 /* LLMeViewController.h */,
 				9EF926521D42668B0078CDD6 /* LLMeViewController.m */,
 				9EF926531D42668B0078CDD6 /* LLMeViewController.xib */,
+				9ACCB62E1D7D733A007E84B1 /* LLProfileEditViewController.h */,
+				9ACCB62F1D7D733A007E84B1 /* LLProfileEditViewController.m */,
+				9ACCB6301D7D733A007E84B1 /* LLProfileEditViewController.xib */,
+				9ACCB6431D7D8780007E84B1 /* LLEditNameViewController.h */,
+				9ACCB6441D7D8780007E84B1 /* LLEditNameViewController.m */,
+				9ACCB6451D7D8780007E84B1 /* LLEditNameViewController.xib */,
+				9A1D21BB1D7E5D2500280EED /* LLPasswordEditViewController.h */,
+				9A1D21BC1D7E5D2500280EED /* LLPasswordEditViewController.m */,
+				9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */,
 			);
 			path = me;
 			sourceTree = "<group>";
@@ -4210,6 +4288,16 @@
 				9E2BE8001D7D770E007805CB /* top.png */,
 				9E39314A1D7D0DE300E2511E /* transfer_24.png */,
 				9E641BF51D7ACFD1000709C3 /* videoPlay.png */,
+				9A1654231D7D1B8A006FB41B /* arrowhead.png */,
+				9A1654241D7D1B8A006FB41B /* arrowhead@2x.png */,
+				9A1654251D7D1B8A006FB41B /* arrowhead@3x.png */,
+				9A1654291D7D1C06006FB41B /* password.png */,
+				9A16542A1D7D1C06006FB41B /* password@2x.png */,
+				9A16542B1D7D1C06006FB41B /* password@3x.png */,
+				9ACCB64D1D7D8B65007E84B1 /* backer@2x.png */,
+				9ACCB64F1D7D8BAC007E84B1 /* finish.png */,
+				9ACCB6501D7D8BAC007E84B1 /* finish@2x.png */,
+				9ACCB6511D7D8BAC007E84B1 /* finish@3x.png */,
 				9A5B33B11D7832E700DE9F51 /* media */,
 				9E467B771D76B21A00D000D7 /* olla__dialogue_triangle@2x.png */,
 				9E467B6B1D7691E600D000D7 /* reply_with_pic_add.png */,
@@ -4368,6 +4456,7 @@
 				9E467B681D76858100D000D7 /* headphoto_default_128.png in Resources */,
 				9E4881011D3DBA2A003AEB2F /* SVWebViewControllerActivityChrome-iPad@2x.png in Resources */,
 				9EF926631D427E000078CDD6 /* chat_groupbar_left_bubble.png in Resources */,
+				9ACCB64E1D7D8B65007E84B1 /* backer@2x.png in Resources */,
 				9E6C07551D3F66F100628BE9 /* chatBar_moreSelected.png in Resources */,
 				9EBC47721D3F0C4100541F23 /* record_animate_2.png in Resources */,
 				9E4881031D3DBA2A003AEB2F /* SVWebViewControllerActivityChrome@2x.png in Resources */,
@@ -4384,6 +4473,7 @@
 				9E4880FE1D3DBA2A003AEB2F /* SVWebViewController.bundle in Resources */,
 				9E6C07321D3F658600628BE9 /* navigation_back_arrow_new.png in Resources */,
 				9E6C07971D3F8B8400628BE9 /* LLMyCenterViewControllerRefactor.xib in Resources */,
+				9ACCB6381D7D7472007E84B1 /* LLAvatorTableViewCell.xib in Resources */,
 				9EF219201D41EAD70015995C /* LLLocationChooseViewController.xib in Resources */,
 				9EF95E641D3E3043000DBD15 /* praise_count.png in Resources */,
 				9EF95E131D3E0491000DBD15 /* LLTabBarViewController.xib in Resources */,
@@ -4391,6 +4481,7 @@
 				9E4882BF1D3DD282003AEB2F /* LoginViewController.xib in Resources */,
 				9EBC47571D3F0C4100541F23 /* homepage_more_gray@2x.png in Resources */,
 				9E487E861D3DB80B003AEB2F /* LaunchScreen.storyboard in Resources */,
+				9ACCB6471D7D8780007E84B1 /* LLEditNameViewController.xib in Resources */,
 				9EBC461E1D3F089200541F23 /* LLHomeHeadCell.xib in Resources */,
 				9EF219301D41F9240015995C /* LLDeviceCatagoryViewController.xib in Resources */,
 				9EF9265D1D4270C30078CDD6 /* friends.png in Resources */,
@@ -4400,6 +4491,7 @@
 				9EF3715B1D4284F200A96215 /* LLUpArrowTableViewCell.xib in Resources */,
 				9E6C075A1D3F66F100628BE9 /* chatBar_keyboard@2x.png in Resources */,
 				9EBC47701D3F0C4100541F23 /* record_animate_13.png in Resources */,
+				9A1D21BF1D7E5D2500280EED /* LLPasswordEditViewController.xib in Resources */,
 				9E6C07561D3F66F100628BE9 /* chatBar_more@2x.png in Resources */,
 				9A5B33B51D78331700DE9F51 /* flashOff.png in Resources */,
 				9E467B641D7671A400D000D7 /* iTunesArtwork@2x.png in Resources */,
@@ -4417,6 +4509,7 @@
 				9EBC47691D3F0C4100541F23 /* keyboard_voice_release.png in Resources */,
 				9EF95E201D3E05EC000DBD15 /* LLHomeViewController.xib in Resources */,
 				9E6C07601D3F66F100628BE9 /* chat_message_checkMark.png in Resources */,
+				9ACCB6541D7D8BAC007E84B1 /* finish@3x.png in Resources */,
 				9E4881071D3DBA2A003AEB2F /* SVWebViewControllerActivitySafari@2x.png in Resources */,
 				9E467B6A1D7691A000D000D7 /* messageToolbarBg@2x.png in Resources */,
 				9E6C075C1D3F66F100628BE9 /* chatBar_faceSelected@2x.png in Resources */,
@@ -4425,6 +4518,7 @@
 				9E39314B1D7D0DE300E2511E /* transfer_24.png in Resources */,
 				9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */,
 				9E467B781D76B21A00D000D7 /* olla__dialogue_triangle@2x.png in Resources */,
+				9A1654271D7D1B8A006FB41B /* arrowhead@2x.png in Resources */,
 				9EF2193A1D42146E0015995C /* LLHotShareViewController.xib in Resources */,
 				9E5436A41D40D85000BB67F9 /* LLHomeBannerCell.xib in Resources */,
 				9EF9266C1D427EA30078CDD6 /* Contents.json in Resources */,
@@ -4445,6 +4539,7 @@
 				9EBC47591D3F0C4100541F23 /* keyboard_delete_icon_n@2x.png in Resources */,
 				9EF95E3B1D3E18DE000DBD15 /* tab_order_new.png in Resources */,
 				9E6C075B1D3F66F100628BE9 /* chatBar_keyboard.png in Resources */,
+				9A16542C1D7D1C06006FB41B /* password.png in Resources */,
 				9EF3713F1D4284F200A96215 /* LLCrownGoodListViewController.xib in Resources */,
 				9EF219161D41D7320015995C /* LLWebBrowserViewController.xib in Resources */,
 				9E2BE8031D7D7826007805CB /* wonderful.png in Resources */,
@@ -4457,9 +4552,11 @@
 				9EBC475F1D3F0C4100541F23 /* keyboard_photo_n@2x.png in Resources */,
 				9EBC476F1D3F0C4100541F23 /* record_animate_12.png in Resources */,
 				9EF219271D41EE4E0015995C /* share_location_pin.png in Resources */,
+				9ACCB6321D7D733A007E84B1 /* LLProfileEditViewController.xib in Resources */,
 				9EF95E571D3E26FB000DBD15 /* LLShareViewCell.xib in Resources */,
 				9EF926591D426E740078CDD6 /* favarite.png in Resources */,
 				9E6C075F1D3F66F100628BE9 /* chatBar_face.png in Resources */,
+				9A16542D1D7D1C06006FB41B /* password@2x.png in Resources */,
 				9EBC477C1D3F0C4100541F23 /* 箭头@2x.png in Resources */,
 				9E6C07951D3F8B8400628BE9 /* LLMyCenterViewController.xib in Resources */,
 				9EF371591D4284F200A96215 /* LLShareDetailViewControllerRefactor2.xib in Resources */,
@@ -4468,6 +4565,7 @@
 				9EBE203A1D4115DF00639DC5 /* head_bg@2x.png in Resources */,
 				9E6C075D1D3F66F100628BE9 /* chatBar_faceSelected.png in Resources */,
 				9E5436971D40769D00BB67F9 /* say_hi_to.png in Resources */,
+				9ACCB6421D7D749F007E84B1 /* LLPasswordTableViewCell.xib in Resources */,
 				9EF926661D427E000078CDD6 /* Contents.json in Resources */,
 				9E4881001D3DBA2A003AEB2F /* SVWebViewControllerActivityChrome-iPad.png in Resources */,
 				9EBC476E1D3F0C4100541F23 /* record_animate_11.png in Resources */,
@@ -4477,10 +4575,14 @@
 				9EF95E5B1D3E2995000DBD15 /* share_demo.thumb.jpg in Resources */,
 				9EBE203B1D4115DF00639DC5 /* head_bg.png in Resources */,
 				9EBC482B1D3F2C5700541F23 /* publish_location_n.png in Resources */,
+				9ACCB63D1D7D748F007E84B1 /* LLNickNameTableViewCell.xib in Resources */,
+				9A16542E1D7D1C06006FB41B /* password@3x.png in Resources */,
 				9EBC475B1D3F0C4100541F23 /* keyboard_facial_n@2x.png in Resources */,
 				9E487E7E1D3DB80B003AEB2F /* Main.storyboard in Resources */,
+				9A1654261D7D1B8A006FB41B /* arrowhead.png in Resources */,
 				9EBC476D1D3F0C4100541F23 /* record_animate_10.png in Resources */,
 				9EF95E381D3E1788000DBD15 /* tab_index_new.png in Resources */,
+				9A1654281D7D1B8A006FB41B /* arrowhead@3x.png in Resources */,
 				9EBC47171D3F0C4000541F23 /* LLPostMessageToolBar.xib in Resources */,
 				9E4881DE1D3DC0C7003AEB2F /* sr_refresh@2X.png in Resources */,
 				9E3931481D7CFF8700E2511E /* LbslmWebViewController.xib in Resources */,
@@ -4494,6 +4596,7 @@
 				9E6C07571D3F66F100628BE9 /* chatBar_more.png in Resources */,
 				9EF95E2A1D3E065F000DBD15 /* LLWorkSpaceViewController.xib in Resources */,
 				9EBC475A1D3F0C4100541F23 /* keyboard_facial_h@2x.png in Resources */,
+				9ACCB6531D7D8BAC007E84B1 /* finish@2x.png in Resources */,
 				9E467B621D76717A00D000D7 /* icon-60@2x.png in Resources */,
 				9EF371511D4284F200A96215 /* LLShareCommentCell.xib in Resources */,
 				9EBC47791D3F0C4100541F23 /* record_animate_9.png in Resources */,
@@ -4502,6 +4605,7 @@
 				9EF9265B1D426FB40078CDD6 /* device.png in Resources */,
 				9EBC45C31D3F034300541F23 /* LLHomeShareViewCell.xib in Resources */,
 				9E4882AD1D3DD13F003AEB2F /* config.plist in Resources */,
+				9ACCB6521D7D8BAC007E84B1 /* finish.png in Resources */,
 				9EF95E651D3E3043000DBD15 /* comment_count.png in Resources */,
 				9E6C07541D3F66F100628BE9 /* chatBar_moreSelected@2x.png in Resources */,
 				9EF371451D4284F200A96215 /* LLLikeTableViewCell.xib in Resources */,
@@ -4604,6 +4708,7 @@
 				9E48825D1D3DC2E3003AEB2F /* LLLoginAuthDAO.m in Sources */,
 				9EBC473A1D3F0C4100541F23 /* LLEaseModUtil.m in Sources */,
 				9E4880F01D3DBA2A003AEB2F /* MJPhoto.m in Sources */,
+				9ACCB63C1D7D748F007E84B1 /* LLNickNameTableViewCell.m in Sources */,
 				9E4881541D3DBA2A003AEB2F /* OllaFMDBUtil.m in Sources */,
 				9E4882A41D3DC5E1003AEB2F /* LLMemoryInfoCenter.m in Sources */,
 				9EBC47301D3F0C4100541F23 /* EMTextView.m in Sources */,
@@ -4659,6 +4764,7 @@
 				9EBE20351D41159700639DC5 /* LLRelativeTimeLabel.m in Sources */,
 				9E4880DE1D3DBA2A003AEB2F /* CTAssetsViewControllerTransition.m in Sources */,
 				9E48816C1D3DBA2A003AEB2F /* UIFont+additions.m in Sources */,
+				9ACCB6311D7D733A007E84B1 /* LLProfileEditViewController.m in Sources */,
 				9EBC472F1D3F0C4100541F23 /* EMSearchBar.m in Sources */,
 				9E4881251D3DBA2A003AEB2F /* OllaTableDataController.m in Sources */,
 				9E4880EE1D3DBA2A003AEB2F /* MBProgressHUD+Add.m in Sources */,
@@ -4763,14 +4869,17 @@
 				9EBC47211D3F0C4100541F23 /* EMChatLocationBubbleView.m in Sources */,
 				9E48819B1D3DBA2A003AEB2F /* OllaTableSection.m in Sources */,
 				9EBE20261D410F2D00639DC5 /* LLDialogView.m in Sources */,
+				9ACCB6371D7D7472007E84B1 /* LLAvatorTableViewCell.m in Sources */,
 				9E48812A1D3DBA2A003AEB2F /* OllaURLDataSource.m in Sources */,
 				9E4881321D3DBA2A003AEB2F /* OllaTask.m in Sources */,
 				9E4881851D3DBA2A003AEB2F /* UIButton+URL.m in Sources */,
 				9EBC474B1D3F0C4100541F23 /* LLIMSender.m in Sources */,
+				9ACCB6411D7D749F007E84B1 /* LLPasswordTableViewCell.m in Sources */,
 				9EF95E291D3E065F000DBD15 /* LLWorkSpaceViewController.m in Sources */,
 				9E4881511D3DBA2A003AEB2F /* OllaDataBind.m in Sources */,
 				9E4880F81D3DBA2A003AEB2F /* NSObject+AssociatedDictionary.m in Sources */,
 				9E4880E41D3DBA2A003AEB2F /* EXTRuntimeExtensions.m in Sources */,
+				9ACCB6461D7D8780007E84B1 /* LLEditNameViewController.m in Sources */,
 				9EBC47311D3F0C4100541F23 /* EMRemarkImageView.m in Sources */,
 				9EBC473C1D3F0C4100541F23 /* LLEMChatsDebugViewController.m in Sources */,
 				9E48816E1D3DBA2A003AEB2F /* UIImage+Color.m in Sources */,
@@ -4841,6 +4950,7 @@
 				9E4880D31D3DBA2A003AEB2F /* ALAssetsGroup+isEqual.m in Sources */,
 				9EBC472D1D3F0C4100541F23 /* RealtimeSearchUtil.m in Sources */,
 				9E4881661D3DBA2A003AEB2F /* NSString+size.m in Sources */,
+				9A1D21BE1D7E5D2500280EED /* LLPasswordEditViewController.m in Sources */,
 				9E4882851D3DC52B003AEB2F /* LLThirdCollection.m in Sources */,
 				9E4880EA1D3DBA2A003AEB2F /* FCUUID.m in Sources */,
 				9EBE201A1D410F2D00639DC5 /* LLBadgeNumberView.m in Sources */,
@@ -4897,7 +5007,6 @@
 				9E4881591D3DBA2A003AEB2F /* NSArray+Helper.m in Sources */,
 				9EBC47431D3F0C4100541F23 /* LLEMIMViewController.m in Sources */,
 				9E4880E11D3DBA2A003AEB2F /* EXTADT.m in Sources */,
-				9AF1C4C81D7959E8006FBDFD /* LLImagePickerViewController.m in Sources */,
 				9EBC47521D3F0C4100541F23 /* LLSendMessageQueue.m in Sources */,
 				9E48825C1D3DC2E3003AEB2F /* LLImDAO.m in Sources */,
 				9E487E781D3DB80B003AEB2F /* AppDelegate.m in Sources */,

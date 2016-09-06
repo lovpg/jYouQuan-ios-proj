@@ -54,12 +54,12 @@
     
     // 新的定义
     //从设备获取数据
-    AVCaptureDeviceInput * _videoDeviceInput;
-    AVCaptureDevice *_audioDevice;
-    AVCaptureDeviceInput * _audioDeviceInput;
+    AVCaptureDeviceInput     *_videoDeviceInput;
+    AVCaptureDevice          *_audioDevice;
+    AVCaptureDeviceInput     *_audioDeviceInput;
     //写入文件
     AVCaptureMovieFileOutput *_captureMovieFileOutput;
-    AVCaptureConnection * _connection;
+    AVCaptureConnection      *_connection;
 
 }
 
@@ -115,19 +115,20 @@
 //    self.tabBarController.tabBar.hidden = NO;
 }
 
-- (void)hideTabBar {
-    if (self.tabBarController.tabBar.hidden == YES) {
-        return;
-    }
-    UIView *contentView;
-    if ( [[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]] )
-        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
-    else
-        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
-    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBarController.tabBar.frame.size.height);
-    self.tabBarController.tabBar.hidden = YES;
-    
-}
+//- (void)hideTabBar
+//{
+//    if (self.tabBarController.tabBar.hidden == YES) {
+//        return;
+//    }
+//    UIView *contentView;
+//    if ( [[self.tabBarController.view.subviews objectAtIndex:0] isKindOfClass:[UITabBar class]] )
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:1];
+//    else
+//        contentView = [self.tabBarController.view.subviews objectAtIndex:0];
+//    contentView.frame = CGRectMake(contentView.bounds.origin.x,  contentView.bounds.origin.y,  contentView.bounds.size.width, contentView.bounds.size.height + self.tabBarController.tabBar.frame.size.height);
+//    self.tabBarController.tabBar.hidden = YES;
+//    
+//}
 
 
 - (void)endAniamtion
@@ -161,7 +162,8 @@
 
 
 
-- (void)setupSubViews {
+- (void)setupSubViews
+{
 //    _view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.view.backgroundColor = [UIColor clearColor];
     
@@ -318,10 +320,17 @@
     [_videoSession beginConfiguration];
     
     //设置分辨率
-    if ([_videoSession canSetSessionPreset:AVCaptureSessionPresetMedium])
+    if ([_videoSession canSetSessionPreset:AVCaptureSessionPreset640x480])
+    {
+        _videoSession.sessionPreset = AVCaptureSessionPreset640x480;
+    }
+    
+    
+    else if ([_videoSession canSetSessionPreset:AVCaptureSessionPresetMedium])
     {
         _videoSession.sessionPreset = AVCaptureSessionPresetMedium;
-    } else
+    }
+    else
     {
         _videoSession.sessionPreset = AVCaptureSessionPresetLow;
     }
@@ -413,7 +422,8 @@
     });
 }
 
-- (void)focusInPointAtVideoView:(CGPoint)point {
+- (void)focusInPointAtVideoView:(CGPoint)point
+{
     CGPoint cameraPoint= [_videoPreLayer captureDevicePointOfInterestForPoint:point];
     _focusView.center = point;
     [_videoView addSubview:_focusView];
@@ -581,7 +591,8 @@
 //    _currentRecord = [KZVideoUtil createNewVideo];
     _currentRecordIsCancel = NO;
 
-    if(![_captureMovieFileOutput isRecording]) {
+    if(![_captureMovieFileOutput isRecording])
+    {
         [_captureMovieFileOutput startRecordingToOutputFileURL:[NSURL fileURLWithPath:[VJ_VideoFolderManager getVideoMOVFilePathString]]
                                              recordingDelegate:self];
     }
@@ -610,11 +621,14 @@
     }
 }
 
+
+// 录制时间过短触发的方法
 - (void)ctrollVideoDidCancel:(KZControllerBar *)controllerBar reason:(KZRecordCancelReason)reason{
     _currentRecordIsCancel = YES;
     _topSlideView.isRecoding = NO;
     _recoding = NO;
-    if (reason == KZRecordCancelReasonTimeShort) {
+    if (reason == KZRecordCancelReasonTimeShort)
+    {
         [KZVideoConfig showHinInfo:@"录制时间过短" inView:_videoView frame:CGRectMake(0,CGRectGetHeight(_videoView.frame)/3*2,CGRectGetWidth(_videoView.frame),20) timeLong:1.0];
     }
 //    NSLog(@"当前视频录制取消");
@@ -636,7 +650,8 @@
 //    NSLog(@"视频录又过了 1 秒");
 }
 
-- (void)ctrollVideoDidClose:(KZControllerBar *)controllerBar {
+- (void)ctrollVideoDidClose:(KZControllerBar *)controllerBar
+{
 //    NSLog(@"录制界面关闭");
     if (_delegate && [_delegate respondsToSelector:@selector(videoViewControllerDidCancel:)]) {
         [_delegate videoViewControllerDidCancel:self];
@@ -702,9 +717,9 @@
         //        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc]initWithAsset:avAsset presetName:AVAssetExportPresetMediumQuality];
         
         //裁剪导出方式
-        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:avAsset presetName:AVAssetExportPresetMediumQuality];
+        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:avAsset presetName:AVAssetExportPresetMediumQuality]; //  AVAssetExportPresetMediumQuality //
         exportSession.videoComposition = mainCompositionInst;
-        //
+        
         
         //判断MP4文件是否有占位，如果有旧删除。
         NSString * mp4Path = [VJ_VideoFolderManager getVideoCompositionFilePathString];

@@ -137,6 +137,42 @@
 			<key>title</key>
 			<string>我</string>
 		</dict>
+		<key>profile-setting</key>
+		<dict>
+			<key>class</key>
+			<string>LLEditProfileViewController</string>
+			<key>nib</key>
+			<string>LLEditProfileViewController</string>
+			<key>title</key>
+			<string>我的</string>
+		</dict>
+		<key>setting-profile</key>
+		<dict>
+			<key>class</key>
+			<string>LLProfileEditViewController</string>
+			<key>nib</key>
+			<string>LLProfileEditViewController</string>
+			<key>title</key>
+			<string>设置</string>
+		</dict>
+		<key>edit-name</key>
+		<dict>
+			<key>class</key>
+			<string>LLEditNameViewController</string>
+			<key>nib</key>
+			<string>LLEditNameViewController</string>
+			<key>title</key>
+			<string>姓名</string>
+		</dict>
+		<key>edit-password</key>
+		<dict>
+			<key>class</key>
+			<string>LLPasswordEditViewController</string>
+			<key>nib</key>
+			<string>LLPasswordEditViewController</string>
+			<key>title</key>
+			<string>修改密码</string>
+		</dict>
 		<key>nav-messages</key>
 		<dict>
 			<key>navbar-hidden</key>

@@ -10,6 +10,7 @@
 #import "LLUserService.h"
 #import "LLUser.h"
 
+
 @interface LLMeViewController ()
 {
     LLUserService *userService;
@@ -40,11 +41,6 @@
 
 - (IBAction)codeScan:(id)sender
 {
-    
-}
-- (IBAction)updateAvatorAction:(id)sender
-{
-    
     if (!imagePickerController)
     {
         imagePickerController = [[OllaImagePickerController alloc] initWithViewController:self];
@@ -67,28 +63,46 @@
                 otherButtonTitles:@[@"拍照",@"从相册中选择"]
                          tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex)
      {
-        
-        if (0==tapIndex) {//camera
-            //默认 camera
-            [imagePickerController setImagePickerType:OllaImagePickerCamera];
-            [imagePickerController picker];
-            
-        }else if(1==tapIndex){// album
-            
-            [imagePickerController setImagePickerType:OllaImagPickerAlbum];
-            [imagePickerController picker];
-            
-        }
-        
-    }];
+         
+         if (0==tapIndex) {//camera
+             //默认 camera
+             [imagePickerController setImagePickerType:OllaImagePickerCamera];
+             [imagePickerController picker];
+             
+         }else if(1==tapIndex){// album
+             
+             [imagePickerController setImagePickerType:OllaImagPickerAlbum];
+             [imagePickerController picker];
+             
+         }
+         
+     }];
 }
 
 
+
+// 点击该cell进入编辑界面
+- (IBAction)editProfileAction:(id)sender
+{
+    [self openURLhidesBottomBarWhenPushed:[self.url URLByAppendingPathComponent:@"setting-profile"] params:self.user animated:YES];
+    
+}
+
+
+
+
+- (IBAction)updateAvatorAction:(id)sender
+{
+    
+    
+}
+
 - (void)updateAvatorWithImage:(UIImage *)image
 {
+    
     //先设置好封面，再上传
     self.avatorButoon.image = image;
-//    [coverImageView setImage:image];
+    //    [coverImageView setImage:image];
     // ***** 保存封面图片到本地  以供其他地方使用
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     NSData *imageData;
@@ -105,16 +119,21 @@
     
     [userService updateAvatar:image success:^(NSDictionary *userInfo)
      {
-        
-        NSString *remoteURL = userInfo[@"data"];//cover
-        [[SDImageCache sharedImageCache] storeImage:image forKey:remoteURL];//这里如果能手工建立头像的url缓存，下次进来就不用闪一下了。
-        
-    }
-    fail:^(NSError *error)
+         
+         NSString *remoteURL = userInfo[@"data"];//cover
+         [[SDImageCache sharedImageCache] storeImage:image forKey:remoteURL];//这里如果能手工建立头像的url缓存，下次进来就不用闪一下了。
+         
+     }
+                         fail:^(NSError *error)
      {
-        [JDStatusBarNotification showWithStatus:@"更新头像失败" dismissAfter:1.f styleName:JDStatusBarStyleDark];
-        
-    }];
+         [JDStatusBarNotification showWithStatus:@"更新头像失败" dismissAfter:1.f styleName:JDStatusBarStyleDark];
+         
+     }];
+    
+    
+    
+    
+    
 }
 
 - (UITabBar *)tabbar

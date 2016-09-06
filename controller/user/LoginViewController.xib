@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -16,6 +16,7 @@
                 <outlet property="passwordTextField" destination="he2-dG-oho" id="DeH-3Q-eH4"/>
                 <outlet property="signupButton" destination="R11-eo-eUf" id="xkb-zn-4qF"/>
                 <outlet property="tableSource" destination="mud-9V-0Ew" id="AtA-Tu-QVF"/>
+                <outlet property="tableView" destination="6j1-0w-Bx3" id="vCk-HO-c1Z"/>
                 <outlet property="titleLabel" destination="Aua-zx-HEi" id="Ayi-mb-OvK"/>
                 <outlet property="usernameTextFeild" destination="mwl-xQ-Uan" id="qhq-7F-nP2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="Hi9-vz-ypq"/>
@@ -182,13 +183,19 @@
                             <action selector="login:" destination="-1" eventType="touchUpInside" id="FPq-zw-jns"/>
                         </connections>
                     </button>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-Rb-Qnb" userLabel="Indicator View">
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7WH-Rb-Qnb" userLabel="Indicator View">
                         <rect key="frame" x="171" y="25" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="4Ih-NJ-rOg"/>
+                            <constraint firstAttribute="width" constant="20" id="Zj9-eW-mi8"/>
+                        </constraints>
                     </activityIndicatorView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="7WH-Rb-Qnb" firstAttribute="top" secondItem="Qff-Mb-CmB" secondAttribute="top" constant="25" id="atC-46-GKq"/>
                     <constraint firstItem="5mI-fJ-BLe" firstAttribute="leading" secondItem="Qff-Mb-CmB" secondAttribute="leadingMargin" constant="24" id="jJV-jI-gXY"/>
                     <constraint firstAttribute="trailingMargin" secondItem="5mI-fJ-BLe" secondAttribute="trailing" constant="20" id="pAD-yS-BhP"/>
+                    <constraint firstItem="7WH-Rb-Qnb" firstAttribute="centerX" secondItem="Qff-Mb-CmB" secondAttribute="centerX" id="z1X-E5-LUD"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="747.5" y="276"/>

@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet OllaButton *signupButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation LoginViewController
@@ -29,6 +31,14 @@
     self.titleLabel.center = self.headView.center;
     loginService = [[LLLoginService alloc] init ];
     self.userAuth = [[loginService loginAuthDAO] get];
+    
+    // tableView向上偏了, 改变偏移量
+    if (Screen_Height == 568)
+    {
+        self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    }
+    
+
     if ((NSInteger*)[self.userAuth .username length] > 12)
     {
         [self doAction:_signupButton];
