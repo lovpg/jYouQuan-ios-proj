@@ -1005,7 +1005,7 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
             otherButtonTitles:@[
                                 @"删除",@"关小黑屋",
                                 @"置顶",@"取消置顶",
-                                @"重置密码",@"和他/她聊天"]
+                                @"重置密码",@"浏览器打开"]
                      tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex)
      {
          
@@ -1031,10 +1031,9 @@ void ProviderReleaseData (void *info, const void *data, size_t size)
          }
          else if(5==tapIndex)
          {
-             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[share.user dictionaryRepresentation]];
-             [dict setValue:@1 forKey:@"flag"];
-            [self openURL:[NSURL URLWithString:[[self.url urlPath] stringByAppendingPathComponent:@"im"] queryValue:dict] animated:YES];
-//             [self openURL:[NSURL URLWithString:@"lbslm:///root/plaza/chats/im" queryValue:dict] animated:YES];
+             NSString *textURL = @"http://app.lbslm.com/share/detail.do?shareId=";
+             NSURL *cleanURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", textURL,share.shareId]];
+             [[UIApplication sharedApplication] openURL:cleanURL];
          }
          
          

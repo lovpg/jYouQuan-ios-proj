@@ -314,6 +314,14 @@
         // [self focusShare:[userInfo objectForKey:@"dataItem"]];
         
     }
+    else if ([eventName isEqualToString:LLShareCategoryButtonClickEvent])
+    {
+        // 先判断是否填写资料
+        LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
+        
+        [self openURL:[NSURL URLWithString:@"present:///root/topic-share-list" ] params:dataItem.tags animated:YES];
+        //     }
+    }
     else if ([eventName isEqualToString:LLMyCenterShareCommentClickEvent])
     {  // 点击评论
         // 先判断是否填写资料
@@ -482,7 +490,7 @@
             otherButtonTitles:@[
                                 @"删除",@"关小黑屋",
                                 @"置顶",@"取消置顶",
-                                @"重置密码",@"和他/她聊天"]
+                                @"重置密码",@"浏览器打开"]
                      tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex)
      {
          
@@ -508,9 +516,9 @@
          }
          else if(5==tapIndex)
          {
-             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[share.user dictionaryRepresentation]];
-             [dict setValue:@1 forKey:@"flag"];
-             [self openURL:[NSURL URLWithString:[[self.url urlPath] stringByAppendingPathComponent:@"im"] queryValue:dict] animated:YES];
+             NSString *textURL = @"http://app.lbslm.com/share/detail.do?shareId=";
+             NSURL *cleanURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", textURL,share.shareId]];
+             [[UIApplication sharedApplication] openURL:cleanURL];
              //             [self openURL:[NSURL URLWithString:@"lbslm:///root/plaza/chats/im" queryValue:dict] animated:YES];
          }
          
