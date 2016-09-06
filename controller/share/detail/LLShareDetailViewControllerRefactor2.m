@@ -41,6 +41,13 @@
                                                                     target:self
                                                                     action:@selector(backAction:)];
         [self.navigationItem setLeftBarButtonItem:leftItem animated:YES];
+        
+        UIButton *moreButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
+        [moreButton setImage:[UIImage imageNamed:@"nav_more"] forState:UIControlStateNormal];
+        [moreButton addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *moreItem = [[UIBarButtonItem alloc] initWithCustomView:moreButton];
+        [self.navigationItem setRightBarButtonItem:moreItem];
+        
     }
     return self;
 }
@@ -51,6 +58,28 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)moreAction:(id)sender
+{
+    [UIActionSheet showInView:[self.presentedViewController view]
+                    withTitle:nil
+            cancelButtonTitle:@"取消"
+       destructiveButtonTitle:nil
+            otherButtonTitles:@[
+                                @"举报",@"删除"]
+                     tapBlock:^(UIActionSheet *actionSheet,NSInteger tapIndex)
+     {
+         
+         if (0==tapIndex)
+         {
+              [self routerEventWithName:LLShareDetailReportButtonClick userInfo:@{@"report":@""}];
+         }
+         else if (1==tapIndex)
+         {
+             [self doDelete:nil];
+         }
+         
+     }];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -108,16 +137,16 @@
     [self.dataItemDataSource addObject:self.share];
    // [myTableView reloadData];
     
-    if ( ![[[userService getMe] uid] isEqualToString:self.share.user.uid] )
-    {
-        self.drButton.hidden = YES;
-        self.reportButton.hidden = NO;
-    }
-    else
-    {
-        self.drButton.hidden = NO;
-        self.reportButton.hidden = YES;
-    }
+//    if ( ![[[userService getMe] uid] isEqualToString:self.share.user.uid] )
+//    {
+//        self.drButton.hidden = YES;
+//        self.reportButton.hidden = NO;
+//    }
+//    else
+//    {
+//        self.drButton.hidden = NO;
+//        self.reportButton.hidden = YES;
+//    }
     
    [myTableView.header beginRefreshing];
     
@@ -683,7 +712,8 @@
 
 #pragma mark - Delete
 // 删除share的功能  //// ////////////
-- (IBAction)deleteButtonClicked:(id)sender {
+- (IBAction)deleteButtonClicked:(id)sender
+{
     
     [self.toolBarView.inputTextView resignFirstResponder];
     
@@ -704,26 +734,43 @@
     }
 }
 
-- (void)doDelete:(id)sender{
+- (void)doDelete:(id)sender
+{
     
-    
-    //    indicatorView.hidden = NO;
-    //    [indicatorView startAnimating];
+    if ( ![[[userService getMe] uid] isEqualToString:self.share.user.uid] )
+    {
+        [UIAlertView showWithTitle:nil
+                           message:@"无权限删除贴子."
+                 cancelButtonTitle:nil
+                 otherButtonTitles:@[@"确定"]
+                          tapBlock:^(UIAlertView *alertView,NSInteger tapIndex)
+        {
+            
+            if (tapIndex == 0)
+            {
+                return ;
+            }
+            
+        }];
+    }
+
     
     [self showHudInView:self.view hint:nil];
     
     [[LLHTTPRequestOperationManager shareManager]
      GETWithURL:LBSLM_API_Share_Delete
      parameters:@{@"shareId":self.share.shareId}
-     success:^(id data,BOOL hasNext){
-         
+     success:^(id data,BOOL hasNext)
+    {
          [[NSNotificationCenter defaultCenter] postNotificationName:@"OllaShareDeleteNotification" object:nil userInfo:@{@"shareId":self.share.shareId}];
          
          [self hideHud];
          
          [self openURL:[NSURL URLWithString:@"." relativeToURL:self.url] animated:YES];
          
-     } failure:^(NSError *error){
+     }
+     failure:^(NSError *error)
+    {
          
          [self hideHud];
          //         indicatorView.hidden = YES;

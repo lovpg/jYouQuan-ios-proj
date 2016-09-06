@@ -79,7 +79,7 @@
     
     __weak __typeof(self)weakSelf = self;
     [self showHudInView:self.view hint:nil];
-    [[LLHTTPRequestOperationManager shareManager] GETWithURL:Olla_API_Edit_Password parameters:@{@"password":password} success:^(id datas, BOOL hasNext) {
+    [[LLHTTPRequestOperationManager shareManager] GETWithURL:TM_API_Edit_Password parameters:@{@"password":password} success:^(id datas, BOOL hasNext) {
         
         [weakSelf hideHud];
 //                [(LLAppDelegate *)[UIApplication sharedApplication].delegate logout]; // 这里不用这句
