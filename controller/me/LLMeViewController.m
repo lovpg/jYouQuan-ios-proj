@@ -141,19 +141,17 @@
     return self.tabBarController.tabBar;
 }
 
-- (void) viewDidAppear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    userService = [[LLUserService alloc] init];
+    if (!userService)
+    {
+        userService = [[LLUserService alloc] init];
+    }
     self.user  = [userService getMe];
     self.nicknameLabel.text = self.user.nickname;
     self.usernameLabel.text = self.user.userName;
-    self.avatorButoon.thumbSize = CGSizeMake(60, 60);
+    
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     NSData *imageData =[defaults objectForKey:@"avatorImageData"];
     if(imageData)
@@ -164,7 +162,30 @@
     {
         [self.avatorButoon sd_setImageWithURL:[NSURL URLWithString:self.user.avatar] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"headphoto_default_128"]];
     }
+    
+    
 
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeUserNameState:) name:@"OllaNicknameChangeNotification" object:nil];
+    
+    self.avatorButoon.thumbSize = CGSizeMake(60, 60);
+    
+}
+
+- (void)changeUserNameState:(NSNotification*)notification
+{
+    self.nicknameLabel.text = notification.object;
+    
 }
 
 - (void)didReceiveMemoryWarning {

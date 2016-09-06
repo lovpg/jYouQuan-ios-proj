@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,22 +15,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowhead.png" id="A5J-31-b3k">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowhead.png" translatesAutoresizingMaskIntoConstraints="NO" id="A5J-31-b3k">
                         <rect key="frame" x="292" y="40" width="20" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="4rm-Um-9bg"/>
+                            <constraint firstAttribute="width" constant="20" id="KNe-ti-TVO"/>
+                        </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6No-mO-ofX">
+                    <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6No-mO-ofX">
                         <rect key="frame" x="15" y="15" width="70" height="70"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="GOj-Zf-GXL"/>
+                            <constraint firstAttribute="width" constant="70" id="h1m-CH-JDq"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N2R-Y2-Ns7">
-                        <rect key="frame" x="186" y="39" width="104" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2R-Y2-Ns7">
+                        <rect key="frame" x="164" y="39" width="126" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="u50-dK-avQ"/>
+                            <constraint firstAttribute="width" constant="126" id="wVL-wX-WYU"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="A5J-31-b3k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="Ffd-0B-aHh"/>
+                    <constraint firstItem="6No-mO-ofX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="I57-hM-RoT"/>
+                    <constraint firstItem="6No-mO-ofX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="J7r-d5-47L"/>
+                    <constraint firstItem="A5J-31-b3k" firstAttribute="leading" secondItem="N2R-Y2-Ns7" secondAttribute="trailing" constant="2" id="ZP6-re-cTp"/>
+                    <constraint firstItem="N2R-Y2-Ns7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="39" id="eQ6-Dc-9Oq"/>
+                    <constraint firstAttribute="trailing" secondItem="A5J-31-b3k" secondAttribute="trailing" constant="8" id="uxz-Tw-MFC"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatorImage" destination="6No-mO-ofX" id="zig-L7-DUH"/>

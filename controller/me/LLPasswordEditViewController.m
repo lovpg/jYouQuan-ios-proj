@@ -43,6 +43,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // _passwordTextField.secureTextEntry = YES;// 密码模式,加密
+    self.passwordTextField.secureTextEntry = YES;
+    self.confirmPasswordTextField.secureTextEntry = YES;
+    
+    
     // 更换返回按钮图标
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backer"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     

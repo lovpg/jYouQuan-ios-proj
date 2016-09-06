@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,25 +14,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="52.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wOb-KC-10X">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOb-KC-10X">
                         <rect key="frame" x="14" y="16" width="111" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="111" id="ZgF-RG-P0z"/>
+                            <constraint firstAttribute="height" constant="21" id="fvC-Ez-972"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowhead.png" id="lAh-rh-4Ug">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowhead.png" translatesAutoresizingMaskIntoConstraints="NO" id="lAh-rh-4Ug">
                         <rect key="frame" x="292" y="16" width="20" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="GWW-75-mUb"/>
+                            <constraint firstAttribute="height" constant="20" id="VZS-s6-1dO"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i8T-18-yVy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8T-18-yVy">
                         <rect key="frame" x="177" y="16" width="107" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="107" id="2Ql-bN-VYZ"/>
+                            <constraint firstAttribute="height" constant="21" id="Yfl-GA-JKE"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="i8T-18-yVy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Jh8-VT-Q5y"/>
+                    <constraint firstItem="wOb-KC-10X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="KXI-BI-9Wh"/>
+                    <constraint firstItem="lAh-rh-4Ug" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Va3-2L-nZ2"/>
+                    <constraint firstAttribute="trailing" secondItem="lAh-rh-4Ug" secondAttribute="trailing" constant="8" id="ef4-3P-xUj"/>
+                    <constraint firstItem="lAh-rh-4Ug" firstAttribute="leading" secondItem="i8T-18-yVy" secondAttribute="trailing" constant="8" id="gXO-Zx-3Bg"/>
+                    <constraint firstItem="wOb-KC-10X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="wnw-Sf-mhk"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="nicknameLB" destination="i8T-18-yVy" id="pwF-M2-hn2"/>
