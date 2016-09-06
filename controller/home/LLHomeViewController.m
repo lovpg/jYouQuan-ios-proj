@@ -508,7 +508,6 @@ LLShareDataSourceDelegate>
 {
     return self.tabBarController.tabBar;
 }
-
 #pragma mark - Router
 - (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
     
@@ -607,6 +606,12 @@ LLShareDataSourceDelegate>
         //        } else {
         //     [self shareWithShare:dataItem];
         //  }
+    }
+    else if ([eventName isEqualToString:LLMyCenterShareThirdPlatfomButtonClickEvent])
+    {
+        LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
+        LLThirdCollection *collection = dataItem.collection;
+        [self openURL:[NSURL URLWithString:@"present:///root/web"] params:collection animated:YES];
     }
     else if ([eventName isEqualToString:LLMyCenterShareAvatarButtonClickEvent])
     {

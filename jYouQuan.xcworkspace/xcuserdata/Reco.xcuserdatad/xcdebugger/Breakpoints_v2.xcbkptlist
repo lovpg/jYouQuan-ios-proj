@@ -906,11 +906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHomeViewController.m"
-            timestampString = "490873515.289349"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "515"
-            endingLineNumber = "515"
+            startingLineNumber = "514"
+            endingLineNumber = "514"
             landmarkName = "-routerEventWithName:userInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -938,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHomeViewController.m"
-            timestampString = "494836629.636546"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1002"
-            endingLineNumber = "1002"
+            startingLineNumber = "1007"
+            endingLineNumber = "1007"
             landmarkName = "-opt:"
             landmarkType = "5">
          </BreakpointContent>
@@ -954,11 +954,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHomeViewController.m"
-            timestampString = "494838702.661151"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1064"
-            endingLineNumber = "1064"
+            startingLineNumber = "1069"
+            endingLineNumber = "1069"
             landmarkName = "-moveTop:"
             landmarkType = "5">
          </BreakpointContent>
@@ -970,11 +970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHomeViewController.m"
-            timestampString = "494836629.636546"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "640"
-            endingLineNumber = "640"
+            startingLineNumber = "645"
+            endingLineNumber = "645"
             landmarkName = "-routerEventWithName:userInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1418,11 +1418,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHomeViewController.m"
-            timestampString = "494759344.685005"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "575"
-            endingLineNumber = "575"
+            startingLineNumber = "574"
+            endingLineNumber = "574"
             landmarkName = "-routerEventWithName:userInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1942,7 +1942,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "view/home/LLHomeShareViewCell.m"
@@ -2026,11 +2026,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHotShareViewController.m"
-            timestampString = "494840402.340434"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "537"
-            endingLineNumber = "537"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
             landmarkName = "-resetPasswd:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2042,11 +2042,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHotShareViewController.m"
-            timestampString = "494840402.340434"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "543"
-            endingLineNumber = "543"
+            startingLineNumber = "549"
+            endingLineNumber = "549"
             landmarkName = "-resetPasswd:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2186,11 +2186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHotShareViewController.m"
-            timestampString = "494840388.542807"
+            timestampString = "494860626.206626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "-routerEventWithName:userInfo:"
             landmarkType = "5">
          </BreakpointContent>
