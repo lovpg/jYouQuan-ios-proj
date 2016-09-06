@@ -256,6 +256,8 @@ static const int ddLogLevel = DDLogLevelDebug;
 
 #define Olla_API_Post_Comment_BatchList  @"/comment/batchList.do"
 
+#define TM_API_Topic_Share_List @"/share/tlist.do"
+
 // 帖子收藏
 #define Olla_API_Post_Favorite @"/post/favorite.do"  // postId=
 #define Olla_API_Post_Favorite_Cancel @"/post/unfavorite.do"  // postId=

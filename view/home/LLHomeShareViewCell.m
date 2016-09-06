@@ -325,6 +325,10 @@
 {
        currentUser.follow?[self unfollow:self.dataItem.user]:[self follow:self.dataItem.user];
 }
+- (IBAction)categoryBtnClick:(id)sender
+{
+    [self routerEventWithName:LLShareCategoryButtonClickEvent userInfo:@{@"dataItem":self.dataItem}];
+}
 
 - (void)unfollow:(LLSimpleUser *)user {
     

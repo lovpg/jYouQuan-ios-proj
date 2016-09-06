@@ -17,6 +17,13 @@
 	<array/>
 	<key>ui</key>
 	<dict>
+		<key>topic-share-list</key>
+		<dict>
+			<key>class</key>
+			<string>LLTopicShareViewController</string>
+			<key>nib</key>
+			<string>LLTopicShareViewController</string>
+		</dict>
 		<key>focus</key>
 		<dict>
 			<key>class</key>
