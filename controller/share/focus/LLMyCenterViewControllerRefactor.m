@@ -20,6 +20,8 @@
 #import "LLSupplyProfileService.h"
 //#import <VKSdk/VKSdk.h>
 //#import "LLMyWalletViewController.h"#
+
+#import "LbslmWebViewController.h"
 #import "AppDelegate.h"
 #import "LLShareButton.h"
 #import "LLThirdCollection.h"
@@ -734,13 +736,19 @@ static NSArray *SCOPE = nil;
             }
         }
     }
+    else if ([eventName isEqualToString:LLMyCenterShareThirdPlatfomButtonClickEvent])
+    {
+        LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
+        LLThirdCollection *collection = dataItem.collection;
+        [self openURL:[NSURL URLWithString:@"present:///root/web"] params:collection animated:YES];
+    }
     else if ([eventName isEqualToString:LLShareTextPhoneNumberClickEvent])
     {  // 电话号码
         NSString *phoneNumber = userInfo[@"phoneNumber"];
         PSTAlertController *alertVC = [PSTAlertController alertControllerWithTitle:phoneNumber message:nil preferredStyle:PSTAlertControllerStyleAlert];
-        [alertVC addAction:[PSTAlertAction actionWithTitle:@"Copy" handler:^(PSTAlertAction *action) {
+        [alertVC addAction:[PSTAlertAction actionWithTitle:@"拷贝" handler:^(PSTAlertAction *action) {
             [[UIPasteboard generalPasteboard] setString:phoneNumber];
-            [self showHint:@"Copy to pasteboard"];
+            [self showHint:@"已拷贝"];
         }]];
         [alertVC addAction:[PSTAlertAction actionWithTitle:@"Call" handler:^(PSTAlertAction *action) {
             NSString *phoneStr = [phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -769,7 +777,7 @@ static NSArray *SCOPE = nil;
     {  // 点击评论
         // 先判断是否填写资料
         LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
-        [self openURL:[self.url URLByAppendingPathComponent:@"share-detail" queryValue:userInfo] params:dataItem animated:YES];
+        [self openURL:[NSURL URLWithString:@"present:///root/share-detail" ] params:dataItem animated:YES];
  //       }
         
 //        // *****重新获取帖子数据
@@ -795,7 +803,7 @@ static NSArray *SCOPE = nil;
         
         // 跳到share详情
         LLShare *dataItem = [userInfo objectForKey:@"share"];
-        [self openURL:[self.url URLByAppendingPathComponent:@"share-detail" queryValue:userInfo] params:dataItem animated:YES];
+        [self openURL:[NSURL URLWithString:@"present:///root/share-detail" ] params:dataItem animated:YES];
     }
     else if ([eventName isEqualToString:LLMyCenterAvatarButtonClickEvent])
     {  // 点击头像
@@ -809,23 +817,21 @@ static NSArray *SCOPE = nil;
         // 跳到收藏列表页面
        // [self openURL:[self.url URLByAppendingPathComponent:@"favorites-list"] animated:YES];
         LLShare *dataItem = [userInfo objectForKey:@"share"];
-        [self openURL:[self.url URLByAppendingPathComponent:@"share-detail" queryValue:userInfo] params:dataItem animated:YES];
+        [self openURL:[NSURL URLWithString:@"present:///root/share-detail" ] params:dataItem animated:YES];
     }
     else if ([eventName isEqualToString:LLMyCenterShareTapGestureClickEvent])
     {
         // 先判断是否填写资料
         LLShare *dataItem = [userInfo objectForKey:@"share"];
-        [self openURL:[self.url URLByAppendingPathComponent:@"share-detail" queryValue:userInfo] params:dataItem animated:YES];
+        [self openURL:[NSURL URLWithString:@"present:///root/share-detail" ] params:dataItem animated:YES];
    //     }
     } else if ([eventName isEqualToString:LLMyCenterShareShareButtonClickEvent])
     {  // 分享
         
         LLShare *dataItem = [userInfo objectForKey:@"share"];
-//        if (dataItem.bar) {
-//            [self shareWithPost:dataItem];
-//        } else {
-       //     [self shareWithShare:dataItem];
-      //  }
+
+        [self shareWithShare:dataItem];
+        
     }
     else if ([eventName isEqualToString:LLMyCenterShareAvatarButtonClickEvent])
     {
@@ -833,7 +839,7 @@ static NSArray *SCOPE = nil;
         if(user.uid == self.user.uid)return;
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[user dictionaryRepresentation]];
         [dict setValue:@1 forKey:@"flag"];
-        [self openURL:[self.url URLByAppendingPathComponent:@"im" queryValue:dict] animated:YES];
+        [self openURL:[NSURL URLWithString:@"present:///root/im"] params:user animated:NO];
 
     }
     else if ([eventName isEqualToString:LLMyCenterShareRewardButtonClickEvent])
@@ -841,7 +847,7 @@ static NSArray *SCOPE = nil;
         
         LLShare *dataItem = [userInfo objectForKey:@"share"];
         if ([dataItem.user.uid isEqualToString:[userService getMe].uid]) {
-            [UIAlertView showWithTitle:nil message:@"You cannot tip yourself." cancelButtonTitle:nil otherButtonTitles:@[@"OK"] tapBlock:^(UIAlertView *alertView,NSInteger tapIndex){
+            [UIAlertView showWithTitle:nil message:@"不能打赏你自己." cancelButtonTitle:nil otherButtonTitles:@[@"OK"] tapBlock:^(UIAlertView *alertView,NSInteger tapIndex){
                 
                 if (tapIndex == 0) {//OK
                     
@@ -897,8 +903,8 @@ static NSArray *SCOPE = nil;
 //    [shareView show];
 }
 
-- (void)shareWithShare:(LLShare *)dataItem {
-//    
+- (void)shareWithShare:(LLShare *)dataItem
+{
 //    NSString *host = [LLAppHelper baseAPIURL];
 //    NSString *url = [NSString stringWithFormat:@"%@/post/page.do?postId=%@", host, dataItem.shareId];
 //    

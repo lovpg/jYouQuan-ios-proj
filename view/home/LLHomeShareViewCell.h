@@ -35,6 +35,7 @@ static NSString *LLMyCenterOptButtonClickEvent = @"LLMyCenterOptButtonClickEvent
     __weak IBOutlet UILabel *enrollCount;
     __weak IBOutlet UIButton *avatarButton;
     
+    __weak IBOutlet UIImageView *topImageView;
     IBOutlet TTTAttributedLabel *shareTextLabel;
     IBOutlet OllaImageLimitGridView *imageGroupView;
     IBOutlet UIView *interactiveView;

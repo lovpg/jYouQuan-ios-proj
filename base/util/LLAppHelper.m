@@ -225,8 +225,13 @@
 
 + (NSString *)shareImageURLWithThumbString:(NSString *)key
 {
-    if ([key containString:@"_320x320_crop"]) {
-        return [key stringByReplacingOccurrencesOfString:@"_320x320_crop" withString:@""];
+    if ([key containString:@"_240x240_crop"])
+    {
+        return [key stringByReplacingOccurrencesOfString:@"_240x240_crop" withString:@""];
+    }
+    else if([key containString:@"_320x320_crop"])
+    {
+         return [key stringByReplacingOccurrencesOfString:@"_320x320_crop" withString:@""];
     }
     return [key stringByReplacingOccurrencesOfString:@"_160x160_crop" withString:@""];
 }

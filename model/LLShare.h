@@ -32,6 +32,7 @@ static NSString *LLShareTextPhoneNumberClickEvent = @"LLShareTextPhoneNumberClic
 @property(nonatomic,assign) BOOL good; //是否点赞
 @property(nonatomic,assign) BOOL favorite;  // 是否收藏
 @property(nonatomic,strong) LLSimpleUser *user;
+@property(nonatomic,assign) BOOL top; //是否置顶
 @property(nonatomic,strong) LLThirdCollection *collection;
 //@property(nonatomic,strong) LLGroupBar *bar;
 

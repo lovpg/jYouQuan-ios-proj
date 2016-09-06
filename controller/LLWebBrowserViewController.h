@@ -9,6 +9,8 @@
 #import "LLBaseViewController.h"
 
 @interface LLWebBrowserViewController : LLBaseViewController
+
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (nonatomic, strong) NSString *urlString;
 
 @end
