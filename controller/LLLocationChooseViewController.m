@@ -46,6 +46,8 @@
   [self openURL:[NSURL URLWithString:@"." relativeToURL:self.url] animated:YES];
 }
 
+
+
 - (void)setupView{
     
     UIImageView *pin = [[UIImageView alloc] initWithFrame:CGRectMake( 0, 0, 17, 25)];

@@ -186,6 +186,8 @@
 		<dict>
 			<key>class</key>
 			<string>LLEMIMViewController</string>
+			<key>nib</key>
+			<string>LLEMIMViewController</string>
 			<key>titile</key>
 			<string></string>
 		</dict>

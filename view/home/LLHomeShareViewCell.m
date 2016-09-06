@@ -184,7 +184,7 @@
 //    timeLabel.text = [self.dataItem timeString];
     
      LLUser *user = [userService getMe];
-    if(![user.uid isEqualToString:@"4463704"])
+    if(![user.uid isEqualToString:@"10000"])
     {
         self.optButton.hidden = YES;
     }
