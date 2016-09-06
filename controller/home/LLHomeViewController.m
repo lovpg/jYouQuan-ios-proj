@@ -582,6 +582,14 @@ LLShareDataSourceDelegate>
         [self openURL:[NSURL URLWithString:@"present:///root/share-detail" ] params:dataItem animated:YES];
         //     }
     }
+    else if ([eventName isEqualToString:LLShareCategoryButtonClickEvent])
+    {
+        // 先判断是否填写资料
+        LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
+        
+        [self openURL:[NSURL URLWithString:@"present:///root/topic-share-list" ] params:dataItem.tags animated:YES];
+        //     }
+    }
 //    else if ([eventName isEqualToString:LLMyCenterShareThirdPlatfomButtonClickEvent])
 //    {
 //        LbslmWebViewController *lvc = [[LbslmWebViewController alloc]initWithNibName:@"LbslmWebViewController" bundle:nil];

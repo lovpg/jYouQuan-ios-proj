@@ -71,11 +71,49 @@
          
          if (0==tapIndex)
          {
-              [self routerEventWithName:LLShareDetailReportButtonClick userInfo:@{@"report":@""}];
+             [[LLHTTPRequestOperationManager shareManager] GETWithURL:Olla_API_report
+                                                           parameters:@{@"shareId":self.share.shareId}
+                                                              success:^(id datas, BOOL hasNext)
+              {
+                  [UIAlertView showWithTitle:nil
+                                     message:@"已举报，等待管理员审核."
+                           cancelButtonTitle:nil
+                           otherButtonTitles:@[@"确定"]
+                                    tapBlock:^(UIAlertView *alertView,NSInteger tapIndex)
+                   {
+                       
+                       if (tapIndex == 0)
+                       {
+                           return ;
+                       }
+                       
+                   }];
+              }
+                                                              failure:^(NSError *error)
+              {
+                  NSString *errorMsg = [error.userInfo stringForKey:@"message"];
+                  if (errorMsg.length == 0) {
+                      errorMsg = error.localizedDescription;
+                  }
+                  
+                  [UIAlertView showWithTitle:nil
+                                     message:errorMsg
+                           cancelButtonTitle:nil
+                           otherButtonTitles:@[@"确定"]
+                                    tapBlock:^(UIAlertView *alertView,NSInteger tapIndex)
+                   {
+                       
+                       if (tapIndex == 0)
+                       {
+                           return ;
+                       }
+                       
+                   }];
+              }];
          }
          else if (1==tapIndex)
          {
-             [self doDelete:nil];
+             [self doDelete:sender];
          }
          
      }];
@@ -712,27 +750,27 @@
 
 #pragma mark - Delete
 // 删除share的功能  //// ////////////
-- (IBAction)deleteButtonClicked:(id)sender
-{
-    
-    [self.toolBarView.inputTextView resignFirstResponder];
-    
-    LLBottomActionSheet *sheet = [[LLBottomActionSheet alloc]
-                                  initWithTitle:@"确定让该分享下架吗?"
-                                  message:nil
-                                  delegate:self
-                                  cancelButtonTitle:@"放弃"
-                                  confirmButtonTitles:@"删除"];
-    [sheet setStyle:SheetRedButton];
-    [sheet show];
-}
-
--(void)sheetSelecteButton:(NSInteger)buttonIndex sheetView:(LLBottomActionSheet *)sheetView
-{
-    if (buttonIndex == 1) {
-        [self doDelete:sheetView];
-    }
-}
+//- (IBAction)deleteButtonClicked:(id)sender
+//{
+//    
+//    [self.toolBarView.inputTextView resignFirstResponder];
+//    
+//    LLBottomActionSheet *sheet = [[LLBottomActionSheet alloc]
+//                                  initWithTitle:@"确定让该分享下架吗?"
+//                                  message:nil
+//                                  delegate:self
+//                                  cancelButtonTitle:@"放弃"
+//                                  confirmButtonTitles:@"删除"];
+//    [sheet setStyle:SheetRedButton];
+//    [sheet show];
+//}
+//
+//-(void)sheetSelecteButton:(NSInteger)buttonIndex sheetView:(LLBottomActionSheet *)sheetView
+//{
+//    if (buttonIndex == 1) {
+//        [self doDelete:sheetView];
+//    }
+//}
 
 - (void)doDelete:(id)sender
 {
@@ -746,40 +784,31 @@
                           tapBlock:^(UIAlertView *alertView,NSInteger tapIndex)
         {
             
-            if (tapIndex == 0)
-            {
-                return ;
-            }
             
         }];
     }
-
-    
-    [self showHudInView:self.view hint:nil];
-    
-    [[LLHTTPRequestOperationManager shareManager]
-     GETWithURL:LBSLM_API_Share_Delete
-     parameters:@{@"shareId":self.share.shareId}
-     success:^(id data,BOOL hasNext)
+    else
     {
-         [[NSNotificationCenter defaultCenter] postNotificationName:@"OllaShareDeleteNotification" object:nil userInfo:@{@"shareId":self.share.shareId}];
-         
-         [self hideHud];
-         
-         [self openURL:[NSURL URLWithString:@"." relativeToURL:self.url] animated:YES];
-         
-     }
-     failure:^(NSError *error)
-    {
-         
-         [self hideHud];
-         //         indicatorView.hidden = YES;
-         //         [indicatorView stopAnimating];
-     }];
-    //执行完毕之后
-    [sender dismissWithClickedButtonIndex:1 animated:NO];
-    
-    
+        [self showHudInView:self.view hint:nil];
+        [[LLHTTPRequestOperationManager shareManager]
+         GETWithURL:LBSLM_API_Share_Delete
+         parameters:@{@"shareId":self.share.shareId}
+         success:^(id data,BOOL hasNext)
+         {
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"OllaShareDeleteNotification" object:nil userInfo:@{@"shareId":self.share.shareId}];
+             [self hideHud];
+             [self openURL:[NSURL URLWithString:@"." relativeToURL:self.url] animated:YES];
+         }
+         failure:^(NSError *error)
+         {
+             [self hideHud];
+         }];
+        if([[self.url absoluteString] hasPrefix:@"present:"])
+        {
+            [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+        }
+        else [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - button click event

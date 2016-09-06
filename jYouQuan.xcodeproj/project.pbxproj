@@ -338,6 +338,8 @@
 		9E4882C51D3DD282003AEB2F /* UserProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4882BC1D3DD282003AEB2F /* UserProtocolViewController.xib */; };
 		9E531C041D7E5D6C000ABF5E /* nav_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E531C031D7E5D6C000ABF5E /* nav_more.png */; };
 		9E531C061D7E629F000ABF5E /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E531C051D7E629F000ABF5E /* black.png */; };
+		9E531C0B1D7E9945000ABF5E /* LLTopicShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E531C091D7E9945000ABF5E /* LLTopicShareViewController.m */; };
+		9E531C0C1D7E9945000ABF5E /* LLTopicShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E531C0A1D7E9945000ABF5E /* LLTopicShareViewController.xib */; };
 		9E5436951D40689B00BB67F9 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5436941D40689B00BB67F9 /* right_arrow.png */; };
 		9E5436971D40769D00BB67F9 /* say_hi_to.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5436961D40769D00BB67F9 /* say_hi_to.png */; };
 		9E5436991D40777900BB67F9 /* wa_tu_ji.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5436981D40777900BB67F9 /* wa_tu_ji.png */; };
@@ -1366,6 +1368,9 @@
 		9E4882BC1D3DD282003AEB2F /* UserProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProtocolViewController.xib; sourceTree = "<group>"; };
 		9E531C031D7E5D6C000ABF5E /* nav_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_more.png; sourceTree = "<group>"; };
 		9E531C051D7E629F000ABF5E /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
+		9E531C081D7E9945000ABF5E /* LLTopicShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTopicShareViewController.h; sourceTree = "<group>"; };
+		9E531C091D7E9945000ABF5E /* LLTopicShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTopicShareViewController.m; sourceTree = "<group>"; };
+		9E531C0A1D7E9945000ABF5E /* LLTopicShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLTopicShareViewController.xib; sourceTree = "<group>"; };
 		9E5436941D40689B00BB67F9 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
 		9E5436961D40769D00BB67F9 /* say_hi_to.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = say_hi_to.png; sourceTree = "<group>"; };
 		9E5436981D40777900BB67F9 /* wa_tu_ji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wa_tu_ji.png; sourceTree = "<group>"; };
@@ -3542,9 +3547,20 @@
 			path = user;
 			sourceTree = "<group>";
 		};
+		9E531C071D7E9945000ABF5E /* category */ = {
+			isa = PBXGroup;
+			children = (
+				9E531C081D7E9945000ABF5E /* LLTopicShareViewController.h */,
+				9E531C091D7E9945000ABF5E /* LLTopicShareViewController.m */,
+				9E531C0A1D7E9945000ABF5E /* LLTopicShareViewController.xib */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
 		9E6C07611D3F6B0500628BE9 /* share */ = {
 			isa = PBXGroup;
 			children = (
+				9E531C071D7E9945000ABF5E /* category */,
 				9EF371081D4284F200A96215 /* detail */,
 				9E6C07831D3F8B8400628BE9 /* focus */,
 				9E6C076C1D3F71F200628BE9 /* LLShareViewController.h */,
@@ -4481,6 +4497,7 @@
 				9EBE20391D4115DF00639DC5 /* head_bg@3x.png in Resources */,
 				9E4882BF1D3DD282003AEB2F /* LoginViewController.xib in Resources */,
 				9EBC47571D3F0C4100541F23 /* homepage_more_gray@2x.png in Resources */,
+				9E531C0C1D7E9945000ABF5E /* LLTopicShareViewController.xib in Resources */,
 				9E487E861D3DB80B003AEB2F /* LaunchScreen.storyboard in Resources */,
 				9ACCB6471D7D8780007E84B1 /* LLEditNameViewController.xib in Resources */,
 				9EBC461E1D3F089200541F23 /* LLHomeHeadCell.xib in Resources */,
@@ -4782,6 +4799,7 @@
 				9E4881771D3DBA2A003AEB2F /* OllaSandBox.m in Sources */,
 				9E4881711D3DBA2A003AEB2F /* UIImage+Resize.m in Sources */,
 				9EBC47511D3F0C4100541F23 /* LLSendMessageItem.m in Sources */,
+				9E531C0B1D7E9945000ABF5E /* LLTopicShareViewController.m in Sources */,
 				9E4881801D3DBA2A003AEB2F /* UIImageView+OllaStyle.m in Sources */,
 				9EF3713E1D4284F200A96215 /* LLCrownGoodListViewController.m in Sources */,
 				9E48824E1D3DC2E3003AEB2F /* LLShareService.m in Sources */,

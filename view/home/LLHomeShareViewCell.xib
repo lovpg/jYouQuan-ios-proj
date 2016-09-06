@@ -154,6 +154,9 @@
                                 <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="categoryBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jaj-Mm-MUo"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Tz-8g-PYj">
                         <rect key="frame" x="176" y="31" width="64" height="30"/>
