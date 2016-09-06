@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-N0-JWi">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-N0-JWi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sE-lM-Deg">
@@ -53,11 +53,17 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dEr-N0-JWi" secondAttribute="trailing" id="6pd-xe-vAo"/>
+                <constraint firstAttribute="bottom" secondItem="dEr-N0-JWi" secondAttribute="bottom" id="H6X-mv-gUp"/>
+                <constraint firstItem="dEr-N0-JWi" firstAttribute="leading" secondItem="1Ng-RC-yKu" secondAttribute="leading" id="Nno-hF-9hg"/>
+                <constraint firstItem="dEr-N0-JWi" firstAttribute="top" secondItem="1Ng-RC-yKu" secondAttribute="top" id="wZp-zC-blf"/>
+            </constraints>
             <point key="canvasLocation" x="13" y="152"/>
         </view>
     </objects>
     <resources>
-        <image name="back" width="31" height="23"/>
+        <image name="back" width="12" height="12"/>
         <image name="finish" width="60" height="60"/>
     </resources>
 </document>
