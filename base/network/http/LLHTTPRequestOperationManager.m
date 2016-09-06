@@ -699,20 +699,21 @@
                              parameters:(id)parameters
                                  images:(NSArray *)images
                                 success:(void (^)(NSDictionary *responseObject))success
-                                failure:(void (^)(NSError *error))failure{
+                                failure:(void (^)(NSError *error))failure
+{
     NSDictionary *params = [self timestampParams:parameters];
     AFHTTPRequestOperation * operation = [[LLHTTPRequestOperationManager shareManager]
                                           POST:URLString
                                           parameters:params
-                                          constructingBodyWithBlock:^(id <AFMultipartFormData> formData){
-                                              
-                                              for (UIImage *image in images) {
-                                                  if (![image isKindOfClass:[UIImage class]]) {
-                                                      continue ;
+                                          constructingBodyWithBlock:^(id <AFMultipartFormData> formData)
+                                          {
+                                                  for (UIImage *image in images) {
+                                                      if (![image isKindOfClass:[UIImage class]]) {
+                                                          continue ;
+                                                      }
+                                                      
+                                                      [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 0.4) name:@"file" fileName:@"file.jpg" mimeType:@"multipart/form-data"];
                                                   }
-                                                  
-                                                  [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 0.4) name:@"file" fileName:@"file.jpg" mimeType:@"multipart/form-data"];
-                                              }
                                               
                                           } success:^(AFHTTPRequestOperation *operation, id responseObject){
                                               

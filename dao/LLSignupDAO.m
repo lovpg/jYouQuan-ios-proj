@@ -16,12 +16,7 @@
                     avatar:(UIImage *)image
                    success:(void (^)(LLLoginAuth *loginAuth))success fail:(void (^)(NSError *error))fail
 {
-    if (!image)
-    {
-        DDLogError(@"图片参数不合法");
-        fail(nil);
-        return;
-    }
+
     // [LLHTTPRequestOperationManager shareManager] -> [LLHTTPWriteOperationManager shareWriteManager]
     [[LLHTTPWriteOperationManager shareWriteManager]
      POSTWithURL:LBSLM_API_Signup
@@ -29,8 +24,9 @@
                   @"password":password,
                   @"code":code
                   }
-     images:@[image]
-     success:^(NSDictionary *responseObject) {
+     images:image ? @[image] : nil
+     success:^(NSDictionary *responseObject)
+    {
         DDLogInfo(@"signup auth info = %@",responseObject);
         
         NSDictionary *data = responseObject[@"data"];

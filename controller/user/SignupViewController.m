@@ -79,10 +79,10 @@
        password: (NSString *)password
            code: (NSString *)code
 {
-    UIImage *headPhotoImage = [UIImage imageNamed:@"default_headphoto"];
+    UIImage *headPhotoImage = [UIImage imageNamed:@"headphoto_default"];
     [signupService signupWithUserName:userName
                              password:password
-                             code:code
+                                 code:code
                                avatar:headPhotoImage
                               success:^(LLLoginAuth *loginAuth)
      {
@@ -117,6 +117,7 @@
          {
              message = @"未知错误";
          }
+         self.nocationView.hidden = YES;
          [UIAlertView showWithTitle:nil message:message cancelButtonTitle:@"知道了" otherButtonTitles:nil tapBlock:nil];
      }];
     
@@ -185,9 +186,9 @@
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
-                [_l_timeButton setBackgroundColor: RGB_HEX(0x5fc225)];
                 [_l_timeButton setTextColor:[UIColor whiteColor]];
                 [_l_timeButton setTitle:@"发送验证码" forState:UIControlStateNormal];
+                _l_timeButton.backgroundColor = RGB_HEX(0xe21001);
                 _l_timeButton.userInteractionEnabled = YES;
             });
         }else{
