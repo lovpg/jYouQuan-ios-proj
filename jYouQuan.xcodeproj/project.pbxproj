@@ -16,6 +16,8 @@
 		9A16542E1D7D1C06006FB41B /* password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A16542B1D7D1C06006FB41B /* password@3x.png */; };
 		9A1D21BE1D7E5D2500280EED /* LLPasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D21BC1D7E5D2500280EED /* LLPasswordEditViewController.m */; };
 		9A1D21BF1D7E5D2500280EED /* LLPasswordEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */; };
+		9A1D21C81D7E9E4E00280EED /* LLLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */; };
+		9A1D21C91D7E9E4E00280EED /* LLLogoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */; };
 		9A5B33B01D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */; };
 		9A5B33B31D78331300DE9F51 /* flashOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B21D78331300DE9F51 /* flashOn.png */; };
 		9A5B33B51D78331700DE9F51 /* flashOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B41D78331700DE9F51 /* flashOff.png */; };
@@ -44,14 +46,11 @@
 		9AD6121B1D7431520052350D /* KZVideoSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612131D7431520052350D /* KZVideoSupport.m */; };
 		9AD6121C1D7431520052350D /* KZVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612151D7431520052350D /* KZVideoViewController.m */; };
 		9AD6121D1D7431520052350D /* LLMediaRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD612171D7431520052350D /* LLMediaRecordController.m */; };
-
-		9AF1C4C81D7959E8006FBDFD /* LLImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */; };
 		9E2BE8011D7D770E007805CB /* top.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2BE8001D7D770E007805CB /* top.png */; };
 		9E2BE8031D7D7826007805CB /* wonderful.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2BE8021D7D7826007805CB /* wonderful.png */; };
 		9E3931481D7CFF8700E2511E /* LbslmWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */; };
 		9E3931491D7CFF8700E2511E /* LbslmWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */; };
 		9E39314B1D7D0DE300E2511E /* transfer_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E39314A1D7D0DE300E2511E /* transfer_24.png */; };
-
 		9E3F4C6D1D3F4EEB00AAF9F8 /* EaseMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F4C6B1D3F4EEB00AAF9F8 /* EaseMob.bundle */; };
 		9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E43F1271D45A04200F89637 /* jion_jbz.png */; };
 		9E43F12D1D45A28900F89637 /* LLJionWorkCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43F12B1D45A28900F89637 /* LLJionWorkCellTableViewCell.m */; };
@@ -661,6 +660,9 @@
 		9A1D21BB1D7E5D2500280EED /* LLPasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPasswordEditViewController.h; sourceTree = "<group>"; };
 		9A1D21BC1D7E5D2500280EED /* LLPasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPasswordEditViewController.m; sourceTree = "<group>"; };
 		9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLPasswordEditViewController.xib; sourceTree = "<group>"; };
+		9A1D21C51D7E9E4D00280EED /* LLLogoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLogoutTableViewCell.h; sourceTree = "<group>"; };
+		9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLogoutTableViewCell.m; sourceTree = "<group>"; };
+		9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLLogoutTableViewCell.xib; sourceTree = "<group>"; };
 		9A5B33AE1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJ_VideoRecorderToolView.h; sourceTree = "<group>"; };
 		9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VJ_VideoRecorderToolView.m; sourceTree = "<group>"; };
 		9A5B33B21D78331300DE9F51 /* flashOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashOn.png; sourceTree = "<group>"; };
@@ -701,16 +703,12 @@
 		9AD612151D7431520052350D /* KZVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZVideoViewController.m; sourceTree = "<group>"; };
 		9AD612161D7431520052350D /* LLMediaRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMediaRecordController.h; sourceTree = "<group>"; };
 		9AD612171D7431520052350D /* LLMediaRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMediaRecordController.m; sourceTree = "<group>"; };
-
-		9AF1C4C61D7959E8006FBDFD /* LLImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLImagePickerViewController.h; sourceTree = "<group>"; };
-		9AF1C4C71D7959E8006FBDFD /* LLImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLImagePickerViewController.m; sourceTree = "<group>"; };
 		9E2BE8001D7D770E007805CB /* top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top.png; sourceTree = "<group>"; };
 		9E2BE8021D7D7826007805CB /* wonderful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wonderful.png; sourceTree = "<group>"; };
 		9E3931451D7CFF8700E2511E /* LbslmWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LbslmWebViewController.xib; path = ../LbslmWebViewController.xib; sourceTree = "<group>"; };
 		9E3931461D7CFF8700E2511E /* LbslmWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LbslmWebViewController.m; path = ../LbslmWebViewController.m; sourceTree = "<group>"; };
 		9E3931471D7CFF8700E2511E /* LbslmWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LbslmWebViewController.h; path = ../LbslmWebViewController.h; sourceTree = "<group>"; };
 		9E39314A1D7D0DE300E2511E /* transfer_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transfer_24.png; sourceTree = "<group>"; };
-
 		9E3F4C031D3F4EEB00AAF9F8 /* EMCallManagerCallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerCallDelegate.h; sourceTree = "<group>"; };
 		9E3F4C041D3F4EEB00AAF9F8 /* EMCallManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCallManagerDelegate.h; sourceTree = "<group>"; };
 		9E3F4C051D3F4EEB00AAF9F8 /* EaseMob+CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EaseMob+CallService.h"; sourceTree = "<group>"; };
@@ -1934,6 +1932,9 @@
 				9ACCB63E1D7D749F007E84B1 /* LLPasswordTableViewCell.h */,
 				9ACCB63F1D7D749F007E84B1 /* LLPasswordTableViewCell.m */,
 				9ACCB6401D7D749F007E84B1 /* LLPasswordTableViewCell.xib */,
+				9A1D21C51D7E9E4D00280EED /* LLLogoutTableViewCell.h */,
+				9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */,
+				9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */,
 			);
 			path = me;
 			sourceTree = "<group>";
@@ -4615,6 +4616,7 @@
 				9EF371431D4284F200A96215 /* LLEnrollTableViewCell.xib in Resources */,
 				9A5B33B71D7836FA00DE9F51 /* changeCamer.png in Resources */,
 				9E4880D91D3DBA2A003AEB2F /* CTAssetsPicker.xcassets in Resources */,
+				9A1D21C91D7E9E4E00280EED /* LLLogoutTableViewCell.xib in Resources */,
 				9E4882C51D3DD282003AEB2F /* UserProtocolViewController.xib in Resources */,
 				9E4880EF1D3DBA2A003AEB2F /* MBProgressHUD.bundle in Resources */,
 				9EF219281D41EE4E0015995C /* share_location_pin_bg.png in Resources */,
@@ -4838,6 +4840,7 @@
 				9E48816F1D3DBA2A003AEB2F /* UIImage+Filter.m in Sources */,
 				9E4882481D3DC2E3003AEB2F /* LLLoginAuthServicd.m in Sources */,
 				9E4880E91D3DBA2A003AEB2F /* NSMethodSignature+EXT.m in Sources */,
+				9A1D21C81D7E9E4E00280EED /* LLLogoutTableViewCell.m in Sources */,
 				9E4880F61D3DBA2A003AEB2F /* MJPhotoView.m in Sources */,
 				9E48816B1D3DBA2A003AEB2F /* UIDevice+software.m in Sources */,
 				9E48810B1D3DBA2A003AEB2F /* TTTAttributedLabel.m in Sources */,

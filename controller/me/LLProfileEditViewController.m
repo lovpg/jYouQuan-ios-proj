@@ -10,6 +10,7 @@
 #import "LLPasswordTableViewCell.h"
 #import "LLAvatorTableViewCell.h"
 #import "LLNickNameTableViewCell.h"
+#import "LLLogoutTableViewCell.h"
 #import "LLUser.h"
 
 
@@ -32,6 +33,8 @@
 
 - (void)viewDidLoad
 {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"backer"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeUserNameState:) name:@"OllaNicknameChangeNotification" object:nil];
     [super viewDidLoad];
     self.user = self.params;
@@ -44,6 +47,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"LLAvatorTableViewCell" bundle:nil] forCellReuseIdentifier:@"avatorEdit"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LLNickNameTableViewCell" bundle:nil] forCellReuseIdentifier:@"nicknameEdit"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LLPasswordTableViewCell" bundle:nil] forCellReuseIdentifier:@"passwordEdit"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"LLLogoutTableViewCell" bundle:nil] forCellReuseIdentifier:@"logoutCell"];
    
 
     
@@ -68,7 +72,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,13 +94,17 @@
         cell2.nicknameLB.textAlignment = NSTextAlignmentRight;
         return cell2;
     }
-    else
+    else if (indexPath.section == 2)
     {
         LLPasswordTableViewCell *cell3 = [tableView dequeueReusableCellWithIdentifier:@"passwordEdit" forIndexPath:indexPath];
         return cell3;
     }
     
-    
+    else
+    {
+        LLLogoutTableViewCell *cell4 = [tableView dequeueReusableCellWithIdentifier:@"logoutCell" forIndexPath:indexPath];
+        return cell4;
+    }
     
 }
 
@@ -194,6 +202,12 @@
             
         }
             break;
+            case 3:
+        {
+             [(AppDelegate *)self.context logout];
+            
+            
+        }
         default:
             break;
     }
@@ -251,6 +265,13 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)back:(UIBarButtonItem *)barButtonItem
+{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 

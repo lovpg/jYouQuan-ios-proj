@@ -35,17 +35,21 @@ extern NSString *OllaNicknameChangeNotification;
     // Do any additional setup after loading the view from its nib.
     
     // 更换返回按钮图标
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backer"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"backer"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"finish"] style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"finish"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.title = @"修改昵称";
+    
     self.backGroundImage.backgroundColor = [UIColor colorWithWhite:0.95 alpha:0.9];
-    _nameTextField = [[UITextField alloc]initWithFrame:CGRectMake(5, 95, Screen_Width - 10, 30)];
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 100, Screen_Width, 40)];
+    backView.backgroundColor = [UIColor whiteColor];
+    backView.layer.borderWidth = 0.20;
+    backView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [self.backGroundImage addSubview:backView];
+    _nameTextField = [[UITextField alloc]initWithFrame:CGRectMake(8, 5, Screen_Width - 16, 30)];
     _nameTextField.backgroundColor = [UIColor whiteColor];
-    _nameTextField.layer.cornerRadius = 3;
-    _nameTextField.clipsToBounds = YES;
-    [self.backGroundImage addSubview:_nameTextField];
+    [backView addSubview:_nameTextField];
     
     userService = [[LLUserService alloc] init];
     _nameTextField.text = [userService getMe].nickname;
@@ -94,9 +98,9 @@ extern NSString *OllaNicknameChangeNotification;
 }
 
 - (BOOL)checkInputLegal{
-    if ([_nameTextField.text length]==0) {
+    if ([_nameTextField.text length] == 0) {
         
-        [UIAlertView showWithTitle:@"nickname must not be empty" message:nil cancelButtonTitle:@"Got it" otherButtonTitles:nil tapBlock:nil];
+        [UIAlertView showWithTitle:@"昵称不能为空" message:nil cancelButtonTitle:@"确定" otherButtonTitles:nil tapBlock:nil];
         
         return NO;
     }
