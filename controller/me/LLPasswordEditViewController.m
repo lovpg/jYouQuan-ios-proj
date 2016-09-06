@@ -49,9 +49,9 @@
     
     
     // 更换返回按钮图标
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backer"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"backer"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"finish"] style:UIBarButtonItemStylePlain target:self action:@selector(finish:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"finish"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(finish:)];
    
     // 这里要设置成UITapGestureRecognizer, 不要设置成UTGestureRecognizer, 不然没有点击效果
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapToHideKeyboard:)];
@@ -71,13 +71,13 @@
     NSString *confirmPassword = self.confirmPasswordTextField.text;
     
     if (!password.length || !confirmPassword.length) {
-        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Tip" message:@"New password or confirm password text field should not be empty." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:@"密码不能为空." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertview show];
         return;
     }
     
     if (![password isEqualToString:confirmPassword]) {
-        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Tip" message:@"New password or confirm password text field should be the same." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:@"两次输入的密码不一致." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertview show];
         return;
     }
@@ -88,12 +88,12 @@
         
         [weakSelf hideHud];
 //                [(LLAppDelegate *)[UIApplication sharedApplication].delegate logout]; // 这里不用这句
-        
+         [(AppDelegate *)self.context logout];
         
         [weakSelf.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
         [weakSelf hideHud];
-        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Tip" message:@"Change password failed, please try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"提示" message:@"更改密码失败, 请重试." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertview show];
     }];
 }

@@ -16,6 +16,8 @@
 		9A16542E1D7D1C06006FB41B /* password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A16542B1D7D1C06006FB41B /* password@3x.png */; };
 		9A1D21BE1D7E5D2500280EED /* LLPasswordEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D21BC1D7E5D2500280EED /* LLPasswordEditViewController.m */; };
 		9A1D21BF1D7E5D2500280EED /* LLPasswordEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */; };
+		9A1D21C81D7E9E4E00280EED /* LLLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */; };
+		9A1D21C91D7E9E4E00280EED /* LLLogoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */; };
 		9A5B33B01D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */; };
 		9A5B33B31D78331300DE9F51 /* flashOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B21D78331300DE9F51 /* flashOn.png */; };
 		9A5B33B51D78331700DE9F51 /* flashOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B41D78331700DE9F51 /* flashOff.png */; };
@@ -660,6 +662,9 @@
 		9A1D21BB1D7E5D2500280EED /* LLPasswordEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLPasswordEditViewController.h; sourceTree = "<group>"; };
 		9A1D21BC1D7E5D2500280EED /* LLPasswordEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLPasswordEditViewController.m; sourceTree = "<group>"; };
 		9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLPasswordEditViewController.xib; sourceTree = "<group>"; };
+		9A1D21C51D7E9E4D00280EED /* LLLogoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLogoutTableViewCell.h; sourceTree = "<group>"; };
+		9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLogoutTableViewCell.m; sourceTree = "<group>"; };
+		9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLLogoutTableViewCell.xib; sourceTree = "<group>"; };
 		9A5B33AE1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJ_VideoRecorderToolView.h; sourceTree = "<group>"; };
 		9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VJ_VideoRecorderToolView.m; sourceTree = "<group>"; };
 		9A5B33B21D78331300DE9F51 /* flashOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashOn.png; sourceTree = "<group>"; };
@@ -1932,6 +1937,9 @@
 				9ACCB63E1D7D749F007E84B1 /* LLPasswordTableViewCell.h */,
 				9ACCB63F1D7D749F007E84B1 /* LLPasswordTableViewCell.m */,
 				9ACCB6401D7D749F007E84B1 /* LLPasswordTableViewCell.xib */,
+				9A1D21C51D7E9E4D00280EED /* LLLogoutTableViewCell.h */,
+				9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */,
+				9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */,
 			);
 			path = me;
 			sourceTree = "<group>";
@@ -4625,6 +4633,7 @@
 				9EF371431D4284F200A96215 /* LLEnrollTableViewCell.xib in Resources */,
 				9A5B33B71D7836FA00DE9F51 /* changeCamer.png in Resources */,
 				9E4880D91D3DBA2A003AEB2F /* CTAssetsPicker.xcassets in Resources */,
+				9A1D21C91D7E9E4E00280EED /* LLLogoutTableViewCell.xib in Resources */,
 				9E4882C51D3DD282003AEB2F /* UserProtocolViewController.xib in Resources */,
 				9E4880EF1D3DBA2A003AEB2F /* MBProgressHUD.bundle in Resources */,
 				9EF219281D41EE4E0015995C /* share_location_pin_bg.png in Resources */,
@@ -4849,6 +4858,7 @@
 				9E48816F1D3DBA2A003AEB2F /* UIImage+Filter.m in Sources */,
 				9E4882481D3DC2E3003AEB2F /* LLLoginAuthServicd.m in Sources */,
 				9E4880E91D3DBA2A003AEB2F /* NSMethodSignature+EXT.m in Sources */,
+				9A1D21C81D7E9E4E00280EED /* LLLogoutTableViewCell.m in Sources */,
 				9E4880F61D3DBA2A003AEB2F /* MJPhotoView.m in Sources */,
 				9E48816B1D3DBA2A003AEB2F /* UIDevice+software.m in Sources */,
 				9E48810B1D3DBA2A003AEB2F /* TTTAttributedLabel.m in Sources */,
