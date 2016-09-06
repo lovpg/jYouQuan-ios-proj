@@ -175,7 +175,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
-                            <action selector="followClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Ee-uT-5lQ"/>
                             <action selector="optAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0nj-oK-Wlx"/>
                         </connections>
                     </button>
