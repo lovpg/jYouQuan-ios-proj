@@ -296,6 +296,12 @@
         
         [alertVC showWithSender:nil controller:self animated:YES completion:nil];
     }
+    else if ([eventName isEqualToString:LLMyCenterShareThirdPlatfomButtonClickEvent])
+    {
+        LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
+        LLThirdCollection *collection = dataItem.collection;
+        [self openURL:[NSURL URLWithString:@"present:///root/web"] params:collection animated:YES];
+    }
     else if ([eventName isEqualToString:LLMyCenterShareLikeClickEvent])
     {  // 点赞
         BOOL isGood = [[userInfo objectForKey:@"isGood"] boolValue];
