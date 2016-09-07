@@ -26,6 +26,7 @@
 		9A758CDC1D767A13007353FC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDB1D767A13007353FC /* AVFoundation.framework */; };
 		9A758CDE1D767A24007353FC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDD1D767A24007353FC /* Photos.framework */; };
 		9A758CE21D768896007353FC /* VJ_VideoFolderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A758CE11D768896007353FC /* VJ_VideoFolderManager.m */; };
+		9AB28F6E1D7FB4C900474422 /* Default-568.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB28F6D1D7FB4C900474422 /* Default-568.png */; };
 		9ACCB6311D7D733A007E84B1 /* LLProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB62F1D7D733A007E84B1 /* LLProfileEditViewController.m */; };
 		9ACCB6321D7D733A007E84B1 /* LLProfileEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6301D7D733A007E84B1 /* LLProfileEditViewController.xib */; };
 		9ACCB6371D7D7472007E84B1 /* LLAvatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB6351D7D7472007E84B1 /* LLAvatorTableViewCell.m */; };
@@ -675,6 +676,7 @@
 		9A758CDD1D767A24007353FC /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		9A758CE01D768896007353FC /* VJ_VideoFolderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJ_VideoFolderManager.h; sourceTree = "<group>"; };
 		9A758CE11D768896007353FC /* VJ_VideoFolderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VJ_VideoFolderManager.m; sourceTree = "<group>"; };
+		9AB28F6D1D7FB4C900474422 /* Default-568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568.png"; sourceTree = "<group>"; };
 		9ACCB62E1D7D733A007E84B1 /* LLProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLProfileEditViewController.h; sourceTree = "<group>"; };
 		9ACCB62F1D7D733A007E84B1 /* LLProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLProfileEditViewController.m; sourceTree = "<group>"; };
 		9ACCB6301D7D733A007E84B1 /* LLProfileEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLProfileEditViewController.xib; sourceTree = "<group>"; };
@@ -4299,6 +4301,7 @@
 		9EF95E2E1D3E16B7000DBD15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				9AB28F6D1D7FB4C900474422 /* Default-568.png */,
 				9E531C051D7E629F000ABF5E /* black.png */,
 				9E531C031D7E5D6C000ABF5E /* nav_more.png */,
 				9E2BE8021D7D7826007805CB /* wonderful.png */,
@@ -4582,6 +4585,7 @@
 				9E4881051D3DBA2A003AEB2F /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				9EBE203A1D4115DF00639DC5 /* head_bg@2x.png in Resources */,
 				9E6C075D1D3F66F100628BE9 /* chatBar_faceSelected.png in Resources */,
+				9AB28F6E1D7FB4C900474422 /* Default-568.png in Resources */,
 				9E5436971D40769D00BB67F9 /* say_hi_to.png in Resources */,
 				9ACCB6421D7D749F007E84B1 /* LLPasswordTableViewCell.xib in Resources */,
 				9EF926661D427E000078CDD6 /* Contents.json in Resources */,
@@ -5294,8 +5298,8 @@
 			baseConfigurationReference = 7764805606C6F6291888D8A6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (

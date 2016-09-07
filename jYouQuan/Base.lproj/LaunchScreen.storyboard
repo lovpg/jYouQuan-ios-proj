@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,51 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iSo-xY-7qa">
-                                <rect key="frame" x="0.0" y="415" width="320" height="68"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="m63-mo-zv6">
-                                        <rect key="frame" x="25" y="17" width="271" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="271" id="30O-Mg-qYg"/>
-                                            <constraint firstAttribute="height" constant="34" id="CXS-qT-mDd"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.85882352939999995" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="m63-mo-zv6" firstAttribute="centerX" secondItem="iSo-xY-7qa" secondAttribute="centerX" id="1GK-Fw-7fI"/>
-                                    <constraint firstItem="m63-mo-zv6" firstAttribute="centerX" secondItem="iSo-xY-7qa" secondAttribute="centerX" id="2Gq-nq-q0t"/>
-                                    <constraint firstAttribute="height" constant="68" id="OUc-j3-uGX"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="dhJ-Vu-o0Y">
-                                <rect key="frame" x="120" y="92" width="81" height="81"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="9UW-y7-Egm"/>
-                                    <constraint firstAttribute="width" constant="90" id="VyY-zd-CQI"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default-568.png" translatesAutoresizingMaskIntoConstraints="NO" id="O0a-F6-jRj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dhJ-Vu-o0Y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GYE-fZ-kYg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iSo-xY-7qa" secondAttribute="trailing" constant="-20" id="H42-kR-bm3"/>
-                            <constraint firstItem="iSo-xY-7qa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="XuX-yn-aGf"/>
-                            <constraint firstItem="dhJ-Vu-o0Y" firstAttribute="top" secondItem="vMN-Vd-pKF" secondAttribute="bottom" constant="100" id="g52-t1-IqI"/>
-                            <constraint firstItem="tYp-4z-YhX" firstAttribute="top" secondItem="iSo-xY-7qa" secondAttribute="bottom" constant="85" id="geF-hh-jR6"/>
-                            <constraint firstItem="iSo-xY-7qa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="rgC-vS-aWF"/>
+                            <constraint firstItem="O0a-F6-jRj" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="cat-Hu-NJV"/>
+                            <constraint firstItem="tYp-4z-YhX" firstAttribute="top" secondItem="O0a-F6-jRj" secondAttribute="bottom" id="omD-1Q-5a0"/>
+                            <constraint firstItem="O0a-F6-jRj" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="uDZ-I6-UbK"/>
+                            <constraint firstAttribute="trailing" secondItem="O0a-F6-jRj" secondAttribute="trailing" id="zPA-lU-5Tk"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="375"/>
+            <point key="canvasLocation" x="27" y="355"/>
         </scene>
     </scenes>
     <resources>
-        <image name="banner.png" width="980" height="90"/>
-        <image name="iTunesArtwork.png" width="512" height="512"/>
+        <image name="Default-568.png" width="320" height="568"/>
     </resources>
 </document>
