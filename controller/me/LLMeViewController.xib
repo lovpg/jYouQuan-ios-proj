@@ -247,11 +247,6 @@
         <customObject id="FLk-qp-nXG" userLabel="dataSections" customClass="OllaTableSection">
             <connections>
                 <outletCollection property="cells" destination="lIq-69-8zO" id="1Cm-Fl-x1w"/>
-                <outletCollection property="cells" destination="SUh-6o-Z3m" id="Snu-1W-28H"/>
-                <outletCollection property="cells" destination="aDZ-rx-Kwo" id="nWT-ge-A7K"/>
-                <outletCollection property="cells" destination="7BU-1A-ciy" id="zJa-6S-Ex9"/>
-                <outletCollection property="cells" destination="7uU-hQ-XZv" id="k5P-as-HNy"/>
-                <outletCollection property="cells" destination="RDE-rP-864" id="IoR-g3-2WV"/>
             </connections>
         </customObject>
     </objects>

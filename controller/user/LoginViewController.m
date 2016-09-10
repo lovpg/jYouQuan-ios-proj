@@ -37,6 +37,10 @@
     {
         self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     }
+    else if (Screen_Height == 480)
+    {
+        self.tableView.contentInset = UIEdgeInsetsMake(128, 0, 0, 0);
+    }
     
 
     if ((NSInteger*)[self.userAuth .username length] > 12)

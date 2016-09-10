@@ -17,6 +17,10 @@
 #define READ_TMP_BUF_LEN   (READ_BUFFER_SIZE+4096)// 36k
 
 
+
+
+
+
 @interface OllaSocket (){
     
     CFSocketRef _socket;
@@ -33,6 +37,8 @@
 @property(nonatomic,strong) NSString *host;
 @property(nonatomic,assign) UInt16 port;
 
+@property(nonatomic, assign) BOOL isIPV6;
+
 @end
 
 
@@ -40,7 +46,16 @@
 
 
 - (id)initWithDelegate:(id)delegate{
-    if (self = [super init]) {
+    if (self = [super init])
+    {
+        
+        #if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= 90000) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) && __MAC_OS_X_VERSION_MIN_REQUIRED >= 101100)
+        
+        _isIPV6 = YES;
+        
+       #else
+        _isIPV6 = NO;
+       #endif
         
         //lineBuffer = [[NSMutableString alloc] init];
         _delegate  = delegate;
@@ -64,7 +79,14 @@
     
     if (!_socket || !CFSocketIsValid(_socket)) {
         CFSocketContext context = {0,(__bridge void *)(self),NULL,NULL,NULL};
-        _socket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketConnectCallBack, socketConnectionCallBack, &context);
+        if (_isIPV6)
+        {
+            _socket = CFSocketCreate(kCFAllocatorDefault, PF_INET6, SOCK_STREAM, IPPROTO_TCP, kCFSocketConnectCallBack, socketConnectionCallBack, &context);
+        }
+        else
+        {
+           _socket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketConnectCallBack, socketConnectionCallBack, &context);
+        }
         if (_socket==NULL || !CFSocketIsValid(_socket)) {
             DDLogError(@"cfsocket create fail");
             [self connectionFailHandler:[[NSError alloc] initWithDomain:@"com.olla.im.invalideSocket" code:-1 userInfo:@{@"message":@"socket error when create socket"}]];
@@ -91,14 +113,23 @@
             }
             DDLogInfo(@"域名转ip:ip=%@",host);
         }
-        
-        
+        // 判断网络连接
+
+        #if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= 90000) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) && __MAC_OS_X_VERSION_MIN_REQUIRED >= 101100)
+        struct sockaddr_in6 addr4;
+        memset(&addr4, 0, sizeof(addr4));
+        addr4.sin6_len = sizeof(addr4);
+        addr4.sin6_family = AF_INET6;
+        addr4.sin6_addr.s_addr = inet_addr([host UTF8String]);
+        addr4.sin6_port = htons(port);// 转成网络字节序，不然会造成send崩溃
+        #else
         struct sockaddr_in addr4;
         memset(&addr4, 0, sizeof(addr4));
         addr4.sin_len = sizeof(addr4);
         addr4.sin_family = AF_INET;
         addr4.sin_addr.s_addr = inet_addr([host UTF8String]);
         addr4.sin_port = htons(port);// 转成网络字节序，不然会造成send崩溃
+        #endif
         
         _host = host;
         _port = port;
@@ -159,14 +190,39 @@
         return nil;
     }
     
-    struct in_addr ip_addr;
-    memcpy(&ip_addr, hostent->h_addr_list[0], 4);
-    char ip[20] = {0};
-    inet_ntop(AF_INET, &ip_addr, ip, sizeof(ip));
+    if (_isIPV6)
+    {
+        struct in6_addr ip_addr;
+        memcpy(&ip_addr, hostent->h_addr_list[0], 4);
+        char ip[20] = {0};
+#if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= 90000) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) && __MAC_OS_X_VERSION_MIN_REQUIRED >= 101100)
+        inet_ntop(AF_INET6, &ip_addr, ip, sizeof(ip));
+#else
+        inet_ntop(AF_INET, &ip_addr, ip, sizeof(ip));
+#endif
+        
+        
+        NSString *ipAddr = [NSString stringWithUTF8String:ip];
+        
+        return ipAddr;
+    }
+    else
+    {
+        struct in_addr ip_addr;
+        memcpy(&ip_addr, hostent->h_addr_list[0], 4);
+        char ip[20] = {0};
+#if (defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= 90000) || (defined(__MAC_OS_X_VERSION_MIN_REQUIRED) && __MAC_OS_X_VERSION_MIN_REQUIRED >= 101100)
+        inet_ntop(AF_INET6, &ip_addr, ip, sizeof(ip));
+#else
+        inet_ntop(AF_INET, &ip_addr, ip, sizeof(ip));
+#endif
+        
+        
+        NSString *ipAddr = [NSString stringWithUTF8String:ip];
+        
+        return ipAddr;
+    }
     
-    NSString *ipAddr = [NSString stringWithUTF8String:ip];
-    
-    return ipAddr;
 }
 
 
@@ -197,16 +253,35 @@
 
 - (int)portFromSocket{
     
-    struct sockaddr_in addr;
-    unsigned long length = sizeof(addr);
-    //这里socket为nil，就会崩溃
-    if (_socket==NULL) {
-        DDLogError(@"getsockname() found socket be nil...");
-        return -1;
+    if (_isIPV6)
+    {
+        struct sockaddr_in6 addr;
+        unsigned long length = sizeof(addr);
+        //这里socket为nil，就会崩溃
+        if (_socket==NULL) {
+            DDLogError(@"getsockname() found socket be nil...");
+            return -1;
+        }
+        getsockname(CFSocketGetNative(_socket), (struct sockaddr *)&addr, (socklen_t *)&length);
+        int port = ntohs(addr.sin6_port);
+        return port;
+
     }
-    getsockname(CFSocketGetNative(_socket), (struct sockaddr *)&addr, (socklen_t *)&length);
-    int port = ntohs(addr.sin_port);
-    return port;
+    else
+    {
+        struct sockaddr_in addr;
+        unsigned long length = sizeof(addr);
+        //这里socket为nil，就会崩溃
+        if (_socket==NULL) {
+            DDLogError(@"getsockname() found socket be nil...");
+            return -1;
+        }
+        getsockname(CFSocketGetNative(_socket), (struct sockaddr *)&addr, (socklen_t *)&length);
+        int port = ntohs(addr.sin_port);
+        return port;
+
+    }
+    
 }
 
 // send data
