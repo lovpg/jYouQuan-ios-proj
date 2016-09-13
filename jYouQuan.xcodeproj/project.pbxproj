@@ -18,6 +18,13 @@
 		9A1D21BF1D7E5D2500280EED /* LLPasswordEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D21BD1D7E5D2500280EED /* LLPasswordEditViewController.xib */; };
 		9A1D21C81D7E9E4E00280EED /* LLLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */; };
 		9A1D21C91D7E9E4E00280EED /* LLLogoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */; };
+		9A4A97061D880E9300B64808 /* Default-568.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A96FF1D880E9300B64808 /* Default-568.png */; };
+		9A4A97071D880E9300B64808 /* Default-Port-hd47.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A97001D880E9300B64808 /* Default-Port-hd47.png */; };
+		9A4A97081D880E9300B64808 /* Default-Port-hd55.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A97011D880E9300B64808 /* Default-Port-hd55.png */; };
+		9A4A97091D880E9300B64808 /* Default-Portrait-ns.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A97021D880E9300B64808 /* Default-Portrait-ns.png */; };
+		9A4A970A1D880E9300B64808 /* Default-Portrait-ns@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A97031D880E9300B64808 /* Default-Portrait-ns@2x.png */; };
+		9A4A970B1D880E9300B64808 /* Default-Port@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A97041D880E9300B64808 /* Default-Port@2x.png */; };
+		9A4A970C1D880E9300B64808 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4A97051D880E9300B64808 /* Default.png */; };
 		9A5B33B01D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */; };
 		9A5B33B31D78331300DE9F51 /* flashOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B21D78331300DE9F51 /* flashOn.png */; };
 		9A5B33B51D78331700DE9F51 /* flashOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33B41D78331700DE9F51 /* flashOff.png */; };
@@ -26,7 +33,6 @@
 		9A758CDC1D767A13007353FC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDB1D767A13007353FC /* AVFoundation.framework */; };
 		9A758CDE1D767A24007353FC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A758CDD1D767A24007353FC /* Photos.framework */; };
 		9A758CE21D768896007353FC /* VJ_VideoFolderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A758CE11D768896007353FC /* VJ_VideoFolderManager.m */; };
-		9AB28F6E1D7FB4C900474422 /* Default-568.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AB28F6D1D7FB4C900474422 /* Default-568.png */; };
 		9ACCB6311D7D733A007E84B1 /* LLProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB62F1D7D733A007E84B1 /* LLProfileEditViewController.m */; };
 		9ACCB6321D7D733A007E84B1 /* LLProfileEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACCB6301D7D733A007E84B1 /* LLProfileEditViewController.xib */; };
 		9ACCB6371D7D7472007E84B1 /* LLAvatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB6351D7D7472007E84B1 /* LLAvatorTableViewCell.m */; };
@@ -666,6 +672,13 @@
 		9A1D21C51D7E9E4D00280EED /* LLLogoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLogoutTableViewCell.h; sourceTree = "<group>"; };
 		9A1D21C61D7E9E4E00280EED /* LLLogoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLogoutTableViewCell.m; sourceTree = "<group>"; };
 		9A1D21C71D7E9E4E00280EED /* LLLogoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLLogoutTableViewCell.xib; sourceTree = "<group>"; };
+		9A4A96FF1D880E9300B64808 /* Default-568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568.png"; sourceTree = "<group>"; };
+		9A4A97001D880E9300B64808 /* Default-Port-hd47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Port-hd47.png"; sourceTree = "<group>"; };
+		9A4A97011D880E9300B64808 /* Default-Port-hd55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Port-hd55.png"; sourceTree = "<group>"; };
+		9A4A97021D880E9300B64808 /* Default-Portrait-ns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-ns.png"; sourceTree = "<group>"; };
+		9A4A97031D880E9300B64808 /* Default-Portrait-ns@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-ns@2x.png"; sourceTree = "<group>"; };
+		9A4A97041D880E9300B64808 /* Default-Port@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Port@2x.png"; sourceTree = "<group>"; };
+		9A4A97051D880E9300B64808 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9A5B33AE1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJ_VideoRecorderToolView.h; sourceTree = "<group>"; };
 		9A5B33AF1D7821CD00DE9F51 /* VJ_VideoRecorderToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VJ_VideoRecorderToolView.m; sourceTree = "<group>"; };
 		9A5B33B21D78331300DE9F51 /* flashOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashOn.png; sourceTree = "<group>"; };
@@ -676,7 +689,6 @@
 		9A758CDD1D767A24007353FC /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		9A758CE01D768896007353FC /* VJ_VideoFolderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VJ_VideoFolderManager.h; sourceTree = "<group>"; };
 		9A758CE11D768896007353FC /* VJ_VideoFolderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VJ_VideoFolderManager.m; sourceTree = "<group>"; };
-		9AB28F6D1D7FB4C900474422 /* Default-568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568.png"; sourceTree = "<group>"; };
 		9ACCB62E1D7D733A007E84B1 /* LLProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLProfileEditViewController.h; sourceTree = "<group>"; };
 		9ACCB62F1D7D733A007E84B1 /* LLProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLProfileEditViewController.m; sourceTree = "<group>"; };
 		9ACCB6301D7D733A007E84B1 /* LLProfileEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLProfileEditViewController.xib; sourceTree = "<group>"; };
@@ -1904,6 +1916,20 @@
 				54C6DF10E453F0F087A91083 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A4A96FE1D880E9300B64808 /* launchImage */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A96FF1D880E9300B64808 /* Default-568.png */,
+				9A4A97001D880E9300B64808 /* Default-Port-hd47.png */,
+				9A4A97011D880E9300B64808 /* Default-Port-hd55.png */,
+				9A4A97021D880E9300B64808 /* Default-Portrait-ns.png */,
+				9A4A97031D880E9300B64808 /* Default-Portrait-ns@2x.png */,
+				9A4A97041D880E9300B64808 /* Default-Port@2x.png */,
+				9A4A97051D880E9300B64808 /* Default.png */,
+			);
+			path = launchImage;
 			sourceTree = "<group>";
 		};
 		9A5B33B11D7832E700DE9F51 /* media */ = {
@@ -4301,7 +4327,7 @@
 		9EF95E2E1D3E16B7000DBD15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				9AB28F6D1D7FB4C900474422 /* Default-568.png */,
+				9A4A96FE1D880E9300B64808 /* launchImage */,
 				9E531C051D7E629F000ABF5E /* black.png */,
 				9E531C031D7E5D6C000ABF5E /* nav_more.png */,
 				9E2BE8021D7D7826007805CB /* wonderful.png */,
@@ -4460,6 +4486,7 @@
 				9EBC47771D3F0C4100541F23 /* record_animate_7.png in Resources */,
 				9EF9266F1D427EA30078CDD6 /* im_bubble_l@3x.png in Resources */,
 				9EF95E4A1D3E22E7000DBD15 /* qrcode_scan.png in Resources */,
+				9A4A97071D880E9300B64808 /* Default-Port-hd47.png in Resources */,
 				9EBC47101D3F0C4000541F23 /* callRing.m4r in Resources */,
 				9EF95E251D3E062F000DBD15 /* LLMessageViewController.xib in Resources */,
 				9E4882C31D3DD282003AEB2F /* UserInfoFillContorllerViewController.xib in Resources */,
@@ -4482,6 +4509,7 @@
 				9E4881031D3DBA2A003AEB2F /* SVWebViewControllerActivityChrome@2x.png in Resources */,
 				9E6C07361D3F666E00628BE9 /* chat_sender_bg.png in Resources */,
 				9EBC47581D3F0C4100541F23 /* keyboard_delete_icon_h@2x.png in Resources */,
+				9A4A97061D880E9300B64808 /* Default-568.png in Resources */,
 				9EBC47671D3F0C4100541F23 /* keyboard_voice_n.png in Resources */,
 				9EBC472B1D3F0C4100541F23 /* notificationCallRing.m4a in Resources */,
 				9EF926641D427E000078CDD6 /* chat_groupbar_left_bubble@2x.png in Resources */,
@@ -4538,7 +4566,9 @@
 				9EBC47751D3F0C4100541F23 /* record_animate_5.png in Resources */,
 				9E39314B1D7D0DE300E2511E /* transfer_24.png in Resources */,
 				9E43F1281D45A04200F89637 /* jion_jbz.png in Resources */,
+				9A4A97091D880E9300B64808 /* Default-Portrait-ns.png in Resources */,
 				9E467B781D76B21A00D000D7 /* olla__dialogue_triangle@2x.png in Resources */,
+				9A4A970A1D880E9300B64808 /* Default-Portrait-ns@2x.png in Resources */,
 				9A1654271D7D1B8A006FB41B /* arrowhead@2x.png in Resources */,
 				9EF2193A1D42146E0015995C /* LLHotShareViewController.xib in Resources */,
 				9E5436A41D40D85000BB67F9 /* LLHomeBannerCell.xib in Resources */,
@@ -4560,6 +4590,7 @@
 				9EBC47591D3F0C4100541F23 /* keyboard_delete_icon_n@2x.png in Resources */,
 				9EF95E3B1D3E18DE000DBD15 /* tab_order_new.png in Resources */,
 				9E6C075B1D3F66F100628BE9 /* chatBar_keyboard.png in Resources */,
+				9A4A970C1D880E9300B64808 /* Default.png in Resources */,
 				9A16542C1D7D1C06006FB41B /* password.png in Resources */,
 				9EF3713F1D4284F200A96215 /* LLCrownGoodListViewController.xib in Resources */,
 				9EF219161D41D7320015995C /* LLWebBrowserViewController.xib in Resources */,
@@ -4585,7 +4616,6 @@
 				9E4881051D3DBA2A003AEB2F /* SVWebViewControllerActivitySafari-iPad@2x.png in Resources */,
 				9EBE203A1D4115DF00639DC5 /* head_bg@2x.png in Resources */,
 				9E6C075D1D3F66F100628BE9 /* chatBar_faceSelected.png in Resources */,
-				9AB28F6E1D7FB4C900474422 /* Default-568.png in Resources */,
 				9E5436971D40769D00BB67F9 /* say_hi_to.png in Resources */,
 				9ACCB6421D7D749F007E84B1 /* LLPasswordTableViewCell.xib in Resources */,
 				9EF926661D427E000078CDD6 /* Contents.json in Resources */,
@@ -4617,6 +4647,7 @@
 				9E5436991D40777900BB67F9 /* wa_tu_ji.png in Resources */,
 				9E6C07571D3F66F100628BE9 /* chatBar_more.png in Resources */,
 				9EF95E2A1D3E065F000DBD15 /* LLWorkSpaceViewController.xib in Resources */,
+				9A4A97081D880E9300B64808 /* Default-Port-hd55.png in Resources */,
 				9EBC475A1D3F0C4100541F23 /* keyboard_facial_h@2x.png in Resources */,
 				9ACCB6531D7D8BAC007E84B1 /* finish@2x.png in Resources */,
 				9E467B621D76717A00D000D7 /* icon-60@2x.png in Resources */,
@@ -4624,6 +4655,7 @@
 				9EBC47791D3F0C4100541F23 /* record_animate_9.png in Resources */,
 				9EBE1FDF1D410E1B00639DC5 /* share_new_gray_1.png in Resources */,
 				9EBC47641D3F0C4100541F23 /* keyboard_toolbar_background.png in Resources */,
+				9A4A970B1D880E9300B64808 /* Default-Port@2x.png in Resources */,
 				9EF9265B1D426FB40078CDD6 /* device.png in Resources */,
 				9EBC45C31D3F034300541F23 /* LLHomeShareViewCell.xib in Resources */,
 				9E4882AD1D3DD13F003AEB2F /* config.plist in Resources */,
