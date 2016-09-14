@@ -106,6 +106,7 @@ static NSString *umengAppKey = @"547c2d92fd98c56fb6000631";
         }
     }
 //    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+
     return YES;
     
 //    [MobClick checkUpdate:@"New version" cancelButtonTitle:@"Skip" otherButtonTitles:@"Update"];
