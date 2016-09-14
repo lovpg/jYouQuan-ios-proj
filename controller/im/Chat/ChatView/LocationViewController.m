@@ -60,32 +60,25 @@ static LocationViewController *defaultLocation = nil;
 {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"location.messageType", @"location message");
-    
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, 44, 44)];
-    backButton.backgroundColor =  [UIColor colorWithRed:118/255.0f green:122/255.0f blue:133/255.0f alpha:0.5];
-    [backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-//    [self.navigationItem setLeftBarButtonItem:backItem];
+   // self.title = NSLocalizedString(@"location.messageType", @"location message");
+    self.title = @"选择定位";
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [backButton setImage:[UIImage imageNamed:@"backer"] forState:UIControlStateNormal];
+    [backButton addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    [self.navigationItem setLeftBarButtonItem:backItem];
     
     _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
     _mapView.delegate = self;
     _mapView.mapType = MKMapTypeStandard;
     _mapView.zoomEnabled = YES;
-    
     [self.view addSubview:_mapView];
-    [self.view addSubview:backButton];
     
-    if (_isSendLocation)
-    {
+    if (_isSendLocation) {
         _mapView.showsUserLocation = YES;//显示当前位置
         
-        UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectMake(64, 20, 44, 44)];
-        sendButton.backgroundColor =  [UIColor colorWithRed:118/255.0f green:122/255.0f blue:133/255.0f alpha:0.5];
-        [sendButton setImage:[UIImage imageNamed:@"profile_flag.png"] forState:UIControlStateNormal];
-        [sendButton addTarget:self action:@selector(sendLocation:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:sendButton];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(sendLocation)];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
         [self startLocation];
     }
     else{
@@ -223,7 +216,7 @@ static LocationViewController *defaultLocation = nil;
     [self createAnnotationWithCoords:_currentLocationCoordinate];
 }
 
--(IBAction)sendLocation:(id)sender
+- (void)sendLocation
 {
     if (_delegate && [_delegate respondsToSelector:@selector(sendLocationLatitude:longitude:andAddress:)]) {
         [_delegate sendLocationLatitude:_currentLocationCoordinate.latitude longitude:_currentLocationCoordinate.longitude andAddress:_addressString];
