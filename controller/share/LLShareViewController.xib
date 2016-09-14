@@ -65,7 +65,7 @@
                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-6c-XYg">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-6c-XYg">
                         <rect key="frame" x="8" y="8" width="304" height="142.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -74,6 +74,10 @@
                         </connections>
                     </textView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="zh0-6c-XYg" firstAttribute="trailing" secondItem="3Px-Zh-tcW" secondAttribute="trailingMargin" id="Q6n-hj-zzy"/>
+                    <constraint firstItem="zh0-6c-XYg" firstAttribute="leading" secondItem="3Px-Zh-tcW" secondAttribute="leadingMargin" id="bYD-uo-JUI"/>
+                </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="450" y="32.5"/>
         </tableViewCell>
