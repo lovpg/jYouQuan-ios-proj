@@ -20,8 +20,8 @@
 {
     [super viewDidLoad];
     self.catagroyDataSource = [[NSArray alloc] initWithObjects:@"挖掘机",@"泵车",@"混凝土搅拌车",@"铲车",
-                                                               @"汽车起重吊",@"卡车",@"推土机",@"叉车",
-                                                               @"压路机",@"混凝土搅拌站",@"堆高机",nil];
+                                                               @"汽车起重吊",@"旋挖钻",@"卡车",@"推土机",@"叉车",
+                                                               @"压路机",@"混凝土搅拌站",@"堆高机",@"招聘",@"求职",@"维修",nil];
 }
 - (IBAction)back:(id)sender
 {
