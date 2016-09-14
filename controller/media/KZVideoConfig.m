@@ -33,6 +33,7 @@ void kz_dispatch_after(float time, dispatch_block_t block)
     return CGSizeMake(kzVideoWidthPX, kzVideoWidthPX/kzVideo_w_h);
 }
 
+// 这个方法可以将黄色和绿色混合
 + (NSArray *)gradualColors {
     return @[(__bridge id)[UIColor greenColor].CGColor,(__bridge id)[UIColor yellowColor].CGColor,];
 }
