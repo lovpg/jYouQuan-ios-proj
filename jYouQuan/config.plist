@@ -259,7 +259,7 @@
 					<key>title</key>
 					<string>消息</string>
 					<key>image</key>
-					<string>tabbar_me_new</string>
+					<string>tabbar_message_new</string>
 				</dict>
 				<dict>
 					<key>url</key>
@@ -267,7 +267,7 @@
 					<key>title</key>
 					<string>我的</string>
 					<key>image</key>
-					<string>tabbar_message_new</string>
+					<string>tabbar_me_new</string>
 				</dict>
 			</array>
 		</dict>
