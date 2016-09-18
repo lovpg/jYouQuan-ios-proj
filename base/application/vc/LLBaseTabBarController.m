@@ -348,18 +348,22 @@ static const CGFloat kDefaultPlaySoundInterval = 3.0;
                 if (item[@"title"]) {
                     [[controller tabBarItem] setTitle:item[@"title"]];
                 }
-                if (item[@"image"]) {
+                if (item[@"image"])
+                {
                     UIImage *normalImage = [UIImage imageNamed:item[@"image"]];
                     if (IS_IOS7) {
                         normalImage = [normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
                     }
                     [[controller tabBarItem] setImage:normalImage];
+                    [[controller tabBarItem] setImageInsets:UIEdgeInsetsMake(0, -10, -6, -10)];
                     
                     NSString *selectImageName = item[@"selectedImage"];
-                    if (!selectImageName) {
+                    if (!selectImageName)
+                    {
                         selectImageName = [item[@"image"] stringByAppendingString:@"_h"];
                     }
-                    if (selectImageName) {
+                    if (selectImageName)
+                    {
                         
                         if (IS_IOS7) {
                             UIImage *selectImage = [[UIImage imageNamed:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
