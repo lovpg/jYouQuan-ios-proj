@@ -11,6 +11,7 @@
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
 #import "KZVideoPlayer.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation LLPhotoLayout
 
@@ -77,6 +78,8 @@
     }
     
 }
+
+
 
 @end
 

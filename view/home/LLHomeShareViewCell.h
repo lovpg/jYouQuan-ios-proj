@@ -11,6 +11,7 @@
 #import "TTTAttributedLabel.h"
 #import "LLGenderImageView.h"
 #import "LLCountryImageView.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 static NSString *LLMyCenterShareTranslateClickEvent = @"LLMyCenterShareTranslateClickEvent";
 static NSString *LLMyCenterShareLikeClickEvent = @"LLMyCenterShareLikeClickEvent";
