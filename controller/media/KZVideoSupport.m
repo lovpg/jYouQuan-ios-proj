@@ -11,15 +11,16 @@
 
 #pragma mark - Custom View --
 
-@implementation KZStatusBar {
+@implementation KZStatusBar
+{
     BOOL _clear;
     CAShapeLayer *_nomalLayer;
     CALayer *_recodingLayer;
-    
     KZVideoViewShowType _style;
-    
     UIButton *_cancelBtn;
 }
+
+
 - (instancetype)initWithFrame:(CGRect)frame style:(KZVideoViewShowType)style; {
     if (self = [super initWithFrame:frame]) {
         _style = style;
@@ -31,7 +32,6 @@
 
 - (void)addCancelTarget:(id)target selector:(SEL)selector {
     [_cancelBtn removeFromSuperview];
-    
     _cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelBtn.frame = CGRectMake(10, 22, 50, 40);
     [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
