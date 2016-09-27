@@ -29,7 +29,7 @@
     self.messageLabel.numberOfLines = 0;
     self.messageLabel.linkAttributes = @{(id)kCTForegroundColorAttributeName:[UIColor blueColor], NSUnderlineStyleAttributeName:[NSNumber numberWithInt:NSUnderlineStyleNone]};
     self.messageLabel.enabledTextCheckingTypes = NSTextCheckingTypeLink | NSTextCheckingTypePhoneNumber;
-    self.avatorButton.cornerRadius = 16.5;
+    self.avatorButton.cornerRadius = 14;
     self.imageButton.cornerRadius = 6;
 }
 

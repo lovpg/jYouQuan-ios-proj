@@ -322,12 +322,14 @@
             success:^(LLUser *user)
     {
          currentUser = user;
-        if ( ![[[userSerive getMe] uid] isEqualToString:self.share.user.uid] )
+        if ( ![[[userSerive getMe] uid] isEqualToString:self.share.user.uid] && !currentUser.follow  )
         {
-            self.followButton.text = currentUser.follow ? @"取消关注" : @"+ 关注";
+            self.followButton.text =  @"+ 关注";
+            self.timeLabel.hidden = YES;
         }
         else
         {
+            self.timeLabel.hidden = NO;
             self.followButton.hidden = YES;
         }
     }
@@ -508,7 +510,8 @@
      success:^(id datas,BOOL hasNext){
          
          __strong typeof(self)strongSelf = weakSelf;
-         self.followButton.text = @"取消关注";
+         self.followButton.hidden = YES;
+         self.timeLabel.hidden = NO;
          //
          //         [strongSelf.url.queryValue setValue:@1 forKey:@"follow"];
          //
