@@ -12,6 +12,7 @@
 #import "KZVideoPlayer.h"
 
 #import <AFNetworking.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "VJ_VideoFolderManager.h"
 
@@ -19,7 +20,7 @@
 
 
 
-@interface LLShareViewController () <KZVideoViewControllerDelegate>
+@interface LLShareViewController () <KZVideoViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 {
     NSMutableArray *selections;
@@ -28,7 +29,12 @@
 }
 
 @property (nonatomic, strong) NSString *videoUrl;
+@property (nonatomic, strong) NSString *videoLocalPath;
 @property (nonatomic, strong) UIButton *videoButton;
+
+@property (strong, nonatomic) UIImagePickerController *imagePicker;
+@property (nonatomic, strong) UIImage *image;
+
 
 
 
@@ -47,7 +53,7 @@
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(backAction:)];
-        UIImage *share_send_img = [UIImage imageNamed:@"share_send"];
+        UIImage *share_send_img = [UIImage imageNamed:@"post_submit"];
         UIImage *share_send = [share_send_img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:share_send
                                                                       style:UIBarButtonItemStylePlain
@@ -120,6 +126,8 @@
         
         else if ([string isEqualToString:@"video"])
         {
+            /*
+            // 仿微信录制视频的打开方式, 没完善, 以后会更改
             _thumbImage = [self.params objectForKey:@"videoPic"];
             
             UIImage *composeImage = [self composeImg:_thumbImage frontImage:[UIImage imageNamed:@"videoPlay"]];
@@ -130,19 +138,214 @@
             [self.imagePickerView addSubview:_videoButton];
             _videoButton.image = composeImage;
             
-//            UIImageView *playImageView = [[UIImageView alloc]init];
-//            playImageView.center = videoButton.center;
-//            playImageView.bounds = CGRectMake(0, 0, 25, 25);
-//            playImageView.image = [UIImage imageNamed:@"videoPlay"];
-//            [self.imagePickerView addSubview:playImageView];
             [_videoButton addTarget:self action:@selector(playVideoActions:) forControlEvents:UIControlEventTouchUpInside];
-            
-            
             self.videoUrl = [self.params objectForKey:@"videoUrl"];
-//            self.videoUrl = [NSURL URLWithString:videoUrl];
+             */
+            
+            
+             // 环信录制视频模式
+#if TARGET_IPHONE_SIMULATOR
+            [self showHint:@"simulator does not support video"];
+#elif TARGET_OS_IPHONE
+            UIImagePickerController *imagePicker = [self imagePicker];
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePicker.mediaTypes = @[(NSString *)kUTTypeMovie];
+            [self presentViewController:imagePicker animated:YES completion:NULL];
+#endif
+
 
         }
 }
+
+
+
+
+
+// 环信录制视频模式
+#pragma mark - helper
+- (NSURL *)convert2Mp4:(NSURL *)movUrl {
+    NSURL *mp4Url = nil;
+    AVURLAsset *avAsset = [AVURLAsset URLAssetWithURL:movUrl options:nil];
+    NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:avAsset];
+    
+    if ([compatiblePresets containsObject:AVAssetExportPresetHighestQuality]) {
+        AVAssetExportSession *exportSession = [[AVAssetExportSession alloc]initWithAsset:avAsset
+                                                                              presetName:AVAssetExportPresetHighestQuality];
+        mp4Url = [movUrl copy];
+        mp4Url = [mp4Url URLByDeletingPathExtension];
+        mp4Url = [mp4Url URLByAppendingPathExtension:@"mp4"];
+        exportSession.outputURL = mp4Url;
+        exportSession.shouldOptimizeForNetworkUse = YES;
+        exportSession.outputFileType = AVFileTypeMPEG4;
+        dispatch_semaphore_t wait = dispatch_semaphore_create(0l);
+        [exportSession exportAsynchronouslyWithCompletionHandler:^{
+            switch ([exportSession status]) {
+                case AVAssetExportSessionStatusFailed: {
+                    NSLog(@"failed, error:%@.", exportSession.error);
+                } break;
+                case AVAssetExportSessionStatusCancelled: {
+                    NSLog(@"cancelled.");
+                } break;
+                case AVAssetExportSessionStatusCompleted: {
+                    NSLog(@"completed.");
+                    NSLog(@"导出成功，导出的MP4文件大小为:%lf MB",[NSData dataWithContentsOfURL:exportSession.outputURL].length/1024.f/1024.f);
+                    _image = [self thumbnailImageForVideo:exportSession.outputURL atTime:1];
+                } break;
+                default: {
+                    NSLog(@"others.");
+                } break;
+            }
+            dispatch_semaphore_signal(wait);
+        }];
+        long timeout = dispatch_semaphore_wait(wait, DISPATCH_TIME_FOREVER);
+        if (timeout) {
+            NSLog(@"timeout.");
+        }
+        if (wait) {
+            //dispatch_release(wait);
+            wait = nil;
+        }
+    }
+    
+    return mp4Url;
+}
+
+- (UIImagePickerController *)imagePicker
+{
+    if (_imagePicker) {
+        _imagePicker.delegate = nil;
+        _imagePicker = nil;
+    }
+    
+    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker.modalPresentationStyle= UIModalPresentationOverFullScreen;
+    _imagePicker.delegate = self;
+    
+    return _imagePicker;
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    NSLog(@"录制取消");
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    NSLog(@"录制结束");
+    NSString *mediaType = info[UIImagePickerControllerMediaType];
+    if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]) {
+        NSURL *videoURL = info[UIImagePickerControllerMediaURL];
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        // video url:
+        // file:///private/var/mobile/Applications/B3CDD0B2-2F19-432B-9CFA-158700F4DE8F/tmp/capture-T0x16e39100.tmp.9R8weF/capturedvideo.mp4
+        // we will convert it to mp4 format
+        NSURL *mp4 = [self convert2Mp4:videoURL];
+        
+        NSFileManager *fileman = [NSFileManager defaultManager];
+        if ([fileman fileExistsAtPath:videoURL.path]) {
+            NSError *error = nil;
+            [fileman removeItemAtURL:videoURL error:&error];
+            if (error) {
+                NSLog(@"failed to remove file, error:%@.", error);
+            }
+        }
+       [self submitVideo:mp4];
+        
+        UIImage *composeImage = [self composeImg:_image frontImage:[UIImage imageNamed:@"videoPlay"]];
+        
+        
+        _videoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _videoButton.frame = CGRectMake(5, -1, 62, 60);
+        [self.imagePickerView addSubview:_videoButton];
+        _videoButton.image = composeImage;
+        
+        [_videoButton addTarget:self action:@selector(playVideoWithVideoPath:) forControlEvents:UIControlEventTouchUpInside];
+
+        
+        
+    }
+}
+
+- (void)playVideoWithVideoPath:(UIButton *)button
+{
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    
+    NSURL *videoURL = [NSURL fileURLWithPath:self.videoLocalPath];
+    MPMoviePlayerViewController *moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
+    [moviePlayerController.moviePlayer prepareToPlay];
+    moviePlayerController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+    [self presentMoviePlayerViewControllerAnimated:moviePlayerController];
+}
+
+
+
+
+- (UIImage *) thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time {
+    
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    
+    NSParameterAssert(asset);
+    
+    AVAssetImageGenerator *assetImageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    
+    
+    
+    assetImageGenerator.appliesPreferredTrackTransform =YES;        assetImageGenerator.apertureMode =AVAssetImageGeneratorApertureModeEncodedPixels;
+    
+    CGImageRef thumbnailImageRef = NULL;
+    
+    CFTimeInterval thumbnailImageTime = time;
+    
+    NSError *thumbnailImageGenerationError = nil;
+    
+    thumbnailImageRef = [assetImageGenerator
+                         copyCGImageAtTime:CMTimeMake(thumbnailImageTime,60) actualTime:NULL error:&thumbnailImageGenerationError];
+    //    thumbnailImageRef = [assetImageGenerator copyCGImageAtTime:CMTimeMake(thumbnailImageTime, 60) actualTime:<#(nullable CMTime *)#> error:<#(NSError *__autoreleasing  _Nullable * _Nullable)#>]
+    
+    if (!thumbnailImageRef)
+        
+        DDLogInfo(@"thumbnailImageGenerationError %@", thumbnailImageGenerationError);
+    
+    UIImage *thumbnailImage = thumbnailImageRef ? [[UIImage alloc] initWithCGImage:thumbnailImageRef] :nil;
+    
+    return thumbnailImage;
+    
+}
+
+
+- (void)submitVideo:(NSURL *)videoUrl
+{
+    NSString *videoPath = videoUrl.relativePath;
+    self.videoLocalPath = videoPath;
+    
+    
+    [[LLHTTPRequestOperationManager shareManager] POSTWithURL:Olla_API_Video_Submit parameters:nil data:[NSData dataWithContentsOfFile:videoPath] success:^(NSDictionary *responseObject)
+     {
+         NSLog(@"upload ok: %@", responseObject[@"data"]);
+         NSString *videoUrl = responseObject[@"data"];
+         
+         NSLog(@"网址为%@", videoUrl);
+         self.videoUrl = videoUrl;
+         //         NSDictionary *dictionary = @{@"tags" : @"video", @"videoPic" : _image, @"videoUrl" : videoUrl};
+//         [self openURL:[self.url URLByAppendingPathComponent:@"share"] params:dictionary animated:YES];
+         
+         
+     } failure:^(NSError *error)
+     {
+         DDLogError(@"whatup视频 upload error:%@",error);
+         
+     }];
+    
+    
+    
+}
+
+
+
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -217,13 +420,17 @@
     
     __weak typeof(self) weakSelf = self;
     
+    LLUser *user = [[[LLUserService alloc]init] getMe];
+    
+    NSString *tags = [NSString stringWithFormat:@"%@,%@",user.equipType, self.tagsLabel.text];
+    
     NSDictionary *dictionary = [NSDictionary dictionary];
     
     if (!self.videoUrl)
     {
       
         dictionary = @{@"content"  :_content.text,
-                       @"tags"     :self.tagsLabel.text,
+                       @"tags"     :tags,
                        @"city"     :@"中国",
                        @"location" :self.postion,
                        @"address"  :self.location.text,
@@ -234,7 +441,7 @@
     {
         
         dictionary = @{@"content"  :_content.text,
-                       @"tags"     :self.tagsLabel.text,
+                       @"tags"     :tags,
                        @"city"     :@"中国",
                        @"location" :self.postion,
                        @"address"  :self.location.text,
@@ -249,7 +456,7 @@
      parameters:dictionary  constructingBodyWithBlock:^(id<AFMultipartFormData> formData){// 一组图片上传！！
          
          NSArray *images = [NSArray array];
-         if (_thumbImage)
+         if (_image)
          {
              images = @[_videoButton.image];
              for (id asset in images)
@@ -356,7 +563,7 @@
 }
 - (IBAction)categoryChooseAction:(id)sender
 {
-    [self openURL:[NSURL URLWithString:@"present:///dev-catagory"] animated:YES];
+    [self openURL:[NSURL URLWithString:@"present:///dev-catagory"] params:@"tags" animated:YES];
 }
 
 /*

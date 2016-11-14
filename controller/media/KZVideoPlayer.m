@@ -62,7 +62,8 @@
     [self addSubview:_backGroudView];
     
 
-    _ctrlView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Width - 50)];
+//    _ctrlView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Width - 50)];
+    _ctrlView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height - 60)];
     _ctrlView.center = self.center;
     _ctrlView.backgroundColor = [UIColor clearColor];
     [_backGroudView addSubview:_ctrlView];

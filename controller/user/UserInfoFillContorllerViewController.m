@@ -89,6 +89,10 @@
 {
     return self.tabBarController.tabBar;
 }
+- (IBAction)leakAction:(id)sender
+{
+            [[[UIApplication sharedApplication] delegate] window].rootViewController = [self.context rootViewControllerWithURLKey:@"login"];
+}
 - (void) updateAvator:(id)sender{
     
     if (!imagePickerController)

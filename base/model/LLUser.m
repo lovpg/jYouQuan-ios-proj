@@ -16,7 +16,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
 
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         self.uid =  [aDecoder decodeObjectForKey:@"uid"];
         self.avatar =  [aDecoder decodeObjectForKey:@"avatar"];
         self.userName =  [aDecoder decodeObjectForKey:@"username"];
@@ -26,6 +27,8 @@
         self.speaking =  [aDecoder decodeObjectForKey:@"speaking"];
         self.learning =  [aDecoder decodeObjectForKey:@"learning"];
         self.interests =  [aDecoder decodeObjectForKey:@"interests"];
+        self.points =  [aDecoder decodeObjectForKey:@"points"];
+        self.equipType =  [aDecoder decodeObjectForKey:@"equipType"];
     }
 
     return self;
@@ -52,6 +55,7 @@
     [aCoder encodeObject:self.nickname forKey:@"nickname"];
     [aCoder encodeObject:self.gender forKey:@"gender"];
     [aCoder encodeObject:self.region forKey:@"region"];
+    [aCoder encodeObject:self.points forKey:@"points"];
 
 }
 

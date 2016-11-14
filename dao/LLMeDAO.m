@@ -129,6 +129,28 @@
      }];
 }
 
+- (void)updateEquipType:(NSString *)equipType
+                success:(void (^)(NSDictionary *userInfo))success
+                   fail:(void (^)(NSError *error))fail
+{
+    
+    [[LLHTTPRequestOperationManager shareManager]
+     GETWithURL:Olla_API_Edit_Equip_Type
+     parameters:@{@"equipType":equipType}
+     success:^(NSDictionary *respondObject , BOOL hasNext)
+    {
+         
+         [self updateValue:equipType forKey:@"equipType"];
+         success(respondObject);
+         
+     }
+     failure:^(NSError *error)
+    {
+         
+         fail(error);
+     }];
+    
+}
 
 - (void)updateGender:(NSString *)gender success:(void (^)(NSDictionary *userInfo))success fail:(void (^)(NSError *error))fail{
 

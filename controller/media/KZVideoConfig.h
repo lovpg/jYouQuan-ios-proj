@@ -13,7 +13,7 @@
 
 
 #define kzThemeBlackColor   [UIColor blackColor]
-#define kzThemeTineColor    [UIColor greenColor]
+#define kzThemeTineColor    RGB_HEX(0xe21001)
 
 #define kzThemeWaringColor  [UIColor redColor]
 #define kzThemeWhiteColor   [UIColor whiteColor]

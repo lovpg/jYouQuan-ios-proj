@@ -151,7 +151,22 @@
     {
         locationView.hidden = YES;
     }
-    tagsButton.text =  [LLAppHelper getNamefromCategory:self.dataItem.tags];
+   
+    NSArray *tagsArray = [self.dataItem.tags componentsSeparatedByString:@","];
+    if( [tagsArray count] > 1 )
+    {
+//        UIButton *equipTypeButton = [[UIButton alloc]initWithFrame:CGRectMake(tagsButton.originX, tagsButton.originY, 56, 21)];
+//        tagsButton.hidden = YES;
+//        equipTypeButton.text = tagsArray[0];
+//        [self addSubview:equipTypeButton];
+        tagsButton.text =  tagsArray[0];
+        tags2Button.text = tagsArray[1];
+    }
+    else
+    {
+        tags2Button.hidden = YES;
+         tagsButton.text =  [LLAppHelper getNamefromCategory:self.dataItem.tags];
+    }
     
     //    likeButton.actionName = self.dataItem.good ? @"unlike" : @"like";
     likeNumLabel.text = [NSString stringWithFormat:@"%d", self.dataItem.goodCount];

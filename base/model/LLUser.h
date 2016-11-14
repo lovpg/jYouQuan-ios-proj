@@ -28,12 +28,12 @@
 @property(nonatomic,strong) NSString *followCount;
 @property(nonatomic,strong) NSString *fansCount;
 @property (nonatomic, strong) NSString *email;
-
+@property(nonatomic,strong) NSString *points;
 @property(nonatomic,strong) NSString *sign;
 @property(nonatomic,strong) NSString *voice;//录音url
 @property(nonatomic,strong) NSString *distanceText;//距离
 @property(nonatomic,strong) NSString *location; //坐标
-
+@property(nonatomic,strong) NSString *equipType;
 @property (nonatomic) BOOL isRedPoint;
 
 // 保存follow状态

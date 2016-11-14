@@ -143,6 +143,17 @@
         locationView.hidden = YES;
     }
     
+    NSArray *tagsArray = [self.dataItem.tags componentsSeparatedByString:@","];
+    if( [tagsArray count] > 1 )
+    {
+        tagsButton.text =  tagsArray[0];
+        tags2button.text = tagsArray[1];
+    }
+    else
+    {
+        tags2button.hidden = YES;
+        tagsButton.text =  [LLAppHelper getNamefromCategory:self.dataItem.tags];
+    }
 //    likeButton.actionName = self.dataItem.good ? @"unlike" : @"like";
     likeNumLabel.text = [NSString stringWithFormat:@"%d", self.dataItem.goodCount];
     commentLabel.text = [NSString stringWithFormat:@"%d", self.dataItem.commentCount];

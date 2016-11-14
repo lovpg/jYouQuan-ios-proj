@@ -80,6 +80,19 @@
 
 - (void) newPost
 {
+    
+    LLUser *user = [[[LLUserService alloc]init] getMe];
+    
+    if( user.equipType == nil || [user.equipType isEmpty] )
+    {
+        [UIAlertView showWithTitle:@"设置提醒"
+                            message:@"请绑定设备类型: 前往 [我的] -> [我的设备] 设置."
+                 cancelButtonTitle:@"知道了"
+                 otherButtonTitles:nil
+                          tapBlock:nil];
+        return;
+    }
+    
     [UIActionSheet showInView:[self.presentedViewController view]
                     withTitle:nil
             cancelButtonTitle:@"取消"
@@ -100,13 +113,13 @@
               */
              
              
-             // openUrl方式打开
-//            [shareDic setValue:@"life" forKey:@"tags"];
-//            [self openURL:[self.url URLByAppendingPathComponent:@"video-record"] params:nil animated:YES];
+             // 仿微信录制视频的打开方式
+//             [self openURLhidesBottomBarWhenPushed:[self.url URLByAppendingPathComponent:@"video-record"] params:nil animated:YES];
              
-//             [self openURLhidesBottomBarWhenPushed:[self.url URLByAppendingPathComponent:@"video-record"] animated:YES];
-
-             [self openURLhidesBottomBarWhenPushed:[self.url URLByAppendingPathComponent:@"video-record"] params:nil animated:YES];
+             // 本地摄像头的打开方式
+             [shareDic setValue:@"video" forKey:@"tags"];
+             [self openURL:[NSURL URLWithString:@"present:///root/share"] params:shareDic animated:YES];
+             
              
          }
          else if(1==tapIndex)

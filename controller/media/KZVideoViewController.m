@@ -287,8 +287,8 @@
     
     // 新的代码
     //视频设备配置为摄像头
-    NSError * vError = nil;
-    NSError * aError = nil;
+    NSError *vError = nil;
+    NSError *aError = nil;
     _videoDevice = [self deviceWithMediaType:AVMediaTypeVideo preferringPosition:captureDeviceType];
     _videoDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:_videoDevice error:&vError];
     
@@ -599,7 +599,8 @@
 
     
     _topSlideView.isRecoding = YES;
-    _statusInfo.textColor = kzThemeTineColor;
+//    _statusInfo.textColor = kzThemeTineColor;
+    _statusInfo.textColor = RGB_HEX(0xe21001);
     _statusInfo.text = @"↑上移取消";
     _statusInfo.hidden = NO;
     kz_dispatch_after(0.5, ^{

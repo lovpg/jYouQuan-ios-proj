@@ -24,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [NSThread sleepForTimeInterval:5];
+    [NSThread sleepForTimeInterval:2];
 
 
     [super application:application didFinishLaunchingWithOptions:launchOptions];
@@ -57,6 +57,7 @@
     {
         [[UINavigationBar appearance] setBarTintColor:RGB_HEX(0xe21001)];
     }
+    [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     return YES;
 }

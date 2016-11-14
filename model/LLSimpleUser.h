@@ -26,7 +26,8 @@
 @property(nonatomic,strong) NSString *hide;
 @property(nonatomic,strong) NSString *speaking;//speaking/native
 @property(nonatomic,strong) NSString *learning;
-
+@property(nonatomic,strong) NSNumber *points;
+@property(nonatomic,strong) NSString *equipType;
 + (LLSimpleUser *)random;// 测试用
 - (NSString *)easeUserName;
 - (NSString *)easePassword;

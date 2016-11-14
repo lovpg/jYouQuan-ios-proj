@@ -70,6 +70,10 @@
  */
 - (void)updateUserName:(NSString *)username  success:(void (^)(NSDictionary *userInfo))success fail:(void (^)(NSError *error))fail;
 
+- (void)updateEquipType:(NSString *)equipType
+                success:(void (^)(NSDictionary *userInfo))success
+                   fail:(void (^)(NSError *error))fail;
+
 - (void)updateBirth:(NSString *)birth  success:(void (^)(NSDictionary *userInfo))success fail:(void (^)(NSError *error))fail;
 
 - (void)updateEmail:(NSString *)email  success:(void (^)(NSDictionary *userInfo))success fail:(void (^)(NSError *error))fail;

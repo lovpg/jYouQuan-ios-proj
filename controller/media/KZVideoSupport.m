@@ -11,15 +11,16 @@
 
 #pragma mark - Custom View --
 
-@implementation KZStatusBar {
+@implementation KZStatusBar
+{
     BOOL _clear;
     CAShapeLayer *_nomalLayer;
     CALayer *_recodingLayer;
-    
     KZVideoViewShowType _style;
-    
     UIButton *_cancelBtn;
 }
+
+
 - (instancetype)initWithFrame:(CGRect)frame style:(KZVideoViewShowType)style; {
     if (self = [super initWithFrame:frame]) {
         _style = style;
@@ -31,12 +32,12 @@
 
 - (void)addCancelTarget:(id)target selector:(SEL)selector {
     [_cancelBtn removeFromSuperview];
-    
     _cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelBtn.frame = CGRectMake(10, 22, 50, 40);
     [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
     [_cancelBtn addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
-    [_cancelBtn setTitleColor:kzThemeTineColor forState:UIControlStateNormal];
+//    [_cancelBtn setTitleColor:kzThemeTineColor forState:UIControlStateNormal];
+    [_cancelBtn setTitleColor:RGB_HEX(0xe21001) forState:UIControlStateNormal];
     _cancelBtn.alpha = 0.8;
     [self addSubview:_cancelBtn];
 }
@@ -121,7 +122,8 @@
     
     CAShapeLayer *trackLayer = [CAShapeLayer layer];
     trackLayer.frame = self.bounds;
-    trackLayer.strokeColor = kzThemeTineColor.CGColor;
+//    trackLayer.strokeColor = kzThemeTineColor.CGColor;
+    trackLayer.strokeColor = RGB_HEX(0xe21001).CGColor;
     trackLayer.fillColor = [UIColor clearColor].CGColor;
     trackLayer.lineCap = kCALineCapRound;
     trackLayer.lineWidth = 3.0;
@@ -197,7 +199,8 @@
     
     CAShapeLayer *trackLayer = [CAShapeLayer layer];
     trackLayer.frame = self.bounds;
-    trackLayer.strokeColor = kzThemeTineColor.CGColor;
+//    trackLayer.strokeColor = kzThemeTineColor.CGColor;
+    trackLayer.strokeColor = RGB_HEX(0xe21001).CGColor;
     trackLayer.fillColor = [UIColor clearColor].CGColor;
     trackLayer.opacity = 1.0;
     trackLayer.lineCap = kCALineCapRound;
@@ -217,18 +220,21 @@
         textLayer.fontSize = font.pointSize;
         CGFontRelease(fontRef);
         textLayer.contentsScale = [UIScreen mainScreen].scale;
-        textLayer.foregroundColor = kzThemeTineColor.CGColor;
+//        textLayer.foregroundColor = kzThemeTineColor.CGColor;
+        textLayer.foregroundColor = RGB_HEX(0xe21001).CGColor;
         textLayer.alignmentMode = kCAAlignmentCenter;
         textLayer.wrapped = YES;
         [trackLayer addSublayer:textLayer];
     }
     
-    CAGradientLayer *gradLayer = [CAGradientLayer layer];
-    gradLayer.frame = self.bounds;
-    gradLayer.colors = [KZVideoConfig gradualColors];
-    [self.layer addSublayer:gradLayer];
+    // 仿微信黄绿色混合的效果
+//    CAGradientLayer *gradLayer = [CAGradientLayer layer];
+//    gradLayer.frame = self.bounds;
+//    gradLayer.colors = [KZVideoConfig gradualColors];
+//    [self.layer addSublayer:gradLayer];
+//    
+//    gradLayer.mask = trackLayer;
     
-    gradLayer.mask = trackLayer;
 }
 @end
 
@@ -259,7 +265,9 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetStrokeColorWithColor(context, kzThemeTineColor.CGColor);
+//    CGContextSetStrokeColorWithColor(context, kzThemeTineColor.CGColor);
+    CGContextSetStrokeColorWithColor(context, RGB_HEX(0xe21001).CGColor);
+
     CGContextSetLineWidth(context, 1.0);
     
     CGFloat len = 4;
@@ -466,7 +474,8 @@ CGFloat angleToRadian(CGFloat angle) {
     [self addGestureRecognizer:_longPress];
     
     _progressLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, selfWidth, 4)];
-    _progressLine.backgroundColor = kzThemeTineColor;
+//    _progressLine.backgroundColor = kzThemeTineColor;
+    _progressLine.backgroundColor = RGB_HEX(0xe21001);
     _progressLine.hidden = YES;
     [self addSubview:_progressLine];
     
@@ -497,8 +506,10 @@ CGFloat angleToRadian(CGFloat angle) {
 - (void)startRecordSet {
     _startBtn.alpha = 1.0;
     
-    _progressLine.frame = CGRectMake(0, 0, self.bounds.size.width, 2);
-    _progressLine.backgroundColor = kzThemeTineColor;
+    
+    _progressLine.frame = CGRectMake(0, 0, self.bounds.size.width, 4);
+//    _progressLine.backgroundColor = kzThemeTineColor;
+    _progressLine.backgroundColor = RGB_HEX(0xe21001);
     _progressLine.hidden = NO;
     
     _surplusTime = kzRecordTime;
@@ -566,7 +577,8 @@ CGFloat angleToRadian(CGFloat angle) {
                 }
             }
             else {
-                _progressLine.backgroundColor = kzThemeTineColor;
+//                _progressLine.backgroundColor = kzThemeTineColor;
+                _progressLine.backgroundColor = RGB_HEX(0xe21001);
             }
         }
             break;
@@ -735,6 +747,7 @@ CGFloat angleToRadian(CGFloat angle) {
     CALayer *bgLayer = [CALayer layer];
     bgLayer.frame = CGRectMake(4, 4, self.bounds.size.width - 8, self.bounds.size.height - 8);
     bgLayer.backgroundColor = [UIColor colorWithRed: 0.5 green: 0.5 blue: 0.5 alpha: 0.3].CGColor;
+    
     bgLayer.cornerRadius = 8.0;
     bgLayer.masksToBounds = YES;
     [self.contentView.layer addSublayer:bgLayer];
