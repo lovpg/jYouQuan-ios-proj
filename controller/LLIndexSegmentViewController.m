@@ -80,6 +80,19 @@
 
 - (void) newPost
 {
+    
+    LLUser *user = [[[LLUserService alloc]init] getMe];
+    
+    if( user.equipType == nil || [user.equipType isEmpty] )
+    {
+        [UIAlertView showWithTitle:@"设置提醒"
+                            message:@"请绑定设备类型: 前往 [我的] -> [我的设备] 设置."
+                 cancelButtonTitle:@"知道了"
+                 otherButtonTitles:nil
+                          tapBlock:nil];
+        return;
+    }
+    
     [UIActionSheet showInView:[self.presentedViewController view]
                     withTitle:nil
             cancelButtonTitle:@"取消"

@@ -47,6 +47,7 @@ static NSString *LLShareCategoryButtonClickEvent = @"LLShareCategoryButtonClickE
     IBOutlet UILabel *locationLabel;
     //相对布局
     IBOutlet UILabel *nicknameLabel;
+    __weak IBOutlet UIButton *tags2Button;
     
     IBOutlet LLGenderImageView *genderImageView;
     

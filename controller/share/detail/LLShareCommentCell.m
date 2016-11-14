@@ -155,7 +155,7 @@ didSelectLinkWithPhoneNumber:(NSString *)phoneNumber {
         self.messageLabel.textAlignment = NSTextAlignmentLeft;
     }
     
-    CGSize size = [self.messageLabel sizeThatFits:CGSizeMake(210, 99999)];
+    CGSize size = [self.messageLabel sizeThatFits:CGSizeMake(320, 99999)];
     self.messageLabel.frame = CGRectMake(68, 38, 210, size.height + 8);
     
     // 显示@名字的颜色
@@ -251,7 +251,8 @@ didSelectLinkWithPhoneNumber:(NSString *)phoneNumber {
 //    [audioButton play];
 //}
 
-- (void)layoutSubviews {
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     self.backgroundButton.frame = CGRectMake(5, 0, self.width - 10, self.height);
     self.backgroundButton2.frame = self.bounds;

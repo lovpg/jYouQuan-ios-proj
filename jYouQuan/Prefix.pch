@@ -151,6 +151,7 @@ static const int ddLogLevel = DDLogLevelDebug;
 #define Olla_API_Edit_Headphoto @"/user/edit/avatar.do"
 #define Olla_API_Edit_Cover @"/user/edit/cover.do" // 修改封面（可能要修改成多图的）
 #define Olla_API_Edit_Gender @"/user/edit/gender.do"
+#define Olla_API_Edit_Equip_Type @"/user/edit/equipType.do"
 #define Olla_API_Edit_Region @"/user/edit/region.do"
 #define Olla_API_Edit_Whatsup @"/user/edit/sign.do"
 

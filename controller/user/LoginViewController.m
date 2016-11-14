@@ -25,6 +25,15 @@
 
 @implementation LoginViewController
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+    {
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,14 +42,14 @@
     self.userAuth = [[loginService loginAuthDAO] get];
     
     // tableView向上偏了, 改变偏移量
-    if (Screen_Height == 568)
-    {
-        self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
-    }
-    else if (Screen_Height == 480)
-    {
-        self.tableView.contentInset = UIEdgeInsetsMake(128, 0, 0, 0);
-    }
+   // if (Screen_Height == 568)
+   // {
+    //    self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+   // }
+   // else if (Screen_Height == 480)
+    //{
+      //  self.tableView.contentInset = UIEdgeInsetsMake(128, 0, 0, 0);
+    //}
     
 
     if ((NSInteger*)[self.userAuth .username length] > 12)

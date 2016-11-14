@@ -249,7 +249,7 @@
         LLComment *comment = self.commentListDataSource[indexPath.row];
         
         NSString *textContent = comment.content;
-        CGSize size = [textContent sizeWithFont:App_Text_Font(15) constrainedSize:CGSizeMake(210, 99999)];
+        CGSize size = [textContent sizeWithFont:App_Text_Font(15) constrainedSize:CGSizeMake(320, 99999)];
         CGFloat textHeight = textContent.trim.length > 0 ? size.height : 0;
         
         CGFloat start = 38.f;

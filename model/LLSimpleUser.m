@@ -27,6 +27,8 @@
         self.sign = [aDecoder decodeObjectForKey:@"sign"];
         self.distanceText = [aDecoder decodeObjectForKey:@"distanceText"];
         self.location = [aDecoder decodeObjectForKey:@"location"];
+        self.points = [aDecoder decodeObjectForKey:@"points"];
+        self.equipType =  [aDecoder decodeObjectForKey:@"equipType"];
         
     }
     
@@ -54,7 +56,7 @@
     [aCoder encodeObject:self.nickname forKey:@"nickname"];
     [aCoder encodeObject:self.gender forKey:@"gender"];
     [aCoder encodeObject:self.region forKey:@"country"];
-    
+    [aCoder encodeObject:self.points forKey:@"points"];
     [aCoder encodeObject:self.sign forKey:@"sign"];
     
     [aCoder encodeObject:self.distanceText forKey:@"distanceText"];

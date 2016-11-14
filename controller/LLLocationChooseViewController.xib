@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLLocationChooseViewController">
@@ -13,44 +17,50 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j0A-V2-zek">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j0A-V2-zek">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="4cq-QL-VoA"/>
                     </connections>
                 </mapView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXu-bW-MvA">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXu-bW-MvA">
                     <rect key="frame" x="15" y="18" width="28" height="28"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" image="navigation_back_arrow_new.png"/>
                     <connections>
                         <action selector="backAction:" destination="-1" eventType="touchUpInside" id="Aub-jB-qF8"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b1-eU-D10">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b1-eU-D10">
                     <rect key="frame" x="239" y="18" width="73" height="28"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="73" id="6wa-zS-cIZ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="发送位置">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="choosePositionClicked:" destination="-1" eventType="touchUpInside" id="CMP-Ey-AWG"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="j0A-V2-zek" secondAttribute="trailing" id="8Kk-OZ-HBq"/>
                 <constraint firstItem="j0A-V2-zek" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="A7Z-Ub-5U0"/>
                 <constraint firstAttribute="bottom" secondItem="j0A-V2-zek" secondAttribute="bottom" id="S90-ce-mRo"/>
+                <constraint firstItem="8b1-eU-D10" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="fax-yz-ZGC"/>
                 <constraint firstAttribute="trailing" secondItem="8b1-eU-D10" secondAttribute="trailing" constant="8" id="hfv-bA-tVD"/>
+                <constraint firstAttribute="trailing" secondItem="8b1-eU-D10" secondAttribute="trailing" constant="63" id="i0u-Um-HSg"/>
+                <constraint firstItem="fXu-bW-MvA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="mbP-g6-wZz"/>
+                <constraint firstItem="fXu-bW-MvA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="oL9-VV-Sdu"/>
                 <constraint firstItem="j0A-V2-zek" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yrz-Ns-9EQ"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>

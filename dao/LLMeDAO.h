@@ -53,6 +53,10 @@
 
 - (void)updateBirth:(NSString *)birth success:(void (^)(NSDictionary *userInfo))success fail:(void (^)(NSError *error))fail;
 
+- (void)updateEquipType:(NSString *)equipType
+                success:(void (^)(NSDictionary *userInfo))success
+                   fail:(void (^)(NSError *error))fail;
+
 - (void)hide:(NSString *)hide
      success:(void (^)(NSDictionary *userInfo))success
         fail:(void (^)(NSError *error))fail;

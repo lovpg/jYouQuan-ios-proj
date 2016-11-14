@@ -30,6 +30,7 @@ static NSString *LLMyCenterShareThirdPlatfomButtonClickEvent = @"LLMyCenterShare
     __weak IBOutlet UILabel *enrollCount;
     __weak IBOutlet UIButton *avatarButton;
     
+    __weak IBOutlet UIButton *tags2button;
     IBOutlet TTTAttributedLabel *shareTextLabel;
     IBOutlet OllaImageLimitGridView *imageGroupView;
     IBOutlet UIView *interactiveView;

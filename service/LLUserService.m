@@ -19,7 +19,8 @@
     return self;
 }
 
-- (LLUser *)getMe{
+- (LLUser *)getMe
+{
     return [meDAO get];
 }
 
@@ -81,8 +82,17 @@
  *  @param success
  *  @param fail
  */
-- (void)updateUserName:(NSString *)username  success:(void (^)(NSDictionary *userInfo))success fail:(void (^)(NSError *error))fail{
+- (void)updateUserName:(NSString *)username
+               success:(void (^)(NSDictionary *userInfo))success
+                  fail:(void (^)(NSError *error))fail{
     [meDAO updateUserName:username success:success fail:fail];
+}
+
+- (void)updateEquipType:(NSString *)equipType
+             success:(void (^)(NSDictionary *userInfo))success
+                fail:(void (^)(NSError *error))fail
+{
+    [meDAO updateEquipType:equipType success:success fail:fail];
 }
 
 - (void)updateGender:(NSString *)gender  success:(void (^)(NSDictionary *userInfo))success fail:(void (^)(NSError *error))fail{

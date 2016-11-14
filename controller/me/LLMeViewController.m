@@ -88,13 +88,16 @@
     
 }
 
+- (IBAction)categroyUpdateAction:(id)sender
+{
+    [self openURL:[NSURL URLWithString:@"present:///dev-catagory"] params:@"equipType" animated:YES];
+}
 
 
 
 - (IBAction)updateAvatorAction:(id)sender
 {
-    
-    
+
 }
 
 - (void)updateAvatorWithImage:(UIImage *)image
@@ -149,9 +152,26 @@
         userService = [[LLUserService alloc] init];
     }
     self.user  = [userService getMe];
+    [userService get:self.user.uid
+             success:^(LLUser *user)
+     {
+         if( ![user.points isEqualToString:self.pointsLabel.text ] )
+         {
+            self.pointsLabel.text = user.points;
+         }
+         [userService updateValue:user.points forKey:@"points"];
+     }
+                fail:^(NSError *error)
+     {
+         
+     }];
     self.nicknameLabel.text = self.user.nickname;
     self.usernameLabel.text = self.user.userName;
-    
+    self.pointsLabel.text = self.user.points;
+    if( !(self.user.equipType == nil) && ![self.user.equipType isEmpty] )
+    {
+        self.equipType.text = self.user.equipType;
+    }
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     NSData *imageData =[defaults objectForKey:@"avatorImageData"];
     if(imageData)
@@ -178,6 +198,11 @@
     
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeUserNameState:) name:@"OllaNicknameChangeNotification" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(categorySelectedHandler:)
+                                                 name:@"LLCatatoryChooseNotification"
+                                               object:nil];
+    
     self.avatorButoon.thumbSize = CGSizeMake(60, 60);
     
 }
@@ -186,6 +211,23 @@
 {
     self.nicknameLabel.text = notification.object;
     
+}
+- (void)categorySelectedHandler:(NSNotification *)notification
+{
+    
+    NSString *categroy = [notification.userInfo valueForKey:@"categroy"];
+    self.equipType.text = categroy;
+    __weak typeof(self) weakSelf = self;
+    [userService updateEquipType:categroy
+                         success:^(NSDictionary *userInfo)
+    {
+         weakSelf.equipType.text = categroy;
+        
+    }
+                            fail:^(NSError *error)
+    {
+        DDLogError(@"更新设备类型 error:%@",error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

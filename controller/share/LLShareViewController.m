@@ -53,7 +53,7 @@
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(backAction:)];
-        UIImage *share_send_img = [UIImage imageNamed:@"share_send"];
+        UIImage *share_send_img = [UIImage imageNamed:@"post_submit"];
         UIImage *share_send = [share_send_img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:share_send
                                                                       style:UIBarButtonItemStylePlain
@@ -420,13 +420,17 @@
     
     __weak typeof(self) weakSelf = self;
     
+    LLUser *user = [[[LLUserService alloc]init] getMe];
+    
+    NSString *tags = [NSString stringWithFormat:@"%@,%@",user.equipType, self.tagsLabel.text];
+    
     NSDictionary *dictionary = [NSDictionary dictionary];
     
     if (!self.videoUrl)
     {
       
         dictionary = @{@"content"  :_content.text,
-                       @"tags"     :self.tagsLabel.text,
+                       @"tags"     :tags,
                        @"city"     :@"中国",
                        @"location" :self.postion,
                        @"address"  :self.location.text,
@@ -437,7 +441,7 @@
     {
         
         dictionary = @{@"content"  :_content.text,
-                       @"tags"     :self.tagsLabel.text,
+                       @"tags"     :tags,
                        @"city"     :@"中国",
                        @"location" :self.postion,
                        @"address"  :self.location.text,
@@ -559,7 +563,7 @@
 }
 - (IBAction)categoryChooseAction:(id)sender
 {
-    [self openURL:[NSURL URLWithString:@"present:///dev-catagory"] animated:YES];
+    [self openURL:[NSURL URLWithString:@"present:///dev-catagory"] params:@"tags" animated:YES];
 }
 
 /*
