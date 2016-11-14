@@ -80,7 +80,7 @@
             <rect key="frame" x="0.0" y="0.0" width="362" height="38"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46Y-7O-Set" id="qNg-A4-QxN">
-                <rect key="frame" x="0.0" y="0.0" width="362" height="37.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="362" height="37"/>
                 <autoresizingMask key="autoresizingMask"/>
             </tableViewCellContentView>
             <point key="canvasLocation" x="746" y="-172"/>

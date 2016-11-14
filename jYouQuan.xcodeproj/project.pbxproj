@@ -343,6 +343,8 @@
 		9E4882C31D3DD282003AEB2F /* UserInfoFillContorllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4882B91D3DD282003AEB2F /* UserInfoFillContorllerViewController.xib */; };
 		9E4882C41D3DD282003AEB2F /* UserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4882BB1D3DD282003AEB2F /* UserProtocolViewController.m */; };
 		9E4882C51D3DD282003AEB2F /* UserProtocolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4882BC1D3DD282003AEB2F /* UserProtocolViewController.xib */; };
+		9E4CD0811DD95ED400A578E4 /* gender@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4CD0801DD95ED400A578E4 /* gender@2x.png */; };
+		9E4CD0841DD960BF00A578E4 /* wj.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4CD0831DD960BF00A578E4 /* wj.png */; };
 		9E531C041D7E5D6C000ABF5E /* nav_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E531C031D7E5D6C000ABF5E /* nav_more.png */; };
 		9E531C061D7E629F000ABF5E /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E531C051D7E629F000ABF5E /* black.png */; };
 		9E531C0B1D7E9945000ABF5E /* LLTopicShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E531C091D7E9945000ABF5E /* LLTopicShareViewController.m */; };
@@ -366,7 +368,6 @@
 		9E6C074F1D3F66F100628BE9 /* chatBar_recordSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C073A1D3F66F100628BE9 /* chatBar_recordSelected.png */; };
 		9E6C07501D3F66F100628BE9 /* chatBar_recordBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C073B1D3F66F100628BE9 /* chatBar_recordBg@2x.png */; };
 		9E6C07511D3F66F100628BE9 /* chatBar_recordBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C073C1D3F66F100628BE9 /* chatBar_recordBg.png */; };
-		9E6C07521D3F66F100628BE9 /* chatBar_record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C073D1D3F66F100628BE9 /* chatBar_record@2x.png */; };
 		9E6C07531D3F66F100628BE9 /* chatBar_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C073E1D3F66F100628BE9 /* chatBar_record.png */; };
 		9E6C07541D3F66F100628BE9 /* chatBar_moreSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C073F1D3F66F100628BE9 /* chatBar_moreSelected@2x.png */; };
 		9E6C07551D3F66F100628BE9 /* chatBar_moreSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07401D3F66F100628BE9 /* chatBar_moreSelected.png */; };
@@ -376,7 +377,6 @@
 		9E6C07591D3F66F100628BE9 /* chatBar_keyboardSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07441D3F66F100628BE9 /* chatBar_keyboardSelected.png */; };
 		9E6C075A1D3F66F100628BE9 /* chatBar_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07451D3F66F100628BE9 /* chatBar_keyboard@2x.png */; };
 		9E6C075B1D3F66F100628BE9 /* chatBar_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07461D3F66F100628BE9 /* chatBar_keyboard.png */; };
-		9E6C075C1D3F66F100628BE9 /* chatBar_faceSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07471D3F66F100628BE9 /* chatBar_faceSelected@2x.png */; };
 		9E6C075D1D3F66F100628BE9 /* chatBar_faceSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07481D3F66F100628BE9 /* chatBar_faceSelected.png */; };
 		9E6C075E1D3F66F100628BE9 /* chatBar_face@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07491D3F66F100628BE9 /* chatBar_face@2x.png */; };
 		9E6C075F1D3F66F100628BE9 /* chatBar_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C074A1D3F66F100628BE9 /* chatBar_face.png */; };
@@ -1429,6 +1429,8 @@
 		9E4882BA1D3DD282003AEB2F /* UserProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProtocolViewController.h; sourceTree = "<group>"; };
 		9E4882BB1D3DD282003AEB2F /* UserProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProtocolViewController.m; sourceTree = "<group>"; };
 		9E4882BC1D3DD282003AEB2F /* UserProtocolViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProtocolViewController.xib; sourceTree = "<group>"; };
+		9E4CD0801DD95ED400A578E4 /* gender@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gender@2x.png"; sourceTree = "<group>"; };
+		9E4CD0831DD960BF00A578E4 /* wj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wj.png; sourceTree = "<group>"; };
 		9E531C031D7E5D6C000ABF5E /* nav_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_more.png; sourceTree = "<group>"; };
 		9E531C051D7E629F000ABF5E /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
 		9E531C081D7E9945000ABF5E /* LLTopicShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTopicShareViewController.h; sourceTree = "<group>"; };
@@ -1454,7 +1456,6 @@
 		9E6C073A1D3F66F100628BE9 /* chatBar_recordSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_recordSelected.png; sourceTree = "<group>"; };
 		9E6C073B1D3F66F100628BE9 /* chatBar_recordBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_recordBg@2x.png"; sourceTree = "<group>"; };
 		9E6C073C1D3F66F100628BE9 /* chatBar_recordBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_recordBg.png; sourceTree = "<group>"; };
-		9E6C073D1D3F66F100628BE9 /* chatBar_record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_record@2x.png"; sourceTree = "<group>"; };
 		9E6C073E1D3F66F100628BE9 /* chatBar_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_record.png; sourceTree = "<group>"; };
 		9E6C073F1D3F66F100628BE9 /* chatBar_moreSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_moreSelected@2x.png"; sourceTree = "<group>"; };
 		9E6C07401D3F66F100628BE9 /* chatBar_moreSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_moreSelected.png; sourceTree = "<group>"; };
@@ -1464,7 +1465,6 @@
 		9E6C07441D3F66F100628BE9 /* chatBar_keyboardSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_keyboardSelected.png; sourceTree = "<group>"; };
 		9E6C07451D3F66F100628BE9 /* chatBar_keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_keyboard@2x.png"; sourceTree = "<group>"; };
 		9E6C07461D3F66F100628BE9 /* chatBar_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_keyboard.png; sourceTree = "<group>"; };
-		9E6C07471D3F66F100628BE9 /* chatBar_faceSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_faceSelected@2x.png"; sourceTree = "<group>"; };
 		9E6C07481D3F66F100628BE9 /* chatBar_faceSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_faceSelected.png; sourceTree = "<group>"; };
 		9E6C07491D3F66F100628BE9 /* chatBar_face@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_face@2x.png"; sourceTree = "<group>"; };
 		9E6C074A1D3F66F100628BE9 /* chatBar_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_face.png; sourceTree = "<group>"; };
@@ -3675,6 +3675,14 @@
 			path = user;
 			sourceTree = "<group>";
 		};
+		9E4CD0821DD960BF00A578E4 /* equip */ = {
+			isa = PBXGroup;
+			children = (
+				9E4CD0831DD960BF00A578E4 /* wj.png */,
+			);
+			path = equip;
+			sourceTree = "<group>";
+		};
 		9E531C071D7E9945000ABF5E /* category */ = {
 			isa = PBXGroup;
 			children = (
@@ -3829,6 +3837,7 @@
 		9EB556AD1DD82BF8006D431B /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				9E4CD0801DD95ED400A578E4 /* gender@2x.png */,
 				9EB556B11DD88E11006D431B /* device.png */,
 				9EB556AE1DD82BF8006D431B /* points.png */,
 			);
@@ -4527,6 +4536,7 @@
 		9EF95E2E1D3E16B7000DBD15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E4CD0821DD960BF00A578E4 /* equip */,
 				9EB556B31DD8B812006D431B /* post */,
 				9EB556AD1DD82BF8006D431B /* setting */,
 				9ED8A6411D8986D1008957E2 /* MessageToolbarImages */,
@@ -4585,7 +4595,6 @@
 				9E6C073A1D3F66F100628BE9 /* chatBar_recordSelected.png */,
 				9E6C073B1D3F66F100628BE9 /* chatBar_recordBg@2x.png */,
 				9E6C073C1D3F66F100628BE9 /* chatBar_recordBg.png */,
-				9E6C073D1D3F66F100628BE9 /* chatBar_record@2x.png */,
 				9E6C073E1D3F66F100628BE9 /* chatBar_record.png */,
 				9E6C073F1D3F66F100628BE9 /* chatBar_moreSelected@2x.png */,
 				9E6C07401D3F66F100628BE9 /* chatBar_moreSelected.png */,
@@ -4595,7 +4604,6 @@
 				9E6C07441D3F66F100628BE9 /* chatBar_keyboardSelected.png */,
 				9E6C07451D3F66F100628BE9 /* chatBar_keyboard@2x.png */,
 				9E6C07461D3F66F100628BE9 /* chatBar_keyboard.png */,
-				9E6C07471D3F66F100628BE9 /* chatBar_faceSelected@2x.png */,
 				9E6C07481D3F66F100628BE9 /* chatBar_faceSelected.png */,
 				9E6C07491D3F66F100628BE9 /* chatBar_face@2x.png */,
 				9E6C074A1D3F66F100628BE9 /* chatBar_face.png */,
@@ -4652,6 +4660,7 @@
 					9E487E6F1D3DB80B003AEB2F = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8K55298386;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -4785,7 +4794,6 @@
 				9E4881071D3DBA2A003AEB2F /* SVWebViewControllerActivitySafari@2x.png in Resources */,
 				9ED8A6911D8986D2008957E2 /* chatBar_more_location.png in Resources */,
 				9E467B6A1D7691A000D000D7 /* messageToolbarBg@2x.png in Resources */,
-				9E6C075C1D3F66F100628BE9 /* chatBar_faceSelected@2x.png in Resources */,
 				9ED8A6981D8986D2008957E2 /* chatBar_more_photoSelected@2x.png in Resources */,
 				9EBC476A1D3F0C4100541F23 /* keyboard_voice_release@2x.png in Resources */,
 				9EBC47751D3F0C4100541F23 /* record_animate_5.png in Resources */,
@@ -4858,7 +4866,6 @@
 				9ED8A67F1D8986D2008957E2 /* chatBar_recordSelected.png in Resources */,
 				9EBC476E1D3F0C4100541F23 /* record_animate_11.png in Resources */,
 				9EBC47441D3F0C4100541F23 /* LLEMIMViewController.xib in Resources */,
-				9E6C07521D3F66F100628BE9 /* chatBar_record@2x.png in Resources */,
 				9E531C041D7E5D6C000ABF5E /* nav_more.png in Resources */,
 				9EF95E5B1D3E2995000DBD15 /* share_demo.thumb.jpg in Resources */,
 				9EBE203B1D4115DF00639DC5 /* head_bg.png in Resources */,
@@ -4877,6 +4884,7 @@
 				9ED8A63F1D897C5C008957E2 /* tabbar_message_new@2x.png in Resources */,
 				9EBC47601D3F0C4100541F23 /* keyboard_popup.png in Resources */,
 				9EF926551D42668B0078CDD6 /* LLMeViewController.xib in Resources */,
+				9E4CD0811DD95ED400A578E4 /* gender@2x.png in Resources */,
 				9EB556B61DD8B812006D431B /* equip_work.png in Resources */,
 				9EF2192A1D41F5D70015995C /* banner.png in Resources */,
 				9EBC476B1D3F0C4100541F23 /* keyboard_voice_short.png in Resources */,
@@ -4914,6 +4922,7 @@
 				9A5B33B71D7836FA00DE9F51 /* changeCamer.png in Resources */,
 				9E4880D91D3DBA2A003AEB2F /* CTAssetsPicker.xcassets in Resources */,
 				9A1D21C91D7E9E4E00280EED /* LLLogoutTableViewCell.xib in Resources */,
+				9E4CD0841DD960BF00A578E4 /* wj.png in Resources */,
 				9ED8A6861D8986D2008957E2 /* chatBar_colorMore_cameraSelected@2x.png in Resources */,
 				9ED8A6721D8986D1008957E2 /* chatBar_faceSelected@2x.png in Resources */,
 				9E4882C51D3DD282003AEB2F /* UserProtocolViewController.xib in Resources */,
@@ -5551,6 +5560,7 @@
 				CODE_SIGN_ENTITLEMENTS = jYouQuan/jYouQuan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8K55298386;
 				ENABLE_BITCODE = NO;
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5584,7 +5594,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = jYouQuan/jYouQuan.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8K55298386;
 				ENABLE_BITCODE = NO;
 				EXECUTABLE_PREFIX = "";
 				FRAMEWORK_SEARCH_PATHS = (
