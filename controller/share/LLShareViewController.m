@@ -383,9 +383,12 @@
 }
 - (void)categorySelectedHandler:(NSNotification *)notification
 {
-    
-    NSString *categroy = [notification.userInfo valueForKey:@"categroy"];
-    self.tagsLabel.text = categroy;
+    NSDictionary *param = notification.userInfo;
+    if( [[param objectForKey:@"opt"] isEqualToString:@"tags"] )
+    {
+        NSString *categroy = [param objectForKey:@"categroy"];
+        self.tagsLabel.text = categroy;
+    }
 }
 
 

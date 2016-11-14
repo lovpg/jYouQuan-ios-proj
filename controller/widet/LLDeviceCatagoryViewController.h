@@ -10,4 +10,6 @@
 
 @interface LLDeviceCatagoryViewController : LLBaseViewController
 
+@property (strong, nonatomic) NSString *opt;
+
 @end

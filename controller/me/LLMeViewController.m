@@ -215,19 +215,24 @@
 - (void)categorySelectedHandler:(NSNotification *)notification
 {
     
-    NSString *categroy = [notification.userInfo valueForKey:@"categroy"];
-    self.equipType.text = categroy;
-    __weak typeof(self) weakSelf = self;
-    [userService updateEquipType:categroy
-                         success:^(NSDictionary *userInfo)
+    NSDictionary *param = notification.userInfo;
+    if( [[param objectForKey:@"opt"] isEqualToString:@"equipType"] )
     {
-         weakSelf.equipType.text = categroy;
-        
+    
+        NSString *categroy = [notification.userInfo valueForKey:@"categroy"];
+        self.equipType.text = categroy;
+        __weak typeof(self) weakSelf = self;
+        [userService updateEquipType:categroy
+                             success:^(NSDictionary *userInfo)
+        {
+             weakSelf.equipType.text = categroy;
+            
+        }
+                                fail:^(NSError *error)
+        {
+            DDLogError(@"更新设备类型 error:%@",error);
+        }];
     }
-                            fail:^(NSError *error)
-    {
-        DDLogError(@"更新设备类型 error:%@",error);
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

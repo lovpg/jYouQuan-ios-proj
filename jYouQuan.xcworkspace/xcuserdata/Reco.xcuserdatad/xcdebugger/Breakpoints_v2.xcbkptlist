@@ -2182,7 +2182,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/home/LLHotShareViewController.m"
@@ -2495,11 +2495,7 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
-<<<<<<< HEAD
-            landmarkType = "5">
-=======
             landmarkType = "7">
->>>>>>> 1.1.0
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2579,9 +2575,6 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "-get"
-<<<<<<< HEAD
-            landmarkType = "5">
-=======
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2816,11 +2809,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/LLShareViewController.m"
-            timestampString = "500737384.012113"
+            timestampString = "500801788.367081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
             landmarkName = "-submit"
             landmarkType = "7">
          </BreakpointContent>
@@ -2919,7 +2912,38 @@
             endingLineNumber = "28"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
->>>>>>> 1.1.0
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/widet/LLDeviceCatagoryViewController.m"
+            timestampString = "500802012.217248"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-chooseCategroyClicked:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/LLShareViewController.m"
+            timestampString = "500801878.44631"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "386"
+            endingLineNumber = "386"
+            landmarkName = "-categorySelectedHandler:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

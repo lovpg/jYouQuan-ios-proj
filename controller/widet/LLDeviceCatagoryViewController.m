@@ -19,13 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *opt = self.params;
-    if( [opt isEqualToString:@"equipType"] )
+    self.opt = self.params;
+    if( [self.opt isEqualToString:@"equipType"] )
     {
         self.catagroyDataSource = [[NSArray alloc] initWithObjects:@"挖掘机",@"泵车",@"混凝土搅拌车",@"铲车", @"汽车起重吊",@"旋挖钻",@"卡车",@"推土机",@"叉车", @"压路机",@"混凝土搅拌站",@"堆高机",@"越野车", nil
                                    ];
     }
-    else if ( [opt isEqualToString:@"tags"] )
+    else if ( [self.opt isEqualToString:@"tags"] )
     {
         self.catagroyDataSource = [[NSArray alloc] initWithObjects:@"新闻",@"活动",@"作业",@"二手",@"租赁",@"招聘",@"求职",@"维修",@"求救",nil];
     }
@@ -54,10 +54,11 @@
 - (void)chooseCategroyClicked : (NSString *)categroy
 {
     
-
+    NSDictionary *param = [[NSDictionary alloc]initWithObjectsAndKeys:self.opt, @"opt",
+                           categroy, @"categroy", nil ];    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LLCatatoryChooseNotification"
                                                         object:nil
-                                                      userInfo:@{@"categroy": categroy}
+                                                      userInfo:param
      ];
     
     [self openURL:[NSURL URLWithString:@"." relativeToURL:self.url] animated:YES];
