@@ -59,23 +59,37 @@
     // 调整nickname label的宽度
     CGSize nameSize = [self.nicknameLabel sizeThatFits:CGSizeMake(999, 20)];
     CGRect nicknameLabelFrame = self.nicknameLabel.frame;
-    nicknameLabelFrame.size.width = MIN(nameSize.width, 95.0f);
-    self.nicknameLabel.frame = CGRectMake(73, 22, MIN(nameSize.width, 95.0f), 21);
+    nicknameLabelFrame.size.width = MIN(nameSize.width, 150.0f);
+    self.nicknameLabel.frame = CGRectMake(68, 22, MIN(nameSize.width, 150.0f), 21);
     
 //    self.genderImageView.originX = self.nicknameLabel.originX + self.nicknameLabel.width + 5;
 //    self.countryImageView.originX = self.genderImageView.originX + self.genderImageView.width + 5;
     
     _timeLabel.text = [[NSDate dateWithTimeIntervalSince1970:self.share.posttime/1000] formatRelativeTime];
-    self.tagsButton.text =  [LLAppHelper getNamefromCategory:self.share.tags];
-    if ([self.share.user.gender isEqualToString:@"男"]) {
-        self.genderImageView.image = [UIImage imageNamed:@"sex_male"];
-    } else if ([self.share.user.gender isEqualToString:@"女"]) {
-        self.genderImageView.image = [UIImage imageNamed:@"sex_female"];
-    } else if ([self.share.user.gender isEqualToString:@"gay"]) {
-        self.genderImageView.image = [UIImage imageNamed:@"sex_gay"];
-    } else {
-        self.genderImageView.image = [UIImage imageNamed:@"sex_secret"];
+//    self.tagsButton.text =  [LLAppHelper getNamefromCategory:self.share.tags];
+    
+    NSArray *tagsArray = [self.share.tags componentsSeparatedByString:@","];
+    if( [tagsArray count] > 1 )
+    {
+        self.tagsButton.text =  tagsArray[0];
+        self.tags2button.text = tagsArray[1];
     }
+    else
+    {
+        self.tags2button.hidden = YES;
+        self.tagsButton.text =  [LLAppHelper getNamefromCategory:self.share.tags];
+    }
+    
+    
+//    if ([self.share.user.gender isEqualToString:@"男"]) {
+//        self.genderImageView.image = [UIImage imageNamed:@"sex_male"];
+//    } else if ([self.share.user.gender isEqualToString:@"女"]) {
+//        self.genderImageView.image = [UIImage imageNamed:@"sex_female"];
+//    } else if ([self.share.user.gender isEqualToString:@"gay"]) {
+//        self.genderImageView.image = [UIImage imageNamed:@"sex_gay"];
+//    } else {
+//        self.genderImageView.image = [UIImage imageNamed:@"sex_secret"];
+//    }
     
     self.countryImageView.image = [UIImage imageNamed:[NSLocale countryCodeWithName:self.share.user.region]];
     
@@ -356,7 +370,7 @@
 {
     if(self.share.collection)
     {
-        [self routerEventWithName:LLMyCenterShareThirdPlatfomButtonClickEvent userInfo:@{
+        [self routerEventWithName:LLShareDetailThirdPlatfomButtonClickEvent userInfo:@{
                                                                 @"dataItem":self.share}];
     }
 }
@@ -490,8 +504,8 @@
      } failure:^(NSError *error){
          //         [hud removeFromSuperview];
          //         //TODO: 添加关注失败
-         //         NSString *message = @"Unfollow failed.";
-         //         [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
+        NSString *message = @"取消关注失败.";
+        [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
          //         self.fansCell.followStateLabel.text = @"Followed";
      }];
 }
@@ -524,13 +538,18 @@
          NSString *message = @"关注成功.";
          [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
          
-     } failure:^(NSError *error){
-         DDLogError(@"添加关注失败：%@",error);
+     }
+    failure:^(NSError *error)
+    {
+        DDLogError(@"添加关注失败：%@",error);
          //[hud removeFromSuperview];
-         
-         //         NSString *message = @"Follow failed.";
-         //         [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
-         //         self.fansCell.followStateLabel.text = @"+ Follow";
+        NSString *message = @"关注对方失败.";
+        if( [[error.userInfo objectForKey:@"status"] isEqualToString:@"BlackListException"])
+        {
+            message = @"你被对方关禁闭啦!";
+        }
+        [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
+//          self.fansCell.followStateLabel.text = @"+ Follow";
      }];
 }
 // 收藏

@@ -18,7 +18,7 @@ static NSString *LLShareDetailReportButtonClick = @"LLShareDetailReportButtonCli
 static NSString *LLShareDetailShareButtonClick = @"LLShareDetailShareButtonClick";
 static NSString *LLShareDetailFavoriteButtonClick = @"LLShareDetailFavoriteButtonClick";
 static NSString *LLShareDetailEnrollButtonClick = @"LLShareDetailEnrollButtonClick";
-static NSString *LLMyCenterShareThirdPlatfomButtonClickEvent = @"LLMyCenterShareThirdPlatfomButtonClickEvent";
+static NSString *LLShareDetailThirdPlatfomButtonClickEvent = @"LLShareDetailThirdPlatfomButtonClickEvent";
 
 @interface LLShareDetailTableViewCellRefactor : UITableViewCell {
     
@@ -33,6 +33,7 @@ static NSString *LLMyCenterShareThirdPlatfomButtonClickEvent = @"LLMyCenterShare
 @property (weak, nonatomic) IBOutlet UIButton *backgroundButton;
 @property (weak, nonatomic) IBOutlet UIButton *followButton;
 @property (weak, nonatomic) IBOutlet UIImageView *locationImage;
+@property (weak, nonatomic) IBOutlet UIButton *tags2button;
 
 @property (weak, nonatomic) IBOutlet UIButton *avatarButton;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;

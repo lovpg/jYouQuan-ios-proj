@@ -29,17 +29,6 @@
                             <action selector="backgroundButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e8z-tx-GMs"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="SDT-RZ-Pha" userLabel="barButton">
-                        <rect key="frame" x="221" y="19" width="85" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal">
-                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="groupBarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="waP-Rp-81C"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FhY-zf-u04" userLabel="avatarButton" customClass="LLAvatarImageButon">
                         <rect key="frame" x="14" y="31" width="40" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -212,8 +201,8 @@
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ImJ-JA-q0W">
-                        <rect key="frame" x="62" y="48" width="56" height="23"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ImJ-JA-q0W">
+                        <rect key="frame" x="62" y="48" width="64" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -244,7 +233,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yUE-G5-KoD">
-                        <rect key="frame" x="136" y="48" width="59" height="23"/>
+                        <rect key="frame" x="136" y="48" width="56" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal">
@@ -268,7 +257,6 @@
                 <outlet property="commentLabel" destination="afk-V6-sg1" id="4Ye-U3-tjC"/>
                 <outlet property="commentLogo" destination="dfG-TZ-wEe" id="9Iw-wj-s4H"/>
                 <outlet property="enrollCount" destination="SxA-kx-G5J" id="oYX-ih-Ayd"/>
-                <outlet property="groupBarButton" destination="SDT-RZ-Pha" id="sae-TD-FWR"/>
                 <outlet property="imageGroupView" destination="yYI-TY-ckR" id="8lY-WQ-xYG"/>
                 <outlet property="interactiveView" destination="TLX-wc-Av3" id="CTn-I4-TcZ"/>
                 <outlet property="likeButton" destination="gFX-i9-Ecd" id="Brd-hL-cXt"/>
@@ -302,7 +290,7 @@
     </objects>
     <resources>
         <image name="comment_count.png" width="32" height="32"/>
-        <image name="headphoto_default_128" width="40" height="40"/>
+        <image name="headphoto_default_128" width="137" height="131"/>
         <image name="location_choose.png" width="32" height="32"/>
         <image name="praise_count.png" width="32" height="32"/>
         <image name="see_count.png" width="32" height="32"/>

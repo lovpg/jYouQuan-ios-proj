@@ -386,9 +386,12 @@
      } failure:^(NSError *error){
          DDLogError(@"添加关注失败：%@",error);
          //[hud removeFromSuperview];
-         
-          NSString *message = @"关注失败，请重试.";
-          [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
+         NSString *message = @"关注对方失败.";
+         if( [[error.userInfo objectForKey:@"status"] isEqualToString:@"BlackListException"])
+         {
+             message = @"你被对方关禁闭啦!";
+         }
+         [JDStatusBarNotification showWithStatus:message dismissAfter:1.f styleName:JDStatusBarStyleDark];
           self.followButton.text = @"+ 关注";
      }];
 }

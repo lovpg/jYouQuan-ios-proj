@@ -838,6 +838,13 @@
 //        [[NSNotificationCenter defaultCenter] postNotificationName:@"LLShareOrPostDetailValueDidChange" object:nil];
         
     }
+    if ([eventName isEqualToString:LLShareDetailThirdPlatfomButtonClickEvent])
+    {
+        LLShare *dataItem = [userInfo objectForKey:@"dataItem"];
+        LLThirdCollection *collection = dataItem.collection;
+        [self openURL:[NSURL URLWithString:@"present:///root/web"] params:collection animated:YES];
+    }
+    
     else if ([eventName isEqualToString:LLShareDetailCommentButtonClickEvent])
     {  // Comment
         [self.toolBarView.inputTextView becomeFirstResponder];

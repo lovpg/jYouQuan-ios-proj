@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,15 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="251"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="250.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v6Z-kI-W7h">
                         <rect key="frame" x="0.0" y="8" width="320" height="234"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphoto_default_128" id="E3h-mQ-0do">
@@ -31,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <gestureRecognizers/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="apU-RJ-RGY" appends="YES" id="Ewk-x4-abe"/>
@@ -41,7 +45,7 @@
                         <rect key="frame" x="212" y="22" width="95" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="5zL-Fe-suI">
@@ -56,21 +60,21 @@
                                 <rect key="frame" x="32" y="9" width="269" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9tA-PA-B1m">
-                                <rect key="frame" x="10" y="5" width="305" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9tA-PA-B1m">
+                                <rect key="frame" x="10" y="0.0" width="305" height="34"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <action selector="toThirdPlatform:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aoc-vs-T2x"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="1"/>
@@ -87,7 +91,7 @@
                             <view hidden="YES" contentMode="scaleToFill" id="XeL-VB-bal" userLabel="line1">
                                 <rect key="frame" x="5" y="1" width="310" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="praise_count.png" id="cMG-YQ-Kr6">
                                 <rect key="frame" x="13" y="8" width="20" height="20"/>
@@ -97,14 +101,14 @@
                                 <rect key="frame" x="52" y="8" width="15" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zfQ-92-1V2" userLabel="commentButton" customClass="LLShareButton">
                                 <rect key="frame" x="83" y="0.0" width="78" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="actionName" value="comment"/>
@@ -120,7 +124,7 @@
                                 <rect key="frame" x="127" y="8" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_count.png" id="Zmf-y5-MKa">
@@ -131,7 +135,7 @@
                                 <rect key="frame" x="213" y="9" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="see_count.png" id="B7i-5H-uwW" userLabel="favoriteLogo">
@@ -157,7 +161,7 @@
                                 <rect key="frame" x="-3" y="0.0" width="78" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="actionName" value="like"/>
@@ -167,14 +171,14 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GjA-Qz-RaV">
                         <rect key="frame" x="8" y="14" width="54" height="53"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
                             <action selector="avatarButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="w9u-8r-EqY"/>
@@ -183,7 +187,7 @@
                     <view contentMode="scaleToFill" id="6H8-3M-pFX" customClass="OllaImageLimitGridView">
                         <rect key="frame" x="20" y="114" width="233" height="23"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cellImageCornerRadius">
                                 <integer key="value" value="5"/>
@@ -195,14 +199,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="+ 关注">
-                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="5"/>
@@ -212,17 +216,17 @@
                             <action selector="followButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hev-el-Gaw"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UII-LT-yZo">
-                        <rect key="frame" x="70" y="44" width="68" height="23"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UII-LT-yZo">
+                        <rect key="frame" x="70" y="45" width="64" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal">
-                            <color key="titleColor" red="0.1553292228" green="0.63857323229999996" blue="0.62120132829999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.1553292228" green="0.63857323229999996" blue="0.62120132829999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.1553292228" green="0.63857323229999996" blue="0.62120132829999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.1553292228" green="0.63857323229999996" blue="0.62120132829999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="1"/>
@@ -232,15 +236,31 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6v-UF-fFv">
-                        <rect key="frame" x="62" y="22" width="124" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W6v-UF-fFv">
+                        <rect key="frame" x="62" y="22" width="173" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DM6-X8-ygJ">
+                        <rect key="frame" x="146" y="45" width="56" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.070588238540000001" green="0.58823531870000001" blue="0.76470595600000002" alpha="1" colorSpace="deviceRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.070588238540000001" green="0.58823531870000001" blue="0.76470595600000002" alpha="1" colorSpace="deviceRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
                 </subviews>
-                <color key="backgroundColor" red="0.96470588235294119" green="0.96862745098039216" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.96470588235294119" green="0.96862745098039216" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <gestureRecognizers/>
             </tableViewCellContentView>
             <connections>
@@ -262,6 +282,7 @@
                 <outlet property="nicknameLabel" destination="W6v-UF-fFv" id="64v-F1-SFl"/>
                 <outlet property="selectionButtonsContainerView" destination="Kkr-qa-kAS" id="D48-AT-tyZ"/>
                 <outlet property="shareDetailLabel" destination="TjO-1w-Ooy" id="0UK-Tv-HNG"/>
+                <outlet property="tags2button" destination="DM6-X8-ygJ" id="5da-61-DZ9"/>
                 <outlet property="tagsButton" destination="UII-LT-yZo" id="tle-e5-1Xg"/>
                 <outlet property="timeLabel" destination="ATe-Fn-8Jc" id="J8u-2J-dlt"/>
             </connections>
@@ -275,10 +296,15 @@
     </objects>
     <resources>
         <image name="comment_count.png" width="32" height="32"/>
-        <image name="headphoto_default_128" width="128" height="128"/>
+        <image name="headphoto_default_128" width="40" height="40"/>
         <image name="location_choose.png" width="32" height="32"/>
         <image name="praise_count.png" width="32" height="32"/>
         <image name="see_count.png" width="32" height="32"/>
         <image name="share_new_gray_1.png" width="28" height="28"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

@@ -384,7 +384,7 @@
             startingLineNumber = "188"
             endingLineNumber = "188"
             landmarkName = "-loadData"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -400,7 +400,7 @@
             startingLineNumber = "204"
             endingLineNumber = "204"
             landmarkName = "-loadData"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -688,7 +688,7 @@
             startingLineNumber = "439"
             endingLineNumber = "439"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -704,7 +704,7 @@
             startingLineNumber = "426"
             endingLineNumber = "426"
             landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -720,7 +720,7 @@
             startingLineNumber = "418"
             endingLineNumber = "418"
             landmarkName = "-numberOfSectionsInTableView:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -736,7 +736,7 @@
             startingLineNumber = "419"
             endingLineNumber = "419"
             landmarkName = "-numberOfSectionsInTableView:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -752,7 +752,7 @@
             startingLineNumber = "470"
             endingLineNumber = "470"
             landmarkName = "-tableView:heightForRowAtIndexPath:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -768,7 +768,7 @@
             startingLineNumber = "486"
             endingLineNumber = "486"
             landmarkName = "-tableView:willDisplayCell:forRowAtIndexPath:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -784,7 +784,7 @@
             startingLineNumber = "434"
             endingLineNumber = "434"
             landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -800,7 +800,7 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "-choosePositionClicked:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -912,7 +912,7 @@
             startingLineNumber = "514"
             endingLineNumber = "514"
             landmarkName = "-routerEventWithName:userInfo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -928,7 +928,7 @@
             startingLineNumber = "239"
             endingLineNumber = "239"
             landmarkName = "-loadMoreData"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -944,7 +944,7 @@
             startingLineNumber = "1007"
             endingLineNumber = "1007"
             landmarkName = "-opt:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -960,7 +960,7 @@
             startingLineNumber = "1069"
             endingLineNumber = "1069"
             landmarkName = "-moveTop:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -976,7 +976,7 @@
             startingLineNumber = "645"
             endingLineNumber = "645"
             landmarkName = "-routerEventWithName:userInfo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1040,7 +1040,7 @@
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "-startUploadLocation"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1392,7 +1392,7 @@
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "-setSelected:animated:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1408,7 +1408,7 @@
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "-ScrollClickAction:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1424,7 +1424,7 @@
             startingLineNumber = "574"
             endingLineNumber = "574"
             landmarkName = "-routerEventWithName:userInfo:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1440,7 +1440,7 @@
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "-ScrollClickAction:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1456,7 +1456,7 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "-ScrollClickAction:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1642,11 +1642,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "controller/share/detail/LLShareDetailTableViewCellRefactor.m"
-            timestampString = "494609764.501787"
+            timestampString = "501039392.213922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "-layoutSubviews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1914,11 +1914,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "view/home/LLHomeShareViewCell.m"
-            timestampString = "500743725.71497"
+            timestampString = "501040638.888072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "415"
-            endingLineNumber = "415"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "-likeButtonClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1930,11 +1930,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "view/home/LLHomeShareViewCell.m"
-            timestampString = "500743725.71497"
+            timestampString = "501040638.888072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "442"
-            endingLineNumber = "442"
+            startingLineNumber = "445"
+            endingLineNumber = "445"
             landmarkName = "-commentButtonClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1946,11 +1946,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "view/home/LLHomeShareViewCell.m"
-            timestampString = "500743725.71497"
+            timestampString = "501040638.888072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "-toThirdCollection:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2511,7 +2511,7 @@
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2527,7 +2527,7 @@
             startingLineNumber = "98"
             endingLineNumber = "98"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2543,7 +2543,7 @@
             startingLineNumber = "104"
             endingLineNumber = "104"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2559,7 +2559,7 @@
             startingLineNumber = "111"
             endingLineNumber = "111"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2943,6 +2943,134 @@
             startingLineNumber = "386"
             endingLineNumber = "386"
             landmarkName = "-categorySelectedHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailTableViewCellRefactor.m"
+            timestampString = "501039392.213922"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
+            landmarkName = "-toThirdPlatform:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailViewControllerRefactor2.m"
+            timestampString = "500963257.564665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "842"
+            endingLineNumber = "842"
+            landmarkName = "-routerEventWithName:userInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailViewControllerRefactor2.m"
+            timestampString = "500963267.181902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "844"
+            endingLineNumber = "844"
+            landmarkName = "-routerEventWithName:userInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailViewControllerRefactor2.m"
+            timestampString = "500963267.821109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "843"
+            endingLineNumber = "843"
+            landmarkName = "-routerEventWithName:userInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailTableViewCellRefactor.m"
+            timestampString = "501040048.356505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
+            landmarkName = "-followButtonClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailTableViewCellRefactor.m"
+            timestampString = "501040054.85128"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "520"
+            endingLineNumber = "520"
+            landmarkName = "-follow:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailTableViewCellRefactor.m"
+            timestampString = "501040070.192641"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
+            landmarkName = "-unfollow:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "controller/share/detail/LLShareDetailTableViewCellRefactor.m"
+            timestampString = "501040638.888072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "544"
+            endingLineNumber = "544"
+            landmarkName = "-follow:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
