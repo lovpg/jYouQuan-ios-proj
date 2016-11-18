@@ -375,7 +375,6 @@
 		9E6C07571D3F66F100628BE9 /* chatBar_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07421D3F66F100628BE9 /* chatBar_more.png */; };
 		9E6C07581D3F66F100628BE9 /* chatBar_keyboardSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07431D3F66F100628BE9 /* chatBar_keyboardSelected@2x.png */; };
 		9E6C07591D3F66F100628BE9 /* chatBar_keyboardSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07441D3F66F100628BE9 /* chatBar_keyboardSelected.png */; };
-		9E6C075A1D3F66F100628BE9 /* chatBar_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07451D3F66F100628BE9 /* chatBar_keyboard@2x.png */; };
 		9E6C075B1D3F66F100628BE9 /* chatBar_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07461D3F66F100628BE9 /* chatBar_keyboard.png */; };
 		9E6C075D1D3F66F100628BE9 /* chatBar_faceSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07481D3F66F100628BE9 /* chatBar_faceSelected.png */; };
 		9E6C075E1D3F66F100628BE9 /* chatBar_face@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C07491D3F66F100628BE9 /* chatBar_face@2x.png */; };
@@ -1464,7 +1463,6 @@
 		9E6C07421D3F66F100628BE9 /* chatBar_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_more.png; sourceTree = "<group>"; };
 		9E6C07431D3F66F100628BE9 /* chatBar_keyboardSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_keyboardSelected@2x.png"; sourceTree = "<group>"; };
 		9E6C07441D3F66F100628BE9 /* chatBar_keyboardSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_keyboardSelected.png; sourceTree = "<group>"; };
-		9E6C07451D3F66F100628BE9 /* chatBar_keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_keyboard@2x.png"; sourceTree = "<group>"; };
 		9E6C07461D3F66F100628BE9 /* chatBar_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_keyboard.png; sourceTree = "<group>"; };
 		9E6C07481D3F66F100628BE9 /* chatBar_faceSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_faceSelected.png; sourceTree = "<group>"; };
 		9E6C07491D3F66F100628BE9 /* chatBar_face@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatBar_face@2x.png"; sourceTree = "<group>"; };
@@ -4605,7 +4603,6 @@
 				9E6C07421D3F66F100628BE9 /* chatBar_more.png */,
 				9E6C07431D3F66F100628BE9 /* chatBar_keyboardSelected@2x.png */,
 				9E6C07441D3F66F100628BE9 /* chatBar_keyboardSelected.png */,
-				9E6C07451D3F66F100628BE9 /* chatBar_keyboard@2x.png */,
 				9E6C07461D3F66F100628BE9 /* chatBar_keyboard.png */,
 				9E6C07481D3F66F100628BE9 /* chatBar_faceSelected.png */,
 				9E6C07491D3F66F100628BE9 /* chatBar_face@2x.png */,
@@ -4769,7 +4766,6 @@
 				9EBC477A1D3F0C4100541F23 /* star@2x.png in Resources */,
 				9EF371541D4284F200A96215 /* LLShareDetailBaseViewController.xib in Resources */,
 				9EF3715B1D4284F200A96215 /* LLUpArrowTableViewCell.xib in Resources */,
-				9E6C075A1D3F66F100628BE9 /* chatBar_keyboard@2x.png in Resources */,
 				9EBC47701D3F0C4100541F23 /* record_animate_13.png in Resources */,
 				9ED8A66F1D8986D1008957E2 /* chatBar_face.png in Resources */,
 				9A1D21BF1D7E5D2500280EED /* LLPasswordEditViewController.xib in Resources */,

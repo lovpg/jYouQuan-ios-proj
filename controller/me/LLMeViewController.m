@@ -248,7 +248,10 @@
                               BOOL isSuccess = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"taobao://lbslm.taobao.com"]];
                               if(!isSuccess)
                               {
-                                  [JDStatusBarNotification showWithStatus:@"请安装淘宝客户端." dismissAfter:1.f styleName:JDStatusBarStyleDark];
+                                  LLThirdCollection *collection = [[LLThirdCollection alloc]init];
+                                  collection.url = @"http://lbslm.taobao.com";
+                                  collection.title = @"哐当商城";
+                                  [self openURL:[NSURL URLWithString:@"present:///root/web"] params:collection animated:YES];
                               }
                           }
                           else
