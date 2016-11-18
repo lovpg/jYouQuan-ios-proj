@@ -20,6 +20,7 @@
 #import "LLHomeHeadCell.h"
 #import "LLThirdCollection.h"
 #import "LLHomeBannerCell.h"
+#import "LocationViewController.h"
 
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height//获取屏幕高度，兼容性测试
 #define span 10000
@@ -82,6 +83,7 @@ LLShareDataSourceDelegate>
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(close) name:@"NOTIFICATION_CLOSE_B" object:nil];
     userService = [[LLUserService alloc] init];
     self.qrView.hidden = YES;
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -556,6 +558,18 @@ LLShareDataSourceDelegate>
         }
         
     }
+    else if ([eventName isEqualToString:LLShareLocationButtonClickEvent])
+    {
+        LLShare *share = [userInfo objectForKey:@"dataItem"];
+        LocationViewController *locationController = [[LocationViewController alloc] initWithLocation:CLLocationCoordinate2DMake(share.lat, share.lng)
+                                                                                          isBarHidden: YES];
+        [self presentViewController:locationController
+                           animated:YES
+                         completion:^
+        {
+            
+        }];
+    }
     else if ([eventName isEqualToString:LLMyCenterFocusButtonClickEvent])
     {  // 点赞
        // [self focusShare:[userInfo objectForKey:@"dataItem"]];
@@ -654,6 +668,12 @@ LLShareDataSourceDelegate>
 }
 
 
+-(void) close
+{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 #pragma mark - Share
 - (void)shareWithPost:(LLShare *)dataItem {

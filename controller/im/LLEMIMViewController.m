@@ -1171,7 +1171,7 @@
 -(void)chatLocationCellBubblePressed:(MessageModel *)model
 {
     _isScrollToBottom = NO;
-    LocationViewController *locationController = [[LocationViewController alloc] initWithLocation:CLLocationCoordinate2DMake(model.latitude, model.longitude)];
+    LocationViewController *locationController = [[LocationViewController alloc] initWithLocation:CLLocationCoordinate2DMake(model.latitude, model.longitude) isBarHidden:NO];
     [self.navigationController pushViewController:locationController animated:YES];
 }
 

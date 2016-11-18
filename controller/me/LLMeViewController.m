@@ -234,10 +234,31 @@
         }];
     }
 }
+- (IBAction)shoppingMallGo:(id)sender
+{
+    
+    [UIAlertView showWithTitle:@"积分兑换提醒"
+                           message:@" 1、拥有足够兑换模型积分的机手们直接前往淘宝，选择好自己要兑换的模型购买即可.\n 2、通过【哐当】或者【淘宝】客户端告之帐号所对应的手机号码，我们将尽快将您所购买的等值货币返还至您的支付宝帐号（微信也可）并扣除您帐号上的等值积分！\n "
+                 cancelButtonTitle:@"取消"
+             otherButtonTitles:@[@"前往"]
+                      tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex)
+                      {
+                          if(buttonIndex == 1)
+                          {
+                              BOOL isSuccess = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"taobao://lbslm.taobao.com"]];
+                              if(!isSuccess)
+                              {
+                                  [JDStatusBarNotification showWithStatus:@"请安装淘宝客户端." dismissAfter:1.f styleName:JDStatusBarStyleDark];
+                              }
+                          }
+                          else
+                           return;
+                      }];
+   
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

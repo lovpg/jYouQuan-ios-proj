@@ -26,7 +26,7 @@ static NSString *LLMyCenterShareThirdPlatfomButtonClickEvent = @"LLMyCenterShare
 static NSString *LLMyCenterFocusButtonClickEvent = @"LLMyCenterFocusButtonClickEvent";
 static NSString *LLMyCenterOptButtonClickEvent = @"LLMyCenterOptButtonClickEvent";
 static NSString *LLShareCategoryButtonClickEvent = @"LLShareCategoryButtonClickEvent";
-
+static NSString *LLShareLocationButtonClickEvent = @"LLShareLocationButtonClickEvent";
 
 @interface LLHomeShareViewCell : UITableViewCell<TTTAttributedLabelDelegate>
 {

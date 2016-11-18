@@ -17,6 +17,12 @@
 	<array/>
 	<key>ui</key>
 	<dict>
+		<key>location</key>
+		<dict/>
+		<key>title</key>
+		<string>位置</string>
+		<key>class</key>
+		<string>LocationViewController</string>
 		<key>topic-share-list</key>
 		<dict>
 			<key>class</key>

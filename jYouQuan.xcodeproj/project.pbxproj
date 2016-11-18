@@ -637,6 +637,7 @@
 		9ED8A6991D8986D2008957E2 /* messageToolbarBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ED8A66E1D8986D1008957E2 /* messageToolbarBg@2x.png */; };
 		9ED8A69C1D899079008957E2 /* chat_location_preview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ED8A69A1D899079008957E2 /* chat_location_preview@2x.png */; };
 		9ED8A69D1D899079008957E2 /* chat_location_preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ED8A69B1D899079008957E2 /* chat_location_preview.png */; };
+		9EF12A2F1DDE99F300DF79C9 /* shopping_mall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EF12A2E1DDE99F300DF79C9 /* shopping_mall@2x.png */; };
 		9EF219151D41D7320015995C /* LLWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF219131D41D7320015995C /* LLWebBrowserViewController.m */; };
 		9EF219161D41D7320015995C /* LLWebBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EF219141D41D7320015995C /* LLWebBrowserViewController.xib */; };
 		9EF2191F1D41EAD70015995C /* LLLocationChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2191D1D41EAD70015995C /* LLLocationChooseViewController.m */; };
@@ -1876,6 +1877,7 @@
 		9ED8A66E1D8986D1008957E2 /* messageToolbarBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messageToolbarBg@2x.png"; sourceTree = "<group>"; };
 		9ED8A69A1D899079008957E2 /* chat_location_preview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_location_preview@2x.png"; sourceTree = "<group>"; };
 		9ED8A69B1D899079008957E2 /* chat_location_preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_location_preview.png; sourceTree = "<group>"; };
+		9EF12A2E1DDE99F300DF79C9 /* shopping_mall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopping_mall@2x.png"; sourceTree = "<group>"; };
 		9EF219121D41D7320015995C /* LLWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLWebBrowserViewController.h; sourceTree = "<group>"; };
 		9EF219131D41D7320015995C /* LLWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLWebBrowserViewController.m; sourceTree = "<group>"; };
 		9EF219141D41D7320015995C /* LLWebBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLWebBrowserViewController.xib; sourceTree = "<group>"; };
@@ -3837,6 +3839,7 @@
 		9EB556AD1DD82BF8006D431B /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				9EF12A2E1DDE99F300DF79C9 /* shopping_mall@2x.png */,
 				9E4CD0801DD95ED400A578E4 /* gender@2x.png */,
 				9EB556B11DD88E11006D431B /* device.png */,
 				9EB556AE1DD82BF8006D431B /* points.png */,
@@ -4877,6 +4880,7 @@
 				9A1654261D7D1B8A006FB41B /* arrowhead.png in Resources */,
 				9EBC476D1D3F0C4100541F23 /* record_animate_10.png in Resources */,
 				9A1654281D7D1B8A006FB41B /* arrowhead@3x.png in Resources */,
+				9EF12A2F1DDE99F300DF79C9 /* shopping_mall@2x.png in Resources */,
 				9EBC47171D3F0C4000541F23 /* LLPostMessageToolBar.xib in Resources */,
 				9E4881DE1D3DC0C7003AEB2F /* sr_refresh@2X.png in Resources */,
 				9E3931481D7CFF8700E2511E /* LbslmWebViewController.xib in Resources */,

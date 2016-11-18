@@ -24,6 +24,7 @@
 
 @property (nonatomic, assign) id<LocationViewDelegate> delegate;
 
-- (instancetype)initWithLocation:(CLLocationCoordinate2D)locationCoordinate;
+- (instancetype)initWithLocation:(CLLocationCoordinate2D)locationCoordinate
+                    isBarHidden : (BOOL) isBarHidden;
 
 @end

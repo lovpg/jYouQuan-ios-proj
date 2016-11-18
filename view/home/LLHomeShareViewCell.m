@@ -12,6 +12,7 @@
 #import "LLThirdCollection.h"
 #import "LLHomeHeadCell.h"
 #import "LLUserService.h"
+#import "LocationViewController.h"
 
 @implementation LLHomeShareViewCell
 {
@@ -404,7 +405,7 @@
     }
     else
     {
-        [self routerEventWithName:LLMyCenterShareCommentClickEvent userInfo:@{@"dataItem":self.dataItem}];
+        [self routerEventWithName:LLShareLocationButtonClickEvent userInfo:@{@"dataItem":self.dataItem}];
     }
 }
 - (IBAction)optAction:(id)sender

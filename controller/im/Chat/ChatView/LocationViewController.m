@@ -28,6 +28,8 @@ static LocationViewController *defaultLocation = nil;
 }
 
 @property (strong, nonatomic) NSString *addressString;
+@property (assign, nonatomic) BOOL isBarHidden;
+
 
 @end
 
@@ -38,7 +40,8 @@ static LocationViewController *defaultLocation = nil;
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         _isSendLocation = YES;
     }
     
@@ -46,11 +49,15 @@ static LocationViewController *defaultLocation = nil;
 }
 
 - (instancetype)initWithLocation:(CLLocationCoordinate2D)locationCoordinate
+                    isBarHidden : (BOOL) isBarHidden
 {
     self = [super initWithNibName:nil bundle:nil];
-    if (self) {
+    if (self)
+    {
         _isSendLocation = NO;
         _currentLocationCoordinate = locationCoordinate;
+        self.isBarHidden = isBarHidden;
+ 
     }
     
     return self;
@@ -73,8 +80,17 @@ static LocationViewController *defaultLocation = nil;
     _mapView.mapType = MKMapTypeStandard;
     _mapView.zoomEnabled = YES;
     [self.view addSubview:_mapView];
+    if(_isBarHidden)
+    {
+        UIButton *backButton2 = [[UIButton alloc] initWithFrame:CGRectMake(12, 20, 32, 32)];
+        backButton2.backgroundColor = RGB_HEX(0xe21001);
+        [backButton2 setImage:[UIImage imageNamed:@"backer"] forState:UIControlStateNormal];
+        [backButton2 addTarget:self.navigationController action:@selector(back2:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:backButton2];
+    }
     
-    if (_isSendLocation) {
+    if (_isSendLocation)
+    {
         _mapView.showsUserLocation = YES;//显示当前位置
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(sendLocation)];
@@ -86,9 +102,32 @@ static LocationViewController *defaultLocation = nil;
     }
 }
 
+
+-(IBAction)back2:(id)sender
+{
+    if ( self.isBarHidden )
+    {
+        [self dismissViewControllerAnimated:NO completion:^()
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATION_CLOSE_B" object:nil userInfo:nil];
+        }];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 -(IBAction)back:(id)sender
 {
-        [self.navigationController popViewControllerAnimated:NO];
+    if ( self.isBarHidden )
+    {
+        [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    }
+    else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -224,5 +263,6 @@ static LocationViewController *defaultLocation = nil;
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end
